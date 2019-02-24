@@ -27,6 +27,13 @@ Vue.component('cart-component', require('./components/CartComponent.vue').defaul
 Vue.component('rent-component', require('./components/RentComponent.vue').default);
 Vue.component('about-component', require('./components/AboutComponent.vue').default);
 Vue.component('contacts-component', require('./components/ContactsComponent').default);
+Vue.component('fz54-component', require('./components/Fz54Component').default);
+Vue.component('sofd-component', require('./components/fz54/SofdComponent').default);
+Vue.component('kas2g-component', require('./components/fz54/Kas2gComponent').default);
+Vue.component('kzokvn-component', require('./components/fz54/KzokvnComponent').default);
+Vue.component('pnf-component', require('./components/fz54/PnfComponent').default);
+Vue.component('nor-component', require('./components/fz54/NorComponent').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

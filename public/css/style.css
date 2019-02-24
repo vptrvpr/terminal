@@ -1711,6 +1711,24 @@ footer.footer p a{
     transform: translateX(-200px);
 
 }
+.h1-fz{
+    font-size: 44px;
+}
+.fz-p{
+    font-size: 16px;
+    line-height: 1.5;
+}
+#bx_689919819_2430 p,li{
+    font-size: 16px;
+    line-height: 1.5;
+}
+#bx_689919819_2430 ae{
+    font-weight: 700;
+    font-size: 15px;
+}
+.a-purple{
+    color: #2F2C65;
+}
 
 
 

@@ -45,6 +45,12 @@ Route::get('/cart_destroy','CartController@destroyCart');
 Route::get('/rent','RentController@index');
 Route::get('/about','PageController@aboutIndex');
 Route::get('/contacts','PageController@contactsIndex');
+Route::get('/fz-54', 'PageController@fz54Index');
+Route::get('/sofd', 'PageController@sofdIndex');
+Route::get('/kassovye-apparaty-s-2019-goda', 'PageController@kas2gIndex');
+Route::get('/kak-zaregistrirovat-onlayn-kassu-v-nalogovoy', 'PageController@kzokvn');
+Route::get('/perekhod-na-ffd-1-05-i-nds-20-atol-shtrikh-m-viki-print', 'PageController@pnf');
+Route::get('/novye-objazatelnye-rekvizity-chekov-kkt-i-bso', 'PageController@nor');
 
 
 

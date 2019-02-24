@@ -1,0 +1,646 @@
+<template>
+    <div>
+
+        <div id="preloader">
+            <div class="preloader-area">
+                <div class="preloader-box">
+                    <div class="preloader"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <header class="header-section">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><b>Компания</b></a>
+                        <a class="navbar-brand" href="#"><b>Терминал</b></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Главная</a></li>
+                            <li><a href="/rent">Аренда</a></li>
+                            <li><a href="/about">О нас</a></li>
+                            <li><a href="/contacts">Контакты</a></li>
+                            <li><a href="/fz-54">ФЗ-54</a></li>
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right cart-menu">
+                            <li><a href="/cart"><span> Корзина - {{cart.total}}₽&nbsp;</span> <span class="shoping-cart">{{cart.count_all}}</span></a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container -->
+            </nav>
+            <transition name="cartMessage">
+            <div v-if="showCartMessage === true" id='error_box' style='z-index: 999999999999;display: block; border: 1px solid #2F2C65 !important; background: #2F2C65 !important; position: fixed; width: 370px; right: 20px; top: 20px; -webkit-box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.2); box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.2); -webkit-border-radius: 5px; border-radius: 5px; text-align: center;'>
+                <p id='error_message' style='color: white; margin-top: 10px; font-weight: bold;filter: dropshadow(color=#FFFFFF, offx=1, offy=1);'>
+                    {{cartMessage}}
+                </p>
+            </div>
+            </transition>
+        </header>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="row subscribe-from">
+                    <div class="col-md-12">
+                        <form class="form-inline col-md-12 wow fadeInDown animated">
+                            <div class="form-group">
+                                <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
+                                <button class="suscribe-btn" ><i class="pe-7s-search"></i></button>
+                            </div>
+                        </form><!-- end /. form -->
+                    </div>
+                </div><!-- end of/. row -->
+            </div><!-- end of /.container -->
+        </section><!-- end of /.news letter section -->
+
+
+        <section class="featured-section" style="    background: whitesmoke;">
+
+            <div class="container">
+                <transition name="showDiv2" >
+                <div class="infomation_about" v-if="showDiv2">
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>ФЗ-54</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <h1 class="h1-fz text-center">Закон 54-ФЗ «О применении контрольно-кассовой техники». Что меняется в 2018 году?</h1>
+
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="bx_689919819_2430">
+                                <p>
+                                    Представляем <strong>список операторов фискальных данных</strong> в России. Заключение договора с одним из них — обязательное требование последней версии закона 54-ФЗ, если вы используете кассовую технику при расчетах с покупателями.
+                                </p>
+                                <p>
+                                    Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.
+                                </p>
+                                <p>
+                                    Что такое оператор фискальных данных (ОФД) и почему с 1 февраля 2017 года необходимо заключать с ним договор?
+                                </p>
+                                <p>
+                                    Напоминаем, что поправки к закону «О применении контрольно-кассовой техники» уже вступили в силу. Меняется схема расчета бизнеса с покупателями и схема взаимодействия с ФНС. Предприниматели обязаны использовать кассовую технику с доступом в&nbsp;интернет. А заключение договора с оператором фискальных данных, список которых утвердила налоговая, — теперь одно из&nbsp;обязательных требований.
+                                </p>
+                                <p>
+                                    Задача организаций из списка ОФД — собирать данные о продажах, отправляемые ККТ нового образца, хранить их и передавать в ФНС по защищенному каналу.
+                                </p>
+
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+
+
+
+                                <h2>Список ОФД с официальным разрешением ФНС на обработку фискальных данных</h2>
+                                <p>
+                                    В конце августа на сайте налоговой появился первый <strong>список ОФД</strong>, сертифицированных для работы в России. На сегодняшний день официальный статус оператора фискальных данных получили 20 компаний.
+                                </p>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> ОФД Такском</ae>
+                                            </p>
+                                            <p>
+                                                ООО «Такском» разрабатывает системы электронного документооборота и обеспечивает обмен информацией по защищенным каналам связи с 2000 года. Собственный учебный центр и центр сертификации ключей ЭЦП. В числе тех, кто сотрудничает с «Такскомом» — Управление делами Президента РФ, МИД России, ФНС и Сбербанк. Один из крупнейших игроков на рынке, без этого оператора фискальных данных список представить сложно. Разрешение на обработку фискальных данных получено 31.08.2016.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> ООО «Эвотор ОФД», бренд «Платформа ОФД»</ae>
+                                            </p>
+                                            <p>
+                                                Эвотор ОФД — совместный проект Сбербанка и производителя кассового оборудования АТОЛ. Основной профиль деятельности компании — создание решений для автоматизации малого бизнеса. В планах компании сотрудничество с ЦТО и развитие партнерства с производителями ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> ООО «Ярус», ОФД ЯРУС (ОФД-Я)</ae>
+                                            </p>
+                                            <p>
+                                                ООО «Ярус» создает банковское оборудование и разрабатывает программное обеспечение с&nbsp;2007 года. Принадлежащий компании спецоператор ОФД-Я&nbsp;уже получил разрешительную документацию для ведения деятельности в статусе ОФД. В начале сентября 2016 года ОФД-Я договорился о партнерстве с производителем контрольно-кассовой техники «ШТРИХ-М». Компании обещают клиентам комплексный подход при переходе на новый порядок применения ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae>  АО «ЭСК», бренд «Первый ОФД»</ae>
+                                            </p>
+                                            <p>
+                                                У АО «Энергетические системы и коммуникации» большой опыт взаимодействия с налоговыми органами, а в 2014 году участие в предварительном эксперименте по применению онлайн-касс. Одно из главных направлений деятельности АО «ЭСК» — разработка технологий для передачи данных. Информация об этом операторе уже появилась в списке ОФД на сайте ФНС. Разрешение на обработку фискальных данных получено 31.08.2016.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae>    ПЕТЕР-СЕРВИС, OFD.RU</ae>
+                                            </p>
+                                            <p>
+                                                OFD.RU создан на базе дочерней компании ПЕТЕР-СЕРВИС, входящей в состав USM Holdings. ПЕТЕР-СЕРВИС уже более 20 лет создает программное обеспечение для рынка телекоммуникаций. На сайте указано, что OFD.RU оказывает услуги малому, среднему и&nbsp;крупному бизнесу по всей России. Разрешение на обработку фискальных данных получено 18.10.2016.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+
+                                        </td>
+                                        <td colspan="1">
+                                            <ae>  Яндекс.ОФД&nbsp;</ae>
+                                            <p>
+                                            </p>
+                                            «Яндекс» владеет одноименной системой поиска, интернет-порталами и службами в нескольких странах, а теперь намерен работать с крупным и мелким бизнесом, используя собственные технологии. Яндекс.ОФД начнет оказание услуг оператора фискальных данных после проведения настроек, связанных с интеграцией систем и обеспечением безопасности данных. Разрешение на обработку фискальных данных получено 10.04.2017.
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+
+                                        </td>
+                                        <td colspan="1">
+                                            <ae>  ООО «Электронный экспресс»</ae><br>
+                                            <br>
+                                            Компания&nbsp;«Электронный экспресс»&nbsp;— разработчик первой в России массовой компьютерной правовой системы ГАРАНТ и комплекса информационно-правового обеспечения. ИПО ГАРАНТ с 1990 года используют сотни тысяч юристов, бухгалтеров, руководителей по всей стране. Услуги компании лицензированы ФСБ России, Минкомсвязи РФ, ФСТЭК. Разрешение на обработку фискальных данных получено 14.04.2017.
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+
+                                        </td>
+                                        <td colspan="1">
+                                            <ae> ЗАО «КАЛУГА АСТРАЛ», бренд «Астрал.ОФД»</ae><br>
+                                            <br>
+                                            Компания создает программное обеспечение и разрабатывает системы электронного документооборота с 1993 года.&nbsp;Продукт имеет сертификаты соответствия Росстандарта России и заключение ФСБ России, подтверждающее обоснованность устройства системы криптографической защиты. Калуга Астрал — одна из участниц эксперимента по внедрению онлайн-касс в 2014 году. Разрешение на обработку фискальных данных получено 14.04.2017.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+
+                                        </td>
+                                        <td colspan="1">
+                                            <ae> ООО «Компания «Тензор», сервис ОФД в сети СБИС</ae> <br>
+                                            <br>
+                                            Компания «Тензор» на рынке программного обеспечения с 1996 года. Аккредитованный ФНС, ПФ и Росстатом оператор электронного документооборота, сертифицированный EDI-провайдер. «Тензор» разрабатывает сеть деловых коммуникаций СБИС и выпускает ключи электронной подписи. В СБИС работает 1 000 000 пользователей,&nbsp;ежедневно подключается около 1 000 новых организаций. Разрешение на обработку фискальных данных получено 14.04.2017.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+
+                                        </td>
+                                        <td colspan="1">
+                                            <ae> ООО «КОРУС Консалтинг СНГ», бренд «КОРУС ОФД»</ae> <br>
+                                            <br>
+                                            «КОРУС Консалтинг СНГ»&nbsp;входит в группу компаний ПАО Сбербанк и с 2005 года предоставляет услуги&nbsp;электронного обмена данными между участниками торговых сделок в ритейле, логистике, фарминдустрии, промышленности, ЖКХ, телекоммуникациях, финансах.&nbsp;Общий трафик электронного документооборота превышает 10 млн документов ежемесячно. Услуги компании лицензированы ФСБ России, ФСТЭК и другими организациями, их качество подтверждено сертификатом Комитета по технологическому обеспечению ECR-Rus российских EDI-провайдеров. Разрешение на обработку фискальных данных получено 12.05.2017.<br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td colspan="1">
+                                            <p>
+                                                <ae>  СКБ Контур, Контур ОФД</ae>
+                                            </p>
+                                            <p>
+                                                СКБ Контур разрабатывает и внедряет программы для бухучета, электронной отчетности и&nbsp;документооборота, предоставляет сервисы для обеспечения информационной безопасности. Разрешение на обработку фискальных данных получено&nbsp;29.06.2017.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td colspan="1">
+                                            <p>
+                                                <ae> АО «Тандер», ОФД «Магнит»</ae>
+                                            </p>
+                                            <p>
+                                                Акционерное общество «Тандер» – операционная компания «Магнита» – получило разрешение на обработку фискальных данных 11.07.2017. В магазинах розничной сети «Магнит» работает около 50 тысяч онлайн-касс, в 2016 году было выдано больше 3,8 млрд чеков. «Магнит» первым из ритейлеров в России будет использовать в работе услуги собственного ОФД. Сервисом оператора смогут пользоваться и другие организации. Сейчас клиентам доступен личный кабинет ОФД, отдельный сайт находится в разработке.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae>   ОФД Инитпро</ae>
+                                            </p>
+                                            <p>
+                                                Пермский удостоверяющий центр «ИнитПро»&nbsp;получил&nbsp;разрешение на обработку фискальных данных 12.09.2017. Клиентам доступны сайт и личный кабинет.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae>  ООО «ГРУППА ЭЛЕМЕНТ»</ae>
+                                            </p>
+                                            <p>
+                                                ООО «ГРУППА ЭЛЕМЕНТ» — компания с частным российским капиталом. Ядро группы — предприятие «Микротех», системный интегратор и производитель контрольно-кассовой техники с 1990 года. Разрешение на обработку фискальных данных получено в соответствии с Приказом ФНС России от 12.09.2017 № ЕД-7-20/721@.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> АО «Энвижн Груп»</ae>
+                                            </p>
+                                            <p>
+                                                Акционерное общество «Энвижн групп» — системный интегратор с 2001 года, принадлежит ПАО «МТС», имеет филиалы во всех федеральных округах РФ. Разрешение на обработку фискальных данных получено 06.12.2017.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> ПАО «Вымпел-Коммуникации»</ae>
+                                            </p>
+                                            <p>
+                                                Публичное акционерное общество «Вымпел-Коммуникации», предоставляющее услуги под брендом «Билайн», получило разрешение на обработку фискальных данных 26.12.2017. На сайте компании клиентам доступен личный кабинет, а также сервис по проверке чеков.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> ООО «МультиКарта»</ae>
+                                            </p>
+                                            <p>
+                                                Общество с ограниченной ответственностью «МультиКарта» является дочерним предприятием ПАО «Почта Банк». Компания с 1994 года работает на рынке высокотехнологичных услуг для банковской отрасли. Разрешение на обработку фискальных данных получено 12.02.2018.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> ООО «Дримкас»</ae>
+                                            </p>
+                                            <p>
+                                                Общество с ограниченной ответственностью «Дримкас» занимается автоматизацией розничной торговли. Компания работает на рынке с 2016 года, она появилась после реорганизации другого крупного предприятия — «Кристалл Сервис». Разрешение на обработку фискальных данных получено 05.04.2018.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae>  ООО «Контур НТТ»</ae>
+                                            </p>
+                                            <p>
+                                                Общество с ограниченной ответственностью «Контур НТТ» является дочерней компанией АО «ПФ «СКБ Контур». Контур.ОФД совместим с любыми моделями кассовой техники, фискальных накопителей и кассового программного обеспечения. Разрешение на обработку фискальных данных получено 11.07.2018.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <ae> ООО «Оператор фискальных данных «Онлайн»</ae>
+                                            </p>
+                                            <p>
+                                                ОФД Онлайн предлагает комплексное решение по реализации работы ККТ в рамках 54-ФЗ. Разрешение на обработку фискальных данных получено 26.12.2018.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <p>
+                                    Договор на оказание услуг по передаче фискальной информации вы можете заключать с каким-то из этих ОФД уже сейчас. С 1 февраля 2017 это стало обязательным при регистрации кассовой техники. Примерная стоимость услуг по&nbsp;передаче фискальных данных&nbsp;— около 3000 рублей в год за одну подключенную кассу или фискальный регистратор.
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <h2>Будет ли пополняться перечень операторов фискальных данных?</h2>
+                                <p>
+                                    В 2019 году число ОФД, к которым можно подключить кассовую технику, будет расти.&nbsp;<span style="font-size: 1rem;">Пополнит ли кто-то еще из операторов фискальных данных список, который мы составили? Полагаем, что главные игроки рынка в нем перечислены. Но&nbsp;все же&nbsp;при выборе обязательно сверяйтесь с официальной информацией на сайте ФНС.</span>
+                                </p>
+                                <h3>Вы выбрали ОФД, что нужно сделать для подключения?</h3>
+                                <p>
+                                    Обязательно нужна квалифицированная электронная подпись (КЭП). Если у вас ее нет, то для получения обратитесь в&nbsp;удостоверяющий центр, аккредитованный в Минкомсвязи. Подсказка: все или почти все ОФД с радостью продадут вам и необходимую электронную подпись.
+                                </p>
+                                <p>
+                                    Свяжитесь с оператором фискальных данных, с которым вы решили сотрудничать, и заключите с ним договор.
+                                </p>
+                                <p>
+                                    Обеспечьте доступ в интернет на точке продаж.
+                                </p>
+                                <p>
+                                    Пройдите регистрацию кассового аппарата с встроенным фискальным накопителем на сайте ФНС, получите регистрационный номер.
+                                </p>
+                                <p>
+                                    И спокойно работайте по новым требованиям.
+                                </p>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-md-0"></div>
+                    </div>
+                </div>
+                </transition>
+            </div>
+
+        </section>
+
+
+        <section class="best-seller-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>РЕКОМЕНДУЕМ</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div v-for="product in productsRec" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
+                        <div class="product-item">
+                            <div class="img-product">
+                                <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
+                            </div>
+                            <div class="product-hover">
+                                <div class="product-meta">
+                                    <a class="add_cart" @click="addCart(product.id)"><i class="pe-7s-cart"></i>Добавить в корзину</a>
+                                </div>
+                            </div>
+                            <div class="product-title">
+                                <a href="#">
+                                    <h3>{{product.name}}</h3>
+                                    <span>{{product.price}} ₽</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>СВЯЗАТЬСЯ</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 wow fadeInLeft animated">
+                        <div class="left-content">
+                            <h1><b>К</b>омпаниия <b>Т</b>ерминал</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
+                            <div class="contact-info">
+                                <p>Адрес: </p>
+                                <p>Телефон: 8 (800) 000-00-00</p>
+                                <p>Почта: info@terminal.com</p>
+                            </div>
+                            <div class="social-media">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeInRight animated">
+                        <form action="" method="" class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Имя">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Почта">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Тема">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="textarea-form-footer">
+                                            <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder="Сообщение..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="submit" class="contact-submit" value="Отправить" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</template>
+
+<script>
+    export default {
+        data: function () {
+            return{
+                categories: {},
+                products: {},
+                showProductsUpdate: false,
+                styleSpanCountProducts: {},
+                count_all: true,
+                cart: {},
+                cartMessage: {},
+                showCartMessage: false,
+                productsRec: {},
+                showDiv2: false
+            }
+        },
+        mounted() {
+            this.getCategories();
+            this.getProducts();
+            this.getCartInfo();
+            this.getProductsRec();setTimeout(() => {
+                this.showProductsUpdate = true;
+                this.showDiv2 = true
+            }, 900);
+
+
+        },
+        methods:{
+            getCategories: function () {
+                axios({
+                    method: 'get',
+                    url: '/get_categories',
+                }).then((response) => {
+                    this.categories = response.data;
+
+                });
+            },
+            showCategory: function ($categoryId) {
+                this.showProductsUpdate = false;
+                this.count_all = false;
+                this.styleSpanCountProducts = {
+                    top: '-23px',
+                    right: '-6px'
+                };
+                axios({
+                    method: 'get',
+                    url: '/products/'+$categoryId,
+                }).then((response) => {
+                    this.products = response.data.products;
+                    this.categories = response.data.categories;
+
+                });
+                setTimeout(() => {
+                    this.showProductsUpdate = true;
+                }, 500)
+
+            },
+            getProducts: function () {
+                this.count_all = true;
+                axios({
+                    method: 'get',
+                    url: '/get_products',
+                }).then((response) => {
+                    this.products = response.data;
+
+                });
+            },
+
+            showAllCategories: function () {
+                this.showProductsUpdate = false;
+                this.count_all = true;
+                axios({
+                    method: 'get',
+                    url: '/get_products',
+                }).then((response) => {
+                    this.products = response.data;
+                    var app = this;
+                    for(var i = 0;i<response.data.length;i++){
+                        app.categories.categories[i].show = false;
+
+                    }
+                });
+                setTimeout(() => {
+                    this.showProductsUpdate = true;
+                }, 500)
+            },
+            addCart: function (id) {
+                this.addCartAnimation();
+                axios({
+                    method: 'get',
+                    url: '/cart_add/'+id,
+                }).then((response) => {
+                    this.cart = response.data;
+                    this.addCartAnimation(response.data.message);
+                });
+
+            },
+            addCartAnimation: function (message) {
+                this.showCartMessage = false;
+                this.cartMessage = message;
+                setTimeout(() => {
+                    this.showCartMessage = true;
+                }, 300);
+                setTimeout(() => {
+                    this.showCartMessage = false;
+                }, 3000)
+            },
+            getCartInfo: function(){
+                axios({
+                    method: 'get',
+                    url: '/cart_info',
+                }).then((response) => {
+                    this.cart = response.data;
+                });
+            },
+            getProductsRec: function () {
+                axios({
+                    method: 'get',
+                    url: '/get_recomended',
+                }).then((response) => {
+                    this.productsRec = response.data;
+                    console.log
+                });
+            }
+
+        }
+
+    }
+</script>
