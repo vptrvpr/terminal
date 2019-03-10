@@ -9,56 +9,98 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
 
-    public function getCategoryAll(){
+    public function getCategoryAll()
+    {
         $categories = Categorie::all();
-        $products = Product::all();
-        foreach ($categories as $category){
+        $products = Product::where('categorie_id',1)->get();
+
+        foreach ($categories as $category) {
+
             $category->products_count = $category->products->count();
-            $category->show = false;
+            $category->show = $category->id == 1 ? true : false;
+            $category->products_page = $category->products;
         }
         $data['categories'] = $categories;
-        $data['product_count_all'] = $products->count();
         return $data;
     }
-    public function getProductsAll(){
+
+
+    public function getProductsAll()
+    {
         $products = Product::all();
         foreach ($products as $product) {
             $product->categorie_id = $product->categorie;
+            $product->category = $product->categorie;
         }
         return $products;
     }
-    public function getProductByCategory($categoryId){
-        $categorie = Categorie::where('id',$categoryId)->first();
+
+
+    public function getProductByCategory($categoryId)
+    {
+        $category = Categorie::where('id', $categoryId)->first();
         $categories = Categorie::all();
         foreach ($categories as $category) {
-            if ($category->id == $categoryId){
+            if ($category->id == $categoryId) {
                 $category->products_count = $category->products->count();
                 $category->show = true;
                 $category->is_style = true;
-            }else{
+            } else {
                 $category->show = false;
                 $category->is_style = false;
             }
 
         }
-        $products = $categorie->products;
+        $products = $category->products;
         $productsAll = Product::all();
         $data = [
             'categories' => [
                 'categories' => $categories,
-                'product_count_all'=> $productsAll->count()
+                'product_count_all' => $productsAll->count()
             ],
-            'products' =>$products,
+            'products' => $products,
 
         ];
 
         return $data;
     }
-    public function deleteProduct($id){
-        Product::where('id',$id)->delete();
+
+
+    public function deleteProduct($id)
+    {
+        Product::where('id', $id)->delete();
     }
-    public function getRecomended(){
-       $products = Product::limit(4)->get();
+
+
+    public function getRecomended()
+    {
+        $products = Product::limit(4)->get();
         return $products;
+    }
+
+
+    public function saveCategories(Request $request)
+    {
+        $categories = $request->get('categories');
+
+        foreach ($categories as $category){
+            if (isset($category['isNew'])){
+
+                $newCategory = new Categorie();
+                $newCategory->name = $category['name'];
+                $newCategory->img = $category['img'];
+                $newCategory->save();
+            }
+        }
+
+        $categoriesAll['categories'] = Categorie::all();
+        return $categoriesAll;
+    }
+
+    public function deleteCategories($categoryId){
+        Categorie::where('id',$categoryId)->delete();
+
+        $categories['categories'] = Categorie::all();
+        return $categories;
     }
 }

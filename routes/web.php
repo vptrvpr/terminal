@@ -12,39 +12,40 @@
 */
 
 Route::get('/', 'PostController@index');
-Route::get('/products/{campaignId}','ProductsController@getProductByCategory');
+Route::get('/products/{campaignId}', 'ProductsController@getProductByCategory');
 Route::get('/delete_product/{id}', 'ProductsController@deleteProduct');
 
 
 /**
  * Products and Category
  */
-Route::get('/get_categories','ProductsController@getCategoryAll');
-Route::get('/get_products','ProductsController@getProductsAll');
-Route::get('/get_recomended','ProductsController@getRecomended');
-
+Route::get('/get_categories', 'ProductsController@getCategoryAll');
+Route::get('/get_products', 'ProductsController@getProductsAll');
+Route::get('/get_recomended', 'ProductsController@getRecomended');
+Route::post('/save_categories', 'ProductsController@saveCategories');
+Route::get('/delete_categories/{categoryId}', 'ProductsController@deleteCategories');
 
 
 /**
  * Admin routes
  */
-Route::get('/admin','AdminController@index');
+Route::get('/admin', 'AdminController@index');
 
 /**
  * Cart
  */
-Route::get('/cart','CartController@index');
-Route::get('/cart_add/{id}','CartController@addCart');
-Route::get('/cart_delete/{rowId}','CartController@deleteCart');
-Route::get('/cart_info','CartController@getInfoCart');
-Route::get('/cart_destroy','CartController@destroyCart');
+Route::get('/cart', 'CartController@index');
+Route::get('/cart_add/{id}', 'CartController@addCart');
+Route::get('/cart_delete/{rowId}', 'CartController@deleteCart');
+Route::get('/cart_info', 'CartController@getInfoCart');
+Route::get('/cart_destroy', 'CartController@destroyCart');
 
 /**
  * Rent
  */
-Route::get('/rent','RentController@index');
-Route::get('/about','PageController@aboutIndex');
-Route::get('/contacts','PageController@contactsIndex');
+Route::get('/rent', 'RentController@index');
+Route::get('/about', 'PageController@aboutIndex');
+Route::get('/contacts', 'PageController@contactsIndex');
 
 
 /**

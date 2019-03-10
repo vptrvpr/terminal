@@ -10,7 +10,7 @@
                         <form class="form-inline col-md-12 wow fadeInDown animated">
                             <div class="form-group">
                                 <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
-                                <button class="suscribe-btn" ><i class="pe-7s-search"></i></button>
+                                <button class="suscribe-btn"><i class="pe-7s-search"></i></button>
                             </div>
                         </form><!-- end /. form -->
                     </div>
@@ -57,58 +57,67 @@
         </section>
 
         <section class="featured-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>ТОВАРЫ</h1>
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="titie-section wow fadeInDown animated ">
+                                <h1>КАТАЛОГ</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="filter-menu">
-                            <ul class="button-group sort-button-group">
-                                <li @click="showAllCategories()" data-category="all">ВСЕ
-                                    <transition name="countall">
-                                    <span class="span-count-products-all" v-if="count_all" >{{categories.product_count_all}}</span>
-                                    </transition>
-                                </li>
-
-                                <li v-for="category in categories.categories" @click="showCategory(category.id)" >{{category.name}}
-                                    <transition name="count">
-                                    <span  class="span-count-products" v-if="category.show === true" :key="category.id">{{category.products_count}}</span>
-                                    </transition>
-
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row featured isotope">
-                    <transition-group name="fade1" tag="div">
-                    <div v-for="product in products" v-if="showProductsUpdate === true" :key="product.id" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
-                        <div class="product-item">
-                            <div class="img-product">
-                                <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
-                            </div>
-                            <div class="product-hover">
-                                <div class="product-meta">
-                                    <a class="add_cart" @click="addCart(product.id)"><i class="pe-7s-cart"></i>Добавить в корзину</a>
+                            <div class="row categories-list">
+                            <div class="container">
+                                <div class="categories-list-center">
+                                <a v-for="(category,index) in categories.categories" @click="showCategory(index)" class="category-index">
+                                    <img :src="category.img">
+                                    <h4>{{category.name}}</h4>
+                                </a>
                                 </div>
                             </div>
-                            <div class="product-title">
-                                <a href="#">
-                                    <h3>{{product.name}}</h3>
-                                    <span>{{product.price}} ₽</span>
-                                </a>
                             </div>
                         </div>
                     </div>
-                    </transition-group>
 
+                </div>
+                <div class="container">
+                    <div class="description-category">
+                        <transition-group name="fade1" tag="div">
+                        <div v-for="category in categories.categories" v-if="category.show" :key="category.id">
+                            <div>
+                                <h1>{{category.name}}</h1>
+                                <p>{{category.description}}</p>
+                            </div>
+                        </div>
+                        </transition-group>
+                    </div>
 
+                    <div v-for="category in categories.categories" class="row featured isotope">
+                        <transition-group name="fade1" tag="div">
+                            <div v-for="product in category.products_page" v-if="category.show" :key="product.id" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
+                                <div class="product-item">
+                                    <div class="img-product">
+                                        <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
+                                    </div>
+                                    <div class="product-hover">
+                                        <div class="product-meta">
+                                            <a class="add_cart"><i class="pe-7s-cart"></i>Добавить в корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class="product-title">
+                                        <a href="#">
+                                            <h3>{{product.name}}</h3>
+                                            <span>{{product.price}} ₽</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </transition-group>
+                    </div>
                 </div>
             </div>
         </section>
@@ -120,28 +129,36 @@
                         <div class="service-item">
                             <i class="pe-7s-settings"></i>
                             <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
+                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
+                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
+                                usu.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 wow fadeInRight animated" data-wow-delay="0.2s">
                         <div class="service-item">
                             <i class="pe-7s-safe"></i>
                             <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
+                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
+                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
+                                usu.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 wow fadeInRight animated" data-wow-delay="0.3s">
                         <div class="service-item">
                             <i class="pe-7s-global"></i>
                             <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
+                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
+                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
+                                usu.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 wow fadeInRight animated" data-wow-delay="0.4s">
                         <div class="service-item">
                             <i class="pe-7s-headphones"></i>
                             <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
+                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
+                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
+                                usu.</p>
                         </div>
                     </div>
                 </div>
@@ -158,20 +175,20 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div v-for="product in productsRec" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
+                    <div class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
                         <div class="product-item">
                             <div class="img-product">
-                                <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
+                                <img src="img" class="img-responsive" width="255" height="322" alt="">
                             </div>
                             <div class="product-hover">
                                 <div class="product-meta">
-                                    <a class="add_cart" @click="addCart(product.id)"><i class="pe-7s-cart"></i>Добавить в корзину</a>
+                                    <a class="add_cart"><i class="pe-7s-cart"></i>Добавить в корзину</a>
                                 </div>
                             </div>
                             <div class="product-title">
                                 <a href="#">
-                                    <h3>{{product.name}}</h3>
-                                    <span>{{product.price}} ₽</span>
+                                    <h3>name</h3>
+                                    <span>price ₽</span>
                                 </a>
                             </div>
                         </div>
@@ -193,7 +210,9 @@
                     <div class="col-md-6 wow fadeInLeft animated">
                         <div class="left-content">
                             <h1><b>К</b>омпаниия <b>Т</b>ерминал</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class
+                                aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut
+                                vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
                             <div class="contact-info">
                                 <p>Адрес: </p>
                                 <p>Телефон: 8 (800) 000-00-00</p>
@@ -231,7 +250,8 @@
                                 <div class="col-md-12">
                                     <div class="input-group">
                                         <div class="textarea-form-footer">
-                                            <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder="Сообщение..."></textarea>
+                                            <textarea name="" id="" class="form-control" cols="30" rows="5"
+                                                      placeholder="Сообщение..."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +259,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group">
-                                        <input type="submit" class="contact-submit" value="Отправить" />
+                                        <input type="submit" class="contact-submit" value="Отправить"/>
                                     </div>
                                 </div>
                             </div>
@@ -256,29 +276,21 @@
 <script>
     export default {
         data: function () {
-            return{
+            return {
                 categories: {},
+                styleSpanCountProducts: {},
                 products: {},
                 showProductsUpdate: false,
-                styleSpanCountProducts: {},
                 count_all: true,
-                cart: {},
-                cartMessage: {},
-                showCartMessage: false,
-                productsRec: {}
+                productsRec: {},
+
             }
         },
         mounted() {
             this.getCategories();
             this.getProducts();
-            this.getCartInfo();
-            this.getProductsRec();setTimeout(() => {
-                this.showProductsUpdate = true;
-            }, 900);
-
-
         },
-        methods:{
+        methods: {
             getCategories: function () {
                 axios({
                     method: 'get',
@@ -288,25 +300,14 @@
 
                 });
             },
-            showCategory: function ($categoryId) {
-                this.showProductsUpdate = false;
-                this.count_all = false;
-                this.styleSpanCountProducts = {
-                    top: '-23px',
-                    right: '-6px'
-                };
+            getProductsRec: function () {
                 axios({
                     method: 'get',
-                    url: '/products/'+$categoryId,
+                    url: '/get_recomended',
                 }).then((response) => {
-                    this.products = response.data.products;
-                    this.categories = response.data.categories;
-
+                    this.productsRec = response.data;
+                    console.log
                 });
-                setTimeout(() => {
-                    this.showProductsUpdate = true;
-                }, 500)
-
             },
             getProducts: function () {
                 this.count_all = true;
@@ -315,10 +316,8 @@
                     url: '/get_products',
                 }).then((response) => {
                     this.products = response.data;
-
                 });
             },
-
             showAllCategories: function () {
                 this.showProductsUpdate = false;
                 this.count_all = true;
@@ -330,7 +329,6 @@
                     var app = this;
                     for(var i = 0;i<response.data.length;i++){
                         app.categories.categories[i].show = false;
-
                     }
                 });
                 setTimeout(() => {
@@ -346,34 +344,15 @@
                     this.cart = response.data;
                     this.addCartAnimation(response.data.message);
                 });
+            },
 
-            },
-            addCartAnimation: function (message) {
-                this.showCartMessage = false;
-                this.cartMessage = message;
-                setTimeout(() => {
-                    this.showCartMessage = true;
-                }, 300);
-                setTimeout(() => {
-                    this.showCartMessage = false;
-                }, 3000)
-            },
-            getCartInfo: function(){
-                axios({
-                    method: 'get',
-                    url: '/cart_info',
-                }).then((response) => {
-                    this.cart = response.data;
-                });
-            },
-            getProductsRec: function () {
-                axios({
-                    method: 'get',
-                    url: '/get_recomended',
-                }).then((response) => {
-                    this.productsRec = response.data;
-                    console.log
-                });
+
+            showCategory: function (index) {
+                var i;
+                for (i = 0; i < this.categories.categories.length; i++) {
+                    this.categories.categories[i].show = false;
+                }
+                this.categories.categories[index].show = true;
             }
 
         }

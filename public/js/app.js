@@ -2117,94 +2117,87 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      showCategories: false,
-      showProducts: true,
       products: {},
-      cart: {}
+      categories: []
     };
   },
   mounted: function mounted() {
-    console.log('Component mounted.');
     this.getProducts();
+    this.getCategories();
   },
   methods: {
-    showProductsFunc: function showProductsFunc() {
-      this.showCategories = false;
-      this.showProducts = true;
+    getCategories: function getCategories() {
+      var _this = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this.categories = response.data;
+      });
     },
-    showCategoriesFunc: function showCategoriesFunc() {
-      this.showCategories = true;
-      this.showProducts = false;
+    deleteCategory: function deleteCategory(categoryId) {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/delete_categories/' + categoryId
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    addNewSlotCategory: function addNewSlotCategory() {
+      this.categories.categories.push({
+        id: '',
+        name: '',
+        img: '',
+        isNew: 1
+      });
+    },
+    saveNewCategories: function saveNewCategories() {
+      var _this3 = this;
+
+      axios({
+        method: 'post',
+        url: '/save_categories',
+        data: {
+          categories: this.categories.categories
+        }
+      }).then(function (response) {
+        _this3.categories = response.data;
+      });
     },
     getProducts: function getProducts() {
-      var _this = this;
+      var _this4 = this;
 
       axios({
         method: 'get',
         url: '/get_products'
       }).then(function (response) {
-        _this.products = response.data;
-        console.log(_this.products);
+        _this4.products = response.data;
       });
     },
     deleteProduct: function deleteProduct(id) {
-      var _this2 = this;
+      var _this5 = this;
 
       axios({
         method: 'get',
         url: '/delete_product/' + id
       }).then(function (response) {
-        _this2.getProducts();
+        _this5.getProducts();
       });
     },
     addCart: function addCart(id) {
-      var _this3 = this;
+      var _this6 = this;
 
       axios({
         method: 'get',
         url: '/cart_add/' + id
       }).then(function (response) {
-        _this3.cart = response.data;
+        _this6.cart = response.data;
       });
     }
   }
@@ -3575,138 +3568,115 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       categories: {},
+      styleSpanCountProducts: {},
       products: {},
       showProductsUpdate: false,
-      styleSpanCountProducts: {},
       count_all: true,
-      cart: {},
-      cartMessage: {},
-      showCartMessage: false,
       productsRec: {}
     };
   },
   mounted: function mounted() {
-    var _this = this;
-
     this.getCategories();
     this.getProducts();
-    this.getCartInfo();
-    this.getProductsRec();
-    setTimeout(function () {
-      _this.showProductsUpdate = true;
-    }, 900);
   },
   methods: {
     getCategories: function getCategories() {
-      var _this2 = this;
+      var _this = this;
 
       axios({
         method: 'get',
         url: '/get_categories'
       }).then(function (response) {
-        _this2.categories = response.data;
+        _this.categories = response.data;
       });
     },
-    showCategory: function showCategory($categoryId) {
-      var _this3 = this;
+    getProductsRec: function getProductsRec() {
+      var _this2 = this;
 
-      this.showProductsUpdate = false;
-      this.count_all = false;
-      this.styleSpanCountProducts = {
-        top: '-23px',
-        right: '-6px'
-      };
       axios({
         method: 'get',
-        url: '/products/' + $categoryId
+        url: '/get_recomended'
       }).then(function (response) {
-        _this3.products = response.data.products;
-        _this3.categories = response.data.categories;
+        _this2.productsRec = response.data;
+        console.log;
       });
-      setTimeout(function () {
-        _this3.showProductsUpdate = true;
-      }, 500);
     },
     getProducts: function getProducts() {
+      var _this3 = this;
+
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this3.products = response.data;
+      });
+    },
+    showAllCategories: function showAllCategories() {
       var _this4 = this;
 
+      this.showProductsUpdate = false;
       this.count_all = true;
       axios({
         method: 'get',
         url: '/get_products'
       }).then(function (response) {
         _this4.products = response.data;
-      });
-    },
-    showAllCategories: function showAllCategories() {
-      var _this5 = this;
-
-      this.showProductsUpdate = false;
-      this.count_all = true;
-      axios({
-        method: 'get',
-        url: '/get_products'
-      }).then(function (response) {
-        _this5.products = response.data;
-        var app = _this5;
+        var app = _this4;
 
         for (var i = 0; i < response.data.length; i++) {
           app.categories.categories[i].show = false;
         }
       });
       setTimeout(function () {
-        _this5.showProductsUpdate = true;
+        _this4.showProductsUpdate = true;
       }, 500);
     },
     addCart: function addCart(id) {
-      var _this6 = this;
+      var _this5 = this;
 
       this.addCartAnimation();
       axios({
         method: 'get',
         url: '/cart_add/' + id
       }).then(function (response) {
-        _this6.cart = response.data;
+        _this5.cart = response.data;
 
-        _this6.addCartAnimation(response.data.message);
+        _this5.addCartAnimation(response.data.message);
       });
     },
-    addCartAnimation: function addCartAnimation(message) {
-      var _this7 = this;
+    showCategory: function showCategory(index) {
+      var i;
 
-      this.showCartMessage = false;
-      this.cartMessage = message;
-      setTimeout(function () {
-        _this7.showCartMessage = true;
-      }, 300);
-      setTimeout(function () {
-        _this7.showCartMessage = false;
-      }, 3000);
-    },
-    getCartInfo: function getCartInfo() {
-      var _this8 = this;
+      for (i = 0; i < this.categories.categories.length; i++) {
+        this.categories.categories[i].show = false;
+      }
 
-      axios({
-        method: 'get',
-        url: '/cart_info'
-      }).then(function (response) {
-        _this8.cart = response.data;
-      });
-    },
-    getProductsRec: function getProductsRec() {
-      var _this9 = this;
-
-      axios({
-        method: 'get',
-        url: '/get_recomended'
-      }).then(function (response) {
-        _this9.productsRec = response.data;
-        console.log;
-      });
+      this.categories.categories[index].show = true;
     }
   }
 });
@@ -43974,257 +43944,163 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "a",
-      { staticClass: "btn btn-info", on: { click: _vm.showProductsFunc } },
-      [_vm._v("Продукты")]
-    ),
+  return _c("div", {}, [
+    _vm._m(0),
     _vm._v(" "),
-    _c(
-      "a",
-      { staticClass: "btn btn-info", on: { click: _vm.showCategoriesFunc } },
-      [_vm._v("Категории")]
-    ),
-    _vm._v(" "),
-    _vm.showCategories === true
-      ? _c("div", { staticClass: "container categories-table" }, [
-          _c("h1", { staticClass: "text-center" }, [_vm._v("Категории")])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.showProducts === true
-      ? _c("div", { staticClass: "container categories-table" }, [
-          _c("h1", { staticClass: "text-center" }, [_vm._v("Продукты")]),
-          _vm._v(" "),
+    _c("div", { staticClass: "content" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Категории")]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
           _c("table", { staticClass: "table" }, [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.products, function(product) {
+              _vm._l(_vm.categories.categories, function(category) {
                 return _c("tr", [
                   _c("th", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(product.id))
+                    _vm._v(_vm._s(category.id))
                   ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(product.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(product.price) + " рублей")]),
                   _vm._v(" "),
                   _c("td", [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-success",
-                        attrs: {
-                          "data-toggle": "modal",
-                          "data-target": ".bd-example-modal-lg" + product.id
-                        }
-                      },
-                      [_vm._v("Изменить")]
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          category.isNew === undefined ? category.name : ""
+                        ) +
+                        "\n                            "
                     ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-danger",
-                        on: {
-                          click: function($event) {
-                            _vm.deleteProduct(product.id)
+                    category.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: category.name,
+                              expression: "category.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: category.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(category, "name", $event.target.value)
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("Удалить")]
-                    )
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      class: "modal fade bd-example-modal-lg" + product.id,
-                      attrs: {
-                        tabindex: "-1",
-                        role: "dialog",
-                        "aria-labelledby": "myLargeModalLabel",
-                        "aria-hidden": "true"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "modal-dialog modal-lg" }, [
-                        _c("div", { staticClass: "modal-content" }, [
-                          _c("h1", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(product.name))
-                          ]),
-                          _vm._m(1, true),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "modal-body" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "d-flex justify-content-center"
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "img-responsive",
-                                    staticStyle: {
-                                      border: "1px solid purple",
-                                      "margin-left": "35%"
-                                    },
-                                    attrs: {
-                                      src: product.img,
-                                      width: "255",
-                                      height: "322",
-                                      alt: ""
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col" }, [
-                                _c("div", { staticClass: "form-group" }, [
-                                  _c(
-                                    "label",
-                                    { staticClass: "col-sm-2 col-form-label" },
-                                    [_vm._v("Название")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col-sm-10" }, [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: product.name,
-                                          expression: "product.name"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        placeholder: "Название"
-                                      },
-                                      domProps: { value: product.name },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            product,
-                                            "name",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "label",
-                                    { staticClass: "col-sm-2 col-form-label" },
-                                    [_vm._v("Цена в рублях")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col-sm-10" }, [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: product.price,
-                                          expression: "product.price"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        placeholder: "Цена"
-                                      },
-                                      domProps: { value: product.price },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            product,
-                                            "price",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "label",
-                                    { staticClass: "col-sm-2 col-form-label" },
-                                    [_vm._v("Описание")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col-sm-10" }, [
-                                    _c("textarea", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: product.description,
-                                          expression: "product.description"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        id: "exampleFormControlTextarea1",
-                                        rows: "3"
-                                      },
-                                      domProps: { value: product.description },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            product,
-                                            "description",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("h4", [_vm._v("Характеристики")]),
-                                _vm._v(" "),
-                                _vm._m(2, true),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass:
-                                      "btn btn-success d-flex justify-content-end"
-                                  },
-                                  [_vm._v("Сохранить")]
-                                )
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  )
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          category.isNew === undefined ? category.img : ""
+                        ) +
+                        "\n                            "
+                    ),
+                    category.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: category.img,
+                              expression: "category.img"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: category.img },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(category, "img", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    category.isNew === undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function($event) {
+                                _vm.deleteCategory(category.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Удалить")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    category.isNew !== undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            on: {
+                              click: function($event) {
+                                _vm.saveNewCategories()
+                              }
+                            }
+                          },
+                          [_vm._v("Сохранить")]
+                        )
+                      : _vm._e()
+                  ])
                 ])
               }),
               0
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                on: { click: _vm.addNewSlotCategory }
+              },
+              [_vm._v("Новая категория")]
             )
           ])
         ])
-      : _vm._e()
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidebar" }, [
+      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
+        _vm._v("Компания Терминал ")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "#news" } }, [
+        _c("i", { staticClass: "fas fa-puzzle-piece" }),
+        _vm._v(" Категории")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "#contact" } }, [_vm._v("Contact")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "#about" } }, [_vm._v("About")])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -44235,46 +44111,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Название")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Цена")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "close",
-        attrs: {
-          type: "button",
-          "data-dismiss": "modal",
-          "aria-label": "Close"
-        }
-      },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("table", { staticClass: "table" }, [
-      _c("thead", [
-        _c("tr", [
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Характеристика")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Параметр")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tbody", [
-        _c("td", { attrs: { scope: "col" } }, [_vm._v("вфывф")]),
-        _vm._v(" "),
-        _c("td", { attrs: { scope: "col" } }, [_vm._v("12")])
       ])
     ])
   }
@@ -46105,220 +45944,143 @@ var render = function() {
       _vm._m(1),
       _vm._v(" "),
       _c("section", { staticClass: "featured-section" }, [
-        _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "container-fluid" }, [
           _vm._m(2),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
               _c("div", { staticClass: "filter-menu" }, [
-                _c(
-                  "ul",
-                  { staticClass: "button-group sort-button-group" },
-                  [
+                _c("div", { staticClass: "row categories-list" }, [
+                  _c("div", { staticClass: "container" }, [
                     _c(
-                      "li",
-                      {
-                        attrs: { "data-category": "all" },
-                        on: {
-                          click: function($event) {
-                            _vm.showAllCategories()
-                          }
-                        }
-                      },
-                      [
-                        _vm._v("ВСЕ\n                                "),
-                        _c("transition", { attrs: { name: "countall" } }, [
-                          _vm.count_all
-                            ? _c(
-                                "span",
-                                { staticClass: "span-count-products-all" },
-                                [
-                                  _vm._v(
-                                    _vm._s(_vm.categories.product_count_all)
-                                  )
-                                ]
-                              )
-                            : _vm._e()
-                        ])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm._l(_vm.categories.categories, function(category) {
-                      return _c(
-                        "li",
-                        {
-                          on: {
-                            click: function($event) {
-                              _vm.showCategory(category.id)
+                      "div",
+                      { staticClass: "categories-list-center" },
+                      _vm._l(_vm.categories.categories, function(
+                        category,
+                        index
+                      ) {
+                        return _c(
+                          "a",
+                          {
+                            staticClass: "category-index",
+                            on: {
+                              click: function($event) {
+                                _vm.showCategory(index)
+                              }
                             }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(category.name) +
-                              "\n                                "
-                          ),
-                          _c("transition", { attrs: { name: "count" } }, [
-                            category.show === true
-                              ? _c(
-                                  "span",
-                                  {
-                                    key: category.id,
-                                    staticClass: "span-count-products"
-                                  },
-                                  [_vm._v(_vm._s(category.products_count))]
-                                )
-                              : _vm._e()
-                          ])
-                        ],
-                        1
-                      )
-                    })
-                  ],
-                  2
-                )
+                          },
+                          [
+                            _c("img", { attrs: { src: category.img } }),
+                            _vm._v(" "),
+                            _c("h4", [_vm._v(_vm._s(category.name))])
+                          ]
+                        )
+                      }),
+                      0
+                    )
+                  ])
+                ])
               ])
             ])
           ]),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "row featured isotope" },
+            { staticClass: "container" },
             [
               _c(
-                "transition-group",
-                { attrs: { name: "fade1", tag: "div" } },
-                _vm._l(_vm.products, function(product) {
-                  return _vm.showProductsUpdate === true
-                    ? _c(
-                        "div",
-                        {
-                          key: product.id,
-                          staticClass:
-                            "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                        },
-                        [
-                          _c("div", { staticClass: "product-item" }, [
-                            _c("div", { staticClass: "img-product" }, [
-                              _c("img", {
-                                staticClass: "img-responsive",
-                                attrs: {
-                                  src: product.img,
-                                  width: "255",
-                                  height: "322",
-                                  alt: ""
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "product-hover" }, [
-                              _c("div", { staticClass: "product-meta" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "add_cart",
-                                    on: {
-                                      click: function($event) {
-                                        _vm.addCart(product.id)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("i", { staticClass: "pe-7s-cart" }),
-                                    _vm._v("Добавить в корзину")
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "product-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("h3", [_vm._v(_vm._s(product.name))]),
-                                _vm._v(" "),
-                                _c("span", [
-                                  _vm._v(_vm._s(product.price) + " ₽")
-                                ])
-                              ])
+                "div",
+                { staticClass: "description-category" },
+                [
+                  _c(
+                    "transition-group",
+                    { attrs: { name: "fade1", tag: "div" } },
+                    _vm._l(_vm.categories.categories, function(category) {
+                      return category.show
+                        ? _c("div", { key: category.id }, [
+                            _c("div", [
+                              _c("h1", [_vm._v(_vm._s(category.name))]),
+                              _vm._v(" "),
+                              _c("p", [_vm._v(_vm._s(category.description))])
                             ])
                           ])
-                        ]
-                      )
-                    : _vm._e()
-                }),
-                0
-              )
+                        : _vm._e()
+                    }),
+                    0
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.categories.categories, function(category) {
+                return _c(
+                  "div",
+                  { staticClass: "row featured isotope" },
+                  [
+                    _c(
+                      "transition-group",
+                      { attrs: { name: "fade1", tag: "div" } },
+                      _vm._l(category.products_page, function(product) {
+                        return category.show
+                          ? _c(
+                              "div",
+                              {
+                                key: product.id,
+                                staticClass:
+                                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                              },
+                              [
+                                _c("div", { staticClass: "product-item" }, [
+                                  _c("div", { staticClass: "img-product" }, [
+                                    _c("img", {
+                                      staticClass: "img-responsive",
+                                      attrs: {
+                                        src: product.img,
+                                        width: "255",
+                                        height: "322",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "product-hover" }, [
+                                    _c("div", { staticClass: "product-meta" }, [
+                                      _c("a", { staticClass: "add_cart" }, [
+                                        _c("i", { staticClass: "pe-7s-cart" }),
+                                        _vm._v("Добавить в корзину")
+                                      ])
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "product-title" }, [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _c("h3", [_vm._v(_vm._s(product.name))]),
+                                      _vm._v(" "),
+                                      _c("span", [
+                                        _vm._v(_vm._s(product.price) + " ₽")
+                                      ])
+                                    ])
+                                  ])
+                                ])
+                              ]
+                            )
+                          : _vm._e()
+                      }),
+                      0
+                    )
+                  ],
+                  1
+                )
+              })
             ],
-            1
+            2
           )
         ])
       ]),
       _vm._v(" "),
       _vm._m(3),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(4),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _vm._m(4),
       _vm._v(" "),
       _vm._m(5)
     ],
@@ -46482,10 +46244,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("ТОВАРЫ")])
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+            _c("h1", [_vm._v("КАТАЛОГ")])
+          ])
         ])
       ])
     ])
@@ -46511,7 +46275,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu."
+                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id\n                            tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an\n                            usu."
                   )
                 ])
               ])
@@ -46532,7 +46296,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu."
+                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id\n                            tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an\n                            usu."
                   )
                 ])
               ])
@@ -46553,7 +46317,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu."
+                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id\n                            tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an\n                            usu."
                   )
                 ])
               ])
@@ -46574,7 +46338,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu."
+                    "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id\n                            tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an\n                            usu."
                   )
                 ])
               ])
@@ -46588,10 +46352,53 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+    return _c("section", { staticClass: "best-seller-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("РЕКОМЕНДУЕМ")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+            },
+            [
+              _c("div", { staticClass: "product-item" }, [
+                _c("div", { staticClass: "img-product" }, [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: { src: "img", width: "255", height: "322", alt: "" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "product-hover" }, [
+                  _c("div", { staticClass: "product-meta" }, [
+                    _c("a", { staticClass: "add_cart" }, [
+                      _c("i", { staticClass: "pe-7s-cart" }),
+                      _vm._v("Добавить в корзину")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "product-title" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("h3", [_vm._v("name")]),
+                    _vm._v(" "),
+                    _c("span", [_vm._v("price ₽")])
+                  ])
+                ])
+              ])
+            ]
+          )
         ])
       ])
     ])
@@ -46624,7 +46431,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class\n                            aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut\n                            vestibulum necs et, vulputate quis urna. Donec at commodo erat."
                 )
               ]),
               _vm._v(" "),
