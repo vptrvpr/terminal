@@ -27,12 +27,27 @@ Vue.component('cart-component', require('./components/CartComponent.vue').defaul
 Vue.component('rent-component', require('./components/RentComponent.vue').default);
 Vue.component('about-component', require('./components/AboutComponent.vue').default);
 Vue.component('contacts-component', require('./components/ContactsComponent').default);
+
+
+/**
+ * FZ54
+ */
 Vue.component('fz54-component', require('./components/Fz54Component').default);
 Vue.component('sofd-component', require('./components/fz54/SofdComponent').default);
 Vue.component('kas2g-component', require('./components/fz54/Kas2gComponent').default);
 Vue.component('kzokvn-component', require('./components/fz54/KzokvnComponent').default);
 Vue.component('pnf-component', require('./components/fz54/PnfComponent').default);
 Vue.component('nor-component', require('./components/fz54/NorComponent').default);
+Vue.component('novye-objazatelnye-rekvizity-chekov-kkt-i-bso-component', require('./components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent').default);
+Vue.component('onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda-component', require('./components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent').default);
+Vue.component('nalogovyj-vychet-za-onlajn-kassu-component', require('./components/fz54/nalogovyjVychetZaOnlajnKassuComponent').default);
+Vue.component('komu-nuzhno-stavit-kassovyj-apparat-component', require('./components/fz54/komuNuzhnoStavitKassovyjApparatComponent').default);
+Vue.component('kak-snyat-s-ucheta-online-kassu-component', require('./components/fz54/kakSnyatSUchetaOnlineKassuComponent').default);
+
+/**
+ * Assets component
+ */
+Vue.component('header-component', require('./components/assets/HeaderComponent').default);
 
 
 /**

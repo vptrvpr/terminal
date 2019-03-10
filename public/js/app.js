@@ -1919,53 +1919,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2774,53 +2727,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3005,55 +2911,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3718,53 +3575,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4097,53 +3907,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4283,10 +4046,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/HeaderComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/assets/HeaderComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4334,11 +4097,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "HeaderComponent"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -5184,53 +4957,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5380,53 +5106,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -6269,53 +5948,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6706,6 +6338,2034 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      categories: {},
+      products: {},
+      showProductsUpdate: false,
+      styleSpanCountProducts: {},
+      count_all: true,
+      cart: {},
+      cartMessage: {},
+      showCartMessage: false,
+      productsRec: {},
+      showDiv2: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.getCategories();
+    this.getProducts();
+    this.getCartInfo();
+    this.getProductsRec();
+    setTimeout(function () {
+      _this.showProductsUpdate = true;
+      _this.showDiv2 = true;
+    }, 900);
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    showCategory: function showCategory($categoryId) {
+      var _this3 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = false;
+      this.styleSpanCountProducts = {
+        top: '-23px',
+        right: '-6px'
+      };
+      axios({
+        method: 'get',
+        url: '/products/' + $categoryId
+      }).then(function (response) {
+        _this3.products = response.data.products;
+        _this3.categories = response.data.categories;
+      });
+      setTimeout(function () {
+        _this3.showProductsUpdate = true;
+      }, 500);
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    showAllCategories: function showAllCategories() {
+      var _this5 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this5.products = response.data;
+        var app = _this5;
+
+        for (var i = 0; i < response.data.length; i++) {
+          app.categories.categories[i].show = false;
+        }
+      });
+      setTimeout(function () {
+        _this5.showProductsUpdate = true;
+      }, 500);
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      this.addCartAnimation();
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+
+        _this6.addCartAnimation(response.data.message);
+      });
+    },
+    addCartAnimation: function addCartAnimation(message) {
+      var _this7 = this;
+
+      this.showCartMessage = false;
+      this.cartMessage = message;
+      setTimeout(function () {
+        _this7.showCartMessage = true;
+      }, 300);
+      setTimeout(function () {
+        _this7.showCartMessage = false;
+      }, 3000);
+    },
+    getCartInfo: function getCartInfo() {
+      var _this8 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_info'
+      }).then(function (response) {
+        _this8.cart = response.data;
+      });
+    },
+    getProductsRec: function getProductsRec() {
+      var _this9 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_recomended'
+      }).then(function (response) {
+        _this9.productsRec = response.data;
+        console.log;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      categories: {},
+      products: {},
+      showProductsUpdate: false,
+      styleSpanCountProducts: {},
+      count_all: true,
+      cart: {},
+      cartMessage: {},
+      showCartMessage: false,
+      productsRec: {},
+      showDiv2: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.getCategories();
+    this.getProducts();
+    this.getCartInfo();
+    this.getProductsRec();
+    setTimeout(function () {
+      _this.showProductsUpdate = true;
+      _this.showDiv2 = true;
+    }, 900);
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    showCategory: function showCategory($categoryId) {
+      var _this3 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = false;
+      this.styleSpanCountProducts = {
+        top: '-23px',
+        right: '-6px'
+      };
+      axios({
+        method: 'get',
+        url: '/products/' + $categoryId
+      }).then(function (response) {
+        _this3.products = response.data.products;
+        _this3.categories = response.data.categories;
+      });
+      setTimeout(function () {
+        _this3.showProductsUpdate = true;
+      }, 500);
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    showAllCategories: function showAllCategories() {
+      var _this5 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this5.products = response.data;
+        var app = _this5;
+
+        for (var i = 0; i < response.data.length; i++) {
+          app.categories.categories[i].show = false;
+        }
+      });
+      setTimeout(function () {
+        _this5.showProductsUpdate = true;
+      }, 500);
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      this.addCartAnimation();
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+
+        _this6.addCartAnimation(response.data.message);
+      });
+    },
+    addCartAnimation: function addCartAnimation(message) {
+      var _this7 = this;
+
+      this.showCartMessage = false;
+      this.cartMessage = message;
+      setTimeout(function () {
+        _this7.showCartMessage = true;
+      }, 300);
+      setTimeout(function () {
+        _this7.showCartMessage = false;
+      }, 3000);
+    },
+    getCartInfo: function getCartInfo() {
+      var _this8 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_info'
+      }).then(function (response) {
+        _this8.cart = response.data;
+      });
+    },
+    getProductsRec: function getProductsRec() {
+      var _this9 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_recomended'
+      }).then(function (response) {
+        _this9.productsRec = response.data;
+        console.log;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      categories: {},
+      products: {},
+      showProductsUpdate: false,
+      styleSpanCountProducts: {},
+      count_all: true,
+      cart: {},
+      cartMessage: {},
+      showCartMessage: false,
+      productsRec: {},
+      showDiv2: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.getCategories();
+    this.getProducts();
+    this.getCartInfo();
+    this.getProductsRec();
+    setTimeout(function () {
+      _this.showProductsUpdate = true;
+      _this.showDiv2 = true;
+    }, 900);
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    showCategory: function showCategory($categoryId) {
+      var _this3 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = false;
+      this.styleSpanCountProducts = {
+        top: '-23px',
+        right: '-6px'
+      };
+      axios({
+        method: 'get',
+        url: '/products/' + $categoryId
+      }).then(function (response) {
+        _this3.products = response.data.products;
+        _this3.categories = response.data.categories;
+      });
+      setTimeout(function () {
+        _this3.showProductsUpdate = true;
+      }, 500);
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    showAllCategories: function showAllCategories() {
+      var _this5 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this5.products = response.data;
+        var app = _this5;
+
+        for (var i = 0; i < response.data.length; i++) {
+          app.categories.categories[i].show = false;
+        }
+      });
+      setTimeout(function () {
+        _this5.showProductsUpdate = true;
+      }, 500);
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      this.addCartAnimation();
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+
+        _this6.addCartAnimation(response.data.message);
+      });
+    },
+    addCartAnimation: function addCartAnimation(message) {
+      var _this7 = this;
+
+      this.showCartMessage = false;
+      this.cartMessage = message;
+      setTimeout(function () {
+        _this7.showCartMessage = true;
+      }, 300);
+      setTimeout(function () {
+        _this7.showCartMessage = false;
+      }, 3000);
+    },
+    getCartInfo: function getCartInfo() {
+      var _this8 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_info'
+      }).then(function (response) {
+        _this8.cart = response.data;
+      });
+    },
+    getProductsRec: function getProductsRec() {
+      var _this9 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_recomended'
+      }).then(function (response) {
+        _this9.productsRec = response.data;
+        console.log;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      categories: {},
+      products: {},
+      showProductsUpdate: false,
+      styleSpanCountProducts: {},
+      count_all: true,
+      cart: {},
+      cartMessage: {},
+      showCartMessage: false,
+      productsRec: {},
+      showDiv2: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.getCategories();
+    this.getProducts();
+    this.getCartInfo();
+    this.getProductsRec();
+    setTimeout(function () {
+      _this.showProductsUpdate = true;
+      _this.showDiv2 = true;
+    }, 900);
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    showCategory: function showCategory($categoryId) {
+      var _this3 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = false;
+      this.styleSpanCountProducts = {
+        top: '-23px',
+        right: '-6px'
+      };
+      axios({
+        method: 'get',
+        url: '/products/' + $categoryId
+      }).then(function (response) {
+        _this3.products = response.data.products;
+        _this3.categories = response.data.categories;
+      });
+      setTimeout(function () {
+        _this3.showProductsUpdate = true;
+      }, 500);
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    showAllCategories: function showAllCategories() {
+      var _this5 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this5.products = response.data;
+        var app = _this5;
+
+        for (var i = 0; i < response.data.length; i++) {
+          app.categories.categories[i].show = false;
+        }
+      });
+      setTimeout(function () {
+        _this5.showProductsUpdate = true;
+      }, 500);
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      this.addCartAnimation();
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+
+        _this6.addCartAnimation(response.data.message);
+      });
+    },
+    addCartAnimation: function addCartAnimation(message) {
+      var _this7 = this;
+
+      this.showCartMessage = false;
+      this.cartMessage = message;
+      setTimeout(function () {
+        _this7.showCartMessage = true;
+      }, 300);
+      setTimeout(function () {
+        _this7.showCartMessage = false;
+      }, 3000);
+    },
+    getCartInfo: function getCartInfo() {
+      var _this8 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_info'
+      }).then(function (response) {
+        _this8.cart = response.data;
+      });
+    },
+    getProductsRec: function getProductsRec() {
+      var _this9 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_recomended'
+      }).then(function (response) {
+        _this9.productsRec = response.data;
+        console.log;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      categories: {},
+      products: {},
+      showProductsUpdate: false,
+      styleSpanCountProducts: {},
+      count_all: true,
+      cart: {},
+      cartMessage: {},
+      showCartMessage: false,
+      productsRec: {},
+      showDiv2: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.getCategories();
+    this.getProducts();
+    this.getCartInfo();
+    this.getProductsRec();
+    setTimeout(function () {
+      _this.showProductsUpdate = true;
+      _this.showDiv2 = true;
+    }, 900);
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    showCategory: function showCategory($categoryId) {
+      var _this3 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = false;
+      this.styleSpanCountProducts = {
+        top: '-23px',
+        right: '-6px'
+      };
+      axios({
+        method: 'get',
+        url: '/products/' + $categoryId
+      }).then(function (response) {
+        _this3.products = response.data.products;
+        _this3.categories = response.data.categories;
+      });
+      setTimeout(function () {
+        _this3.showProductsUpdate = true;
+      }, 500);
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    showAllCategories: function showAllCategories() {
+      var _this5 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this5.products = response.data;
+        var app = _this5;
+
+        for (var i = 0; i < response.data.length; i++) {
+          app.categories.categories[i].show = false;
+        }
+      });
+      setTimeout(function () {
+        _this5.showProductsUpdate = true;
+      }, 500);
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      this.addCartAnimation();
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+
+        _this6.addCartAnimation(response.data.message);
+      });
+    },
+    addCartAnimation: function addCartAnimation(message) {
+      var _this7 = this;
+
+      this.showCartMessage = false;
+      this.cartMessage = message;
+      setTimeout(function () {
+        _this7.showCartMessage = true;
+      }, 300);
+      setTimeout(function () {
+        _this7.showCartMessage = false;
+      }, 3000);
+    },
+    getCartInfo: function getCartInfo() {
+      var _this8 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_info'
+      }).then(function (response) {
+        _this8.cart = response.data;
+      });
+    },
+    getProductsRec: function getProductsRec() {
+      var _this9 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_recomended'
+      }).then(function (response) {
+        _this9.productsRec = response.data;
+        console.log;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -41978,297 +43638,144 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "featured-section",
-        staticStyle: { background: "whitesmoke" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c("transition", { attrs: { name: "showDiv2" } }, [
-              _vm.showDiv2
-                ? _c("div", { staticClass: "infomation_about" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "titie-section wow fadeInDown animated "
-                          },
-                          [_c("h1", [_vm._v("О НАС")])]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("h1", [
-                          _vm._v(
-                            "Компания Vector обеспечивает комплексное снабжение промышленных и строительных объектов спецтехникой и энергетическим оборудованием, гарантируя своевременные поставки, сервисное обслуживание и пусконаладочные работы."
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("О НАС")])]
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("ul", {}, [
-                          _c("li", [
-                            _c("h2", [
-                              _vm._v(
-                                "Поставка оборудования в любой регион России и стран СНГ"
-                              )
-                            ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", [
+                            _vm._v(
+                              "Компания Vector обеспечивает комплексное снабжение промышленных и строительных объектов спецтехникой и энергетическим оборудованием, гарантируя своевременные поставки, сервисное обслуживание и пусконаладочные работы."
+                            )
                           ]),
                           _vm._v(" "),
-                          _c("li", [
-                            _c("h2", [
-                              _vm._v("Пусконаладочные и сервисные работы  ")
+                          _c("ul", {}, [
+                            _c("li", [
+                              _c("h2", [
+                                _vm._v(
+                                  "Поставка оборудования в любой регион России и стран СНГ"
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("h2", [
+                                _vm._v("Пусконаладочные и сервисные работы  ")
+                              ])
                             ])
                           ])
                         ])
                       ])
                     ])
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "add_cart",
-                          on: {
-                            click: function($event) {
-                              _vm.addCart(product.id)
-                            }
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(5)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
         ]
       ),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Компания")])
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Терминал")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -43375,338 +44882,188 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c("section", { staticClass: "featured-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          [
-            _c("transition", { attrs: { name: "showDiv1" } }, [
-              _vm.showDiv1
-                ? _c("div", { staticClass: "col-md-12" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "company_address",
-                        staticStyle: { "font-size": "15px" }
-                      },
-                      [
-                        _c("h1", [_vm._v("Информация о компании :")]),
-                        _vm._v(" "),
-                        _c("h2", { staticClass: "mt-1" }, [
-                          _vm._v("197376, Санкт-Петербург, Салова, д. 46")
-                        ]),
-                        _vm._v(" "),
-                        _c("h2", [
-                          _vm._v(
-                            "График работы: Пн-Пт с 9.00 до 18.00 Тел: 8 (812) 380-85-00"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("h2", [
-                          _vm._v("E-mail: "),
-                          _c(
-                            "a",
-                            {
-                              staticStyle: { color: "#2F2C65" },
-                              attrs: { href: "mailto:info@nwc-em.ru" }
-                            },
-                            [_vm._v("info@telehandlers.ru")]
-                          )
-                        ])
-                      ]
-                    )
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("section", { staticClass: "service-section-1" }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          { staticClass: "row" },
-          [
-            _c("transition", { attrs: { name: "showDiv2" } }, [
-              _vm.showDiv2
-                ? _c("div", { staticClass: "col-md-12" }, [
-                    _c("h2", [
-                      _c("b", [_vm._v("Полное наименование:")]),
-                      _vm._v(" Vector")
-                    ]),
-                    _vm._v(" "),
-                    _c("h2", [
-                      _c("b", [
-                        _vm._v("Сокращенное наименование на английском языке:")
-                      ]),
-                      _vm._v(" Vector")
-                    ]),
-                    _vm._v(" "),
-                    _c("h2", [
-                      _c("b", [_vm._v("Юридический адрес:")]),
-                      _vm._v(
-                        " 198095, г. Санкт-Петербург, Михайловский переулок, Дом 4А, Литер Б, помещение 5"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("h2", [
-                      _c("b", [_vm._v("ИНН:")]),
-                      _vm._v(" 7805314203")
-                    ]),
-                    _vm._v(" "),
-                    _c("h2", [_c("b", [_vm._v("КПП:")]), _vm._v(" 780501001")]),
-                    _vm._v(" "),
-                    _c("h2", [
-                      _c("b", [_vm._v("ОГРН:")]),
-                      _vm._v(" 1157847162285")
-                    ])
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(5),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("section", { staticClass: "featured-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _c("transition", { attrs: { name: "showDiv1" } }, [
+                _vm.showDiv1
+                  ? _c("div", { staticClass: "col-md-12" }, [
                       _c(
-                        "a",
+                        "div",
                         {
-                          staticClass: "add_cart",
-                          on: {
-                            click: function($event) {
-                              _vm.addCart(product.id)
-                            }
-                          }
+                          staticClass: "company_address",
+                          staticStyle: { "font-size": "15px" }
                         },
                         [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
+                          _c("h1", [_vm._v("Информация о компании :")]),
+                          _vm._v(" "),
+                          _c("h2", { staticClass: "mt-1" }, [
+                            _vm._v("197376, Санкт-Петербург, Салова, д. 46")
+                          ]),
+                          _vm._v(" "),
+                          _c("h2", [
+                            _vm._v(
+                              "График работы: Пн-Пт с 9.00 до 18.00 Тел: 8 (812) 380-85-00"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("h2", [
+                            _vm._v("E-mail: "),
+                            _c(
+                              "a",
+                              {
+                                staticStyle: { color: "#2F2C65" },
+                                attrs: { href: "mailto:info@nwc-em.ru" }
+                              },
+                              [_vm._v("info@telehandlers.ru")]
+                            )
+                          ])
                         ]
                       )
                     ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "service-section-1" }, [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "col-md-12" }, [
+                      _c("h2", [
+                        _c("b", [_vm._v("Полное наименование:")]),
+                        _vm._v(" Vector")
+                      ]),
                       _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      _c("h2", [
+                        _c("b", [
+                          _vm._v(
+                            "Сокращенное наименование на английском языке:"
+                          )
+                        ]),
+                        _vm._v(" Vector")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("Юридический адрес:")]),
+                        _vm._v(
+                          " 198095, г. Санкт-Петербург, Михайловский переулок, Дом 4А, Литер Б, помещение 5"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("ИНН:")]),
+                        _vm._v(" 7805314203")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("КПП:")]),
+                        _vm._v(" 780501001")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("ОГРН:")]),
+                        _vm._v(" 1157847162285")
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
                     ])
                   ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(6)
-  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
-        ]
-      ),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("К")]),
-        _vm._v("омпания")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Т")]),
-        _vm._v("ерминал")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -43964,199 +45321,269 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "featured-section",
-        staticStyle: { background: "whitesmoke" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c("transition", { attrs: { name: "showDiv2" } }, [
-              _vm.showDiv2
-                ? _c("div", { staticClass: "infomation_about" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "titie-section wow fadeInDown animated "
-                          },
-                          [_c("h1", [_vm._v("ФЗ-54")])]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("h1", { staticClass: "h1-fz text-center" }, [
-                          _vm._v(
-                            "Закон 54-ФЗ «О применении контрольно-кассовой техники». Что меняется в 2018 году?"
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
                           )
                         ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { attrs: { id: "bx_689919819_2430" } }, [
-                          _c("p", [
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "\n                                С прошлого года в России действуют поправки в закон "
-                            ),
-                            _c("strong", [
+                              "Закон 54-ФЗ «О применении контрольно-кассовой техники». Что меняется в 2018 году?"
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_2430" } }, [
+                            _c("p", [
                               _vm._v(
-                                "54-ФЗ «О применении контрольно-кассовой техники»"
-                              )
-                            ]),
-                            _vm._v(
-                              ". Завершился второй этап кассовой реформы, третий пройдет в 2019 году. Кто и когда должен поставить онлайн-кассу? Как зарегистрировать и где обслуживать контрольно-кассовую технику (ККТ)? Какие данные указывать в чеке и как избежать штрафов?\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Переход на работу по новому порядку — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение. В него входит ККТ с ФН, ОФД на год и кассовая программа.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "54-ФЗ. Новый порядок применения ККТ с 2018 года"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", [
-                            _c("li", [
-                              _vm._v(
-                                "Основная поправка в закон 54-ФЗ «О применении контрольно-кассовой техники» 2017 года меняет схему работы торговых организаций с налоговой. Перемены касаются большинства предпринимателей. Новый порядок применения ККТ предполагает, что данные о продажах с каждого выбитого чека должны передаваться в налоговую через интернет. Отправляются они через оператора фискальных данных (ОФД). С одной из компаний-ОФД нужно обязательно заключить договор. "
+                                "\n                                С прошлого года в России действуют поправки в закон "
                               ),
-                              _c(
-                                "a",
-                                { attrs: { href: "sofd", target: "_blank" } },
-                                [
-                                  _vm._v(
-                                    "Список операторов фискальных данных — здесь >>"
-                                  )
-                                ]
+                              _c("strong", [
+                                _vm._v(
+                                  "54-ФЗ «О применении контрольно-кассовой техники»"
+                                )
+                              ]),
+                              _vm._v(
+                                ". Завершился второй этап кассовой реформы, третий пройдет в 2019 году. Кто и когда должен поставить онлайн-кассу? Как зарегистрировать и где обслуживать контрольно-кассовую технику (ККТ)? Какие данные указывать в чеке и как избежать штрафов?\n                            "
                               )
                             ]),
                             _vm._v(" "),
-                            _c("li", [
+                            _c("p", [
                               _vm._v(
-                                "Предприниматели теперь могут использовать только кассы с фискальным накопителем (ФН). ФН нужен для записи и хранения информации о расчетах, которые проводятся на ККТ. Все разрешенные для использования кассы внесены в реестр ФНС. Налоговая сертифицировала уже больше 100 моделей ККТ нового образца от разных производителей. Ведется и реестр фискальных накопителей — там их уже более 15. Подробнее: "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: {
-                                    href: "kassovye-apparaty-s-2019-goda",
-                                    target: "_blank"
-                                  }
-                                },
-                                [_vm._v("кассовые аппараты в 2019 году >>")]
+                                "\n                                Переход на работу по новому порядку — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение. В него входит ККТ с ФН, ОФД на год и кассовая программа.\n                            "
                               )
                             ]),
                             _vm._v(" "),
-                            _c("li", [
+                            _c("h2", [
+                              _vm._v(
+                                "54-ФЗ. Новый порядок применения ККТ с 2018 года"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Основная поправка в закон 54-ФЗ «О применении контрольно-кассовой техники» 2017 года меняет схему работы торговых организаций с налоговой. Перемены касаются большинства предпринимателей. Новый порядок применения ККТ предполагает, что данные о продажах с каждого выбитого чека должны передаваться в налоговую через интернет. Отправляются они через оператора фискальных данных (ОФД). С одной из компаний-ОФД нужно обязательно заключить договор. "
+                                ),
+                                _c(
+                                  "a",
+                                  { attrs: { href: "sofd", target: "_blank" } },
+                                  [
+                                    _vm._v(
+                                      "Список операторов фискальных данных — здесь >>"
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Предприниматели теперь могут использовать только кассы с фискальным накопителем (ФН). ФН нужен для записи и хранения информации о расчетах, которые проводятся на ККТ. Все разрешенные для использования кассы внесены в реестр ФНС. Налоговая сертифицировала уже больше 100 моделей ККТ нового образца от разных производителей. Ведется и реестр фискальных накопителей — там их уже более 15. Подробнее: "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "kassovye-apparaty-s-2019-goda",
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [_vm._v("кассовые аппараты в 2019 году >>")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href:
+                                        "/kak-zaregistrirovat-onlayn-kassu-v-nalogovoy",
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Зарегистрировать онлайн-кассу в налоговой "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(
+                                  " можно через интернет, но только после подписания договора с ОФД. А вот в ЦТО можно уже не обращаться. Обязательное заключение договора с центром техобслуживания больше не требуется для использования ККТ. Предприниматель сам решает — выбрать ЦТО или другой сервисный центр или делать все самостоятельно. "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  " С 1 января 2019 онлайн-касса должна поддерживать формат фискальных данных 1.05 и ставку НДС 20%. Без обновлений работать будет нельзя. Подробнее о "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      target: "_blank",
+                                      href:
+                                        "/perekhod-na-ffd-1-05-i-nds-20-atol-shtrikh-m-viki-print"
+                                    }
+                                  },
+                                  [_vm._v("переходе на ФФД 1.05 и НДС 20% >>")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Хотя передача данных в налоговую стала онлайн-процедурой, закон 54-ФЗ «О применении ККТ» не содержит положений о том, что выдавать бумажный чек в 2019 году не надо. По желанию покупателя нужно отправить ему документ по email или SMS в дополнение к распечатанному на ККТ. Электронный чек приравнивается к бумажному."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Закон о ККТ с 2018 года требует указывать больше данных в чеках и бланках строгой отчетности. Например, перечень пробитых товаров (с указанием цены, скидок), заводской номер фискального накопителя и номер телефона или email покупателя, если документ передается в электронной форме. "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href:
+                                        "/novye-objazatelnye-rekvizity-chekov-kkt-i-bso",
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Новые обязательные реквизиты чеков ККТ и БСО в 2019 году >>"
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Предпринимателей на патенте и ЕНВД тоже коснулись изменения в 54-ФЗ: с 2018 года они тоже начинают ставить кассы, хотя раньше были вообще освобождены от использования ККТ. Те, кто работает в рознице и общепите, должны были перейти на новый порядок с 1 июля этого года. А для остальных применение ККТ обязательно с 1 июля 2019 года. Читайте все об "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href:
+                                        "/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda",
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [_vm._v("отсрочках по онлайн-кассам >>")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Расходы на покупку ККТ можно вычесть из налога — до 18 000 рублей на каждый аппарат. Но не всем. "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "/nalogovyj-vychet-za-onlajn-kassu",
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Налоговый вычет за онлайн-кассу: подробнее >>"
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Закон о ККТ с 2018 года коснулся не всех. Некоторые организации освобождены от применения касс. Узнайте, "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href:
+                                        "/komu-nuzhno-stavit-kassovyj-apparat",
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "кому можно не ставить онлайн-кассу >>"
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Снять ККТ с учета можно также без посещения налоговой — через личный кабинет на сайте ФНС. Но налоговая может сделать это и принудительно. "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "/kak-snyat-s-ucheta-online-kassu",
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Как снять онлайн-кассу с учета — здесь >>"
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Применение ККМ в 2018-2019 году — как это выглядит на практике"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Порядок применения ККТ в 2018 году изменился. Предприниматель может поставить онлайн-кассу на учет через интернет. Подробно о том, "
+                              ),
                               _c(
                                 "a",
                                 {
@@ -44166,557 +45593,310 @@ var render = function() {
                                     target: "_blank"
                                   }
                                 },
-                                [
-                                  _vm._v(
-                                    "Зарегистрировать онлайн-кассу в налоговой "
-                                  )
-                                ]
-                              ),
-                              _vm._v(
-                                " можно через интернет, но только после подписания договора с ОФД. А вот в ЦТО можно уже не обращаться. Обязательное заключение договора с центром техобслуживания больше не требуется для использования ККТ. Предприниматель сам решает — выбрать ЦТО или другой сервисный центр или делать все самостоятельно. "
+                                [_vm._v("как зарегистрировать онлайн-кассу >>")]
                               )
                             ]),
                             _vm._v(" "),
-                            _c("li", [
+                            _c("p", [
                               _vm._v(
-                                " С 1 января 2019 онлайн-касса должна поддерживать формат фискальных данных 1.05 и ставку НДС 20%. Без обновлений работать будет нельзя. Подробнее о "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: {
-                                    target: "_blank",
-                                    href:
-                                      "/perekhod-na-ffd-1-05-i-nds-20-atol-shtrikh-m-viki-print"
-                                  }
-                                },
-                                [_vm._v("переходе на ФФД 1.05 и НДС 20% >>")]
+                                "\n                                Когда кассовый аппарат зарегистрирован, с ним начинает работать продавец. Применение ККТ в 2018-2019 году в целом не отличается от привычной работы. Покупатель оплачивает товар и получает чек — теперь и электронный. Фискальный регистратор отправляет сведения о продаже или возврате оператору фискальных данных. ОФД обрабатывает информацию, посылает подтверждение обратно в кассу, а данные — в налоговую. Все сведения передаются параллельно с оформлением чека, то есть время обслуживания покупателя не меняется.\n                            "
                               )
                             ]),
                             _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Хотя передача данных в налоговую стала онлайн-процедурой, закон 54-ФЗ «О применении ККТ» не содержит положений о том, что выдавать бумажный чек в 2019 году не надо. По желанию покупателя нужно отправить ему документ по email или SMS в дополнение к распечатанному на ККТ. Электронный чек приравнивается к бумажному."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Закон о ККТ с 2018 года требует указывать больше данных в чеках и бланках строгой отчетности. Например, перечень пробитых товаров (с указанием цены, скидок), заводской номер фискального накопителя и номер телефона или email покупателя, если документ передается в электронной форме. "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: {
-                                    href:
-                                      "/poleznoe/izmenenija-v-54-fz/novye-objazatelnye-rekvizity-chekov-kkt-i-bso/",
-                                    target: "_blank"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Новые обязательные реквизиты чеков ККТ и БСО в 2019 году >>"
-                                  )
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Предпринимателей на патенте и ЕНВД тоже коснулись изменения в 54-ФЗ: с 2018 года они тоже начинают ставить кассы, хотя раньше были вообще освобождены от использования ККТ. Те, кто работает в рознице и общепите, должны были перейти на новый порядок с 1 июля этого года. А для остальных применение ККТ обязательно с 1 июля 2019 года. Читайте все об "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: {
-                                    href:
-                                      "/poleznoe/izmenenija-v-54-fz/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda/",
-                                    target: "_blank"
-                                  }
-                                },
-                                [_vm._v("отсрочках по онлайн-кассам >>")]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Расходы на покупку ККТ можно вычесть из налога — до 18 000 рублей на каждый аппарат. Но не всем. "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: {
-                                    href:
-                                      "/poleznoe/izmenenija-v-54-fz/nalogovyj-vychet-za-onlajn-kassu/",
-                                    target: "_blank"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Налоговый вычет за онлайн-кассу: подробнее >>"
-                                  )
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Закон о ККТ с 2018 года коснулся не всех. Некоторые организации освобождены от применения касс. Узнайте, "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: {
-                                    href:
-                                      "/poleznoe/shkola-torgovli/komu-nuzhno-stavit-kassovyj-apparat/#bezcheka",
-                                    target: "_blank"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "кому можно не ставить онлайн-кассу >>"
-                                  )
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Снять ККТ с учета можно также без посещения налоговой — через личный кабинет на сайте ФНС. Но налоговая может сделать это и принудительно. "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: {
-                                    href:
-                                      "/poleznoe/izmenenija-v-54-fz/kak-snyat-s-ucheta-online-kassu/",
-                                    target: "_blank"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Как снять онлайн-кассу с учета — здесь >>"
-                                  )
-                                ]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Применение ККМ в 2018-2019 году — как это выглядит на практике"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Порядок применения ККТ в 2018 году изменился. Предприниматель может поставить онлайн-кассу на учет через интернет. Подробно о том, "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/poleznoe/izmenenija-v-54-fz/kak-zaregistrirovat-onlayn-kassu-v-nalogovoy/",
-                                  target: "_blank"
-                                }
-                              },
-                              [_vm._v("как зарегистрировать онлайн-кассу >>")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Когда кассовый аппарат зарегистрирован, с ним начинает работать продавец. Применение ККТ в 2018-2019 году в целом не отличается от привычной работы. Покупатель оплачивает товар и получает чек — теперь и электронный. Фискальный регистратор отправляет сведения о продаже или возврате оператору фискальных данных. ОФД обрабатывает информацию, посылает подтверждение обратно в кассу, а данные — в налоговую. Все сведения передаются параллельно с оформлением чека, то есть время обслуживания покупателя не меняется.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
                             _c("img", {
                               attrs: {
-                                src: "/upload/iblock/307/FZ-54-shema.png",
+                                src: "/images/FZ-54-shema.png",
                                 alt: "",
                                 align: "bottom"
                               }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Закон 54-ФЗ «О применении контрольно-кассовой техники» предполагает, что с 2018 года во все торговые точки должен быть проведен интернет. Если подключения к сети нет, то работать вы не сможете. При этом сбой связи торговле не помешает — ФН сохранит информацию о каждой покупке и передаст ее в налоговую, когда появится интернет. Устройство хранит информацию в течение 30 дней. Если за это время соединения с интернетом не будет, ФН заблокируется, и регистрировать продажи станет невозможно. Подробнее: "
-                            ),
-                            _c(
-                              "a",
-                              {
+                            }),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("img", {
                                 attrs: {
-                                  href:
-                                    "/poleznoe/izmenenija-v-54-fz/kassovye-apparaty-s-2019-goda/",
-                                  target: "_blank"
+                                  src: "/upload/iblock/307/FZ-54-shema.png",
+                                  alt: "",
+                                  align: "bottom"
                                 }
-                              },
-                              [_vm._v("кассовые аппараты в 2019 году >>")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Новые правила применения ККМ в 2018 году помогали государству сделать торговлю прозрачной. Но для предпринимателей переоснащение места кассира — дополнительные затраты. Минфин подсчитал, что в 2018 году ККТ обошлась в среднем в 25 000 рублей. "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/poleznoe/izmenenija-v-54-fz/onlajn-kassa-dlja-magazina/",
-                                  target: "_blank"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Онлайн-касса для магазина: сколько стоит и как сэкономить >>"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                При этом ИП на патенте и ЕНВД могут вернуть за каждую ККМ до 18 000 рублей: с 2018 года в законе о ККТ есть такая поправка. Для этого нужно обратиться в ФНС за налоговым вычетом. Причем получить его можно не только за покупку кассы, но и за услуги по ее настройке и подключению к ОФД. "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/poleznoe/izmenenija-v-54-fz/nalogovyj-vychet-za-onlajn-kassu/",
-                                  target: "_blank"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  " Налоговый вычет на покупку ККТ: обязательные требования >>"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("a", { attrs: { name: "shtraf" } }),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Чем грозит неправильное применение контрольно-кассовой техники в 2019 году?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Налоговая уже выписала первые штрафы за нарушение требований 54-ФЗ. За неиспользование новой ККТ предпринимателя могут оштрафовать на 25–50% от суммы, проведенной мимо кассы, но не меньше 10 000 рублей. Организации — на 75–100%, но не менее 30 000 рублей. За использование ККТ, которая не соответствует требованиям закона, ИП грозит штраф до 3 000 рублей, а компании — до 10 000 рублей. При повторном нарушении, если сумма расчетов составит более 1 млн рублей, деятельность предпринимателя или организации может быть приостановлена на срок до 90 суток.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                С 1 июля 2018 года штрафов за неправильное применение касс стало больше. В Кодекс об административных нарушениях внесли поправки — теперь наказывать будут и за фиктивные чеки ККТ. С компаний смогут взыскать до 40 000 рублей, с ИП — до 10 000 руб. ФНС также сможет штрафовать за неправильно указанный маркируемый товар в чеке или несвоевременную передачу фискальных данных: организации на сумму до 100 000 рублей, предпринимателей — до 50 000 рублей. Если же ИП или компания попадутся на нарушении повторно, а сумма расчетов будет более 1 млн рублей, размер штрафа составит от 800 000 до 1 млн рублей.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Кроме того, у налоговиков появится право блокировать работу касс, которые использовали при нарушении. Это будет возможно в присутствии двух понятых или с применением видеозаписи.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [_vm._v("Что делать? ")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Для отдельных льготников переход на новый порядок работы закончится 1 июля 2019 года, но для большинства предпринимателей он уже наступил 1 июля 2018. Поэтому покупать технику нужно уже сейчас. Откладывать уже некуда: учитывайте, что процесс может затянуться — нужной кассы может не оказаться в наличии, придется ждать поставку, регистрация кассы тоже займет какое-то время. А потом понадобится еще и настроить ККТ, выбрать и установить кассовую программу, проверить все это на совместимость и научиться работать.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Переход пройдет намного проще и быстрее с готовым решением. Мы предлагаем онлайн-кассу под ключ: в одном комплекте — ККТ с фискальным накопителем, подписка на ОФД и удобная кассовая программа. Ждать поставки не придется — вся техника в наличии. Мы поможем все настроить и научим вас работать с программой. Решение проверенное и надежное: в прошлом году его уже испытали наши пользователи, которые попали в первую волну внедрения онлайн-касс.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Эксперты прогнозируют дефицит фискальных накопителей на рынке, что приведет к завышению цен на них. По оценке Торгово-промышленной палаты РФ, сегодня ФН производится гораздо меньше, чем кассовых аппаратов, а задержки в поставках достигают трех месяцев.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Поэтому начните переход прямо сейчас — не откладывая на крайний срок. А сэкономить время, нервы и деньги поможет МойСклад. Стоимость нашего комплекта «Эконом» покрывается налоговым вычетом. А наша кассовая программа совместима с новыми моделями ККТ, не требует установки и дорогостоящего внедрения, подходит для автоматизации любого числа розничных точек.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                С нами надежно! МойСклад — официальный участник первого эксперимента с онлайн-кассами: пилотного проекта, который провели еще в 2015 году. Тогда на первые несколько тысяч касс впервые поставили модуль, передающий данные в ФНС. Проект признали успешным — и внедрили по всей России.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c(
-                              "a",
-                              {
-                                attrs: { href: "/register/", target: "_blank" }
-                              },
-                              [_vm._v(" Попробуйте МойСклад")]
-                            ),
-                            _vm._v(
-                              " бесплатно: после регистрации в сервисе мы откроем для вас пробный период на 14 дней, а на все ваши вопросы ответит персональный менеджер.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Онлайн-кассы и малый бизнес ")]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v("Применение ККТ для ЕНВД в 2018-2019 году")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Спецрежимников тоже касаются изменения в 54-ФЗ: с июля 2018 года должны были перейти на онлайн-кассы фирмы и ИП на ЕНВД и патенте с наемными сотрудниками, которые занимаются розничной торговлей или оказывают услуги общепита. Остальные получили отсрочку до 1 июля 2019 года. Подробнее "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/poleznoe/izmenenija-v-54-fz/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda/",
-                                  target: "_blank"
-                                }
-                              },
-                              [_vm._v("о сроках перехода на онлайн-кассы >>")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v("Применение ККТ при УСН в 2018-2019 году")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Для ИП применение ККМ при УСН в 2018 году было необходимо, как и для юрлиц. Право на отсрочку до 1 июля 2019 года получили только те компании и предприниматели на упрощенке, которые оказывают услуги населению. Вместо использования ККТ они пока могут выдавать клиентам бланки строгой отчетности.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Применение ККТ при оказании услуг населению в 2019 году"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нет, в 2019 это не обязательно — при условии, что ИП или компания выдает клиентам бланки строгой отчетности. "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/poleznoe/izmenenija-v-54-fz/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda/",
-                                  target: "_blank"
-                                }
-                              },
-                              [_vm._v("Подробнее >>")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Получат ли отсрочку на применение ККТ в 2019 году ИП на патенте?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Действующая редакция закона о ККТ с 2018 года касается только части предпринимателей на патенте. Те из них, у кого есть сотрудники на трудовых договорах и которые торгуют в розницу или оказывают услуги общепита, обязаны были поставить ККТ к 1 июля 2018. Для остальных налогоплательщиков на ПСН переход уже отложен — до 2019. Подробнее об этом читайте в нашей статье "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/poleznoe/izmenenija-v-54-fz/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda/",
-                                  target: "_blank"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "о сроках перехода на 54-ФЗ для малого бизнеса >>"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Посмотрите также запись нашего семинара, на котором руководитель отдела продаж МоегоСклада Иван Кириллин рассказал про изменения в 54-ФЗ, как выбрать кассу, какой вариант подойдет интернет-магазину, как перейти на ФФД 1.05 и НДС 20%.\n                            "
-                            )
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Закон 54-ФЗ «О применении контрольно-кассовой техники» предполагает, что с 2018 года во все торговые точки должен быть проведен интернет. Если подключения к сети нет, то работать вы не сможете. При этом сбой связи торговле не помешает — ФН сохранит информацию о каждой покупке и передаст ее в налоговую, когда появится интернет. Устройство хранит информацию в течение 30 дней. Если за это время соединения с интернетом не будет, ФН заблокируется, и регистрировать продажи станет невозможно. Подробнее: "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href: "/kassovye-apparaty-s-2019-goda",
+                                    target: "_blank"
+                                  }
+                                },
+                                [_vm._v("кассовые аппараты в 2019 году >>")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Новые правила применения ККМ в 2018 году помогали государству сделать торговлю прозрачной. Но для предпринимателей переоснащение места кассира — дополнительные затраты. Минфин подсчитал, что в 2018 году ККТ обошлась в среднем в 25 000 рублей.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При этом ИП на патенте и ЕНВД могут вернуть за каждую ККМ до 18 000 рублей: с 2018 года в законе о ККТ есть такая поправка. Для этого нужно обратиться в ФНС за налоговым вычетом. Причем получить его можно не только за покупку кассы, но и за услуги по ее настройке и подключению к ОФД. "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href: "/nalogovyj-vychet-za-onlajn-kassu",
+                                    target: "_blank"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    " Налоговый вычет на покупку ККТ: обязательные требования >>"
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("a", { attrs: { name: "shtraf" } }),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Чем грозит неправильное применение контрольно-кассовой техники в 2019 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Налоговая уже выписала первые штрафы за нарушение требований 54-ФЗ. За неиспользование новой ККТ предпринимателя могут оштрафовать на 25–50% от суммы, проведенной мимо кассы, но не меньше 10 000 рублей. Организации — на 75–100%, но не менее 30 000 рублей. За использование ККТ, которая не соответствует требованиям закона, ИП грозит штраф до 3 000 рублей, а компании — до 10 000 рублей. При повторном нарушении, если сумма расчетов составит более 1 млн рублей, деятельность предпринимателя или организации может быть приостановлена на срок до 90 суток.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                С 1 июля 2018 года штрафов за неправильное применение касс стало больше. В Кодекс об административных нарушениях внесли поправки — теперь наказывать будут и за фиктивные чеки ККТ. С компаний смогут взыскать до 40 000 рублей, с ИП — до 10 000 руб. ФНС также сможет штрафовать за неправильно указанный маркируемый товар в чеке или несвоевременную передачу фискальных данных: организации на сумму до 100 000 рублей, предпринимателей — до 50 000 рублей. Если же ИП или компания попадутся на нарушении повторно, а сумма расчетов будет более 1 млн рублей, размер штрафа составит от 800 000 до 1 млн рублей.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Кроме того, у налоговиков появится право блокировать работу касс, которые использовали при нарушении. Это будет возможно в присутствии двух понятых или с применением видеозаписи.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [_vm._v("Что делать? ")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для отдельных льготников переход на новый порядок работы закончится 1 июля 2019 года, но для большинства предпринимателей он уже наступил 1 июля 2018. Поэтому покупать технику нужно уже сейчас. Откладывать уже некуда: учитывайте, что процесс может затянуться — нужной кассы может не оказаться в наличии, придется ждать поставку, регистрация кассы тоже займет какое-то время. А потом понадобится еще и настроить ККТ, выбрать и установить кассовую программу, проверить все это на совместимость и научиться работать.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход пройдет намного проще и быстрее с готовым решением. Мы предлагаем онлайн-кассу под ключ: в одном комплекте — ККТ с фискальным накопителем, подписка на ОФД и удобная кассовая программа. Ждать поставки не придется — вся техника в наличии. Мы поможем все настроить и научим вас работать с программой. Решение проверенное и надежное: в прошлом году его уже испытали наши пользователи, которые попали в первую волну внедрения онлайн-касс.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Эксперты прогнозируют дефицит фискальных накопителей на рынке, что приведет к завышению цен на них. По оценке Торгово-промышленной палаты РФ, сегодня ФН производится гораздо меньше, чем кассовых аппаратов, а задержки в поставках достигают трех месяцев.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Поэтому начните переход прямо сейчас — не откладывая на крайний срок. А сэкономить время, нервы и деньги поможет МойСклад. Стоимость нашего комплекта «Эконом» покрывается налоговым вычетом. А наша кассовая программа совместима с новыми моделями ККТ, не требует установки и дорогостоящего внедрения, подходит для автоматизации любого числа розничных точек.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                С нами надежно! МойСклад — официальный участник первого эксперимента с онлайн-кассами: пилотного проекта, который провели еще в 2015 году. Тогда на первые несколько тысяч касс впервые поставили модуль, передающий данные в ФНС. Проект признали успешным — и внедрили по всей России.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Онлайн-кассы и малый бизнес ")]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Применение ККТ для ЕНВД в 2018-2019 году")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Спецрежимников тоже касаются изменения в 54-ФЗ: с июля 2018 года должны были перейти на онлайн-кассы фирмы и ИП на ЕНВД и патенте с наемными сотрудниками, которые занимаются розничной торговлей или оказывают услуги общепита. Остальные получили отсрочку до 1 июля 2019 года. Подробнее "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda",
+                                    target: "_blank"
+                                  }
+                                },
+                                [_vm._v("о сроках перехода на онлайн-кассы >>")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Применение ККТ при УСН в 2018-2019 году")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для ИП применение ККМ при УСН в 2018 году было необходимо, как и для юрлиц. Право на отсрочку до 1 июля 2019 года получили только те компании и предприниматели на упрощенке, которые оказывают услуги населению. Вместо использования ККТ они пока могут выдавать клиентам бланки строгой отчетности.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Применение ККТ при оказании услуг населению в 2019 году"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нет, в 2019 это не обязательно — при условии, что ИП или компания выдает клиентам бланки строгой отчетности. "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda",
+                                    target: "_blank"
+                                  }
+                                },
+                                [_vm._v("Подробнее >>")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Получат ли отсрочку на применение ККТ в 2019 году ИП на патенте?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Действующая редакция закона о ККТ с 2018 года касается только части предпринимателей на патенте. Те из них, у кого есть сотрудники на трудовых договорах и которые торгуют в розницу или оказывают услуги общепита, обязаны были поставить ККТ к 1 июля 2018. Для остальных налогоплательщиков на ПСН переход уже отложен — до 2019. Подробнее об этом читайте в нашей статье "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda",
+                                    target: "_blank"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "о сроках перехода на 54-ФЗ для малого бизнеса >>"
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Посмотрите также запись нашего семинара, на котором руководитель отдела продаж МоегоСклада Иван Кириллин рассказал про изменения в 54-ФЗ, как выбрать кассу, какой вариант подойдет интернет-магазину, как перейти на ФФД 1.05 и НДС 20%.\n                            "
+                              )
+                            ])
                           ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-0" })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
                     ])
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "add_cart",
-                          on: {
-                            click: function($event) {
-                              _vm.addCart(product.id)
-                            }
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(5)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
         ]
       ),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Компания")])
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Терминал")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -44915,386 +46095,237 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("section", { staticClass: "featured-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "filter-menu" }, [
                 _c(
                   "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
+                  { staticClass: "button-group sort-button-group" },
                   [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _c("section", { staticClass: "featured-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(5),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "filter-menu" }, [
-              _c(
-                "ul",
-                { staticClass: "button-group sort-button-group" },
-                [
-                  _c(
-                    "li",
-                    {
-                      attrs: { "data-category": "all" },
-                      on: {
-                        click: function($event) {
-                          _vm.showAllCategories()
-                        }
-                      }
-                    },
-                    [
-                      _vm._v("ВСЕ\n                                "),
-                      _c("transition", { attrs: { name: "countall" } }, [
-                        _vm.count_all
-                          ? _c(
-                              "span",
-                              { staticClass: "span-count-products-all" },
-                              [_vm._v(_vm._s(_vm.categories.product_count_all))]
-                            )
-                          : _vm._e()
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm._l(_vm.categories.categories, function(category) {
-                    return _c(
+                    _c(
                       "li",
                       {
+                        attrs: { "data-category": "all" },
                         on: {
                           click: function($event) {
-                            _vm.showCategory(category.id)
+                            _vm.showAllCategories()
                           }
                         }
                       },
                       [
-                        _vm._v(
-                          _vm._s(category.name) +
-                            "\n                                "
-                        ),
-                        _c("transition", { attrs: { name: "count" } }, [
-                          category.show === true
+                        _vm._v("ВСЕ\n                                "),
+                        _c("transition", { attrs: { name: "countall" } }, [
+                          _vm.count_all
                             ? _c(
                                 "span",
-                                {
-                                  key: category.id,
-                                  staticClass: "span-count-products"
-                                },
-                                [_vm._v(_vm._s(category.products_count))]
+                                { staticClass: "span-count-products-all" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.categories.product_count_all)
+                                  )
+                                ]
                               )
                             : _vm._e()
                         ])
                       ],
                       1
-                    )
-                  })
-                ],
-                2
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row featured isotope" },
-          [
-            _c(
-              "transition-group",
-              { attrs: { name: "fade1", tag: "div" } },
-              _vm._l(_vm.products, function(product) {
-                return _vm.showProductsUpdate === true
-                  ? _c(
-                      "div",
-                      {
-                        key: product.id,
-                        staticClass:
-                          "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                      },
-                      [
-                        _c("div", { staticClass: "product-item" }, [
-                          _c("div", { staticClass: "img-product" }, [
-                            _c("img", {
-                              staticClass: "img-responsive",
-                              attrs: {
-                                src: product.img,
-                                width: "255",
-                                height: "322",
-                                alt: ""
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "product-hover" }, [
-                            _c("div", { staticClass: "product-meta" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "add_cart",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.addCart(product.id)
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("i", { staticClass: "pe-7s-cart" }),
-                                  _vm._v("Добавить в корзину")
-                                ]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "product-title" }, [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("h3", [_vm._v(_vm._s(product.name))]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  : _vm._e()
-              }),
-              0
-            )
-          ],
-          1
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(6),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(7),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
-                      _c(
-                        "a",
+                    ),
+                    _vm._v(" "),
+                    _vm._l(_vm.categories.categories, function(category) {
+                      return _c(
+                        "li",
                         {
-                          staticClass: "add_cart",
                           on: {
                             click: function($event) {
-                              _vm.addCart(product.id)
+                              _vm.showCategory(category.id)
                             }
                           }
                         },
                         [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
+                          _vm._v(
+                            _vm._s(category.name) +
+                              "\n                                "
+                          ),
+                          _c("transition", { attrs: { name: "count" } }, [
+                            category.show === true
+                              ? _c(
+                                  "span",
+                                  {
+                                    key: category.id,
+                                    staticClass: "span-count-products"
+                                  },
+                                  [_vm._v(_vm._s(category.products_count))]
+                                )
+                              : _vm._e()
+                          ])
+                        ],
+                        1
+                      )
+                    })
+                  ],
+                  2
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row featured isotope" },
+            [
+              _c(
+                "transition-group",
+                { attrs: { name: "fade1", tag: "div" } },
+                _vm._l(_vm.products, function(product) {
+                  return _vm.showProductsUpdate === true
+                    ? _c(
+                        "div",
+                        {
+                          key: product.id,
+                          staticClass:
+                            "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                        },
+                        [
+                          _c("div", { staticClass: "product-item" }, [
+                            _c("div", { staticClass: "img-product" }, [
+                              _c("img", {
+                                staticClass: "img-responsive",
+                                attrs: {
+                                  src: product.img,
+                                  width: "255",
+                                  height: "322",
+                                  alt: ""
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "product-hover" }, [
+                              _c("div", { staticClass: "product-meta" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "add_cart",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.addCart(product.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "pe-7s-cart" }),
+                                    _vm._v("Добавить в корзину")
+                                  ]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "product-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("h3", [_vm._v(_vm._s(product.name))]),
+                                _vm._v(" "),
+                                _c("span", [
+                                  _vm._v(_vm._s(product.price) + " ₽")
+                                ])
+                              ])
+                            ])
+                          ])
                         ]
                       )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                    : _vm._e()
+                }),
+                0
+              )
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(4),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
                     ])
                   ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(8)
-  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(5)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
-        ]
-      ),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Компания")])
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Терминал")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/about" } }, [_vm._v("Наши партнеры")])
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -45718,320 +46749,171 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("section", { staticClass: "featured-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "filter-menu" }, [
                 _c(
                   "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
+                  { staticClass: "button-group sort-button-group" },
                   [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n                "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c("section", { staticClass: "featured-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "filter-menu" }, [
-              _c(
-                "ul",
-                { staticClass: "button-group sort-button-group" },
-                [
-                  _c(
-                    "li",
-                    {
-                      attrs: { "data-category": "all" },
-                      on: {
-                        click: function($event) {
-                          _vm.showAllCategories()
-                        }
-                      }
-                    },
-                    [
-                      _vm._v("ВСЕ\n                                "),
-                      _c("transition", { attrs: { name: "countall" } }, [
-                        _vm.count_all
-                          ? _c(
-                              "span",
-                              { staticClass: "span-count-products-all" },
-                              [_vm._v(_vm._s(_vm.categories.product_count_all))]
-                            )
-                          : _vm._e()
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm._l(_vm.categories.categories, function(category) {
-                    return _c(
+                    _c(
                       "li",
                       {
+                        attrs: { "data-category": "all" },
                         on: {
                           click: function($event) {
-                            _vm.showCategory(category.id)
+                            _vm.showAllCategories()
                           }
                         }
                       },
                       [
-                        _vm._v(
-                          _vm._s(category.name) +
-                            "\n                                "
-                        ),
-                        _c("transition", { attrs: { name: "count" } }, [
-                          category.show === true
+                        _vm._v("ВСЕ\n                                "),
+                        _c("transition", { attrs: { name: "countall" } }, [
+                          _vm.count_all
                             ? _c(
                                 "span",
-                                {
-                                  key: category.id,
-                                  staticClass: "span-count-products"
-                                },
-                                [_vm._v(_vm._s(category.products_count))]
+                                { staticClass: "span-count-products-all" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.categories.product_count_all)
+                                  )
+                                ]
                               )
                             : _vm._e()
                         ])
                       ],
                       1
-                    )
-                  })
-                ],
-                2
-              )
+                    ),
+                    _vm._v(" "),
+                    _vm._l(_vm.categories.categories, function(category) {
+                      return _c(
+                        "li",
+                        {
+                          on: {
+                            click: function($event) {
+                              _vm.showCategory(category.id)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            _vm._s(category.name) +
+                              "\n                                "
+                          ),
+                          _c("transition", { attrs: { name: "count" } }, [
+                            category.show === true
+                              ? _c(
+                                  "span",
+                                  {
+                                    key: category.id,
+                                    staticClass: "span-count-products"
+                                  },
+                                  [_vm._v(_vm._s(category.products_count))]
+                                )
+                              : _vm._e()
+                          ])
+                        ],
+                        1
+                      )
+                    })
+                  ],
+                  2
+                )
+              ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row featured isotope" },
-          [
-            _c(
-              "transition-group",
-              { attrs: { name: "fade1", tag: "div" } },
-              _vm._l(_vm.products, function(product) {
-                return _vm.showProductsUpdate === true
-                  ? _c(
-                      "div",
-                      {
-                        key: product.id,
-                        staticClass:
-                          "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                      },
-                      [
-                        _c("div", { staticClass: "product-item" }, [
-                          _c("div", { staticClass: "img-product" }, [
-                            _c("img", {
-                              staticClass: "img-responsive",
-                              attrs: {
-                                src: product.img,
-                                width: "255",
-                                height: "322",
-                                alt: ""
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "product-hover" }, [
-                            _c("div", { staticClass: "product-meta" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "add_cart",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.addCart(product.id)
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row featured isotope" },
+            [
+              _c(
+                "transition-group",
+                { attrs: { name: "fade1", tag: "div" } },
+                _vm._l(_vm.products, function(product) {
+                  return _vm.showProductsUpdate === true
+                    ? _c(
+                        "div",
+                        {
+                          key: product.id,
+                          staticClass:
+                            "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                        },
+                        [
+                          _c("div", { staticClass: "product-item" }, [
+                            _c("div", { staticClass: "img-product" }, [
+                              _c("img", {
+                                staticClass: "img-responsive",
+                                attrs: {
+                                  src: product.img,
+                                  width: "255",
+                                  height: "322",
+                                  alt: ""
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "product-hover" }, [
+                              _c("div", { staticClass: "product-meta" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "add_cart",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.addCart(product.id)
+                                      }
                                     }
-                                  }
-                                },
-                                [
-                                  _c("i", { staticClass: "pe-7s-cart" }),
-                                  _vm._v("Добавить в корзину")
-                                ]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "product-title" }, [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("h3", [_vm._v(_vm._s(product.name))]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                                  },
+                                  [
+                                    _c("i", { staticClass: "pe-7s-cart" }),
+                                    _vm._v("Добавить в корзину")
+                                  ]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "product-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("h3", [_vm._v(_vm._s(product.name))]),
+                                _vm._v(" "),
+                                _c("span", [
+                                  _vm._v(_vm._s(product.price) + " ₽")
+                                ])
+                              ])
                             ])
                           ])
-                        ])
-                      ]
-                    )
-                  : _vm._e()
-              }),
-              0
-            )
-          ],
-          1
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(5),
-    _vm._v(" "),
-    _vm._m(6)
-  ])
+                        ]
+                      )
+                    : _vm._e()
+                }),
+                0
+              )
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _vm._m(3)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
-        ]
-      ),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("К")]),
-        _vm._v("омпания")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Т")]),
-        _vm._v("ерминал")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -46309,6 +47191,114 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/assets/HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("div", { attrs: { id: "preloader" } }, [
+        _c("div", { staticClass: "preloader-area" }, [
+          _c("div", { staticClass: "preloader-box" }, [
+            _c("div", { staticClass: "preloader" })
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("header", { staticClass: "header-section" }, [
+        _c("nav", { staticClass: "navbar navbar-default" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "navbar-header" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "navbar-toggle collapsed",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "collapse",
+                    "data-target": "#bs-example-navbar-collapse-1",
+                    "aria-expanded": "false"
+                  }
+                },
+                [
+                  _c("span", { staticClass: "sr-only" }, [
+                    _vm._v("Toggle navigation")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "icon-bar" }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "icon-bar" }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "icon-bar" })
+                ]
+              ),
+              _vm._v(" "),
+              _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+                _c("b", [_vm._v("Компания")])
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+                _c("b", [_vm._v("Терминал")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "collapse navbar-collapse",
+                attrs: { id: "bs-example-navbar-collapse-1" }
+              },
+              [
+                _c("ul", { staticClass: "nav navbar-nav" }, [
+                  _c("li", { staticClass: "active" }, [
+                    _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "/contacts" } }, [
+                      _vm._v("Контакты")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=template&id=30f945cc&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=template&id=30f945cc& ***!
@@ -46324,609 +47314,464 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "featured-section",
-        staticStyle: { background: "whitesmoke" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c("transition", { attrs: { name: "showDiv2" } }, [
-              _vm.showDiv2
-                ? _c("div", { staticClass: "infomation_about" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "titie-section wow fadeInDown animated "
-                          },
-                          [_c("h1", [_vm._v("ФЗ-54")])]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("h1", { staticClass: "h1-fz text-center" }, [
-                          _vm._v(
-                            "Введение кассовых аппаратов с 2018 года: ККТ установят почти все"
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
                           )
                         ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { attrs: { id: "bx_689919819_2430" } }, [
-                          _c("p", [
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "\n                                Вступили в силу поправки в закон 54-ФЗ «О применении контрольно-кассовой техники»:  "
-                            ),
-                            _c("strong", [
-                              _vm._v("с 2018 года введение кассовых аппаратов ")
-                            ]),
-                            _vm._v(
-                              " затрагивает даже предпринимателей на спецрежимах. Большинство из них должно было установить новую ККТ уже к 1 июля.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Переход на новую кассу — процесс поэтапный. Купить новую технику недостаточно. Перед регистрацией ККТ в налоговой нужно заключить договор с ОФД, а также установить кассовую программу, потому что в чеках теперь надо пробивать наименования товаров. У нас вы можете купить готовое решение. В него входит ККТ с ФН, ОФД на год и кассовая программа.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Кто должен применять кассовые аппараты с 2018 года?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В этом году установка ККТ затронула малый бизнес: кассы должны были установить почти все, кто платит налог по спецрежимам — УСН, патент и ЕНВД.  Отсрочку получили только те, кто работает в рознице или общепите и не имеет наемных сотрудников. Правда, всего на год — с 1 июля 2019 года онлайн-ККТ должна быть у всех. Узнайте из нашего подробного обзора, когда нужно ставить кассу именно вам >>\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Ввели ли с 2018 года кассовые аппараты для ИП?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Да, но не для всех. До 1 июля 2019 году могут обойтись без касс те, кто:\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", [
-                            _c("li", [
-                              _vm._v(
-                                "оказывает услуги населению, оформляя их бланками строгой отчетности. Подробнее о требованиях к БСО — здесь >>"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "применяет ЕНВД и ПСН, работает в рознице или общепите и не имеет наемных сотрудников."
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Остальные должны были поставить новую ККТ уже к лету 2018 года.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Кассовый аппарат для ИП с 2018 года: последние новости"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", [
-                            _c("li", [
-                              _vm._v(
-                                "Изменено понятие расчетов. Теперь к ним относится не только движение денежных средств, но и зачет предоплаты и получение за товар других вещей."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "После получения онлайн-платежа чек нужно сформировать не позднее следующего рабочего дня."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                " С 1 июля 2019 года при зачете предоплаты нужно будет пробивать два чека: при получении денег и при передаче товара.\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "ИП на вмененке или патенте\n                                    могут вернуть до 18 000 рублей в виде налогового вычета за покупку или настройку новой кассы. "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Предпринимателей и компании на спецрежимах (УСН, ЕНВД и патент) будут штрафовать до 10 000 рублей за использование фискальных накопителей на 13 месяцев. Налоговая разъяснила — малый бизнес может применять только ФН на 36 месяцев. "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Зарегистрировать ККМ с 2017 года можно через интернет — это удобно и быстро. Подробнее о регистрации кассы >>"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Если предприниматель не будет соблюдать требования 54-ФЗ, ему грозит штраф до 50% от суммы, полученной за время работы без кассы (но не меньше 10 000 рублей). С июля 2018 года ИП могут оштрафовать на 10 000 рублей за проведение через ККТ расчетов, которых на самом деле не было, а также за неправильно указанный в чеке маркируемый товар — на 50 000 рублей. Такой же штраф грозит и за несвоевременную передачу фискальных данных. "
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [_vm._v("Что можно сделать прямо сейчас?")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В 2018 году почти все предприниматели должны зарегистрировать кассу. Всего, по оценкам экспертов, в этом году перешли на новый порядок около 1 млн бизнесменов. Остальные предприниматели должны поставить кассу к 1 июля 2019 года. Рекомендуем уже сейчас задуматься о покупке комплектов кассовой техники: возможен дефицит фискальных накопителей и моделей нового образца. Откладывать покупку опасно: как показала практика прошлого года, тянут до последнего большинство предпринимателей — а их более 1 млн! "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Коснутся ли новые правила интернет-магазинов и вендинговых фирм?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Да, интернет-магазины тоже должны установить ККТ. Чек нужен всегда — даже когда клиент дистанционно оплачивает покупку картой. В такой ситуации надо отправить документ на email покупателя. Если происходит доставка за наличные — чек выдает курьер.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Вендинговые автоматы могут работать без ККТ до 1 июля 2018 года. Но если вы — ИП без сотрудников, можете не ставить кассу до 1 июля 2019 года.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Какие кассы можно использовать в 2018 году?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Все разрешенные к использованию модели ККТ есть в реестре на сайте ФНС. Онлайн-ККТ с 2017 года должны подключаться к интернету — добавился Ethernet-порт, встроенный GPRS- или WiFi-модем. Самые бюджетные образцы используют интернет на компьютере, к которому подключаются по USB-порту. В новой ККМ с 2017 года должен быть фискальный накопитель — аналог электронной ленты (ЭКЛЗ). Сама ЭКЛЗ ушла в прошлое — кассы с ней уже не выпускают.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Сколько стоят новые кассовые аппараты в 2018 году?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Менять ККТ предпринимателям приходится за свой счет. Часто покупка новой кассы выходит дешевле, чем доработка старой. Стоимость модернизации зависит от количества техники и ее моделей.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В среднем с 2017 года изменения по кассовым аппаратам обходятся примерно в 20 000 рублей. ИП на патенте и ЕНВД могут вычесть расходы на покупку кассы из налоговой базы до 18 000 рублей. Можно учесть расходы и на настройку ККТ. У нас можно купить комплект, стоимость которого покроет налоговый вычет. Узнайте цены здесь >>\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Еще одна статья расходов — услуги ОФД. Они обходятся около 3 000 рублей в год за одну кассу. Стоит учесть и затраты на подключение к интернету — закон предполагает, что каждая торговая точка должна быть подключена к сети. Кроме того, раз в 13 месяцев надо менять фискальный накопитель. Юрлицам на ЕНВД, УСН или патенте — раз в три года.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Новые кассовые аппараты требуют и расходов на обслуживание. Но сегодня предприниматель может выбирать: платить за постоянное обслуживание в сервисном центре или обращаться туда только по факту поломки.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Как происходит замена кассовых аппаратов в 2018 году?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Для перерегистрации уже имеющейся кассы необходимо узнать, можно ли ее модернизировать — у ККТ должна быть возможность подключаться к интернету. Надо также проверить, можно ли установить на ККТ фискальный накопитель. Узнайте подробнее в своем сервисном центре. Если вашу кассу доработать нельзя, придется покупать новую. Затем нужно заключить договор с ОФД и поставить ККТ на учет, это можно сделать через интернет.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v("Как теперь проходит фискализация?")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Фискализацию можно пройти в интернете — предпринимателю не нужно идти в налоговую или обращаться в центр технического обслуживания. Для этого потребуется квалифицированная электронная подпись (КЭП) — аналог личной подписи.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Получить КЭП можно в удостоверяющем центре, аккредитованном Минкомсвязи. Адреса опубликованы на сайте ведомства — забирать электронную подпись надо лично.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Обязательно ли обслуживать новые кассовые аппараты в ЦТО?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Необязательно. Кассовую технику поддерживает  производитель, который может привлекать партнерские сервис-центры, которым теперь не надо получать разрешения в налоговой. Таким образом, нет ничего страшного, если с 1 января 2017 года новые кассы не обслуживаются там на постоянной основе. Для регистрации ККТ в налоговой договор с ЦТО больше не является обязательным условием.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Кому можно вообще не ставить новые кассовые аппараты?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Есть виды деятельности, которых 54-ФЗ не коснулся. И не важно, ведет такой бизнес ИП или ООО, — кассовый аппарат в 2018 году ему не нужен.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Так, могут не использовать кассы и дальше те, кто торгует:\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", [
-                            _c("li", [
-                              _vm._v(
-                                "бахчевыми, овощами и фруктами вразвал, а также живой рыбой;"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "мороженым и прохладительными напитками в киосках и лотках;"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых павильонах или магазинах);"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v("молоком, маслом или керосином в розлив;")
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [_vm._v("газетами и журналами; ")]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "изделиями художественных народных промыслов."
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Освобождены от применения ККТ и те, кто оказывает услуги:\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", [
-                            _c("li", [
-                              _vm._v("по вспашке огородов и распилу дров;")
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [_vm._v("по ремонту и покраске обуви;")]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "по изготовлению ключей и мелкому ремонту ювелирных изделий и очков."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [_vm._v("нянь и сиделок;")]),
-                            _vm._v(" "),
-                            _c("li", [_vm._v("носильщиков на вокзалах;")])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Также в списке освобожденных от использования ККТ — точки по приему утильсырья и стекла, аптечные и фельдшерские пункты в сельской местности и прочие медицинские учреждения.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Как новые правила будут работать в труднодоступных местностях, где нет интернета?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В отдаленных деревнях и поселках можно работать без передачи данных в налоговую через интернет. Но замену кассовых аппаратов в 2018 году никто не отменял даже там: во всех кассах все равно должен быть фискальный накопитель. Список населенных пунктов, в которых можно работать без подключения к интернету, определяют местные власти.\n                            "
+                              "Введение кассовых аппаратов с 2018 года: ККТ установят почти все"
                             )
                           ])
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-md-0" })
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_2430" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вступили в силу поправки в закон 54-ФЗ «О применении контрольно-кассовой техники»:  "
+                              ),
+                              _c("strong", [
+                                _vm._v(
+                                  "с 2018 года введение кассовых аппаратов "
+                                )
+                              ]),
+                              _vm._v(
+                                " затрагивает даже предпринимателей на спецрежимах. Большинство из них должно было установить новую ККТ уже к 1 июля.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход на новую кассу — процесс поэтапный. Купить новую технику недостаточно. Перед регистрацией ККТ в налоговой нужно заключить договор с ОФД, а также установить кассовую программу, потому что в чеках теперь надо пробивать наименования товаров. У нас вы можете купить готовое решение. В него входит ККТ с ФН, ОФД на год и кассовая программа.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Кто должен применять кассовые аппараты с 2018 года?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В этом году установка ККТ затронула малый бизнес: кассы должны были установить почти все, кто платит налог по спецрежимам — УСН, патент и ЕНВД.  Отсрочку получили только те, кто работает в рознице или общепите и не имеет наемных сотрудников. Правда, всего на год — с 1 июля 2019 года онлайн-ККТ должна быть у всех. Узнайте из нашего подробного обзора, когда нужно ставить кассу именно вам >>\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Ввели ли с 2018 года кассовые аппараты для ИП?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Да, но не для всех. До 1 июля 2019 году могут обойтись без касс те, кто:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "оказывает услуги населению, оформляя их бланками строгой отчетности. Подробнее о требованиях к БСО — здесь >>"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "применяет ЕНВД и ПСН, работает в рознице или общепите и не имеет наемных сотрудников."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Остальные должны были поставить новую ККТ уже к лету 2018 года.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Кассовый аппарат для ИП с 2018 года: последние новости"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Изменено понятие расчетов. Теперь к ним относится не только движение денежных средств, но и зачет предоплаты и получение за товар других вещей."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "После получения онлайн-платежа чек нужно сформировать не позднее следующего рабочего дня."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  " С 1 июля 2019 года при зачете предоплаты нужно будет пробивать два чека: при получении денег и при передаче товара.\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "ИП на вмененке или патенте\n                                    могут вернуть до 18 000 рублей в виде налогового вычета за покупку или настройку новой кассы. "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Предпринимателей и компании на спецрежимах (УСН, ЕНВД и патент) будут штрафовать до 10 000 рублей за использование фискальных накопителей на 13 месяцев. Налоговая разъяснила — малый бизнес может применять только ФН на 36 месяцев. "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Зарегистрировать ККМ с 2017 года можно через интернет — это удобно и быстро. Подробнее о регистрации кассы >>"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Если предприниматель не будет соблюдать требования 54-ФЗ, ему грозит штраф до 50% от суммы, полученной за время работы без кассы (но не меньше 10 000 рублей). С июля 2018 года ИП могут оштрафовать на 10 000 рублей за проведение через ККТ расчетов, которых на самом деле не было, а также за неправильно указанный в чеке маркируемый товар — на 50 000 рублей. Такой же штраф грозит и за несвоевременную передачу фискальных данных. "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Что можно сделать прямо сейчас?")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В 2018 году почти все предприниматели должны зарегистрировать кассу. Всего, по оценкам экспертов, в этом году перешли на новый порядок около 1 млн бизнесменов. Остальные предприниматели должны поставить кассу к 1 июля 2019 года. Рекомендуем уже сейчас задуматься о покупке комплектов кассовой техники: возможен дефицит фискальных накопителей и моделей нового образца. Откладывать покупку опасно: как показала практика прошлого года, тянут до последнего большинство предпринимателей — а их более 1 млн! "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Коснутся ли новые правила интернет-магазинов и вендинговых фирм?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Да, интернет-магазины тоже должны установить ККТ. Чек нужен всегда — даже когда клиент дистанционно оплачивает покупку картой. В такой ситуации надо отправить документ на email покупателя. Если происходит доставка за наличные — чек выдает курьер.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вендинговые автоматы могут работать без ККТ до 1 июля 2018 года. Но если вы — ИП без сотрудников, можете не ставить кассу до 1 июля 2019 года.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Какие кассы можно использовать в 2018 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Все разрешенные к использованию модели ККТ есть в реестре на сайте ФНС. Онлайн-ККТ с 2017 года должны подключаться к интернету — добавился Ethernet-порт, встроенный GPRS- или WiFi-модем. Самые бюджетные образцы используют интернет на компьютере, к которому подключаются по USB-порту. В новой ККМ с 2017 года должен быть фискальный накопитель — аналог электронной ленты (ЭКЛЗ). Сама ЭКЛЗ ушла в прошлое — кассы с ней уже не выпускают.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Сколько стоят новые кассовые аппараты в 2018 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Менять ККТ предпринимателям приходится за свой счет. Часто покупка новой кассы выходит дешевле, чем доработка старой. Стоимость модернизации зависит от количества техники и ее моделей.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В среднем с 2017 года изменения по кассовым аппаратам обходятся примерно в 20 000 рублей. ИП на патенте и ЕНВД могут вычесть расходы на покупку кассы из налоговой базы до 18 000 рублей. Можно учесть расходы и на настройку ККТ. У нас можно купить комплект, стоимость которого покроет налоговый вычет. Узнайте цены здесь >>\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Еще одна статья расходов — услуги ОФД. Они обходятся около 3 000 рублей в год за одну кассу. Стоит учесть и затраты на подключение к интернету — закон предполагает, что каждая торговая точка должна быть подключена к сети. Кроме того, раз в 13 месяцев надо менять фискальный накопитель. Юрлицам на ЕНВД, УСН или патенте — раз в три года.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Новые кассовые аппараты требуют и расходов на обслуживание. Но сегодня предприниматель может выбирать: платить за постоянное обслуживание в сервисном центре или обращаться туда только по факту поломки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Как происходит замена кассовых аппаратов в 2018 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для перерегистрации уже имеющейся кассы необходимо узнать, можно ли ее модернизировать — у ККТ должна быть возможность подключаться к интернету. Надо также проверить, можно ли установить на ККТ фискальный накопитель. Узнайте подробнее в своем сервисном центре. Если вашу кассу доработать нельзя, придется покупать новую. Затем нужно заключить договор с ОФД и поставить ККТ на учет, это можно сделать через интернет.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Как теперь проходит фискализация?")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Фискализацию можно пройти в интернете — предпринимателю не нужно идти в налоговую или обращаться в центр технического обслуживания. Для этого потребуется квалифицированная электронная подпись (КЭП) — аналог личной подписи.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Получить КЭП можно в удостоверяющем центре, аккредитованном Минкомсвязи. Адреса опубликованы на сайте ведомства — забирать электронную подпись надо лично.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Обязательно ли обслуживать новые кассовые аппараты в ЦТО?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Необязательно. Кассовую технику поддерживает  производитель, который может привлекать партнерские сервис-центры, которым теперь не надо получать разрешения в налоговой. Таким образом, нет ничего страшного, если с 1 января 2017 года новые кассы не обслуживаются там на постоянной основе. Для регистрации ККТ в налоговой договор с ЦТО больше не является обязательным условием.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Кому можно вообще не ставить новые кассовые аппараты?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Есть виды деятельности, которых 54-ФЗ не коснулся. И не важно, ведет такой бизнес ИП или ООО, — кассовый аппарат в 2018 году ему не нужен.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Так, могут не использовать кассы и дальше те, кто торгует:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "бахчевыми, овощами и фруктами вразвал, а также живой рыбой;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "мороженым и прохладительными напитками в киосках и лотках;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых павильонах или магазинах);"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "молоком, маслом или керосином в розлив;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("газетами и журналами; ")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "изделиями художественных народных промыслов."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Освобождены от применения ККТ и те, кто оказывает услуги:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v("по вспашке огородов и распилу дров;")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("по ремонту и покраске обуви;")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "по изготовлению ключей и мелкому ремонту ювелирных изделий и очков."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("нянь и сиделок;")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("носильщиков на вокзалах;")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Также в списке освобожденных от использования ККТ — точки по приему утильсырья и стекла, аптечные и фельдшерские пункты в сельской местности и прочие медицинские учреждения.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Как новые правила будут работать в труднодоступных местностях, где нет интернета?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В отдаленных деревнях и поселках можно работать без передачи данных в налоговую через интернет. Но замену кассовых аппаратов в 2018 году никто не отменял даже там: во всех кассах все равно должен быть фискальный накопитель. Список населенных пунктов, в которых можно работать без подключения к интернету, определяют местные власти.\n                            "
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
                     ])
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "add_cart",
-                          on: {
-                            click: function($event) {
-                              _vm.addCart(product.id)
-                            }
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(5)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
         ]
       ),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Компания")])
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Терминал")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -47125,1129 +47970,986 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "featured-section",
-        staticStyle: { background: "whitesmoke" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c("transition", { attrs: { name: "showDiv2" } }, [
-              _vm.showDiv2
-                ? _c("div", { staticClass: "infomation_about" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "titie-section wow fadeInDown animated "
-                          },
-                          [_c("h1", [_vm._v("ФЗ-54")])]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("h1", { staticClass: "h1-fz text-center" }, [
-                          _vm._v(
-                            "Введение кассовых аппаратов с 2018 года: ККТ установят почти все"
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
                           )
                         ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { attrs: { id: "bx_689919819_2430" } }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Благодаря поправкам к 54-ФЗ порядок работы с кассовой техникой заметно изменился, как и процесс регистрации ККТ в налоговой. Целые категории предпринимателей, которые раньше были освобождены от использования ККТ, должны будут поставить кассу на учет в налоговом органе в 2018 или следующем году. Это не так сложно, как кажется. Ниже мы расскажем, "
-                            ),
-                            _c("strong", [
-                              _vm._v(
-                                "как зарегистрировать онлайн-кассу в налоговой"
-                              )
-                            ]),
-                            _vm._v(
-                              ", и дадим пошаговую инструкцию регистрации ККТ для тех, кого коснулось изменение закона или кто впервые открывает собственный бизнес.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("div", { attrs: { align: "center" } }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/online-kassa-pod-klyuch/?utm_medium=banner&utm_source=moysklad&utm_campaign=KomplektKKT0218"
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "btn-shadow",
-                                  attrs: {
-                                    src:
-                                      "/upload/medialibrary/726/komplekt-kkt-2018-18k.png",
-                                    alt: "",
-                                    align: "bottom"
-                                  }
-                                })
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нововведения нужно учесть уже при выборе кассы. С 2017 года необходима современная техника — с фискальным накопителем и возможностью передавать данные онлайн. Подходящие модели включены в Государственный реестр ККТ, который ведет ФНС. Проверьте, есть ли в нем касса, которую вы выбрали для покупки.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Требования закона теперь включают в цепочку передачи данных новое обязательное звено — оператора фискальных данных (ОФД). Именно через него информация будет поступать в ФНС. С 1 июля 2017 использование ККТ без ОФД невозможно (кроме списка исключений). Поэтому сразу после покупки новой техники подключитесь к одному из утвержденного ФНС списка ОФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Итак, вы приобрели ККТ и выбрали оператора. Теперь можно приступать к регистрации онлайн-кассы в налоговой.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Сделать это можно разными способами: загрузить документы через интернет или подать в налоговую «по старинке» — принести лично, передать через представителя по нотариально заверенной доверенности или отправить почтой.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Постановка кассового аппарата на учет в налоговой обязательна и бесплатна — никто не имеет права брать с вас деньги за регистрацию как таковую, только за посреднические услуги. Посредниками могут стать представители ЦТО или ОФД: их сотрудники за плату сделают все за вас. Но если вы не планируете обращаться за помощью к специалистам, то справитесь и самостоятельно.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Проще всего будет зарегистрировать онлайн-кассу через интернет: весь процесс происходит в личном кабинете налогоплательщика на сайте nalog.ru. Не понадобится ни собирать и заполнять бумажные документы, ни нести кассовый аппарат в налоговую для осмотра и фискализации: вы просто введете нужные данные в веб-форму.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Регистрация онлайн-кассы в налоговой: пошаговая инструкция"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Вот как выглядела раньше пошаговая инструкция по регистрации ККТ в налоговой: "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 1. Заключение договора с ЦТО. "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 2. Подготовка необходимых документов. "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 3. Подача документов в ИФНС. "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 4. Осмотр и фискализация кассы в ИФНС. "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 5. Получение карточки регистрации ККМ.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Сейчас добавился новый пункт: "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 6. Заключение договора и регистрация кассы в ОФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                При желании вы можете действовать по такому сценарию, но сравните, насколько все проще, если проводить регистрацию ККТ онлайн. Предварительное заключение договора с ЦТО по закону больше не требуется, шаги упрощены, а главное — все можно сделать дистанционно. Раньше процедура растягивалась на несколько дней, а теперь занимает минуты, и не нужно приходить в ИФНС и приносить туда кассу.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В результате получаем новый порядок регистрации кассы онлайн в ФНС и ОФД: "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 1. Подача заявления на регистрацию кассы в ИФНС через личный кабинет налогоплательщика онлайн на сайте nalog.ru. И сразу же — получение регистрационного номера ККТ. "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 2. Самостоятельная фискализация. (В нашем примере использована утилита для регистрации ККТ АТОЛ.) "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 3. Получение карточки регистрации ККТ из ФНС. "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                Шаг 4. Регистрация кассы в личном кабинете ОФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Сценарий 1. Регистрация кассы в ИФНС через личный кабинет"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Регистрация ККТ осуществляется через личный кабинет налогоплательщика на сайте налоговой nalog.ru. Для этого вам понадобится действующая электронная подпись (КЭП), выпущенная на имя ИП или генерального директора ООО. И не забудьте заранее выбрать ОФД — в процессе регистрации вы обязаны его указать.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h4", [
-                            _vm._v(
-                              "Шаг 1. Подача заявления на регистрацию ККТ и получение регистрационного номера ККТ."
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                На главной странице личного кабинета откройте вкладку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Учет контрольно-кассовой техники")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "465",
-                                alt: "001.png",
-                                src: "/upload/medialibrary/001.png",
-                                height: "215",
-                                title: "001.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                На этой странице содержится вся информация о всех ККТ, которые зарегистрированы на данное юрлицо с данной КЭП. Чтобы зарегистрировать новую ККТ, нажмите кнопку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Зарегистрировать ККТ")]
-                            ),
-                            _vm._v(" и выберите "),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Заполнить параметры заявления вручную")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "490",
-                                alt: "002.png",
-                                src: "/upload/medialibrary/002.png",
-                                height: "241",
-                                title: "002.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Здесь же вы можете загрузить самостоятельно заполненное заявление о регистрации ККТ (форма по КНД-1110061). Тогда вам не придется заполнять онлайн-форму.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В первую очередь нужно заполнить адрес непосредственной установки. Нажмите кнопку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Выбрать адрес")]
-                            ),
-                            _vm._v(
-                              ". Заполните открывшуюся форму. Индекс подставится автоматически. В поле "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Наименование места установки ККТ")]
-                            ),
-                            _vm._v(
-                              " опишите место более подробно. Затем введите информацию о модели своей ККТ. Нажмите кнопку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Выбрать модель ККТ")]
-                            ),
-                            _vm._v(
-                              " и выберите модель из списка.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                После выбора модели появится поле ввода заводского номера ККТ. Этот номер можно посмотреть в паспорте ККТ, а также на шильдике, который находится на корпусе ККТ. Введите номер в поле и нажмите кнопку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Выбрать")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                При вводе серийного номера и номера фискального регистратора в кабинете налогоплательщика происходит автоматическая проверка на включение в Государственный реестр ККТ. Если номер введен неправильно (или если устройство не включено в реестр), будет показано сообщение об ошибке.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Затем выберите модель фискального накопителя и введите его заводской номер, который указан в его паспорте. Здесь также работает автоматическая проверка.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Следующий этап — выбор оператора фискальных данных. Если ваша деятельность не совпадает с перечисленными в полях видами деятельности, оставьте поля пустыми и выберите ОФД из выпадающего списка. ИНН ОФД заполнится автоматически.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "478",
-                                alt: "003.png",
-                                src: "/upload/medialibrary/003.png",
-                                height: "292",
-                                title: "003.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нажмите кнопку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Подписать и отправить")]
-                            ),
-                            _vm._v(
-                              ". Появится предупреждение о том, что будет использована цифровая подпись.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Чтобы узнать информацию о состоянии заявления на регистрацию, пройдите по ссылке или откройте раздел "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [
-                                _vm._v(
-                                  "Информация о прохождении документов, направленных в налоговый орган"
-                                )
-                              ]
-                            ),
-                            _vm._v(
-                              ". Здесь отображаются все документы, которые отправлялись с данной КЭП. Проверьте статус документа "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Заявление о регистрации")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "459",
-                                alt: "005.png",
-                                src: "/upload/medialibrary/005.png",
-                                height: "190",
-                                title: "005.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Когда заявление будет обработано, на главной странице кабинета налогоплательщика снова войдите в раздел "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Учет контрольно-кассовой техники")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Здесь появилась запись о том, что ККТ присвоен регистрационный номер. Чтобы просмотреть параметры ККТ, кликните на присвоенный номер.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Чтобы просмотреть и скачать уведомление о присвоении регистрационного номера, перейдите на вкладку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("История заявлений")]
-                            ),
-                            _vm._v(
-                              " и скачайте PDF-документ.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "458",
-                                alt: "007.png",
-                                src: "/upload/medialibrary/007.png",
-                                height: "246",
-                                title: "007.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("h4", [
-                            _vm._v(
-                              "Шаг 2. Фискализация. Утилита для регистрации ККТ (АТОЛ)"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                После присвоения регистрационного номера касса должна пройти фискализацию. При регистрации онлайн вы сможете провести ее самостоятельно. Для этого понадобятся данные, которые присутствовали в заявлении, поэтому заранее в отдельных окнах откройте детальную информацию по ККТ и уведомление о присвоении регистрационного номера.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "778",
-                                alt: "00777.png",
-                                src: "/upload/medialibrary/00777.png",
-                                height: "291",
-                                title: "00777.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Запустите утилиту фискализации. Ее предоставляет производитель фискального регистратора: в примере использована утилита для регистрации ККТ АТОЛ.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "500",
-                                alt: "util-1.1.png",
-                                src: "/upload/medialibrary/util-1.1.png",
-                                height: "347",
-                                title: "util-1.1.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Если ККМ подключена по USB, то она определится сама. Если под другим интерфейсом — зайдите в настройки и укажите параметры подключения. Нажмите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Зарегистрировать")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "500",
-                                alt: "util-2.png",
-                                src: "/upload/medialibrary/util-2.png",
-                                height: "347",
-                                title: "util-2.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Проверьте дату и время. Если они отличаются от времени на компьютере, то проведите синхронизацию. Если совпадают — нажмите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Далее")]
-                            ),
-                            _vm._v(
-                              " для перехода на вкладку ввода параметров.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Теперь понадобятся документы, о которых говорилось выше: информация по ККТ и уведомление о присвоении регистрационного номера. Чтобы данные полностью совпадали, скопируйте их из документов и вставьте в соответствующие поля.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "374",
-                                alt: "021.png",
-                                src: "/upload/medialibrary/021.png",
-                                height: "298",
-                                title: "021.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Впишите параметры вашего ОФД. Нажмите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Далее")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "500",
-                                alt: "util-5.png",
-                                src: "/upload/medialibrary/util-5.png",
-                                height: "347",
-                                title: "util-5.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                На следующей вкладке укажите систему налогообложения. Можно выбрать сразу несколько вариантов. Нажмите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Далее")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "500",
-                                alt: "util-6.png",
-                                src: "/upload/medialibrary/util-6.png",
-                                height: "347",
-                                title: "util-6.png"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Проверьте правильность введенной информации. Если есть ошибка, нажмите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Назад ")]
-                            ),
-                            _vm._v(
-                              "и внесите правки. Если все в порядке, нажмите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Выполнить")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Происходит регистрация ККТ. Отчет о регистрации будет напечатан на чеке.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "300",
-                                alt: "11.PNG",
-                                src: "/upload/medialibrary/11.PNG",
-                                height: "377",
-                                title: "11.PNG"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Вернитесь в личный кабинет налогоплательщика на сайте nalog.ru. Нажмите кнопку "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Завершить регистрацию")]
-                            ),
-                            _vm._v(". Заполните открывшуюся форму "),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Отчет о регистрации ККТ")]
-                            ),
-                            _vm._v(
-                              ". Используйте данные отчета, напечатанного на чеке при фискализации кассы. \n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "500",
-                                alt: "00888.png",
-                                src: "/upload/medialibrary/00888.png",
-                                height: "266",
-                                title: "00888.png"
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Внимание! Закон дает всего одни сутки на то, чтобы после фискализации внести фискальный признак в личный кабинет налогоплательщика. Время и дата в форме должны точно совпадать с чеком.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c(
-                              "span",
-                              { staticStyle: { "font-size": "1rem" } },
-                              [_vm._v("Проверьте данные и нажмите кнопку ")]
-                            ),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "1rem",
-                                  "font-weight": "bold"
-                                }
-                              },
-                              [_vm._v("Подписать и отправить")]
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-size": "1rem" } },
-                              [_vm._v(".")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                После регистрации карточка ККТ будет доступна в личном кабинете налогоплательщика в разделе "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [
-                                _vm._v(
-                                  "«Информация о прохождении документов, отправленных в налоговый орган»"
-                                )
-                              ]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [_vm._v("Шаг 3. Карточка регистрации ККТ")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                После регистрации кассы в личном кабинете налогоплательщика в разделе "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [
-                                _vm._v(
-                                  "Информация о прохождении документов, направленных в налоговый орган"
-                                )
-                              ]
-                            ),
-                            _vm._v(
-                              ", напротив вашей кассы появится электронная карточка регистрации ККТ. С этого момента касса легализована, а работа с ней законна. Датой регистрации в ФНС считается дата выдачи карточки.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Карточка подписывается усиленной квалифицированной электронной подписью. В нее вносятся изменения при изменении указанных при регистрации параметров, а также при замене фискального накопителя. При покупке подержанной кассы карточка регистрации ККТ передается новому владельцу.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                При необходимости в ИФНС можно получить бумажный экземпляр. Если карточка повреждена или утеряна — выдается дубликат. При этом не назначается штрафов.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [_vm._v("Шаг 4. Регистрация кассы в ОФД")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                После получения карточки регистрации работа с кассой уже законна, но еще невозможна: она пока не передает данные в ОФД (в договоре с ОФД, который вы уже заключили, нет регистрационной информации о конкретной кассе). Чтобы запустить онлайн-передачу данных, нужно зарегистрировать кассу в ОФД. Это финальный шаг, и он очень простой.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Войдите в личный кабинет вашего ОФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Откройте вкладку ККТ, выберите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Подключить ККТ")]
-                            ),
-                            _vm._v(".\n                            ")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В открывшемся окне "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Регистрация ККТ")]
-                            ),
-                            _vm._v(
-                              " заполните все поля.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "497",
-                                alt: "OFDreg1.jpg",
-                                src: "/upload/medialibrary/OFDreg1.jpg",
-                                height: "294",
-                                title: "OFDreg1.jpg"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Всю информацию возьмите из отчета о регистрации, который был напечатан на предыдущем шаге.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v("\n                                В поле "),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Внутреннее наименование ККТ")]
-                            ),
-                            _vm._v(
-                              " можно присвоить ФР произвольное имя.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("img", {
-                              attrs: {
-                                width: "450",
-                                alt: "OFDreg2.jpg",
-                                src: "/upload/medialibrary/OFDreg2.jpg",
-                                height: "287",
-                                title: "OFDreg2.jpg"
-                              }
-                            }),
-                            _c("br")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нажмите "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-weight": "bold" } },
-                              [_vm._v("Сохранить")]
-                            ),
-                            _vm._v(
-                              ". Появится сообщение об успешной регистрации кассы в ОФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Сценарий 2. Как зарегистрировать кассу в ИФНС"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Хотя делать все онлайн гораздо проще и удобнее, регистрация ККТ в налоговой «по старинке», через отделение ФНС, по-прежнему возможна и легальна.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Внимание! Используйте распечатанный бланк заявления по форме КНД-1110061. Заявление по форме КНД-1110021 (старого образца) не содержит полей, необходимых для ввода полной информации об онлайн-кассе (например, модели и номера ФН). Поэтому оно не подходит для регистрации ККТ.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Если вы собираетесь регистрировать кассу через отделение ФНС, не забудьте взять с собой паспорта ККТ и ФН, а также документ, подтверждающий ваши полномочия в организации. Закон не обязывает предоставлять эти документ, но они могут понадобиться для правильного оформления регистрации кассового аппарата в налоговой.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                На сегодняшний день закон предусматривает общую систему регистрации контрольно-кассовой техники. Раньше регистрация кассового аппарата в налоговой для ООО осуществлялась по месту установки кассы, для ИП — по месту прописки предпринимателя. А сейчас вы можете обратиться в любую ИФНС. Регистрация кассового аппарата для ИП и организаций происходит одинаково: вы можете подать заявление в любой налоговый орган.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Срок регистрации ККМ в ИФНС от даты подачи заявления составляет 5 рабочих дней: согласно пп. 7 и 11 ст. 4.2 закона от 22.05.2003 № 54-ФЗ карточка регистрации ККТ выдается налоговой по истечении этого срока со дня подачи заявления на регистрацию.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Старый способ постановки на учет — когда вы приносите документы в ИФНС и потом в назначенный сотрудниками день приносите туда же кассу для осмотра и фискализации — по-прежнему действителен, его не отменили. Но регистрировать кассу намного удобнее через интернет. Возможность удаленной постановки на учет — одно из заметных преимуществ новой системы применения ККТ.\n                            "
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v(
+                              "Как зарегистрировать онлайн-кассу в налоговой"
                             )
                           ])
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-md-0" })
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_2430" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Благодаря поправкам к 54-ФЗ порядок работы с кассовой техникой заметно изменился, как и процесс регистрации ККТ в налоговой. Целые категории предпринимателей, которые раньше были освобождены от использования ККТ, должны будут поставить кассу на учет в налоговом органе в 2018 или следующем году. Это не так сложно, как кажется. Ниже мы расскажем, "
+                              ),
+                              _c("strong", [
+                                _vm._v(
+                                  "как зарегистрировать онлайн-кассу в налоговой"
+                                )
+                              ]),
+                              _vm._v(
+                                ", и дадим пошаговую инструкцию регистрации ККТ для тех, кого коснулось изменение закона или кто впервые открывает собственный бизнес.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("div", { attrs: { align: "center" } }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "/online-kassa-pod-klyuch/?utm_medium=banner&utm_source=moysklad&utm_campaign=KomplektKKT0218"
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "btn-shadow",
+                                    attrs: {
+                                      src:
+                                        "/upload/medialibrary/726/komplekt-kkt-2018-18k.png",
+                                      alt: "",
+                                      align: "bottom"
+                                    }
+                                  })
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нововведения нужно учесть уже при выборе кассы. С 2017 года необходима современная техника — с фискальным накопителем и возможностью передавать данные онлайн. Подходящие модели включены в Государственный реестр ККТ, который ведет ФНС. Проверьте, есть ли в нем касса, которую вы выбрали для покупки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Требования закона теперь включают в цепочку передачи данных новое обязательное звено — оператора фискальных данных (ОФД). Именно через него информация будет поступать в ФНС. С 1 июля 2017 использование ККТ без ОФД невозможно (кроме списка исключений). Поэтому сразу после покупки новой техники подключитесь к одному из утвержденного ФНС списка ОФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Итак, вы приобрели ККТ и выбрали оператора. Теперь можно приступать к регистрации онлайн-кассы в налоговой.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Сделать это можно разными способами: загрузить документы через интернет или подать в налоговую «по старинке» — принести лично, передать через представителя по нотариально заверенной доверенности или отправить почтой.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Постановка кассового аппарата на учет в налоговой обязательна и бесплатна — никто не имеет права брать с вас деньги за регистрацию как таковую, только за посреднические услуги. Посредниками могут стать представители ЦТО или ОФД: их сотрудники за плату сделают все за вас. Но если вы не планируете обращаться за помощью к специалистам, то справитесь и самостоятельно.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Проще всего будет зарегистрировать онлайн-кассу через интернет: весь процесс происходит в личном кабинете налогоплательщика на сайте nalog.ru. Не понадобится ни собирать и заполнять бумажные документы, ни нести кассовый аппарат в налоговую для осмотра и фискализации: вы просто введете нужные данные в веб-форму.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Регистрация онлайн-кассы в налоговой: пошаговая инструкция"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вот как выглядела раньше пошаговая инструкция по регистрации ККТ в налоговой: "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 1. Заключение договора с ЦТО. "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 2. Подготовка необходимых документов. "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 3. Подача документов в ИФНС. "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 4. Осмотр и фискализация кассы в ИФНС. "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 5. Получение карточки регистрации ККМ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Сейчас добавился новый пункт: "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 6. Заключение договора и регистрация кассы в ОФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При желании вы можете действовать по такому сценарию, но сравните, насколько все проще, если проводить регистрацию ККТ онлайн. Предварительное заключение договора с ЦТО по закону больше не требуется, шаги упрощены, а главное — все можно сделать дистанционно. Раньше процедура растягивалась на несколько дней, а теперь занимает минуты, и не нужно приходить в ИФНС и приносить туда кассу.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В результате получаем новый порядок регистрации кассы онлайн в ФНС и ОФД: "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 1. Подача заявления на регистрацию кассы в ИФНС через личный кабинет налогоплательщика онлайн на сайте nalog.ru. И сразу же — получение регистрационного номера ККТ. "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 2. Самостоятельная фискализация. (В нашем примере использована утилита для регистрации ККТ АТОЛ.) "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 3. Получение карточки регистрации ККТ из ФНС. "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Шаг 4. Регистрация кассы в личном кабинете ОФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Сценарий 1. Регистрация кассы в ИФНС через личный кабинет"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Регистрация ККТ осуществляется через личный кабинет налогоплательщика на сайте налоговой nalog.ru. Для этого вам понадобится действующая электронная подпись (КЭП), выпущенная на имя ИП или генерального директора ООО. И не забудьте заранее выбрать ОФД — в процессе регистрации вы обязаны его указать.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h4", [
+                              _vm._v(
+                                "Шаг 1. Подача заявления на регистрацию ККТ и получение регистрационного номера ККТ."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                На главной странице личного кабинета откройте вкладку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Учет контрольно-кассовой техники")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "465",
+                                  alt: "001.png",
+                                  src: "/upload/medialibrary/001.png",
+                                  height: "215",
+                                  title: "001.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                На этой странице содержится вся информация о всех ККТ, которые зарегистрированы на данное юрлицо с данной КЭП. Чтобы зарегистрировать новую ККТ, нажмите кнопку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Зарегистрировать ККТ")]
+                              ),
+                              _vm._v(" и выберите "),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [
+                                  _vm._v(
+                                    "Заполнить параметры заявления вручную"
+                                  )
+                                ]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "490",
+                                  alt: "002.png",
+                                  src: "/upload/medialibrary/002.png",
+                                  height: "241",
+                                  title: "002.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Здесь же вы можете загрузить самостоятельно заполненное заявление о регистрации ККТ (форма по КНД-1110061). Тогда вам не придется заполнять онлайн-форму.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В первую очередь нужно заполнить адрес непосредственной установки. Нажмите кнопку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Выбрать адрес")]
+                              ),
+                              _vm._v(
+                                ". Заполните открывшуюся форму. Индекс подставится автоматически. В поле "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Наименование места установки ККТ")]
+                              ),
+                              _vm._v(
+                                " опишите место более подробно. Затем введите информацию о модели своей ККТ. Нажмите кнопку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Выбрать модель ККТ")]
+                              ),
+                              _vm._v(
+                                " и выберите модель из списка.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                После выбора модели появится поле ввода заводского номера ККТ. Этот номер можно посмотреть в паспорте ККТ, а также на шильдике, который находится на корпусе ККТ. Введите номер в поле и нажмите кнопку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Выбрать")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При вводе серийного номера и номера фискального регистратора в кабинете налогоплательщика происходит автоматическая проверка на включение в Государственный реестр ККТ. Если номер введен неправильно (или если устройство не включено в реестр), будет показано сообщение об ошибке.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Затем выберите модель фискального накопителя и введите его заводской номер, который указан в его паспорте. Здесь также работает автоматическая проверка.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Следующий этап — выбор оператора фискальных данных. Если ваша деятельность не совпадает с перечисленными в полях видами деятельности, оставьте поля пустыми и выберите ОФД из выпадающего списка. ИНН ОФД заполнится автоматически.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "478",
+                                  alt: "003.png",
+                                  src: "/upload/medialibrary/003.png",
+                                  height: "292",
+                                  title: "003.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нажмите кнопку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Подписать и отправить")]
+                              ),
+                              _vm._v(
+                                ". Появится предупреждение о том, что будет использована цифровая подпись.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Чтобы узнать информацию о состоянии заявления на регистрацию, пройдите по ссылке или откройте раздел "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [
+                                  _vm._v(
+                                    "Информация о прохождении документов, направленных в налоговый орган"
+                                  )
+                                ]
+                              ),
+                              _vm._v(
+                                ". Здесь отображаются все документы, которые отправлялись с данной КЭП. Проверьте статус документа "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Заявление о регистрации")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "459",
+                                  alt: "005.png",
+                                  src: "/upload/medialibrary/005.png",
+                                  height: "190",
+                                  title: "005.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Когда заявление будет обработано, на главной странице кабинета налогоплательщика снова войдите в раздел "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Учет контрольно-кассовой техники")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Здесь появилась запись о том, что ККТ присвоен регистрационный номер. Чтобы просмотреть параметры ККТ, кликните на присвоенный номер.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Чтобы просмотреть и скачать уведомление о присвоении регистрационного номера, перейдите на вкладку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("История заявлений")]
+                              ),
+                              _vm._v(
+                                " и скачайте PDF-документ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "458",
+                                  alt: "007.png",
+                                  src: "/upload/medialibrary/007.png",
+                                  height: "246",
+                                  title: "007.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("h4", [
+                              _vm._v(
+                                "Шаг 2. Фискализация. Утилита для регистрации ККТ (АТОЛ)"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                После присвоения регистрационного номера касса должна пройти фискализацию. При регистрации онлайн вы сможете провести ее самостоятельно. Для этого понадобятся данные, которые присутствовали в заявлении, поэтому заранее в отдельных окнах откройте детальную информацию по ККТ и уведомление о присвоении регистрационного номера.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "778",
+                                  alt: "00777.png",
+                                  src: "/upload/medialibrary/00777.png",
+                                  height: "291",
+                                  title: "00777.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Запустите утилиту фискализации. Ее предоставляет производитель фискального регистратора: в примере использована утилита для регистрации ККТ АТОЛ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "500",
+                                  alt: "util-1.1.png",
+                                  src: "/upload/medialibrary/util-1.1.png",
+                                  height: "347",
+                                  title: "util-1.1.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если ККМ подключена по USB, то она определится сама. Если под другим интерфейсом — зайдите в настройки и укажите параметры подключения. Нажмите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Зарегистрировать")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "500",
+                                  alt: "util-2.png",
+                                  src: "/upload/medialibrary/util-2.png",
+                                  height: "347",
+                                  title: "util-2.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Проверьте дату и время. Если они отличаются от времени на компьютере, то проведите синхронизацию. Если совпадают — нажмите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Далее")]
+                              ),
+                              _vm._v(
+                                " для перехода на вкладку ввода параметров.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Теперь понадобятся документы, о которых говорилось выше: информация по ККТ и уведомление о присвоении регистрационного номера. Чтобы данные полностью совпадали, скопируйте их из документов и вставьте в соответствующие поля.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "374",
+                                  alt: "021.png",
+                                  src: "/upload/medialibrary/021.png",
+                                  height: "298",
+                                  title: "021.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Впишите параметры вашего ОФД. Нажмите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Далее")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "500",
+                                  alt: "util-5.png",
+                                  src: "/upload/medialibrary/util-5.png",
+                                  height: "347",
+                                  title: "util-5.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                На следующей вкладке укажите систему налогообложения. Можно выбрать сразу несколько вариантов. Нажмите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Далее")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "500",
+                                  alt: "util-6.png",
+                                  src: "/upload/medialibrary/util-6.png",
+                                  height: "347",
+                                  title: "util-6.png"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Проверьте правильность введенной информации. Если есть ошибка, нажмите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Назад ")]
+                              ),
+                              _vm._v(
+                                "и внесите правки. Если все в порядке, нажмите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Выполнить")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Происходит регистрация ККТ. Отчет о регистрации будет напечатан на чеке.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "300",
+                                  alt: "11.PNG",
+                                  src: "/upload/medialibrary/11.PNG",
+                                  height: "377",
+                                  title: "11.PNG"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вернитесь в личный кабинет налогоплательщика на сайте nalog.ru. Нажмите кнопку "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Завершить регистрацию")]
+                              ),
+                              _vm._v(". Заполните открывшуюся форму "),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Отчет о регистрации ККТ")]
+                              ),
+                              _vm._v(
+                                ". Используйте данные отчета, напечатанного на чеке при фискализации кассы. \n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "500",
+                                  alt: "00888.png",
+                                  src: "/upload/medialibrary/00888.png",
+                                  height: "266",
+                                  title: "00888.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Внимание! Закон дает всего одни сутки на то, чтобы после фискализации внести фискальный признак в личный кабинет налогоплательщика. Время и дата в форме должны точно совпадать с чеком.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c(
+                                "span",
+                                { staticStyle: { "font-size": "1rem" } },
+                                [_vm._v("Проверьте данные и нажмите кнопку ")]
+                              ),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "1rem",
+                                    "font-weight": "bold"
+                                  }
+                                },
+                                [_vm._v("Подписать и отправить")]
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-size": "1rem" } },
+                                [_vm._v(".")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                После регистрации карточка ККТ будет доступна в личном кабинете налогоплательщика в разделе "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [
+                                  _vm._v(
+                                    "«Информация о прохождении документов, отправленных в налоговый орган»"
+                                  )
+                                ]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Шаг 3. Карточка регистрации ККТ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                После регистрации кассы в личном кабинете налогоплательщика в разделе "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [
+                                  _vm._v(
+                                    "Информация о прохождении документов, направленных в налоговый орган"
+                                  )
+                                ]
+                              ),
+                              _vm._v(
+                                ", напротив вашей кассы появится электронная карточка регистрации ККТ. С этого момента касса легализована, а работа с ней законна. Датой регистрации в ФНС считается дата выдачи карточки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Карточка подписывается усиленной квалифицированной электронной подписью. В нее вносятся изменения при изменении указанных при регистрации параметров, а также при замене фискального накопителя. При покупке подержанной кассы карточка регистрации ККТ передается новому владельцу.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При необходимости в ИФНС можно получить бумажный экземпляр. Если карточка повреждена или утеряна — выдается дубликат. При этом не назначается штрафов.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Шаг 4. Регистрация кассы в ОФД")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                После получения карточки регистрации работа с кассой уже законна, но еще невозможна: она пока не передает данные в ОФД (в договоре с ОФД, который вы уже заключили, нет регистрационной информации о конкретной кассе). Чтобы запустить онлайн-передачу данных, нужно зарегистрировать кассу в ОФД. Это финальный шаг, и он очень простой.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Войдите в личный кабинет вашего ОФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Откройте вкладку ККТ, выберите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Подключить ККТ")]
+                              ),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В открывшемся окне "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Регистрация ККТ")]
+                              ),
+                              _vm._v(
+                                " заполните все поля.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "497",
+                                  alt: "OFDreg1.jpg",
+                                  src: "/upload/medialibrary/OFDreg1.jpg",
+                                  height: "294",
+                                  title: "OFDreg1.jpg"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Всю информацию возьмите из отчета о регистрации, который был напечатан на предыдущем шаге.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В поле "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Внутреннее наименование ККТ")]
+                              ),
+                              _vm._v(
+                                " можно присвоить ФР произвольное имя.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                attrs: {
+                                  width: "450",
+                                  alt: "OFDreg2.jpg",
+                                  src: "/upload/medialibrary/OFDreg2.jpg",
+                                  height: "287",
+                                  title: "OFDreg2.jpg"
+                                }
+                              }),
+                              _c("br")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нажмите "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [_vm._v("Сохранить")]
+                              ),
+                              _vm._v(
+                                ". Появится сообщение об успешной регистрации кассы в ОФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Сценарий 2. Как зарегистрировать кассу в ИФНС"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Хотя делать все онлайн гораздо проще и удобнее, регистрация ККТ в налоговой «по старинке», через отделение ФНС, по-прежнему возможна и легальна.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Внимание! Используйте распечатанный бланк заявления по форме КНД-1110061. Заявление по форме КНД-1110021 (старого образца) не содержит полей, необходимых для ввода полной информации об онлайн-кассе (например, модели и номера ФН). Поэтому оно не подходит для регистрации ККТ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если вы собираетесь регистрировать кассу через отделение ФНС, не забудьте взять с собой паспорта ККТ и ФН, а также документ, подтверждающий ваши полномочия в организации. Закон не обязывает предоставлять эти документ, но они могут понадобиться для правильного оформления регистрации кассового аппарата в налоговой.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                На сегодняшний день закон предусматривает общую систему регистрации контрольно-кассовой техники. Раньше регистрация кассового аппарата в налоговой для ООО осуществлялась по месту установки кассы, для ИП — по месту прописки предпринимателя. А сейчас вы можете обратиться в любую ИФНС. Регистрация кассового аппарата для ИП и организаций происходит одинаково: вы можете подать заявление в любой налоговый орган.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Срок регистрации ККМ в ИФНС от даты подачи заявления составляет 5 рабочих дней: согласно пп. 7 и 11 ст. 4.2 закона от 22.05.2003 № 54-ФЗ карточка регистрации ККТ выдается налоговой по истечении этого срока со дня подачи заявления на регистрацию.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Старый способ постановки на учет — когда вы приносите документы в ИФНС и потом в назначенный сотрудниками день приносите туда же кассу для осмотра и фискализации — по-прежнему действителен, его не отменили. Но регистрировать кассу намного удобнее через интернет. Возможность удаленной постановки на учет — одно из заметных преимуществ новой системы применения ККТ.\n                            "
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
                     ])
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "add_cart",
-                          on: {
-                            click: function($event) {
-                              _vm.addCart(product.id)
-                            }
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(5)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
         ]
       ),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Компания")])
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Терминал")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -48442,8 +49144,717 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v(
+                              "Введение кассовых аппаратов с 2018 года: ККТ установят почти все"
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_2430" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Недавно принятые изменения в правилах применения контрольно-кассовой техники влекут за собой и дополнительные требования к кассовым чекам и бланкам строгой отчетности. Это логично, поскольку появилось новое звено в цепочке взаимодействия между предпринимателями и налоговой – оператор фискальных данных. Поэтому данные ОФД, к которому подключен продавец-пользователь онлайн-кассы, включены в "
+                              ),
+                              _c("strong", [
+                                _vm._v(
+                                  "обязательные реквизиты бсо и кассового чека в 2019 году"
+                                )
+                              ]),
+                              _vm._v(
+                                ". А так как изменения в законодательстве направлены на увеличение прозрачности бизнеса, в документах помимо даты и времени покупки появляется место осуществления расчета и многие другие параметры.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для новых реквизитов в чеках онлайн-касс и бланков строгой отчетности нет унифицированных форм, но в них должны содержаться определенные данные. Это данные, которые добавились с вступлением закона 54-ФЗ в силу. Вот новые реквизиты в чеках онлайн-касс:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Применяемая организацией система налогообложения."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Признак расчета: продажа/возврат.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Заводской номер фискального накопителя."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Порядковый номер фискальных данных.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Фискальный признак данных.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Список приобретенных товаров со стоимостью, ценой и примененными скидками."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("НДС для каждой позиции.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Заводской номер фискального накопителя."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Номер фискального документа.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Код фискальной передачи данных.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумма НДС и ставка налога.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Название ОФД.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Адрес сайта ОФД.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "QR-код, служащий дополнительной проверкой подлинности чека."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При этом в законе в списке обязательных реквизитов чека онлайн-кассы QR-код не значится, однако в разделе требований к контрольно-кассовой технике указано, что кассовый аппарат должен «обеспечивать возможность печати на кассовом чеке (бланке строгой отчетности) двухмерного штрихового кода (QR-код размером не менее 20Х20 мм), содержащего в кодированном виде реквизиты проверки кассового чека или бланка строгой отчетности в отдельной выделенной области кассового чека или бланка строгой отчетности». Таким образом QR-кода на новых чеках онлайн-касс вполне может и не быть, но онлайн-кассы должны уметь его печатать.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Что должно быть зашифровано в QR-коде на кассовом чеке по новым правилам? Закон говорит, что там должны содержаться сведения о покупке (дата и время платежа, порядковый номер фискального документа, признак расчета, сумма расчета, заводской номер фискального накопителя, фискальный признак документа).\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Обязательные реквизиты кассового чека в 2019 году "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вот список реквизитов чека — 54-ФЗ строго предписывает их печатать на каждом документе, подтверждающем продажу:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v("признак расчета (приход или расход),")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "дата, время и место осуществления расчета,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "информация о налоговой системе продавца,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "заводской номер фискального накопителя,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("номенклатура товаров (услуг),")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "сумма расчета с отдельным указанием ставки и размера НДС,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "форма расчета (наличные или электронный платеж),"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("заводской номер ФН,")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("регистрационный номер ККТ,")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("адрес сайта ОФД,.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("фискальный признак документа,")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "порядковый номер фискального документа,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("номер смены,")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("фискальный признак сообщения,")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "если покупатель захотел получить чек на e-mail или смс, то должен быть указан его адрес электронной почты или номер телефона, а также в этом случае должен значиться электронный адрес почты отправителя чека."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  "https://www.moysklad.ru/images/Чек_наш.jpg"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В этом чеке отмечены следующие реквизиты:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ol", [
+                              _c("li", [
+                                _vm._v("«Торговый объект» - название магазина.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("«Кассовый чек» - название документа.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Приход – признак расчета.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("«Морковь» - номенклатура товара.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Количество товара.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Цена за единицу товара.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Стоимость товара.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("% НДС.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумма НДС.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Итоговая сумма расчета.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Форма расчета – наличными с суммой.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Форма расчета – картой, тоже с суммой.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Информация о налоговой системе продавца."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Отдельно общая сумма НДС.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("ФИО кассира и его должность.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Номер смены.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "ИНН торгового предприятия, выдавшего чек."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("ЗН – заводской номер кассовой машины.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Наименование организации, выдавшей чек."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Адрес расчета.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Адрес сайта, где можно проверить чек.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Порядковый номер чека.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Дата и время выдачи чека. ")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Регистрационный номер ККТ.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Заводской номер фискального накопителя."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Номер фискального чека.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Фискальный признак данных.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("QR-код для проверки чека.")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Все эти данные – обязательные реквизиты чека онлайн-кассы. Если на чеке отсутствует хотя бы один из них, то по закону чек считается не действительным, а предприниматель должен будет приложить все усилия, чтобы доказать проверяющему органу применение онлайн-кассы, иначе он будет оштрафован за несоблюдение нового закона. Более подробно про реквизиты чека, требуемые 54-ФЗ, можно прочитать в самом тексте закона. При этом контролировать соответствие реквизитов на чеках закону может даже сам покупатель, поэтому не только предпринимателям необходимо быть в курсе, какие реквизиты должны быть в кассовом чеке.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("div", { attrs: { align: "center" } }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "/online-kassa-pod-klyuch/?utm_medium=banner&utm_source=moysklad&utm_campaign=KomplektKKT0218"
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "btn-shadow",
+                                    attrs: {
+                                      src:
+                                        "/upload/medialibrary/726/komplekt-kkt-2018-18k.png",
+                                      alt: "",
+                                      align: "bottom"
+                                    }
+                                  })
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Важно! Индивидуальные предприниматели, использующие ПСН, УСН и ЕНВД, за исключением тех, кто торгует подакцизными товарами, могут не указывать на чеках наименование и количество купленных товаров или услуг. Такое послабление для малого бизнеса дано до 1 февраля 2021 года (ФЗ от 03.07.2016 N 290-ФЗ). После этой даты они должны работать, как все остальные предприятия. Читайте подробнее о сроках, когда надо будет начать указывать товары в чеке, а также об "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "/poleznoe/izmenenija-v-54-fz/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda/",
+                                    target: "_blank"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "отсрочке онлайн-касс до 2019 года здесь >>"
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Обязательные реквизиты БСО")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Что касается обязательных реквизитов БСО, то в случае, если организация находится в труднодоступной области, последние три пункта из списка обязательных реквизитов чека онлайн-кассы могут не указываться. Кроме того, Правительство РФ предупреждает в законе, что оно может дополнить список еще одним обязательным реквизитом – кодом товарной номенклатуры – в случае, если он определен. В остальном, все реквизиты БСО ничем не отличаются от реквизитов чека онлайн-кассы.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                А именно:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ol", [
+                              _c("li", [_vm._v("Название документа.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Номер документа, состоящий из шести цифр."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Название и форма собственности организации, выдавшей чек."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Адрес фирмы.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("ИНН фирмы, выдавшей документ.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Вид услуги, оказанной клиенту.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Стоимость услуги.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумма, вносимая клиентом.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Должность и ФИО сотрудника, принявшего оплату."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Другие характеристики услуги (не обязательно)."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Если у бланка документа нет отрывной части, то при его заполнении необходимо делать копию. Дублировать серию и номер бланка документа запрещено. Кроме того, БСО должен быть изготовлен либо с применением автоматизированной системы, либо отпечатан в типографии – в последнем варианте на нем должна быть указана информация об этой типографии (название, ИНН), значиться тираж печати, номер заказа и год его исполнения.\n                                "
+                                )
+                              ])
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "search-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row subscribe-from" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "form",
+              { staticClass: "form-inline col-md-12 wow fadeInDown animated" },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control subscribe",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      placeholder: "Search..."
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "suscribe-btn" }, [
+                    _c("i", { staticClass: "pe-7s-search" })
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "contact-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+            _c("div", { staticClass: "left-content" }, [
+              _c("h1", [
+                _c("b", [_vm._v("К")]),
+                _vm._v("омпаниия "),
+                _c("b", [_vm._v("Т")]),
+                _vm._v("ерминал")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "contact-info" }, [
+                _c("p", [_vm._v("Адрес: ")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Почта: info@terminal.com")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "social-media" }, [
+                _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "fa fa-instagram" })
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Имя" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Почта"
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Тема" }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-2" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "textarea-form-footer" }, [
+                        _c("textarea", {
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "",
+                            id: "",
+                            cols: "30",
+                            rows: "5",
+                            placeholder: "Сообщение..."
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "contact-submit",
+                        attrs: { type: "submit", value: "Отправить" }
+                      })
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -48464,878 +49875,725 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "featured-section",
-        staticStyle: { background: "whitesmoke" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c("transition", { attrs: { name: "showDiv2" } }, [
-              _vm.showDiv2
-                ? _c("div", { staticClass: "infomation_about" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "titie-section wow fadeInDown animated "
-                          },
-                          [_c("h1", [_vm._v("ФЗ-54")])]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("h1", { staticClass: "h1-fz text-center" }, [
-                          _vm._v(
-                            "Введение кассовых аппаратов с 2018 года: ККТ установят почти все"
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
                           )
                         ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { attrs: { id: "bx_689919819_2430" } }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                С 1 января 2019 действуют два новых обязательных требования к онлайн-кассам. Во-первых, меняется формат фискальных данных (ФФД): набор правил, по которым кассы передают информацию в налоговую через оператора фискальных данных. Новая версия ФФД — 1.05. Если ваша касса была зарегистрирована с указанием предыдущей версии ФФД 1.0 — ее придется перерегистрировать.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Во-вторых, меняется ставка НДС: с 1 января 2019 — 20%. И онлайн-кассы должны будут печатать чеки с указанием именно такой ставки.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Новые требования — обязательные. ФНС намерена строго следить за их выполнением и назначать штрафы в случае нарушений. Отсрочка по штрафам для опоздавших допустима только на короткое время (согласно письму службы ЕД-4-20/24234@ от 13 декабря, в первом квартале 2019 предпринимателей не будут наказывать за чек, пробитый с указанием ставки НДС 18%, при условии, что товар был продан со ставкой 20%). До конца года нужно успеть настроить онлайн-кассы так, чтобы они соответствовали новым требованиям. Что для этого нужно предпринять? Кто поможет, сколько это стоит и можно ли сделать все самостоятельно? Разберемся вместе.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                О том, как в ваших документах — накладных, счетах-фактурах, договорах — уже сейчас учесть повышение НДС с 1 января 2019 года >>.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Переход на ФФД 1.05")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Переход на ФФД 1.05 закреплен в приказе ФНС от 21.03.2017 №ММВ-7-20/229@ и приказе ФНС с изменениями от 09.04.2018 №ММВ-7-20/207@. В последнем есть важная поправка: переход на ФФД 1.05 разрешается осуществлять без замены фискального накопителя. Это важно, поскольку значительно облегчает переход и снижает затраты.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "alert alert-warning" }, [
-                            _vm._v(
-                              "\n                                Различайте версию фискального накопителя (ФН) и версию ФФД. Фискальные накопители могут иметь одну из двух версий: 1.0 или 1.1, — и поддерживают разные форматы фискальных данных. Версия 1.0 поддерживает ФФД 1.0 и 1.05 — поэтому с фискальным накопителем 1.0 можно спокойно перейти на новый формат фискальных данных 1 января 2019 года. Версия 1.1 поддерживает ФФД 1.1 — переход на этот формат фискальных данных еще предстоит в будущем.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Как узнать, какую версию ФФД поддерживает ваша касса?\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Проще всего узнать это из чека информации о ККТ. Чтобы его напечатать, включите кассу с нажатой кнопкой промотки чековой ленты. Когда устройство издаст однократный звуковой сигнал — отпустите кнопку. Касса напечатает чек, в котором будет указана версия ФФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Если в чеке указан ФФД 1.05 — вам ничего не нужно делать. Если 1.0 — вам предстоит переход.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Чеки при зачете предоплаты")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                С 1 июля 2019 года предприниматели обязаны пробивать чеки по предоплате. Полная и частичная предоплаты — это варианты расчета, поддерживаемые в ФФД 1.05 и требующие дополнительного учета на фискальных документах. Это значит, что для правильно оформить предоплату без перехода на ФФД 1.05 будет невозможно.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "alert alert-warning" }, [
-                            _vm._v(
-                              "\n                                В чем отличие предоплаты от аванса? В случае предоплаты всегда точно определен список покупаемых позиций, по которым впоследствии будет осуществлен расчет. А аванс — это ситуация, когда предприниматель просто получил на счет определенную сумму.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Переход на НДС 20%")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Переход на новую ставку НДС закреплен в федеральном законе 303-ФЗ от 3 августа 2018 года. Если вы применяете ставку 18% — с 1 января 2019 года вы должны применять 20%. Если (для предоплаты) 18/118% — меняете на 20/120%.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Кого это касается?\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Всех плательщиков НДС. Если вы не платите НДС — ничего менять не нужно. Если платите — к 1 января 2019 года вам нужно привести кассу в соответствие требованию о новой ставке.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "alert alert-warning" }, [
-                            _vm._v(
-                              "\n                                ФНС пока не дала окончательных разъяснений о том, как именно будет происходить переход на новую ставку НДС в 2019 году. Пока, по предварительным данным, ожидаемая схема работы такая:"
-                            ),
-                            _c("br"),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                — Если вы продаете товары или оказываете услуги с 1 января 2019 года, включая договоры, заключенные до 1.01.19, предоплаченные или частично предоплаченные до 1.01.19) — вам нужно использовать ставку НДС 20%."
-                            ),
-                            _c("br"),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                — Если вы в 2018 году собираетесь взять оплату или частичную оплату за товары или услуги, которые отгрузите в 2019 году, — используйте ставку 18/118%. При этом в 2019 году у вас возникнет сложность, поскольку окончательный расчет при поставке или реализации нужно будет сделать по ставке 20%. При авансе или предоплате в 2018 с поставкой в 2019 возникнет разница в ставке НДС, которую потребуется вашему клиенту или вам (то есть оформить в виде скидки)."
-                            ),
-                            _c("br"),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                — Возврат товаров, которые были проданы в 2018 году, но возвращены будут в 2019, надо будет делать по ставке НДС 18%.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c("strong", [_vm._v("Важно!")]),
-                            _vm._v(
-                              " Перейти на новую ставку НДС необходимо строго к 1 января. Норма закона 54-ФЗ П.8 ст.1.2, которая разрешает в случае появления дополнительных требований к ККТ привести технику в соответствие новому закону в течение года, в данном случае НЕ действует. Никаких юридических лазеек нет. Уже 1 января 2019 года ставка НДС в любом чеке должна быть именно 20%. ФНС намерена отслеживать исполнение и штрафовать за нарушения. Таким образом, лучше обновить кассы заранее, чтобы с 1 января в чеке гарантированно печаталась правильная ставка НДС.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "alert alert-warning" }, [
-                            _vm._v(
-                              "\n                                Хорошие новости для пользователей МоегоСклада. Мы автоматически обновим драйвер ККТ и версию Кассы МойСклад под новую ставку НДС. Для этого в настройках компании ("
-                            ),
-                            _c("strong", [_vm._v("Меню пользователя")]),
-                            _vm._v(" — "),
-                            _c("strong", [_vm._v("Настройки")]),
-                            _vm._v(" — "),
-                            _c("strong", [_vm._v("Справочники")]),
-                            _vm._v(" — "),
-                            _c("strong", [_vm._v("Юр. лица")]),
-                            _vm._v(
-                              ") должно быть отмечено, что вы платите НДС.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Итак, вот короткий чек-лист подготовки вашей кассы к Новому году:\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ol", [
-                            _c("li", [
-                              _vm._v(
-                                "Проверьте версию ФФД на кассе. Если 1.0 — требуется апгрейд. Если 1.05 — ничего менять не нужно!"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Проверьте, платите ли вы НДС. Если да — приготовьтесь менять прошивку кассы. Если нет — ничего делать не нужно."
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Обновление Viki Print (Дримкас): НДС 20% и ФФД 1.05"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Все кассы Viki Print поддерживают НДС 20% и ФФД 1.05. Но самостоятельно проапгрейдить их не получится: обновить прошивку устройства смогут только специалисты. Для этого вам обязательно нужно обратиться в сервисный центр Дримкас, который обслуживает вашу технику. Лучше сделать это как можно скорее. Обновление уже доступно, и если вы еще не обратились в сервисный центр — не теряйте времени, чтобы потом не ждать в очереди.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Обратите внимание, что такое обновление не является гарантийным обязательством — то есть будет платным. Стоимость зависит от выбранного сервисного центра: каждый из них сам устанавливает цены на услуги. Если вы считаете, что цена слишком высокая, то можете попробовать другой авторизованный сервисный центр Дримкас.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Обновление ШТРИХ-М: ФФД 1.05")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Под ФФД 1.05 кассы ШТРИХ-М можно обновить самостоятельно и бесплатно. Для этого:\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", { attrs: { type: "square" } }, [
-                            _c("li", [
-                              _vm._v(
-                                "Найдите на сайте ШТРИХ-М в разделе Продукты свою модель кассы, откройте вкладку Скачать и загрузите программу «Драйвер ФР ШТРИХ-М». Или скачайте ее из личного кабинета ЦТО. Актуальная версия драйвера — 4.14.0.701."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Выполните переход с ФФД 1.0 на ФФД 1.05 по инструкции >>  "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Выполните отчет о перерегистрации. Это можно сделать через драйвер ККТ или через упрощенную утилиту «Программа мастер фискализации/модернизации (v.1.1.27)». Ее можно скачать из личного кабинета ЦТО в разделе «Дополнительные материалы» для своей модели ФР. "
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Переход на ФФД 1.05 ШТРИХ-М рекомендует сделать уже сейчас: все ОФД уже принимают документы по новому стандарту. Проапгрейдите кассу как можно скорее: важно успеть все сделать вовремя, не позднее 31 декабря 2018 года.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Если вы не хотите заниматься обновлением сами — обратитесь к партнерам: выберите подходящего из списка и договоритесь в рамках обслуживания.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Обновление ШТРИХ-М: НДС 20%")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Обновить прошивку касс ШТРИХ-М под НДС 20% самостоятельно невозможно. Для этого необходимо обратиться в сервисный центр производителя, где вам понадобится купить лицензию на каждую кассу. При этом вы получите файл лицензии. Затем обновите прошивку и драйвер ККТ до последней версии, как описано в пункте выше. После этого вы сможете работать в нем с лицензиями. Добавьте файл купленной лицензии. После этого касса будет готова к работе с НДС 20%.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Если ваш сервисный центр ШТРИХ-М занимается поддержкой и настройкой ККТ, лучше обратитесь к специалисту для выполнения этих операций.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Обновление ККТ АТОЛ: ФФД 1.05")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Кассы АТОЛ можно проапгрейдить самостоятельно или с помощью партнеров.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Чтобы узнать, можете ли вы сделать все сами, проверьте версию прошивки ККТ. Если она меньше, чем 4555, ее нужно обновить с помощью партнеров АТОЛ. Если 4555 и выше, то можно переходить на ФФД 1.05 без изменения прошивки.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Чтобы перейти на ФФД 1.05:\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", [
-                            _c("li", [_vm._v("Закройте смену.")]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Убедитесь, что все ранее сформированные фискальные документы переданы в ОФД."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Скачайте, установите и запустите приложение Утилита регистрации ККТ АТОЛ. Выполните в нем перерегистрацию кассы. При этом укажите причину перерегистрации — изменение параметров ККТ. На следующем экране поменяйте версию ФФД: укажите 1.05."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Подайте заявление о перерегистрации ККТ в ФНС. Это можно сделать на сайте ФНС. "
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Прошивка АТОЛ под НДС 20%")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                АТОЛ выпустила новую прошивку: внутреннее ПО кассы, которое автоматически изменит НДС с 18 на 20% в 00 часов 00 минут 1 января 2019 года. Для этого нужно: \n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                — установить саму новую прошивку — она вышла в октябре 2018, \n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                — закрыть смену до 24 часов 31 декабря 2018.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Также пользователям АТОЛ понадобится обновить драйвер ККТ и обновить версию кассовой программы — в случае, если ставку НДС считает не касса. Владельцам ньюджеров АТОЛ и экономных касс АТОЛ 90Ф понадобится только обновить прошивку.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "alert alert-warning" }, [
-                            _vm._v(
-                              "\n                                Хорошие новости для пользователей связки АТОЛ + МойСклад: драйвер ККТ и кассовую программу МойСклад обновит автоматически, от вас потребуется только обновить прошивку в кассе.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Как обновить прошивку ККТ АТОЛ под НДС 20%?\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Займитесь обновлением уже сейчас, если вы этого еще не сделали! Обновить прошивку касс АТОЛ можно:\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("ul", [
-                            _c("li", [
-                              _vm._v(
-                                "В офисе сервисного партнера АТОЛ: для этого вам понадобится привезти туда кассу. "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "В месте установки кассовой техники: для этого вызовите к себе инженера, чтобы он настроил вашу кассу."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Дистанционно — с помощью облачных инструментов АТОЛ Сервис. Компания АТОЛ готовит надежный, понятный и быстрый способ обновить прошивку самостоятельно и удаленно."
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "likeh3" }, [
-                            _vm._v("Итог")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Не все производители касс предоставляют пользователям возможность самостоятельно обновить прошивку. Но и не все пользователи достаточно технически подкованы для этого. Если у вас одна касса, и вам предстоит разовая процедура, — лучше обратитесь к специалистам. Не стоит пытаться сэкономить деньги: если что-то пойдет не так, стоимость потерь превысит выгоду. Погружаться в технические нюансы самостоятельно имеет смысл, только если у вас несколько касс и есть собственные технические специалисты для подстраховки.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "likeh2" }, [
-                            _vm._v("ВОПРОСЫ И ОТВЕТЫ")
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v("Как узнать, какой у моей кассы ФФД?")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Напечатайте чек информации: включите кассу с нажатой кнопкой промотки чековой ленты, после однократного звукового сигнала отпустите кнопку. Касса напечатает чек, в котором будет указана версия ФФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Нужно ли менять ФН при смене ФФД 1.0 на 1.05?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нет, не нужно. Это официальная информация от ФНС. Фискальный накопитель нужно менять только по истечении его срока действия.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Что делать, если у меня ФН на 36 месяцев, и его срок не истек?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Продолжайте работать с этим фискальным накопителем. Менять ФН при переходе с ФФД 1.00 на 1.05 не нужно.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Если у меня версия ФН — 1.0, а ФФД ККТ — 1.05, нужно ли менять? "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нет, не нужно.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Как можно без партнеров обновить прошивку ККТ АТОЛ?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Дистанционно — через облачные инструменты АТОЛ Сервис.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Как быть с арендуемыми кассами АТОЛ? Когда можно обновить прошивку и куда обратиться?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Для онлайн-касс также потребуется обновление прошивки. Нужно связаться с АТОЛ Онлайн, там помогут спланировать обновление.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Зачем в чеке печатать НДС, если мы работаем без него?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                «БЕЗ НДС» — это тоже тип налоговой ставки.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Почему на чеках пишется строка про НДС под каждым товаром, если я не использую НДС? Можно ее убрать?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Пока это убрать нельзя.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "До какого времени нужно будет перейти с ФФД 1.05 на ФФД 1.1?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Срок пока не определен, прогноз — 2021 год.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "После смены ФФД или ставки НДС нужно ли перерегистрировать кассу в ФНС?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нужно — после смены ФФД.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Как сегодня правильно оформлять предоплату? "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                До перехода на ФФД 1.05 нет строгих рекомендаций. Мы рекомендуем пробивать чек на товар «Предоплата», а потом при передаче товаров делать 100% скидку на чек с товарами.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Как проверить версию прошивки на Ритейл-01Ф (Штрих-М)?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                На ПК нужно установить программу «Драйвер ФР ШТРИХ-М», которую можно бесплатно скачать с сайта. Актуальная версия драйвера 4.14.0.701.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Кассу регистрировали с ФФД 1.05, при распечатке тест-листа версия ФФД ФН — 1.0. В какой версии работает ФН?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Не надо смешивать версию ФН и версию ФФД ККТ.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Есть два вида ФН: ФН 1.0 и ФН 1.1. И есть три версии ФФД: 1.0, 1.05, 1.1.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В случае работы с ФН 1.0 под ФФД 1.05 сам ФН никак не видит ФФД 1.05 и не участвует в тех изменениях, которые прошли в ФФД. Поэтому на ФН 1.0 версия ФФД 1.05 никак не повлияет и будет отображаться версия ФН 1.0.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Для ставки 20% в АТОЛ кассах будет отдельный код (1 - 0%, ... 7 - 20%)?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нет. Тот тег, что был использован для ставки НДС 18%, будет заменен на 20%.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v("Партнеры обновляют кассы бесплатно?")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Нет, партнеры оказывают услуги за деньги.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Можно ли будет печатать на кассах АТОЛ код товара с 01.01.2019?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Код товара содержится в теге 1162, данный тег реализован в кассах. Значение данного тега нужно заполнять только для маркированных товаров, которые уже будут обязательны к маркировке.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Когда в чеке изменится «электронные» на «безналичный расчет»?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Позже. Об этом сообщат дополнительно. Но это будет только изменение в наименовании на чеке. Сделать его можно только после того, как будут приняты изменения к приказу ФНС о Форматах фискальных документов. К настоящему моменту этот документ не принят, поэтому у производителей касс нет оснований делать переименование реквизита.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Для каких случаев автоматически поменяется ставка, если ставка у товара явно не указана?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Для тех, у которых в карточке товара указана была ставка НДС 18%.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Смотрите также запись вебинара, который мы провели совместно коллегами из компании АТОЛ. Мы рассказали о грядущих изменениях и разобрали, как и что надо перенастроить.\n                            "
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v(
+                              "Переход на ФФД 1.05 и НДС 20%: АТОЛ, ШТРИХ-М, Viki Print"
                             )
                           ])
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-md-0" })
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_2430" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                С 1 января 2019 действуют два новых обязательных требования к онлайн-кассам. Во-первых, меняется формат фискальных данных (ФФД): набор правил, по которым кассы передают информацию в налоговую через оператора фискальных данных. Новая версия ФФД — 1.05. Если ваша касса была зарегистрирована с указанием предыдущей версии ФФД 1.0 — ее придется перерегистрировать.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Во-вторых, меняется ставка НДС: с 1 января 2019 — 20%. И онлайн-кассы должны будут печатать чеки с указанием именно такой ставки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Новые требования — обязательные. ФНС намерена строго следить за их выполнением и назначать штрафы в случае нарушений. Отсрочка по штрафам для опоздавших допустима только на короткое время (согласно письму службы ЕД-4-20/24234@ от 13 декабря, в первом квартале 2019 предпринимателей не будут наказывать за чек, пробитый с указанием ставки НДС 18%, при условии, что товар был продан со ставкой 20%). До конца года нужно успеть настроить онлайн-кассы так, чтобы они соответствовали новым требованиям. Что для этого нужно предпринять? Кто поможет, сколько это стоит и можно ли сделать все самостоятельно? Разберемся вместе.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                О том, как в ваших документах — накладных, счетах-фактурах, договорах — уже сейчас учесть повышение НДС с 1 января 2019 года >>.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Переход на ФФД 1.05")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход на ФФД 1.05 закреплен в приказе ФНС от 21.03.2017 №ММВ-7-20/229@ и приказе ФНС с изменениями от 09.04.2018 №ММВ-7-20/207@. В последнем есть важная поправка: переход на ФФД 1.05 разрешается осуществлять без замены фискального накопителя. Это важно, поскольку значительно облегчает переход и снижает затраты.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                Различайте версию фискального накопителя (ФН) и версию ФФД. Фискальные накопители могут иметь одну из двух версий: 1.0 или 1.1, — и поддерживают разные форматы фискальных данных. Версия 1.0 поддерживает ФФД 1.0 и 1.05 — поэтому с фискальным накопителем 1.0 можно спокойно перейти на новый формат фискальных данных 1 января 2019 года. Версия 1.1 поддерживает ФФД 1.1 — переход на этот формат фискальных данных еще предстоит в будущем.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Как узнать, какую версию ФФД поддерживает ваша касса?\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Проще всего узнать это из чека информации о ККТ. Чтобы его напечатать, включите кассу с нажатой кнопкой промотки чековой ленты. Когда устройство издаст однократный звуковой сигнал — отпустите кнопку. Касса напечатает чек, в котором будет указана версия ФФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если в чеке указан ФФД 1.05 — вам ничего не нужно делать. Если 1.0 — вам предстоит переход.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Чеки при зачете предоплаты")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                С 1 июля 2019 года предприниматели обязаны пробивать чеки по предоплате. Полная и частичная предоплаты — это варианты расчета, поддерживаемые в ФФД 1.05 и требующие дополнительного учета на фискальных документах. Это значит, что для правильно оформить предоплату без перехода на ФФД 1.05 будет невозможно.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                В чем отличие предоплаты от аванса? В случае предоплаты всегда точно определен список покупаемых позиций, по которым впоследствии будет осуществлен расчет. А аванс — это ситуация, когда предприниматель просто получил на счет определенную сумму.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Переход на НДС 20%")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход на новую ставку НДС закреплен в федеральном законе 303-ФЗ от 3 августа 2018 года. Если вы применяете ставку 18% — с 1 января 2019 года вы должны применять 20%. Если (для предоплаты) 18/118% — меняете на 20/120%.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Кого это касается?\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Всех плательщиков НДС. Если вы не платите НДС — ничего менять не нужно. Если платите — к 1 января 2019 года вам нужно привести кассу в соответствие требованию о новой ставке.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                ФНС пока не дала окончательных разъяснений о том, как именно будет происходить переход на новую ставку НДС в 2019 году. Пока, по предварительным данным, ожидаемая схема работы такая:"
+                              ),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                — Если вы продаете товары или оказываете услуги с 1 января 2019 года, включая договоры, заключенные до 1.01.19, предоплаченные или частично предоплаченные до 1.01.19) — вам нужно использовать ставку НДС 20%."
+                              ),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                — Если вы в 2018 году собираетесь взять оплату или частичную оплату за товары или услуги, которые отгрузите в 2019 году, — используйте ставку 18/118%. При этом в 2019 году у вас возникнет сложность, поскольку окончательный расчет при поставке или реализации нужно будет сделать по ставке 20%. При авансе или предоплате в 2018 с поставкой в 2019 возникнет разница в ставке НДС, которую потребуется вашему клиенту или вам (то есть оформить в виде скидки)."
+                              ),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                — Возврат товаров, которые были проданы в 2018 году, но возвращены будут в 2019, надо будет делать по ставке НДС 18%.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("strong", [_vm._v("Важно!")]),
+                              _vm._v(
+                                " Перейти на новую ставку НДС необходимо строго к 1 января. Норма закона 54-ФЗ П.8 ст.1.2, которая разрешает в случае появления дополнительных требований к ККТ привести технику в соответствие новому закону в течение года, в данном случае НЕ действует. Никаких юридических лазеек нет. Уже 1 января 2019 года ставка НДС в любом чеке должна быть именно 20%. ФНС намерена отслеживать исполнение и штрафовать за нарушения. Таким образом, лучше обновить кассы заранее, чтобы с 1 января в чеке гарантированно печаталась правильная ставка НДС.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                Хорошие новости для пользователей МоегоСклада. Мы автоматически обновим драйвер ККТ и версию Кассы МойСклад под новую ставку НДС. Для этого в настройках компании ("
+                              ),
+                              _c("strong", [_vm._v("Меню пользователя")]),
+                              _vm._v(" — "),
+                              _c("strong", [_vm._v("Настройки")]),
+                              _vm._v(" — "),
+                              _c("strong", [_vm._v("Справочники")]),
+                              _vm._v(" — "),
+                              _c("strong", [_vm._v("Юр. лица")]),
+                              _vm._v(
+                                ") должно быть отмечено, что вы платите НДС.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Итак, вот короткий чек-лист подготовки вашей кассы к Новому году:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ol", [
+                              _c("li", [
+                                _vm._v(
+                                  "Проверьте версию ФФД на кассе. Если 1.0 — требуется апгрейд. Если 1.05 — ничего менять не нужно!"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Проверьте, платите ли вы НДС. Если да — приготовьтесь менять прошивку кассы. Если нет — ничего делать не нужно."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Обновление Viki Print (Дримкас): НДС 20% и ФФД 1.05"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Все кассы Viki Print поддерживают НДС 20% и ФФД 1.05. Но самостоятельно проапгрейдить их не получится: обновить прошивку устройства смогут только специалисты. Для этого вам обязательно нужно обратиться в сервисный центр Дримкас, который обслуживает вашу технику. Лучше сделать это как можно скорее. Обновление уже доступно, и если вы еще не обратились в сервисный центр — не теряйте времени, чтобы потом не ждать в очереди.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Обратите внимание, что такое обновление не является гарантийным обязательством — то есть будет платным. Стоимость зависит от выбранного сервисного центра: каждый из них сам устанавливает цены на услуги. Если вы считаете, что цена слишком высокая, то можете попробовать другой авторизованный сервисный центр Дримкас.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Обновление ШТРИХ-М: ФФД 1.05")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Под ФФД 1.05 кассы ШТРИХ-М можно обновить самостоятельно и бесплатно. Для этого:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", { attrs: { type: "square" } }, [
+                              _c("li", [
+                                _vm._v(
+                                  "Найдите на сайте ШТРИХ-М в разделе Продукты свою модель кассы, откройте вкладку Скачать и загрузите программу «Драйвер ФР ШТРИХ-М». Или скачайте ее из личного кабинета ЦТО. Актуальная версия драйвера — 4.14.0.701."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Выполните переход с ФФД 1.0 на ФФД 1.05 по инструкции >>  "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Выполните отчет о перерегистрации. Это можно сделать через драйвер ККТ или через упрощенную утилиту «Программа мастер фискализации/модернизации (v.1.1.27)». Ее можно скачать из личного кабинета ЦТО в разделе «Дополнительные материалы» для своей модели ФР. "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход на ФФД 1.05 ШТРИХ-М рекомендует сделать уже сейчас: все ОФД уже принимают документы по новому стандарту. Проапгрейдите кассу как можно скорее: важно успеть все сделать вовремя, не позднее 31 декабря 2018 года.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если вы не хотите заниматься обновлением сами — обратитесь к партнерам: выберите подходящего из списка и договоритесь в рамках обслуживания.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Обновление ШТРИХ-М: НДС 20%")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Обновить прошивку касс ШТРИХ-М под НДС 20% самостоятельно невозможно. Для этого необходимо обратиться в сервисный центр производителя, где вам понадобится купить лицензию на каждую кассу. При этом вы получите файл лицензии. Затем обновите прошивку и драйвер ККТ до последней версии, как описано в пункте выше. После этого вы сможете работать в нем с лицензиями. Добавьте файл купленной лицензии. После этого касса будет готова к работе с НДС 20%.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если ваш сервисный центр ШТРИХ-М занимается поддержкой и настройкой ККТ, лучше обратитесь к специалисту для выполнения этих операций.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Обновление ККТ АТОЛ: ФФД 1.05")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Кассы АТОЛ можно проапгрейдить самостоятельно или с помощью партнеров.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Чтобы узнать, можете ли вы сделать все сами, проверьте версию прошивки ККТ. Если она меньше, чем 4555, ее нужно обновить с помощью партнеров АТОЛ. Если 4555 и выше, то можно переходить на ФФД 1.05 без изменения прошивки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Чтобы перейти на ФФД 1.05:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [_vm._v("Закройте смену.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Убедитесь, что все ранее сформированные фискальные документы переданы в ОФД."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Скачайте, установите и запустите приложение Утилита регистрации ККТ АТОЛ. Выполните в нем перерегистрацию кассы. При этом укажите причину перерегистрации — изменение параметров ККТ. На следующем экране поменяйте версию ФФД: укажите 1.05."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Подайте заявление о перерегистрации ККТ в ФНС. Это можно сделать на сайте ФНС. "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Прошивка АТОЛ под НДС 20%")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                АТОЛ выпустила новую прошивку: внутреннее ПО кассы, которое автоматически изменит НДС с 18 на 20% в 00 часов 00 минут 1 января 2019 года. Для этого нужно: \n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                — установить саму новую прошивку — она вышла в октябре 2018, \n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                — закрыть смену до 24 часов 31 декабря 2018.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Также пользователям АТОЛ понадобится обновить драйвер ККТ и обновить версию кассовой программы — в случае, если ставку НДС считает не касса. Владельцам ньюджеров АТОЛ и экономных касс АТОЛ 90Ф понадобится только обновить прошивку.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                Хорошие новости для пользователей связки АТОЛ + МойСклад: драйвер ККТ и кассовую программу МойСклад обновит автоматически, от вас потребуется только обновить прошивку в кассе.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Как обновить прошивку ККТ АТОЛ под НДС 20%?\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Займитесь обновлением уже сейчас, если вы этого еще не сделали! Обновить прошивку касс АТОЛ можно:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "В офисе сервисного партнера АТОЛ: для этого вам понадобится привезти туда кассу. "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "В месте установки кассовой техники: для этого вызовите к себе инженера, чтобы он настроил вашу кассу."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Дистанционно — с помощью облачных инструментов АТОЛ Сервис. Компания АТОЛ готовит надежный, понятный и быстрый способ обновить прошивку самостоятельно и удаленно."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "likeh3" }, [
+                              _vm._v("Итог")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Не все производители касс предоставляют пользователям возможность самостоятельно обновить прошивку. Но и не все пользователи достаточно технически подкованы для этого. Если у вас одна касса, и вам предстоит разовая процедура, — лучше обратитесь к специалистам. Не стоит пытаться сэкономить деньги: если что-то пойдет не так, стоимость потерь превысит выгоду. Погружаться в технические нюансы самостоятельно имеет смысл, только если у вас несколько касс и есть собственные технические специалисты для подстраховки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "likeh2" }, [
+                              _vm._v("ВОПРОСЫ И ОТВЕТЫ")
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Как узнать, какой у моей кассы ФФД?")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Напечатайте чек информации: включите кассу с нажатой кнопкой промотки чековой ленты, после однократного звукового сигнала отпустите кнопку. Касса напечатает чек, в котором будет указана версия ФФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Нужно ли менять ФН при смене ФФД 1.0 на 1.05?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нет, не нужно. Это официальная информация от ФНС. Фискальный накопитель нужно менять только по истечении его срока действия.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Что делать, если у меня ФН на 36 месяцев, и его срок не истек?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Продолжайте работать с этим фискальным накопителем. Менять ФН при переходе с ФФД 1.00 на 1.05 не нужно.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Если у меня версия ФН — 1.0, а ФФД ККТ — 1.05, нужно ли менять? "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нет, не нужно.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Как можно без партнеров обновить прошивку ККТ АТОЛ?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Дистанционно — через облачные инструменты АТОЛ Сервис.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Как быть с арендуемыми кассами АТОЛ? Когда можно обновить прошивку и куда обратиться?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для онлайн-касс также потребуется обновление прошивки. Нужно связаться с АТОЛ Онлайн, там помогут спланировать обновление.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Зачем в чеке печатать НДС, если мы работаем без него?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                «БЕЗ НДС» — это тоже тип налоговой ставки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Почему на чеках пишется строка про НДС под каждым товаром, если я не использую НДС? Можно ее убрать?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Пока это убрать нельзя.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "До какого времени нужно будет перейти с ФФД 1.05 на ФФД 1.1?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Срок пока не определен, прогноз — 2021 год.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "После смены ФФД или ставки НДС нужно ли перерегистрировать кассу в ФНС?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нужно — после смены ФФД.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Как сегодня правильно оформлять предоплату? "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                До перехода на ФФД 1.05 нет строгих рекомендаций. Мы рекомендуем пробивать чек на товар «Предоплата», а потом при передаче товаров делать 100% скидку на чек с товарами.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Как проверить версию прошивки на Ритейл-01Ф (Штрих-М)?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                На ПК нужно установить программу «Драйвер ФР ШТРИХ-М», которую можно бесплатно скачать с сайта. Актуальная версия драйвера 4.14.0.701.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Кассу регистрировали с ФФД 1.05, при распечатке тест-листа версия ФФД ФН — 1.0. В какой версии работает ФН?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Не надо смешивать версию ФН и версию ФФД ККТ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Есть два вида ФН: ФН 1.0 и ФН 1.1. И есть три версии ФФД: 1.0, 1.05, 1.1.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В случае работы с ФН 1.0 под ФФД 1.05 сам ФН никак не видит ФФД 1.05 и не участвует в тех изменениях, которые прошли в ФФД. Поэтому на ФН 1.0 версия ФФД 1.05 никак не повлияет и будет отображаться версия ФН 1.0.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Для ставки 20% в АТОЛ кассах будет отдельный код (1 - 0%, ... 7 - 20%)?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нет. Тот тег, что был использован для ставки НДС 18%, будет заменен на 20%.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Партнеры обновляют кассы бесплатно?")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нет, партнеры оказывают услуги за деньги.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Можно ли будет печатать на кассах АТОЛ код товара с 01.01.2019?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Код товара содержится в теге 1162, данный тег реализован в кассах. Значение данного тега нужно заполнять только для маркированных товаров, которые уже будут обязательны к маркировке.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Когда в чеке изменится «электронные» на «безналичный расчет»?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Позже. Об этом сообщат дополнительно. Но это будет только изменение в наименовании на чеке. Сделать его можно только после того, как будут приняты изменения к приказу ФНС о Форматах фискальных документов. К настоящему моменту этот документ не принят, поэтому у производителей касс нет оснований делать переименование реквизита.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Для каких случаев автоматически поменяется ставка, если ставка у товара явно не указана?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для тех, у которых в карточке товара указана была ставка НДС 18%.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Смотрите также запись вебинара, который мы провели совместно коллегами из компании АТОЛ. Мы рассказали о грядущих изменениях и разобрали, как и что надо перенастроить.\n                            "
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
                     ])
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "add_cart",
-                          on: {
-                            click: function($event) {
-                              _vm.addCart(product.id)
-                            }
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(5)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
         ]
       ),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Компания")])
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Терминал")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
-    ])
-  },
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -49534,779 +50792,721 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "header",
-      { staticClass: "header-section" },
-      [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "nav navbar-nav navbar-right cart-menu" },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/cart" } }, [
-                        _c("span", [
-                          _vm._v(" Корзина - " + _vm._s(_vm.cart.total) + "₽ ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "shoping-cart" }, [
-                          _vm._v(_vm._s(_vm.cart.count_all))
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "cartMessage" } }, [
-          _vm.showCartMessage === true
-            ? _c(
-                "div",
-                {
-                  staticStyle: {
-                    "z-index": "999999999999",
-                    display: "block",
-                    border: "1px solid #2F2C65 !important",
-                    background: "#2F2C65 !important",
-                    position: "fixed",
-                    width: "370px",
-                    right: "20px",
-                    top: "20px",
-                    "-webkit-box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "box-shadow": "0px 6px 5px 1px rgba(0, 0, 0, 0.2)",
-                    "-webkit-border-radius": "5px",
-                    "border-radius": "5px",
-                    "text-align": "center"
-                  },
-                  attrs: { id: "error_box" }
-                },
-                [
-                  _c(
-                    "p",
-                    {
-                      staticStyle: {
-                        color: "white",
-                        "margin-top": "10px",
-                        "font-weight": "bold",
-                        filter: "dropshadow(color=#FFFFFF, offx=1, offy=1)"
-                      },
-                      attrs: { id: "error_message" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.cartMessage) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "featured-section",
-        staticStyle: { background: "whitesmoke" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c("transition", { attrs: { name: "showDiv2" } }, [
-              _vm.showDiv2
-                ? _c("div", { staticClass: "infomation_about" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "titie-section wow fadeInDown animated "
-                          },
-                          [_c("h1", [_vm._v("ФЗ-54")])]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("h1", { staticClass: "h1-fz text-center" }, [
-                          _vm._v(
-                            "Закон 54-ФЗ «О применении контрольно-кассовой техники». Что меняется в 2018 году?"
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
                           )
                         ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { attrs: { id: "bx_689919819_2430" } }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Представляем "
-                            ),
-                            _c("strong", [
-                              _vm._v("список операторов фискальных данных")
-                            ]),
-                            _vm._v(
-                              " в России. Заключение договора с одним из них — обязательное требование последней версии закона 54-ФЗ, если вы используете кассовую технику при расчетах с покупателями.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Что такое оператор фискальных данных (ОФД) и почему с 1 февраля 2017 года необходимо заключать с ним договор?\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Напоминаем, что поправки к закону «О применении контрольно-кассовой техники» уже вступили в силу. Меняется схема расчета бизнеса с покупателями и схема взаимодействия с ФНС. Предприниматели обязаны использовать кассовую технику с доступом в интернет. А заключение договора с оператором фискальных данных, список которых утвердила налоговая, — теперь одно из обязательных требований.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Задача организаций из списка ОФД — собирать данные о продажах, отправляемые ККТ нового образца, хранить их и передавать в ФНС по защищенному каналу.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Список ОФД с официальным разрешением ФНС на обработку фискальных данных"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В конце августа на сайте налоговой появился первый "
-                            ),
-                            _c("strong", [_vm._v("список ОФД")]),
-                            _vm._v(
-                              ", сертифицированных для работы в России. На сегодняшний день официальный статус оператора фискальных данных получили 20 компаний.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("table", [
-                            _c("tbody", [
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [_c("ae", [_vm._v(" ОФД Такском")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            ООО «Такском» разрабатывает системы электронного документооборота и обеспечивает обмен информацией по защищенным каналам связи с 2000 года. Собственный учебный центр и центр сертификации ключей ЭЦП. В числе тех, кто сотрудничает с «Такскомом» — Управление делами Президента РФ, МИД России, ФНС и Сбербанк. Один из крупнейших игроков на рынке, без этого оператора фискальных данных список представить сложно. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v(
-                                          " ООО «Эвотор ОФД», бренд «Платформа ОФД»"
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Эвотор ОФД — совместный проект Сбербанка и производителя кассового оборудования АТОЛ. Основной профиль деятельности компании — создание решений для автоматизации малого бизнеса. В планах компании сотрудничество с ЦТО и развитие партнерства с производителями ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v(" ООО «Ярус», ОФД ЯРУС (ОФД-Я)")
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            ООО «Ярус» создает банковское оборудование и разрабатывает программное обеспечение с 2007 года. Принадлежащий компании спецоператор ОФД-Я уже получил разрешительную документацию для ведения деятельности в статусе ОФД. В начале сентября 2016 года ОФД-Я договорился о партнерстве с производителем контрольно-кассовой техники «ШТРИХ-М». Компании обещают клиентам комплексный подход при переходе на новый порядок применения ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v("  АО «ЭСК», бренд «Первый ОФД»")
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            У АО «Энергетические системы и коммуникации» большой опыт взаимодействия с налоговыми органами, а в 2014 году участие в предварительном эксперименте по применению онлайн-касс. Одно из главных направлений деятельности АО «ЭСК» — разработка технологий для передачи данных. Информация об этом операторе уже появилась в списке ОФД на сайте ФНС. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v("    ПЕТЕР-СЕРВИС, OFD.RU")
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            OFD.RU создан на базе дочерней компании ПЕТЕР-СЕРВИС, входящей в состав USM Holdings. ПЕТЕР-СЕРВИС уже более 20 лет создает программное обеспечение для рынка телекоммуникаций. На сайте указано, что OFD.RU оказывает услуги малому, среднему и крупному бизнесу по всей России. Разрешение на обработку фискальных данных получено 18.10.2016.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "1" } }),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  { attrs: { colspan: "1" } },
-                                  [
-                                    _c("ae", [_vm._v("  Яндекс.ОФД ")]),
-                                    _vm._v(" "),
-                                    _c("p"),
-                                    _vm._v(
-                                      "\n                                        «Яндекс» владеет одноименной системой поиска, интернет-порталами и службами в нескольких странах, а теперь намерен работать с крупным и мелким бизнесом, используя собственные технологии. Яндекс.ОФД начнет оказание услуг оператора фискальных данных после проведения настроек, связанных с интеграцией систем и обеспечением безопасности данных. Разрешение на обработку фискальных данных получено 10.04.2017.\n                                        "
-                                    ),
-                                    _c("p")
-                                  ],
-                                  1
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "1" } }),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  { attrs: { colspan: "1" } },
-                                  [
-                                    _c("ae", [
-                                      _vm._v("  ООО «Электронный экспресс»")
-                                    ]),
-                                    _c("br"),
-                                    _vm._v(" "),
-                                    _c("br"),
-                                    _vm._v(
-                                      "\n                                        Компания «Электронный экспресс» — разработчик первой в России массовой компьютерной правовой системы ГАРАНТ и комплекса информационно-правового обеспечения. ИПО ГАРАНТ с 1990 года используют сотни тысяч юристов, бухгалтеров, руководителей по всей стране. Услуги компании лицензированы ФСБ России, Минкомсвязи РФ, ФСТЭК. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                        "
-                                    ),
-                                    _c("p")
-                                  ],
-                                  1
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "1" } }),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  { attrs: { colspan: "1" } },
-                                  [
-                                    _c("ae", [
-                                      _vm._v(
-                                        " ЗАО «КАЛУГА АСТРАЛ», бренд «Астрал.ОФД»"
-                                      )
-                                    ]),
-                                    _c("br"),
-                                    _vm._v(" "),
-                                    _c("br"),
-                                    _vm._v(
-                                      "\n                                        Компания создает программное обеспечение и разрабатывает системы электронного документооборота с 1993 года. Продукт имеет сертификаты соответствия Росстандарта России и заключение ФСБ России, подтверждающее обоснованность устройства системы криптографической защиты. Калуга Астрал — одна из участниц эксперимента по внедрению онлайн-касс в 2014 году. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                    "
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "1" } }),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  { attrs: { colspan: "1" } },
-                                  [
-                                    _c("ae", [
-                                      _vm._v(
-                                        " ООО «Компания «Тензор», сервис ОФД в сети СБИС"
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("br"),
-                                    _vm._v(" "),
-                                    _c("br"),
-                                    _vm._v(
-                                      "\n                                        Компания «Тензор» на рынке программного обеспечения с 1996 года. Аккредитованный ФНС, ПФ и Росстатом оператор электронного документооборота, сертифицированный EDI-провайдер. «Тензор» разрабатывает сеть деловых коммуникаций СБИС и выпускает ключи электронной подписи. В СБИС работает 1 000 000 пользователей, ежедневно подключается около 1 000 новых организаций. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                    "
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "1" } }),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  { attrs: { colspan: "1" } },
-                                  [
-                                    _c("ae", [
-                                      _vm._v(
-                                        " ООО «КОРУС Консалтинг СНГ», бренд «КОРУС ОФД»"
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("br"),
-                                    _vm._v(" "),
-                                    _c("br"),
-                                    _vm._v(
-                                      "\n                                        «КОРУС Консалтинг СНГ» входит в группу компаний ПАО Сбербанк и с 2005 года предоставляет услуги электронного обмена данными между участниками торговых сделок в ритейле, логистике, фарминдустрии, промышленности, ЖКХ, телекоммуникациях, финансах. Общий трафик электронного документооборота превышает 10 млн документов ежемесячно. Услуги компании лицензированы ФСБ России, ФСТЭК и другими организациями, их качество подтверждено сертификатом Комитета по технологическому обеспечению ECR-Rus российских EDI-провайдеров. Разрешение на обработку фискальных данных получено 12.05.2017."
-                                    ),
-                                    _c("br")
-                                  ],
-                                  1
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", { attrs: { colspan: "1" } }, [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v("  СКБ Контур, Контур ОФД")
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            СКБ Контур разрабатывает и внедряет программы для бухучета, электронной отчетности и документооборота, предоставляет сервисы для обеспечения информационной безопасности. Разрешение на обработку фискальных данных получено 29.06.2017.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", { attrs: { colspan: "1" } }, [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v(" АО «Тандер», ОФД «Магнит»")
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Акционерное общество «Тандер» – операционная компания «Магнита» – получило разрешение на обработку фискальных данных 11.07.2017. В магазинах розничной сети «Магнит» работает около 50 тысяч онлайн-касс, в 2016 году было выдано больше 3,8 млрд чеков. «Магнит» первым из ритейлеров в России будет использовать в работе услуги собственного ОФД. Сервисом оператора смогут пользоваться и другие организации. Сейчас клиентам доступен личный кабинет ОФД, отдельный сайт находится в разработке.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [_c("ae", [_vm._v("   ОФД Инитпро")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Пермский удостоверяющий центр «ИнитПро» получил разрешение на обработку фискальных данных 12.09.2017. Клиентам доступны сайт и личный кабинет.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v("  ООО «ГРУППА ЭЛЕМЕНТ»")
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            ООО «ГРУППА ЭЛЕМЕНТ» — компания с частным российским капиталом. Ядро группы — предприятие «Микротех», системный интегратор и производитель контрольно-кассовой техники с 1990 года. Разрешение на обработку фискальных данных получено в соответствии с Приказом ФНС России от 12.09.2017 № ЕД-7-20/721@.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [_c("ae", [_vm._v(" АО «Энвижн Груп»")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Акционерное общество «Энвижн групп» — системный интегратор с 2001 года, принадлежит ПАО «МТС», имеет филиалы во всех федеральных округах РФ. Разрешение на обработку фискальных данных получено 06.12.2017.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v(" ПАО «Вымпел-Коммуникации»")
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Публичное акционерное общество «Вымпел-Коммуникации», предоставляющее услуги под брендом «Билайн», получило разрешение на обработку фискальных данных 26.12.2017. На сайте компании клиентам доступен личный кабинет, а также сервис по проверке чеков.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [_c("ae", [_vm._v(" ООО «МультиКарта»")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Общество с ограниченной ответственностью «МультиКарта» является дочерним предприятием ПАО «Почта Банк». Компания с 1994 года работает на рынке высокотехнологичных услуг для банковской отрасли. Разрешение на обработку фискальных данных получено 12.02.2018.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [_c("ae", [_vm._v(" ООО «Дримкас»")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Общество с ограниченной ответственностью «Дримкас» занимается автоматизацией розничной торговли. Компания работает на рынке с 2016 года, она появилась после реорганизации другого крупного предприятия — «Кристалл Сервис». Разрешение на обработку фискальных данных получено 05.04.2018.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [_c("ae", [_vm._v("  ООО «Контур НТТ»")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            Общество с ограниченной ответственностью «Контур НТТ» является дочерней компанией АО «ПФ «СКБ Контур». Контур.ОФД совместим с любыми моделями кассовой техники, фискальных накопителей и кассового программного обеспечения. Разрешение на обработку фискальных данных получено 11.07.2018.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c(
-                                    "p",
-                                    [
-                                      _c("ae", [
-                                        _vm._v(
-                                          " ООО «Оператор фискальных данных «Онлайн»"
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                            ОФД Онлайн предлагает комплексное решение по реализации работы ККТ в рамках 54-ФЗ. Разрешение на обработку фискальных данных получено 26.12.2018.\n                                        "
-                                    )
-                                  ])
-                                ])
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Договор на оказание услуг по передаче фискальной информации вы можете заключать с каким-то из этих ОФД уже сейчас. С 1 февраля 2017 это стало обязательным при регистрации кассовой техники. Примерная стоимость услуг по передаче фискальных данных — около 3000 рублей в год за одну подключенную кассу или фискальный регистратор.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("p"),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "Будет ли пополняться перечень операторов фискальных данных?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                В 2019 году число ОФД, к которым можно подключить кассовую технику, будет расти. "
-                            ),
-                            _c(
-                              "span",
-                              { staticStyle: { "font-size": "1rem" } },
-                              [
-                                _vm._v(
-                                  "Пополнит ли кто-то еще из операторов фискальных данных список, который мы составили? Полагаем, что главные игроки рынка в нем перечислены. Но все же при выборе обязательно сверяйтесь с официальной информацией на сайте ФНС."
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h3", [
-                            _vm._v(
-                              "Вы выбрали ОФД, что нужно сделать для подключения?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Обязательно нужна квалифицированная электронная подпись (КЭП). Если у вас ее нет, то для получения обратитесь в удостоверяющий центр, аккредитованный в Минкомсвязи. Подсказка: все или почти все ОФД с радостью продадут вам и необходимую электронную подпись.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Свяжитесь с оператором фискальных данных, с которым вы решили сотрудничать, и заключите с ним договор.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Обеспечьте доступ в интернет на точке продаж.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                Пройдите регистрацию кассового аппарата с встроенным фискальным накопителем на сайте ФНС, получите регистрационный номер.\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                                И спокойно работайте по новым требованиям.\n                            "
-                            )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v("Список операторов фискальных данных")
                           ])
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-md-0" })
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_2430" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Представляем "
+                              ),
+                              _c("strong", [
+                                _vm._v("список операторов фискальных данных")
+                              ]),
+                              _vm._v(
+                                " в России. Заключение договора с одним из них — обязательное требование последней версии закона 54-ФЗ, если вы используете кассовую технику при расчетах с покупателями.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Что такое оператор фискальных данных (ОФД) и почему с 1 февраля 2017 года необходимо заключать с ним договор?\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Напоминаем, что поправки к закону «О применении контрольно-кассовой техники» уже вступили в силу. Меняется схема расчета бизнеса с покупателями и схема взаимодействия с ФНС. Предприниматели обязаны использовать кассовую технику с доступом в интернет. А заключение договора с оператором фискальных данных, список которых утвердила налоговая, — теперь одно из обязательных требований.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Задача организаций из списка ОФД — собирать данные о продажах, отправляемые ККТ нового образца, хранить их и передавать в ФНС по защищенному каналу.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Список ОФД с официальным разрешением ФНС на обработку фискальных данных"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В конце августа на сайте налоговой появился первый "
+                              ),
+                              _c("strong", [_vm._v("список ОФД")]),
+                              _vm._v(
+                                ", сертифицированных для работы в России. На сегодняшний день официальный статус оператора фискальных данных получили 20 компаний.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("table", [
+                              _c("tbody", [
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [_c("ae", [_vm._v(" ОФД Такском")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            ООО «Такском» разрабатывает системы электронного документооборота и обеспечивает обмен информацией по защищенным каналам связи с 2000 года. Собственный учебный центр и центр сертификации ключей ЭЦП. В числе тех, кто сотрудничает с «Такскомом» — Управление делами Президента РФ, МИД России, ФНС и Сбербанк. Один из крупнейших игроков на рынке, без этого оператора фискальных данных список представить сложно. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v(
+                                            " ООО «Эвотор ОФД», бренд «Платформа ОФД»"
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Эвотор ОФД — совместный проект Сбербанка и производителя кассового оборудования АТОЛ. Основной профиль деятельности компании — создание решений для автоматизации малого бизнеса. В планах компании сотрудничество с ЦТО и развитие партнерства с производителями ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v(
+                                            " ООО «Ярус», ОФД ЯРУС (ОФД-Я)"
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            ООО «Ярус» создает банковское оборудование и разрабатывает программное обеспечение с 2007 года. Принадлежащий компании спецоператор ОФД-Я уже получил разрешительную документацию для ведения деятельности в статусе ОФД. В начале сентября 2016 года ОФД-Я договорился о партнерстве с производителем контрольно-кассовой техники «ШТРИХ-М». Компании обещают клиентам комплексный подход при переходе на новый порядок применения ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v(
+                                            "  АО «ЭСК», бренд «Первый ОФД»"
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            У АО «Энергетические системы и коммуникации» большой опыт взаимодействия с налоговыми органами, а в 2014 году участие в предварительном эксперименте по применению онлайн-касс. Одно из главных направлений деятельности АО «ЭСК» — разработка технологий для передачи данных. Информация об этом операторе уже появилась в списке ОФД на сайте ФНС. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v("    ПЕТЕР-СЕРВИС, OFD.RU")
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            OFD.RU создан на базе дочерней компании ПЕТЕР-СЕРВИС, входящей в состав USM Holdings. ПЕТЕР-СЕРВИС уже более 20 лет создает программное обеспечение для рынка телекоммуникаций. На сайте указано, что OFD.RU оказывает услуги малому, среднему и крупному бизнесу по всей России. Разрешение на обработку фискальных данных получено 18.10.2016.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", { attrs: { colspan: "1" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { attrs: { colspan: "1" } },
+                                    [
+                                      _c("ae", [_vm._v("  Яндекс.ОФД ")]),
+                                      _vm._v(" "),
+                                      _c("p"),
+                                      _vm._v(
+                                        "\n                                        «Яндекс» владеет одноименной системой поиска, интернет-порталами и службами в нескольких странах, а теперь намерен работать с крупным и мелким бизнесом, используя собственные технологии. Яндекс.ОФД начнет оказание услуг оператора фискальных данных после проведения настроек, связанных с интеграцией систем и обеспечением безопасности данных. Разрешение на обработку фискальных данных получено 10.04.2017.\n                                        "
+                                      ),
+                                      _c("p")
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", { attrs: { colspan: "1" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { attrs: { colspan: "1" } },
+                                    [
+                                      _c("ae", [
+                                        _vm._v("  ООО «Электронный экспресс»")
+                                      ]),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                        Компания «Электронный экспресс» — разработчик первой в России массовой компьютерной правовой системы ГАРАНТ и комплекса информационно-правового обеспечения. ИПО ГАРАНТ с 1990 года используют сотни тысяч юристов, бухгалтеров, руководителей по всей стране. Услуги компании лицензированы ФСБ России, Минкомсвязи РФ, ФСТЭК. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                        "
+                                      ),
+                                      _c("p")
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", { attrs: { colspan: "1" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { attrs: { colspan: "1" } },
+                                    [
+                                      _c("ae", [
+                                        _vm._v(
+                                          " ЗАО «КАЛУГА АСТРАЛ», бренд «Астрал.ОФД»"
+                                        )
+                                      ]),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                        Компания создает программное обеспечение и разрабатывает системы электронного документооборота с 1993 года. Продукт имеет сертификаты соответствия Росстандарта России и заключение ФСБ России, подтверждающее обоснованность устройства системы криптографической защиты. Калуга Астрал — одна из участниц эксперимента по внедрению онлайн-касс в 2014 году. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                    "
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", { attrs: { colspan: "1" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { attrs: { colspan: "1" } },
+                                    [
+                                      _c("ae", [
+                                        _vm._v(
+                                          " ООО «Компания «Тензор», сервис ОФД в сети СБИС"
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                        Компания «Тензор» на рынке программного обеспечения с 1996 года. Аккредитованный ФНС, ПФ и Росстатом оператор электронного документооборота, сертифицированный EDI-провайдер. «Тензор» разрабатывает сеть деловых коммуникаций СБИС и выпускает ключи электронной подписи. В СБИС работает 1 000 000 пользователей, ежедневно подключается около 1 000 новых организаций. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                    "
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", { attrs: { colspan: "1" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { attrs: { colspan: "1" } },
+                                    [
+                                      _c("ae", [
+                                        _vm._v(
+                                          " ООО «КОРУС Консалтинг СНГ», бренд «КОРУС ОФД»"
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                        «КОРУС Консалтинг СНГ» входит в группу компаний ПАО Сбербанк и с 2005 года предоставляет услуги электронного обмена данными между участниками торговых сделок в ритейле, логистике, фарминдустрии, промышленности, ЖКХ, телекоммуникациях, финансах. Общий трафик электронного документооборота превышает 10 млн документов ежемесячно. Услуги компании лицензированы ФСБ России, ФСТЭК и другими организациями, их качество подтверждено сертификатом Комитета по технологическому обеспечению ECR-Rus российских EDI-провайдеров. Разрешение на обработку фискальных данных получено 12.05.2017."
+                                      ),
+                                      _c("br")
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", { attrs: { colspan: "1" } }, [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v("  СКБ Контур, Контур ОФД")
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            СКБ Контур разрабатывает и внедряет программы для бухучета, электронной отчетности и документооборота, предоставляет сервисы для обеспечения информационной безопасности. Разрешение на обработку фискальных данных получено 29.06.2017.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", { attrs: { colspan: "1" } }, [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v(" АО «Тандер», ОФД «Магнит»")
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Акционерное общество «Тандер» – операционная компания «Магнита» – получило разрешение на обработку фискальных данных 11.07.2017. В магазинах розничной сети «Магнит» работает около 50 тысяч онлайн-касс, в 2016 году было выдано больше 3,8 млрд чеков. «Магнит» первым из ритейлеров в России будет использовать в работе услуги собственного ОФД. Сервисом оператора смогут пользоваться и другие организации. Сейчас клиентам доступен личный кабинет ОФД, отдельный сайт находится в разработке.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [_c("ae", [_vm._v("   ОФД Инитпро")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Пермский удостоверяющий центр «ИнитПро» получил разрешение на обработку фискальных данных 12.09.2017. Клиентам доступны сайт и личный кабинет.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v("  ООО «ГРУППА ЭЛЕМЕНТ»")
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            ООО «ГРУППА ЭЛЕМЕНТ» — компания с частным российским капиталом. Ядро группы — предприятие «Микротех», системный интегратор и производитель контрольно-кассовой техники с 1990 года. Разрешение на обработку фискальных данных получено в соответствии с Приказом ФНС России от 12.09.2017 № ЕД-7-20/721@.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [_c("ae", [_vm._v(" АО «Энвижн Груп»")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Акционерное общество «Энвижн групп» — системный интегратор с 2001 года, принадлежит ПАО «МТС», имеет филиалы во всех федеральных округах РФ. Разрешение на обработку фискальных данных получено 06.12.2017.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v(" ПАО «Вымпел-Коммуникации»")
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Публичное акционерное общество «Вымпел-Коммуникации», предоставляющее услуги под брендом «Билайн», получило разрешение на обработку фискальных данных 26.12.2017. На сайте компании клиентам доступен личный кабинет, а также сервис по проверке чеков.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [_vm._v(" ООО «МультиКарта»")])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Общество с ограниченной ответственностью «МультиКарта» является дочерним предприятием ПАО «Почта Банк». Компания с 1994 года работает на рынке высокотехнологичных услуг для банковской отрасли. Разрешение на обработку фискальных данных получено 12.02.2018.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [_c("ae", [_vm._v(" ООО «Дримкас»")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Общество с ограниченной ответственностью «Дримкас» занимается автоматизацией розничной торговли. Компания работает на рынке с 2016 года, она появилась после реорганизации другого крупного предприятия — «Кристалл Сервис». Разрешение на обработку фискальных данных получено 05.04.2018.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [_vm._v("  ООО «Контур НТТ»")])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            Общество с ограниченной ответственностью «Контур НТТ» является дочерней компанией АО «ПФ «СКБ Контур». Контур.ОФД совместим с любыми моделями кассовой техники, фискальных накопителей и кассового программного обеспечения. Разрешение на обработку фискальных данных получено 11.07.2018.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "p",
+                                      [
+                                        _c("ae", [
+                                          _vm._v(
+                                            " ООО «Оператор фискальных данных «Онлайн»"
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(
+                                        "\n                                            ОФД Онлайн предлагает комплексное решение по реализации работы ККТ в рамках 54-ФЗ. Разрешение на обработку фискальных данных получено 26.12.2018.\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Договор на оказание услуг по передаче фискальной информации вы можете заключать с каким-то из этих ОФД уже сейчас. С 1 февраля 2017 это стало обязательным при регистрации кассовой техники. Примерная стоимость услуг по передаче фискальных данных — около 3000 рублей в год за одну подключенную кассу или фискальный регистратор.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Будет ли пополняться перечень операторов фискальных данных?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В 2019 году число ОФД, к которым можно подключить кассовую технику, будет расти. "
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-size": "1rem" } },
+                                [
+                                  _vm._v(
+                                    "Пополнит ли кто-то еще из операторов фискальных данных список, который мы составили? Полагаем, что главные игроки рынка в нем перечислены. Но все же при выборе обязательно сверяйтесь с официальной информацией на сайте ФНС."
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Вы выбрали ОФД, что нужно сделать для подключения?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Обязательно нужна квалифицированная электронная подпись (КЭП). Если у вас ее нет, то для получения обратитесь в удостоверяющий центр, аккредитованный в Минкомсвязи. Подсказка: все или почти все ОФД с радостью продадут вам и необходимую электронную подпись.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Свяжитесь с оператором фискальных данных, с которым вы решили сотрудничать, и заключите с ним договор.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Обеспечьте доступ в интернет на точке продаж.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Пройдите регистрацию кассового аппарата с встроенным фискальным накопителем на сайте ФНС, получите регистрационный номер.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                И спокойно работайте по новым требованиям.\n                            "
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
                     ])
-                  ])
-                : _vm._e()
-            ])
-          ],
-          1
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.productsRec, function(product) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-              },
-              [
-                _c("div", { staticClass: "product-item" }, [
-                  _c("div", { staticClass: "img-product" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: {
-                        src: product.img,
-                        width: "255",
-                        height: "322",
-                        alt: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-hover" }, [
-                    _c("div", { staticClass: "product-meta" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "add_cart",
-                          on: {
-                            click: function($event) {
-                              _vm.addCart(product.id)
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
                             }
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "pe-7s-cart" }),
-                          _vm._v("Добавить в корзину")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("h3", [_vm._v(_vm._s(product.name))]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
                     ])
                   ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(5)
-  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "preloader" } }, [
-      _c("div", { staticClass: "preloader-area" }, [
-        _c("div", { staticClass: "preloader-box" }, [
-          _c("div", { staticClass: "preloader" })
+    return _c("section", { staticClass: "search-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row subscribe-from" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "form",
+              { staticClass: "form-inline col-md-12 wow fadeInDown animated" },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control subscribe",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      placeholder: "Search..."
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "suscribe-btn" }, [
+                    _c("i", { staticClass: "pe-7s-search" })
+                  ])
+                ])
+              ]
+            )
+          ])
         ])
       ])
     ])
@@ -50315,35 +51515,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "navbar-toggle collapsed",
-          attrs: {
-            type: "button",
-            "data-toggle": "collapse",
-            "data-target": "#bs-example-navbar-collapse-1",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon-bar" })
-        ]
-      ),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Компания")])
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _c("b", [_vm._v("Терминал")])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+        ])
       ])
     ])
   },
@@ -50351,22 +51527,3072 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav navbar-nav" }, [
-      _c("li", { staticClass: "active" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
+    return _c("section", { staticClass: "contact-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+            _c("div", { staticClass: "left-content" }, [
+              _c("h1", [
+                _c("b", [_vm._v("К")]),
+                _vm._v("омпаниия "),
+                _c("b", [_vm._v("Т")]),
+                _vm._v("ерминал")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "contact-info" }, [
+                _c("p", [_vm._v("Адрес: ")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Почта: info@terminal.com")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "social-media" }, [
+                _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "fa fa-instagram" })
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Имя" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Почта"
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Тема" }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-2" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "textarea-form-footer" }, [
+                        _c("textarea", {
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "",
+                            id: "",
+                            cols: "30",
+                            rows: "5",
+                            placeholder: "Сообщение..."
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "contact-submit",
+                        attrs: { type: "submit", value: "Отправить" }
+                      })
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v("Как снять с учета онлайн-кассу")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_3774" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Есть несколько вариантов снятия ККТ с учета: при обращении в налоговую или через личный кабинет на сайте ФНС. Но налоговики могут сделать это и принудительно. Разберем подробнее, "
+                              ),
+                              _c("strong", [
+                                _vm._v("как снять с учета онлайн-кассу")
+                              ]),
+                              _vm._v(".\n                            ")
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Владелец может сделать это по своей инициативе, если:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v("передает ККТ другому пользователю,")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("технику украли или потеряли, ")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("устройство сломалось. ")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нужно подать в налоговую инспекцию заявление о снятии ККТ с учета (форма по КНД 1110062) не позднее одного рабочего дня после передачи или обнаружения кражи. Отнесите документ лично или отправьте по интернету. Ниже на странице — шаблон заявления и инструкция, как снять онлайн-кассу с учета через личный кабинет на сайте ФНС.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v("Заявление на снятие с учета онлайн-кассы")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В заявлении укажите:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "название компании или ФИО предпринимателя,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("ИНН,")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("модель и заводской номер ККТ,")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "подробные сведения о краже или потере (если они есть)."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                ФНС внесла изменения в форму бланка (приказ от 07.09.2018 № ММВ-7-20/527@). У нас вы можете скачать новый образец бланка заявления о снятии ККТ с учета.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                Если заявление на снятие с учета онлайн-кассы подает представитель, укажите реквизиты доверенности.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При передаче ККТ другому пользователю к заявлению надо приложить отчет о закрытии фискального накопителя. Его можно сделать через меню онлайн-кассы.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если ККТ сломалась или ее украли — отчет не нужен. В этом случае лучше снять с учета онлайн-кассу как можно скорее. Сделайте это через интернет: это самый простой и быстрый способ. Дополнительных документов при поломке или краже не понадобится. Как снять кассу с учета через личный кабинет — ниже на странице.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если техника работала без передачи данных в ОФД (например, в отдаленных регионах), надо приложить все фискальные данные, записанные в накопитель.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Рекомендуем снимать онлайн-кассы с учета через личный кабинет — это просто и удобно. Для этого вам потребуется электронная цифровая подпись. Несколько действий — и все готово. Далее пошагово разберем снятие онлайн-кассы с учета через личный кабинет.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Как снять кассу с учета через личный кабинет"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для начала войдите в личный кабинет на сайте налоговой и откройте раздел «Учет ККТ».\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                staticStyle: { border: "1px solid #121212" },
+                                attrs: {
+                                  width: "450",
+                                  src: "/upload/docs/snyatie KKT-1.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Далее выберите кассу, которую нужно закрыть, и нажмите кнопку «Снять с регистрации».\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                staticStyle: { border: "1px solid #121212" },
+                                attrs: {
+                                  width: "500",
+                                  src: "/upload/docs/snyatie KKT-2.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Откроется заявление о снятии ККТ с учета в налоговой инспекции. Заполните дату и время закрытия ФН, номер фискального документа и фискальный признак. После этого нажмите кнопку «Подписать и отправить» — заявление будет заверено цифровой подписью.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                staticStyle: { border: "1px solid #121212" },
+                                attrs: {
+                                  width: "500",
+                                  src: "/upload/docs/snyatie KKT-3.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                После этих действий вы увидите, что запрос на снятие с учета онлайн-кассы добавлен.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                staticStyle: { border: "1px solid #121212" },
+                                attrs: {
+                                  width: "500",
+                                  src: "/upload/docs/snyatie%20KKT-4.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v("Как узнать, снята ККМ с учета или нет")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                После выполнения всех действий на сайте появится оповещение.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("img", {
+                                staticStyle: { border: "1px solid #121212" },
+                                attrs: {
+                                  width: "300",
+                                  src: "/upload/docs/snyatie%20KKT-55.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Кроме того, налоговая в течение 5 дней после получения заявления на снятие с учета онлайн-кассы пришлет через личный кабинет подтверждающую карточку. Можно также прийти в ИФНС и забрать бумажный вариант документа.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Налоговая может снять ККТ с учета и принудительно. Разберемся, что делать в этом случае.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "likeh2" }, [
+                              _vm._v("Кассу с учета сняла ФНС: что делать")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если снятие ККТ с регистрационного учета произошло по инициативе налоговой — подавать заявление не нужно. ФНС может сделать это, если:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "есть нарушения в использовании — повторно зарегистрировать кассу можно будет после их устранения; "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "истек срок эксплуатации фискального накопителя — надо в течение 30 дней передать налоговикам записанные на ФН платежные данные."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                Компаниям на ОСНО надо менять ФН раз в 13 месяцев, а на спецрежимах (ЕНВД, УСН, ПСН) — раз в 36.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/rent" } }, [_vm._v("Аренда")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "search-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row subscribe-from" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "form",
+              { staticClass: "form-inline col-md-12 wow fadeInDown animated" },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control subscribe",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      placeholder: "Search..."
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "suscribe-btn" }, [
+                    _c("i", { staticClass: "pe-7s-search" })
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
     ])
   },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "contact-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+            _c("div", { staticClass: "left-content" }, [
+              _c("h1", [
+                _c("b", [_vm._v("К")]),
+                _vm._v("омпаниия "),
+                _c("b", [_vm._v("Т")]),
+                _vm._v("ерминал")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "contact-info" }, [
+                _c("p", [_vm._v("Адрес: ")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Почта: info@terminal.com")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "social-media" }, [
+                _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "fa fa-instagram" })
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Имя" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Почта"
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Тема" }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-2" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "textarea-form-footer" }, [
+                        _c("textarea", {
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "",
+                            id: "",
+                            cols: "30",
+                            rows: "5",
+                            placeholder: "Сообщение..."
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "contact-submit",
+                        attrs: { type: "submit", value: "Отправить" }
+                      })
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v("Кому нужно ставить кассовый аппарат")
+                          ]),
+                          _c("br")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_1476" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                По закону 54-ФЗ «О применении контрольно-кассовой техники» торговля в стране поэтапно переходит на онлайн-ККТ — сегодня зарегистрировано более 2,3 млн новых касс. Чтобы разобраться, "
+                              ),
+                              _c("strong", [
+                                _vm._v("кому нужно ставить кассовый аппарат")
+                              ]),
+                              _vm._v(
+                                " в этом году, читайте нашу статью.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Все, что связано с использованием ККТ, регулирует 54-ФЗ. Этот закон отвечает и на вопросы, кто и когда должен ставить кассу, обязан ли ИП иметь кассовый аппарат, кто вообще освобожден от установки новой техники. Разберем для начала, зависит ли применение ККТ от формы собственности бизнеса.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Нужно ли ставить кассовый аппарат для ИП в 2019 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Нужен ли кассовый аппарат для ИП — раньше решали сами предприниматели: они могли выбирать, чем подтверждать покупку. Можно было использовать не только кассовые чеки, но и другие документы — например, товарный чек. После принятия поправок в 54-ФЗ порядок изменился.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Так обязательно ли ИП иметь кассовый аппарат сегодня? Для некоторых предпринимателей, например, тех, кто занят в рознице и общепите и имеет наемных сотрудников, эта обязанность наступила уже в июле 2018.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                А к июлю 2019 года поставить кассы обязаны уже все — и ИП, и организации. Важно, что техника должна быть нового образца — с подключением к интернету для онлайн-передачи данных в налоговую.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v("Нужен ли кассовый аппарат для ООО?")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Применение ККТ не зависит от формы собственности организации, то есть ООО тоже должны использовать новые кассы. При этом срок перехода на новый порядок определяется налоговым режимом. Далее мы подробно разберем, кому и когда надо ставить кассу в зависимости от формы налогообложения.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v("Нужен ли кассовый аппарат при ЕНВД?")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Раньше отдельным категориям предпринимателей на вмененке можно было не использовать ККТ, но поправки в закон обязали их установить новую технику. Теперь при ЕНВД кассовые аппараты обязательны для всех. Различается только срок установки: кто-то должен был поставить кассу уже в этом году, а кому-то дали еще год отсрочки. Подробнее об этом — ниже.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Кассовый аппарат для ИП на ЕНВД: нужен ли, когда ставить, штрафы за отсутствие"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                К июлю 2019 года должны поставить ККТ те, кто оказывает услуги населению. Для ИП, работающих в рознице, общепите или торгующих подакцизными товарами, все зависит от того, есть ли наемные сотрудники. Если их нет — с установкой кассы можно немного подождать (хотя мы не рекомендуем тянуть до самого дедлайна в июле 2019), если есть — установить ККТ надо было еще в прошлом году.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При установке кассы надо не забыть про оснащение рабочего места продавца. Но клиентам МоегоСклада можно об этом не думать — мы предлагаем уже готовое АРМ кассира. Это альтернатива дорогим POS-системам, которая позволит потратить на автоматизацию рабочего места продавца вполовину меньше. С удобным АРМ кассира МойСклад можно вести складской учет, регистрировать продажи, пробивать чеки. Просто запустите программу на компьютере или ноутбуке, а затем подключите к нему фискальный регистратор и сканер.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если предприниматель проигнорирует закон, его оштрафуют — до 50% выручки, прошедшей «мимо кассы» (не меньше 10 000 рублей). За повторное нарушение, если сумма расчетов в совокупности будет 1 млн рублей и более, с 1 июля 2018 года грозит штраф от 800 000 до 1 млн рублей или приостановление деятельности на срок до 90 суток.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Касса для ООО на ЕНВД: когда устанавливать, какие грозят штрафы"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Организации на вмененке тоже должны поставить ККТ. Те, кто занят в рознице, общепите или продаже подакцизных товаров — уже должны были обзавестись кассой к 1 июля прошлого года, остальные — обязаны успеть до 1 июля 2019.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                За несоблюдение закона организациям грозит штраф до 100% выручки, полученной без применения ККТ, но не менее 30 000 рублей. С июля этого года, если компанию поймают повторно, а сумма расчетов составит более 1 млн рублей, налоговики смогут взыскать от 800 000 до 1 млн рублей.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Нужен ли кассовый аппарат при патенте в 2019 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Раньше организациям и ИП, применяющим патентную систему налогообложения, разрешалось выдавать покупателям документы, заменяющие кассовые чеки. Но с июля 2018 они должны перейти на новую ККТ. До лета 2019 года подождать с установкой кассы могут те, кто работает в рознице и общепите и не имеет наемных сотрудников.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v("Нужен ли кассовый аппарат при УСН?")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Однозначно — да. Если вы выбираете упрощенную систему налогообложения, то должны использовать ККТ. При этом, если юрлицо (ИП или ООО) на УСН оказывает услуги населению, кассовый аппарат не нужен до 1 июля 2019 года — при условии, что выдаются бланки строгой отчетности. Для тех, кто занят в общепите, отсрочка зависит от наличия наемных сотрудников. Если их нет — кассу надо установить к 1 июля 2019 года, если есть — она должна была появиться к июлю 2018.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Затягивать с покупкой не стоит — в прошлом году на новый порядок перешли около 1 млн предпринимателей! В этом году возможен дефицит фискальных накопителей — а значит, цены взлетят, причем на фоне ажиотажа и задержек в поставках: как показал прошлый опыт, большинство бизнесменов тянут буквально до последних недель. Чтобы сэкономить время, деньги и нервы, подумайте о приобретении новой ККТ заранее — сейчас действуют выгодные акции, а вся техника в наличии.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Нужен ли кассовый аппарат для интернет-магазина?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Онлайн-торговля как вид деятельности не попадает в список освобожденных от использования ККТ. А это значит, что кассовый аппарат для интернет-магазина нужен.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Рекомендуем заранее просчитать все затраты. Возможно, одной кассы будет недостаточно. Если платеж был проведен онлайн, нужна ККТ, зарегистрированная по url интернет-магазина. Когда оплату принимает курьер, ему требуется специальная "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href: "/reshenija/kassa-na-android/",
+                                    target: "_blank"
+                                  }
+                                },
+                                [_vm._v(" мобильная касса")]
+                              ),
+                              _vm._v(
+                                ". Если же у интернет-магазина есть пункт самовывоза, где можно оплатить покупку, там должна быть еще одна ККМ. Ее надо регистрировать по физическому адресу этой точки.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Нужен ли кассовый аппарат при эквайринге?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Зависит от того, чем занимается компания. Если это розничный магазин, то ответ однозначный — да. При этом квитанции терминала по приему платежных карт (или, как его называют, слипа) недостаточно. Нужен полноценный кассовый аппарат, который может напечатать наименования купленных товаров с ценами, скидками и стоимостью по каждой позиции.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если вы оказываете услуги населению, то кассу нужно применять с 1 июля 2019 года. При этом до этой даты каждому клиенту надо выдавать бланки строгой отчетности.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Кому не нужно ставить кассовые аппараты в 2018 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { attrs: { id: "bezcheka" } }, [
+                              _vm._v(
+                                "\n                                Некоторые виды деятельности закон вообще освобождает от выдачи покупателям каких-либо документов. ИП и организации на любой системе налогообложения могут не использовать кассовый аппарат при торговле:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "бахчевыми, овощами и фруктами вразвал, а также живой рыбой;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "мороженым и прохладительными напитками в киосках и лотках;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых павильонах или магазинах);"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "молоком, маслом или керосином в розлив;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "газетами и журналами на бумажном носителе;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "изделиями художественных народных промыслов."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Среди предпринимателей, кому можно не ставить кассовый аппарат в 2018 году, есть те, кто оказывает услуги:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v("по вспашке огородов и распилу дров;")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("по ремонту и покраске обуви;")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "по изготовлению ключей и мелкому ремонту ювелирных изделий и очков;"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("нянь и сиделок;")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("носильщиков на вокзалах.")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Кроме того, освобождены от использования ККТ аптечные и фельдшерские пункты в селах, а также точки по приему утильсырья и стекла, библиотеки.\n                            "
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "search-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row subscribe-from" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "form",
+              { staticClass: "form-inline col-md-12 wow fadeInDown animated" },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control subscribe",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      placeholder: "Search..."
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "suscribe-btn" }, [
+                    _c("i", { staticClass: "pe-7s-search" })
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "contact-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+            _c("div", { staticClass: "left-content" }, [
+              _c("h1", [
+                _c("b", [_vm._v("К")]),
+                _vm._v("омпаниия "),
+                _c("b", [_vm._v("Т")]),
+                _vm._v("ерминал")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "contact-info" }, [
+                _c("p", [_vm._v("Адрес: ")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Почта: info@terminal.com")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "social-media" }, [
+                _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "fa fa-instagram" })
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Имя" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Почта"
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Тема" }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-2" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "textarea-form-footer" }, [
+                        _c("textarea", {
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "",
+                            id: "",
+                            cols: "30",
+                            rows: "5",
+                            placeholder: "Сообщение..."
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "contact-submit",
+                        attrs: { type: "submit", value: "Отправить" }
+                      })
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v("Налоговый вычет за онлайн-кассу")
+                          ]),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("h3", [_vm._v("11 Января 2019")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_3563" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                С 1 января 2018 года некоторые предприниматели имеют право на "
+                              ),
+                              _c("strong", [
+                                _vm._v("налоговый вычет за онлайн-кассу")
+                              ]),
+                              _vm._v(
+                                ": вступил в силу закон от 27.11.2017 № 349-ФЗ «О внесении изменений в часть вторую Налогового кодекса Российской Федерации». Расскажем, как его получить.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вычесть расходы на онлайн-ККТ из суммы налога разрешено индивидуальным предпринимателям, которые применяют патентную систему налогообложения или платят единый налог на вмененный доход.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вернуть таким образом получится до 18 000 рублей на каждую кассу. В эту сумму может входить не только стоимость самой ККТ: можно учесть расходы на покупку фискального накопителя, необходимых программ, услуг по настройке и прочие затраты на приведение техники в рабочий режим.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n\n                                Максимальный налоговый вычет на приобретение онлайн-кассы — 18 000 рублей на каждую единицу. Если покупка и настройка ККТ обошлись дороже, зачесть все равно можно только эту сумму.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Налоговый вычет на покупку ККТ: обязательные требования"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Льгота распространяется не на все кассы: есть условия, которые обязательно нужно соблюдать.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Во-первых, налоговый вычет предоставляется только на ККТ, включенные в официальный реестр ФНС. "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Во-вторых, кассу обязательно нужно поставить на учет, иначе вернуть потраченные на нее деньги не получится. "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n\n                                Важно зарегистрировать ККТ как можно скорее — желательно сразу после покупки. Налоговый вычет по онлайн-кассам не распространяется на период, который был до регистрации.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Возместят ли вам расходы — зависит от вашей деятельности и даты постановки ККТ на учет:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "ИП на ПСН или ЕНВД в сфере розничной торговли или общественного питания, имеющие сотрудников на трудовых договорах, могут получить вычет, если зарегистрировали кассу с 1 февраля 2017 до 1 июля 2018 года. Таким образом, они могут получить налоговый вычет при покупке онлайн-ККТ только в 2018."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Остальные ИП на ЕНВД и ПСН могут получить вычет, если зарегистрировали кассу с 1 февраля 2017 до 1 июля 2019 года. "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Таким образом, в 2019 вы сможете претендовать на возмещение расходов, только если у вас нет наемных сотрудников. Если по трудовому договору в вашем кафе занят хотя бы один человек, вернуть расходы на кассу уже не получится.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n\n                                Если вы совмещаете ЕНВД и ПСН, то сможете получить налоговый вычет за онлайн-кассу только по одному режиму.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Вычет по ЕНВД при покупке онлайн-кассы")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При покупке онлайн-кассы на ЕНВД налоговый вычет нельзя получить за период, который предшествовал регистрации ККТ. Сумма налога уменьшается при исчислении за налоговые периоды 2018 и 2019 годов, но не раньше периода, в котором был зарегистрирован аппарат. Если сумма ЕНВД меньше вычета за онлайн-кассу, то можно перенести остаток на следующие периоды до конца 2019 года.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v("Налоговый вычет на ККТ для ПСН")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для ИП на ПСН сумма налога уменьшается за периоды, которые начинаются в 2018 году и завершаются после регистрации ККТ. Если затраты превышают лимит, остаток учитывается при начислении налогов за следующие периоды. А если сумма налога оказалась меньше затрат, можно уменьшить патент с других видов деятельности, если для них используется касса.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Как получить налоговый вычет при покупке онлайн-кассы"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Чтобы оформить вычет, индивидуальные предприниматели на ЕНВД должны подать налоговую декларацию и отразить в ней расходы на ККТ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Предпринимателям на ПСН нужно предоставить в налоговую уведомление об уменьшении суммы платежа по патенту. Пока официальный шаблон этого документа не утвержден, и заполнять его можно в свободной форме.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Скачать шаблон уведомления на налоговый вычет за онлайн-кассу для ИП на патенте"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В уведомлении обязательно указать:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ol", [
+                              _c("li", [
+                                _vm._v("ФИО и ИНН налогоплательщика.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Номер и дату патента, в отношении которого производится уменьшение суммы налога, сроки уплаты уменьшаемых платежей, суммы уменьшения."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Модель и заводской номер купленной кассы."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумму расходов на покупку.")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если вы уже заплатили сумму, из которой хотите получить вычет, то необходимо подать в налоговую заявление о возврате излишне уплаченного налога.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                К декларации или уведомлению необходимо приложить документ, подтверждающий затраты на покупку ККТ, фискального накопителя, программного обеспечения, выполнение работ по их настройке и оказание соответствующих услуг, в том числе — на модернизацию старой кассы.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Документы подаются в тот налоговый орган, где предприниматель состоит на учете как налогоплательщик и куда он уплатил или собирается уплатить налог, из которого хочет получить вычет.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Налоговый вычет на ККТ: часто задаваемые вопросы"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Возможен ли налоговый вычет за онлайн-кассу для ИП на УСН?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Только в случае, когда ИП совмещает УСН и ЕНВД / ПСН. Тогда можно зачесть расходы на те кассы, которые используются на вмененке или патенте. Компаниям и предпринимателям на упрощенке кассовый вычет не предоставляют.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Можно ли получить вычет за онлайн-кассу, купленную в 2017 году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Да, но только если вы поставили ее на учет в ФНС после 1 февраля. Если вы регистрировали онлайн-кассу в январе 2017 года, вернуть расходы на ее покупку нельзя.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Как получить налоговый вычет за онлайн-кассы в полном размере?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Полный размер вычета, установленный законом, — 18 000 рублей на каждую кассу. Вернуть деньги сверх этой суммы не получится, даже если ККТ обошлась дороже.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h3", [
+                              _vm._v(
+                                "Как получить налоговый вычет за онлайн-кассу ИП на ПСН?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если вы применяете патентную систему налогообложения (патент), вычет за онлайн-кассу оформляется с помощью уведомления об уменьшении суммы налога.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Если налог уже заплачен — подайте в ФНС заявление на возврат излишне уплаченной суммы.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Документы предоставьте в налоговую инспекцию, где состоите на учете и куда будете платить налог. Можно отправить их в ФНС и по интернету, заверив усиленной квалифицированной электронной подписью.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "search-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row subscribe-from" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "form",
+              { staticClass: "form-inline col-md-12 wow fadeInDown animated" },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control subscribe",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      placeholder: "Search..."
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "suscribe-btn" }, [
+                    _c("i", { staticClass: "pe-7s-search" })
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "contact-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+            _c("div", { staticClass: "left-content" }, [
+              _c("h1", [
+                _c("b", [_vm._v("К")]),
+                _vm._v("омпаниия "),
+                _c("b", [_vm._v("Т")]),
+                _vm._v("ерминал")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "contact-info" }, [
+                _c("p", [_vm._v("Адрес: ")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Почта: info@terminal.com")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "social-media" }, [
+                _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "fa fa-instagram" })
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Имя" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Почта"
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Тема" }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-2" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "textarea-form-footer" }, [
+                        _c("textarea", {
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "",
+                            id: "",
+                            cols: "30",
+                            rows: "5",
+                            placeholder: "Сообщение..."
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "contact-submit",
+                        attrs: { type: "submit", value: "Отправить" }
+                      })
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595&":
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595& ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v(
+                              "Обязательные реквизиты кассового чека и БСО в 2019 году"
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_1349" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Недавно принятые поправки в правила применения контрольно-кассовой техники влекут за собой и дополнительные требования к кассовым чекам и бланкам строгой отчетности. Данные ОФД, к которому подключена онлайн-касса, включены в "
+                              ),
+                              _c("strong", [
+                                _vm._v(
+                                  "обязательные реквизиты БСО и кассового чека в 2019 году"
+                                )
+                              ]),
+                              _vm._v(
+                                ". В документах теперь надо указывать разные параметры. В чеках нужно пробивать наименования товаров, для этого необходима кассовая программа, которая это умеет. Наше бесплатнное приложение Касса МойСклад поддерживает это и все остальные требования 54-ФЗ. Скачайте и попробуйте его прямо сейчас.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Для новых реквизитов в чеках онлайн-касс и бланков строгой отчетности нет унифицированных форм, но в них должны содержаться определенные данные. Это данные, которые добавились с вступлением закона 54-ФЗ в силу. Вот новые реквизиты в чеках онлайн-касс:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Применяемая организацией система налогообложения."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Признак расчета: продажа/возврат.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Заводской номер фискального накопителя."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Порядковый номер фискальных данных.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Фискальный признак данных.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Список приобретенных товаров со стоимостью, ценой и примененными скидками."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("НДС для каждой позиции.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Заводской номер фискального накопителя."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Номер фискального документа.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Код фискальной передачи данных.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумма НДС и ставка налога.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Название ОФД.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Адрес сайта ОФД.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "QR-код, служащий дополнительной проверкой подлинности чека."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При этом в законе в списке обязательных реквизитов чека онлайн-кассы QR-код не значится, однако в разделе требований к контрольно-кассовой технике указано, что кассовый аппарат должен «обеспечивать возможность печати на кассовом чеке (бланке строгой отчетности) двухмерного штрихового кода (QR-код размером не менее 20Х20 мм), содержащего в кодированном виде реквизиты проверки кассового чека или бланка строгой отчетности в отдельной выделенной области кассового чека или бланка строгой отчетности». Таким образом QR-кода на новых чеках онлайн-касс вполне может и не быть, но онлайн-кассы должны уметь его печатать.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Что должно быть зашифровано в QR-коде на кассовом чеке по новым правилам? Закон говорит, что там должны содержаться сведения о покупке (дата и время платежа, порядковый номер фискального документа, признак расчета, сумма расчета, заводской номер фискального накопителя, фискальный признак документа).\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Обязательные реквизиты кассового чека в 2019 году "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Вот список реквизитов чека — 54-ФЗ строго предписывает их печатать на каждом документе, подтверждающем продажу:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v("признак расчета (приход или расход),")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "дата, время и место осуществления расчета,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "информация о налоговой системе продавца,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "заводской номер фискального накопителя,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("номенклатура товаров (услуг),")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "сумма расчета с отдельным указанием ставки и размера НДС,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "форма расчета (наличные или электронный платеж),"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("заводской номер ФН,")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("регистрационный номер ККТ,")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("адрес сайта ОФД,.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("фискальный признак документа,")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "порядковый номер фискального документа,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("номер смены,")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("фискальный признак сообщения,")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "если покупатель захотел получить чек на e-mail или смс, то должен быть указан его адрес электронной почты или номер телефона, а также в этом случае должен значиться электронный адрес почты отправителя чека."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  "https://www.moysklad.ru/upload/medialibrary/aca/Чек_наш.jpg",
+                                Бланки: "",
+                                строгой: "",
+                                отчетности: "",
+                                должны: "",
+                                быть: "",
+                                изготовлены: "",
+                                типографским: "",
+                                способом: "",
+                                или: "",
+                                сформированы: "",
+                                с: "",
+                                использованием: "",
+                                автоматизированных: "",
+                                "систем.": "",
+                                Если: "null",
+                                вы: "",
+                                печатаете: "",
+                                БСО: "null",
+                                в: "",
+                                то: "",
+                                такие: "",
+                                бланки: "",
+                                содержать: "",
+                                сведения: "",
+                                об: "",
+                                "изготовителе:": "",
+                                сокращенное: "",
+                                номер: "",
+                                заказа: "",
+                                и: "",
+                                год: "",
+                                его: "",
+                                "тираж.": "",
+                                p: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                В этом чеке отмечены следующие реквизиты:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ol", [
+                              _c("li", [
+                                _vm._v("«Торговый объект» - название магазина.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("«Кассовый чек» - название документа.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Приход – признак расчета.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("«Морковь» - номенклатура товара.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Количество товара.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Цена за единицу товара.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Стоимость товара.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("% НДС.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумма НДС.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Итоговая сумма расчета.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Форма расчета – наличными с суммой.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Форма расчета – картой, тоже с суммой.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Информация о налоговой системе продавца."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Отдельно общая сумма НДС.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("ФИО кассира и его должность.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Номер смены.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "ИНН торгового предприятия, выдавшего чек."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("ЗН – заводской номер кассовой машины.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Наименование организации, выдавшей чек."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Адрес расчета.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Адрес сайта, где можно проверить чек.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Порядковый номер чека.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Дата и время выдачи чека. ")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Регистрационный номер ККТ.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Заводской номер фискального накопителя."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Номер фискального чека.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Фискальный признак данных.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("QR-код для проверки чека.")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Все эти данные – обязательные реквизиты чека онлайн-кассы. Если на чеке отсутствует хотя бы один из них, то по закону чек считается не действительным, а предприниматель должен будет приложить все усилия, чтобы доказать проверяющему органу применение онлайн-кассы, иначе он будет оштрафован за несоблюдение нового закона. Более подробно про реквизиты чека, требуемые 54-ФЗ, можно прочитать в самом тексте закона. При этом контролировать соответствие реквизитов на чеках закону может даже сам покупатель, поэтому не только предпринимателям необходимо быть в курсе, какие реквизиты должны быть в кассовом чеке.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Важно! Индивидуальные предприниматели, использующие ПСН, УСН и ЕНВД, за исключением тех, кто торгует подакцизными товарами, могут не указывать на чеках наименование и количество купленных товаров или услуг. Такое послабление для малого бизнеса дано до 1 февраля 2021 года (ФЗ от 03.07.2016 N 290-ФЗ). После этой даты они должны работать, как все остальные предприятия. Читайте подробнее о сроках, когда надо будет начать указывать товары в чеке, а также об отсрочке онлайн-касс до 2019 года здесь\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("Обязательные реквизиты БСО")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Что касается обязательных реквизитов БСО, то в случае, если организация находится в труднодоступной области, последние три пункта из списка обязательных реквизитов чека онлайн-кассы могут не указываться. Кроме того, Правительство РФ предупреждает в законе, что оно может дополнить список еще одним обязательным реквизитом – кодом товарной номенклатуры – в случае, если он определен. В остальном, все реквизиты БСО ничем не отличаются от реквизитов чека онлайн-кассы.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                А именно:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ol", [
+                              _c("li", [_vm._v("Название документа.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Номер документа, состоящий из шести цифр."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Название и форма собственности организации, выдавшей чек."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Адрес фирмы.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("ИНН фирмы, выдавшей документ.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("Вид услуги, оказанной клиенту.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Стоимость услуги.")]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумма, вносимая клиентом.")]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Должность и ФИО сотрудника, принявшего оплату."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Другие характеристики услуги (не обязательно)."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Если у бланка документа нет отрывной части, то при его заполнении необходимо делать копию. Дублировать серию и номер бланка документа запрещено. Кроме того, БСО должен быть изготовлен либо с применением автоматизированной системы, либо отпечатан в типографии – в последнем варианте на нем должна быть указана информация об этой типографии (название, ИНН), значиться тираж печати, номер заказа и год его исполнения.\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Подробнее об оформлении БСО см. Положение об осуществлении наличных денежных расчетов и (или) расчетов с использованием платежных карт без применения ККТ Постановления Правительства РФ от 6 мая 2008 г. № 359.\n                                "
+                                )
+                              ])
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "search-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row subscribe-from" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "form",
+              { staticClass: "form-inline col-md-12 wow fadeInDown animated" },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control subscribe",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      placeholder: "Search..."
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "suscribe-btn" }, [
+                    _c("i", { staticClass: "pe-7s-search" })
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "contact-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+            _c("div", { staticClass: "left-content" }, [
+              _c("h1", [
+                _c("b", [_vm._v("К")]),
+                _vm._v("омпаниия "),
+                _c("b", [_vm._v("Т")]),
+                _vm._v("ерминал")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "contact-info" }, [
+                _c("p", [_vm._v("Адрес: ")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Почта: info@terminal.com")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "social-media" }, [
+                _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "fa fa-instagram" })
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Имя" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Почта"
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "name", placeholder: "Тема" }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-2" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "textarea-form-footer" }, [
+                        _c("textarea", {
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "",
+                            id: "",
+                            cols: "30",
+                            rows: "5",
+                            placeholder: "Сообщение..."
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("input", {
+                        staticClass: "contact-submit",
+                        attrs: { type: "submit", value: "Отправить" }
+                      })
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [_c("h1", [_vm._v("ФЗ-54")])]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h1", { staticClass: "h1-fz text-center" }, [
+                            _vm._v(
+                              "Онлайн-кассы для ИП на ЕНВД и ПСН: отсрочка до 2021 года не прошла"
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { attrs: { id: "bx_689919819_3591" } }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Госдума рассмотрела возможность отложить переход на "
+                              ),
+                              _c("strong", [
+                                _vm._v(
+                                  "онлайн-кассы: отсрочка до 2021 года для ИП на ЕНВД"
+                                )
+                              ]),
+                              _vm._v(
+                                " и других налогоплательщиков предлагалась сразу в нескольких законопроектах. В итоге некоторым разрешили вообще не использовать ККТ, а все остальные должны поставить кассы к 1 июля 2019 года.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Учтите, что покупкой ККТ и регистрацией ее в налоговой вы не ограничитесь. В чеках теперь надо пробивать наименования товаров — а значит, вам потребуется кассовая программа, которая это умеет.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Далее разберем, кому и когда надо ставить онлайн-кассу.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Еще одна поправка к закону об онлайн-кассах — изменение понятия расчетов:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Теперь к ним относится не только любое движение денег в наличной форме и по безналу, но и зачет предоплаты (например, продажа по подарочным картам). Из текста закона убрали понятие «электронное средство платежа», которое вызывало вопрос, нужна ли касса, если покупатель-физлицо перевел деньги на банковский счет продавца. "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Расчетом также признается получение за товар других предметов. Например, передача старой вещи в зачет стоимости новой (trade-in)."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Это значит, что теперь в законе перечислены все случаи, когда нужно использовать ККТ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", { attrs: { id: "envd-psn" } }, [
+                              _vm._v("Отмена онлайн-касс для ЕНВД и ПСН")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Хотя полная отмена онлайн-касс для ИП и юрлиц на специальных режимах налогообложения даже не обсуждалась, депутаты все же отложили до 1 июля 2019 года переход для:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v("ИП и организаций на вмененке, ")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Предпринимателей на патентной системе налогообложения, но не для всех."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Отсрочку получили ИП на патенте, которые:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "чинят одежду, обувь и ювелирные изделия, "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "занимаются репетиторством или уходом за больными,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "оказывают парикмахерские, косметические или клининговые услуги,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "содержат химчистку, прачечную или фотоателье, "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "изготавливают ключи и металлическую галантерею,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "ремонтируют бытовую технику, транспорт, компьютеры, радиоэлектронную аппаратуры, мебель, жилье,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "оказывают ветеринарные, ритуальные, автотранспортные, монтажные, сварочные и прочие производственные услуги,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v("сдают в аренду недвижимость, ")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "изготавливают изделия народных промыслов. "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Полный список перечислен в статье 346.43 НК.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Таким образом, речь идет об отсрочке онлайн-касс для ИП практически во всех сферах малого бизнеса. Цель — поддержать предпринимателей, дать им время подготовиться: и к работе по новому порядку, и к расходам на технику. К тому же поэтапное введение онлайн-касс позволяет избежать очередей на поставку и дефицита техники. В 2018 году более 1,5 млн предпринимателей поставили онлайн-кассы в срок и без задержек.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Переход упрощают не только отсрочки. Онлайн-кассы для ИП на ЕНВД и ПСН обойдутся гораздо дешевле, потому что на их покупку можно получить налоговый вычет — правда, не больше 18 000 рублей. Это разрешает закон № 349-ФЗ.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", { attrs: { id: "2019" } }, [
+                              _vm._v("Первая отсрочка онлайн-касс до 2018 года")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Первой отсрочкой онлайн-касс — до 2018 года — уже воспользовались те, кто торгует в розницу или оказывает услуги общественного питания с привлечением наемных работников:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v("Предприниматели на ЕНВД и на патенте.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("ООО на вмененке.")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Сейчас все эти предприниматели уже обязаны применять ККТ нового образца: с 1 июля 2018 года техника должна быть установлена.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v("Отсрочка онлайн-касс до 2019 года")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Сейчас идет второй этап отсрочки онлайн-касс — до 1 июля 2019 года. Согласно Федеральному закону от 27.11.2017 № 337-ФЗ это касается:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Организаций и предпринимателей на ЕНВД, кроме розницы и общепита."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "ИП на патенте с определенными видами деятельности. Полный список /li>\n                                "
+                                )
+                              ]),
+                              _c("li", [
+                                _vm._v(
+                                  "Предпринимателей на ЕНВД и ПСН с розницей или общепитом — при условии, что у них нет наемных работников. Как только такой ИП наймет сотрудника, на него перестанет распространяться отсрочка применения онлайн-касс. Это касается даже тех, кто нанял всего одного работника: при заключении первого же трудового договора нужно купить и зарегистрировать в ФНС новую ККТ в течение 30 календарных дней."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "ООО и ИП, оказывающих услуги или выполняющих работы, если они выдают клиентам бланки строгой отчетности. Право выдавать бумажные БСО также продлено до 1 июля 2019 года для предпринимателей и организаций с услугами, кроме общепита."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Предпринимателей, которые используют вендинговые автоматы, при условии, что у них нет наемных работников. Подробнее "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Отмена онлайн-касс для этих категорий — временная мера. До 1 июля 2019 года все перечисленные предприниматели и организации обязаны купить ККТ нового образца и зарегистрировать их в ФНС.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                С 1 июля 2019 года нужно использовать ККТ при любых безналичных расчетах с физлицами. Кассовый документ должен быть сформирован не позднее одного рабочего дня после оплаты. Сейчас при безналичной оплате без карт пробивать чеки не нужно.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", { attrs: { id: "vending" } }, [
+                              _vm._v("Отсрочка ККТ в вендинге до 2019 года")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Предпринимателям, у которых нет наемных работников и которые торгуют с использованием вендинговых аппаратов, тоже положена отсрочка онлайн-ККТ до 2019 года. Но к 1 июля они должны будут поставить кассовую технику.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                При этом владельцам вендинговых аппаратов разрешили использовать одну кассу для нескольких автоматов при условии, что:\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "не продаются подакцизные, технически сложные и подлежащие обязательной маркировке товары,"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "на корпусе устройства открыто указан его заводской номер."
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Кроме того, с 1 февраля 2020 можно будет не печатать чек, если на экране аппарата будет отображен QR-код.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "alert alert-warning" }, [
+                              _vm._v(
+                                "\n                                Тем, кто использует механические автоматы (например, по продаже конфет), кассы ставить не нужно вообще.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "Будет ли отсрочка по онлайн-кассам до 2021 года?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Все предложения по отсрочке до 2021 года Госдума отклонила. Окончание кассовой реформы отодвинули только на год. К 1 июля 2019 кассы поставить придется уже всем, кроме отдельныхисключений.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Сдвиг сроков не коснулся и других спецрежимов: организации и предприниматели на УСН (кроме перечисленных выше) и плательщики ЕСХН уже давно обязаны использовать ККТ нового образца.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                Правда, расширился список исключений — то есть тех, кому вообще можно не применять онлайн-кассы. Среди них те, кто торгует безалкогольными напитками, молоком и питьевой водой, оказывает библиотечные услуги и содержит платные парковки. Полный перечень такой\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", { attrs: { id: "tovari" } }, [
+                              _vm._v("Отсрочка по товарам в чеке")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                                До 2021 года отложено только требование указывать в чеке наименования товаров. Это тоже касается отдельных групп налогоплательщиков: повезло индивидуальным предпринимателям на УСН, ПСН и ЕНВД (кроме торгующих подакцизными товарами). Они могут не указывать товар в кассовом чеке и на электронном бланке строгой отчетности до 1 февраля 2021 года.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-0" })
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "best-seller-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productsRec, function(product) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                },
+                [
+                  _c("div", { staticClass: "product-item" }, [
+                    _c("div", { staticClass: "img-product" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: {
+                          src: product.img,
+                          width: "255",
+                          height: "322",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-hover" }, [
+                      _c("div", { staticClass: "product-meta" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "add_cart",
+                            on: {
+                              click: function($event) {
+                                _vm.addCart(product.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "pe-7s-cart" }),
+                            _vm._v("Добавить в корзину")
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-title" }, [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -61837,12 +66063,26 @@ Vue.component('cart-component', __webpack_require__(/*! ./components/CartCompone
 Vue.component('rent-component', __webpack_require__(/*! ./components/RentComponent.vue */ "./resources/js/components/RentComponent.vue").default);
 Vue.component('about-component', __webpack_require__(/*! ./components/AboutComponent.vue */ "./resources/js/components/AboutComponent.vue").default);
 Vue.component('contacts-component', __webpack_require__(/*! ./components/ContactsComponent */ "./resources/js/components/ContactsComponent.vue").default);
+/**
+ * FZ54
+ */
+
 Vue.component('fz54-component', __webpack_require__(/*! ./components/Fz54Component */ "./resources/js/components/Fz54Component.vue").default);
 Vue.component('sofd-component', __webpack_require__(/*! ./components/fz54/SofdComponent */ "./resources/js/components/fz54/SofdComponent.vue").default);
 Vue.component('kas2g-component', __webpack_require__(/*! ./components/fz54/Kas2gComponent */ "./resources/js/components/fz54/Kas2gComponent.vue").default);
 Vue.component('kzokvn-component', __webpack_require__(/*! ./components/fz54/KzokvnComponent */ "./resources/js/components/fz54/KzokvnComponent.vue").default);
 Vue.component('pnf-component', __webpack_require__(/*! ./components/fz54/PnfComponent */ "./resources/js/components/fz54/PnfComponent.vue").default);
 Vue.component('nor-component', __webpack_require__(/*! ./components/fz54/NorComponent */ "./resources/js/components/fz54/NorComponent.vue").default);
+Vue.component('novye-objazatelnye-rekvizity-chekov-kkt-i-bso-component', __webpack_require__(/*! ./components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent */ "./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue").default);
+Vue.component('onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda-component', __webpack_require__(/*! ./components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent */ "./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue").default);
+Vue.component('nalogovyj-vychet-za-onlajn-kassu-component', __webpack_require__(/*! ./components/fz54/nalogovyjVychetZaOnlajnKassuComponent */ "./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue").default);
+Vue.component('komu-nuzhno-stavit-kassovyj-apparat-component', __webpack_require__(/*! ./components/fz54/komuNuzhnoStavitKassovyjApparatComponent */ "./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue").default);
+Vue.component('kak-snyat-s-ucheta-online-kassu-component', __webpack_require__(/*! ./components/fz54/kakSnyatSUchetaOnlineKassuComponent */ "./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue").default);
+/**
+ * Assets component
+ */
+
+Vue.component('header-component', __webpack_require__(/*! ./components/assets/HeaderComponent */ "./resources/js/components/assets/HeaderComponent.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -62465,6 +66705,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/assets/HeaderComponent.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/assets/HeaderComponent.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true& */ "./resources/js/components/assets/HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true&");
+/* harmony import */ var _HeaderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/assets/HeaderComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _HeaderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "50a19762",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/assets/HeaderComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/HeaderComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/assets/HeaderComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/HeaderComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/assets/HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true& ***!
+  \*******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/HeaderComponent.vue?vue&type=template&id=50a19762&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/fz54/Kas2gComponent.vue":
 /*!*********************************************************!*\
   !*** ./resources/js/components/fz54/Kas2gComponent.vue ***!
@@ -62810,6 +67119,351 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_template_id_4cf5c54f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f& */ "./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f&");
+/* harmony import */ var _kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_template_id_4cf5c54f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_template_id_4cf5c54f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_template_id_4cf5c54f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue?vue&type=template&id=4cf5c54f&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_template_id_4cf5c54f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_kakSnyatSUchetaOnlineKassuComponent_vue_vue_type_template_id_4cf5c54f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_template_id_0ae8c14a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a& */ "./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a&");
+/* harmony import */ var _komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_template_id_0ae8c14a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_template_id_0ae8c14a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a& ***!
+  \******************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_template_id_0ae8c14a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue?vue&type=template&id=0ae8c14a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_template_id_0ae8c14a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_komuNuzhnoStavitKassovyjApparatComponent_vue_vue_type_template_id_0ae8c14a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_template_id_050be428___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428& */ "./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428&");
+/* harmony import */ var _nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_template_id_050be428___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_template_id_050be428___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428& ***!
+  \***************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_template_id_050be428___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/nalogovyjVychetZaOnlajnKassuComponent.vue?vue&type=template&id=050be428&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_template_id_050be428___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_nalogovyjVychetZaOnlajnKassuComponent_vue_vue_type_template_id_050be428___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_template_id_68023595___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595& */ "./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595&");
+/* harmony import */ var _novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_template_id_68023595___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_template_id_68023595___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595&":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595& ***!
+  \**************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_template_id_68023595___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/novyeObjazatelnyeRekvizityChekovKktIBsoComponent.vue?vue&type=template&id=68023595&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_template_id_68023595___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_novyeObjazatelnyeRekvizityChekovKktIBsoComponent_vue_vue_type_template_id_68023595___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue ***!
+  \**************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454& */ "./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454&");
+/* harmony import */ var _onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454& ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent.vue?vue&type=template&id=79353454&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -62828,8 +67482,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\OSPanel\domains\blog\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\blog\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Ospanel 2\OSPanel\domains\term\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Ospanel 2\OSPanel\domains\term\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

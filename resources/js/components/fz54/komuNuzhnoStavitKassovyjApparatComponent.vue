@@ -1,0 +1,385 @@
+<template>
+    <div>
+
+        <header-component></header-component>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="row subscribe-from">
+                    <div class="col-md-12">
+                        <form class="form-inline col-md-12 wow fadeInDown animated">
+                            <div class="form-group">
+                                <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
+                                <button class="suscribe-btn" ><i class="pe-7s-search"></i></button>
+                            </div>
+                        </form><!-- end /. form -->
+                    </div>
+                </div><!-- end of/. row -->
+            </div><!-- end of /.container -->
+        </section><!-- end of /.news letter section -->
+
+
+        <section class="featured-section" style="    background: whitesmoke;">
+
+            <div class="container">
+                <transition name="showDiv2" >
+                <div class="infomation_about" v-if="showDiv2">
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>ФЗ-54</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <h1 class="h1-fz text-center">Кому нужно ставить кассовый аппарат</h1><br>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="bx_689919819_1476">
+                                <p>
+                                    По закону 54-ФЗ «О применении контрольно-кассовой техники» торговля в стране поэтапно переходит на онлайн-ККТ — сегодня зарегистрировано более 2,3 млн новых касс. Чтобы разобраться, <strong>кому нужно ставить кассовый аппарат</strong> в этом году, читайте нашу статью.
+                                </p>
+                                <p>
+                                    Все, что связано с использованием ККТ, регулирует 54-ФЗ. Этот закон отвечает и на вопросы, кто и когда должен ставить кассу, обязан ли ИП иметь кассовый аппарат, кто вообще освобожден от установки новой техники. Разберем для начала, зависит ли применение ККТ от формы собственности бизнеса.
+                                </p>
+                                <h2>Нужно ли ставить кассовый аппарат для ИП в 2019 году?</h2>
+                                <p>
+                                    Нужен ли кассовый аппарат для ИП — раньше решали сами предприниматели: они могли выбирать, чем подтверждать покупку. Можно было использовать не только кассовые чеки, но и другие документы — например, товарный чек. После принятия поправок в 54-ФЗ порядок изменился.
+                                </p>
+                                <p>
+                                    Так обязательно ли ИП иметь кассовый аппарат сегодня? Для некоторых предпринимателей, например, тех, кто занят в рознице и общепите и имеет наемных сотрудников, эта обязанность наступила уже в июле 2018.
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                    А к июлю 2019 года поставить кассы обязаны уже все — и ИП, и организации. Важно, что техника должна быть нового образца — с подключением к интернету для онлайн-передачи данных в налоговую.
+                                </p>
+                                <h2>Нужен ли кассовый аппарат для ООО?</h2>
+                                <p>
+                                    Применение ККТ не зависит от формы собственности организации, то есть ООО тоже должны использовать новые кассы. При этом срок перехода на новый порядок определяется налоговым режимом. Далее мы подробно разберем, кому и когда надо ставить кассу в зависимости от формы налогообложения.
+                                </p>
+                                <h2>Нужен ли кассовый аппарат при ЕНВД?</h2>
+                                <p>
+                                    Раньше отдельным категориям предпринимателей на вмененке можно было не использовать ККТ, но поправки в закон обязали их установить новую технику. Теперь при ЕНВД кассовые аппараты обязательны для всех. Различается только срок установки: кто-то должен был поставить кассу уже в этом году, а кому-то дали еще год отсрочки. Подробнее об этом — ниже.
+                                </p>
+                                <h3>Кассовый аппарат для ИП на ЕНВД: нужен ли, когда ставить, штрафы за отсутствие</h3>
+                                <p>
+                                    К июлю 2019 года должны поставить ККТ те, кто оказывает услуги населению. Для ИП, работающих в рознице, общепите или торгующих подакцизными товарами, все зависит от того, есть ли наемные сотрудники. Если их нет — с установкой кассы можно немного подождать (хотя мы не рекомендуем тянуть до самого дедлайна в июле 2019), если есть — установить ККТ надо было еще в прошлом году.
+                                </p>
+                                <p>
+                                    При установке кассы надо не забыть про оснащение рабочего места продавца. Но клиентам МоегоСклада можно об этом не думать — мы предлагаем уже готовое АРМ кассира. Это альтернатива дорогим POS-системам, которая позволит потратить на автоматизацию рабочего места продавца вполовину меньше. С удобным АРМ кассира МойСклад можно вести складской учет, регистрировать продажи, пробивать чеки. Просто запустите программу на компьютере или ноутбуке, а затем подключите к нему фискальный регистратор и сканер.
+                                </p>
+                                <p>
+                                    Если предприниматель проигнорирует закон, его оштрафуют — до 50% выручки, прошедшей «мимо кассы» (не меньше 10 000 рублей). За повторное нарушение, если сумма расчетов в совокупности будет 1 млн рублей и более, с 1 июля 2018 года грозит штраф от 800 000 до 1 млн рублей или приостановление деятельности на срок до 90 суток.
+                                </p>
+                                <h3>Касса для ООО на ЕНВД: когда устанавливать, какие грозят штрафы</h3>
+                                <p>
+                                    Организации на вмененке тоже должны поставить ККТ. Те, кто занят в рознице, общепите или продаже подакцизных товаров — уже должны были обзавестись кассой к 1 июля прошлого года, остальные — обязаны успеть до 1 июля 2019.
+                                </p>
+                                <p>
+                                    За несоблюдение закона организациям грозит штраф до 100% выручки, полученной без применения ККТ, но не менее 30 000 рублей. С июля этого года, если компанию поймают повторно, а сумма расчетов составит более 1 млн рублей, налоговики смогут взыскать от 800 000 до 1 млн рублей.
+                                </p>
+                                <h2>Нужен ли кассовый аппарат при патенте в 2019 году?</h2>
+                                <p>
+                                    Раньше организациям и ИП, применяющим патентную систему налогообложения, разрешалось выдавать покупателям документы, заменяющие кассовые чеки. Но с июля 2018 они должны перейти на новую ККТ. До лета 2019 года подождать с установкой кассы могут те, кто работает в рознице и общепите и не имеет наемных сотрудников.
+                                </p>
+                                <h2>Нужен ли кассовый аппарат при УСН?</h2>
+                                <p>
+                                    Однозначно — да. Если вы выбираете упрощенную систему налогообложения, то должны использовать ККТ. При этом, если юрлицо (ИП или ООО) на УСН оказывает услуги населению, кассовый аппарат не нужен до 1 июля 2019 года — при условии, что выдаются бланки строгой отчетности. Для тех, кто занят в общепите, отсрочка зависит от наличия наемных сотрудников. Если их нет — кассу надо установить к 1 июля 2019 года, если есть — она должна была появиться к июлю 2018.
+                                </p>
+                                <p>
+                                    Затягивать с покупкой не стоит — в прошлом году на новый порядок перешли около 1 млн предпринимателей! В этом году возможен дефицит фискальных накопителей — а значит, цены взлетят, причем на фоне ажиотажа и задержек в поставках: как показал прошлый опыт, большинство бизнесменов тянут буквально до последних недель. Чтобы сэкономить время, деньги и нервы, подумайте о приобретении новой ККТ заранее — сейчас действуют выгодные акции, а вся техника в наличии.
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <h2>Нужен ли кассовый аппарат для интернет-магазина?</h2>
+                                <p>
+                                    Онлайн-торговля как вид деятельности не попадает в список освобожденных от использования ККТ. А это значит, что кассовый аппарат для интернет-магазина нужен.
+                                </p>
+                                <p>
+                                    Рекомендуем заранее просчитать все затраты. Возможно, одной кассы будет недостаточно. Если платеж был проведен онлайн, нужна ККТ, зарегистрированная по url интернет-магазина. Когда оплату принимает курьер, ему требуется специальная <a href="/reshenija/kassa-na-android/" target="_blank"> мобильная касса</a>. Если же у интернет-магазина есть пункт самовывоза, где можно оплатить покупку, там должна быть еще одна ККМ. Ее надо регистрировать по физическому адресу этой точки.
+                                </p>
+                                <h2>Нужен ли кассовый аппарат при эквайринге?</h2>
+                                <p>
+                                    Зависит от того, чем занимается компания. Если это розничный магазин, то ответ однозначный — да. При этом квитанции терминала по приему платежных карт (или, как его называют, слипа) недостаточно. Нужен полноценный кассовый аппарат, который может напечатать наименования купленных товаров с ценами, скидками и стоимостью по каждой позиции.
+                                </p>
+                                <p>
+                                    Если вы оказываете услуги населению, то кассу нужно применять с 1 июля 2019 года. При этом до этой даты каждому клиенту надо выдавать бланки строгой отчетности.
+                                </p>
+                                <h2>Кому не нужно ставить кассовые аппараты в 2018 году?</h2>
+                                <p id="bezcheka">
+                                    Некоторые виды деятельности закон вообще освобождает от выдачи покупателям каких-либо документов. ИП и организации на любой системе налогообложения могут не использовать кассовый аппарат при торговле:
+                                </p>
+                                <ul>
+                                    <li>бахчевыми, овощами и фруктами вразвал, а также живой рыбой;</li>
+                                    <li>мороженым и прохладительными напитками в киосках и лотках;</li>
+                                    <li>вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых павильонах или магазинах);</li>
+                                    <li>молоком, маслом или керосином в розлив;</li>
+                                    <li>газетами и журналами на бумажном носителе;</li>
+                                    <li>изделиями художественных народных промыслов.</li>
+                                </ul>
+                                <p>
+                                    Среди предпринимателей, кому можно не ставить кассовый аппарат в 2018 году, есть те, кто оказывает услуги:
+                                </p>
+                                <ul>
+                                    <li>по вспашке огородов и распилу дров;</li>
+                                    <li>по ремонту и покраске обуви;</li>
+                                    <li>по изготовлению ключей и мелкому ремонту ювелирных изделий и очков;</li>
+                                    <li>нянь и сиделок;</li>
+                                    <li>носильщиков на вокзалах.</li>
+                                </ul>
+                                <p>
+                                    Кроме того, освобождены от использования ККТ аптечные и фельдшерские пункты в селах, а также точки по приему утильсырья и стекла, библиотеки.
+                                </p>
+                                   </div>
+                        </div>
+                        <div class="col-md-0"></div>
+                    </div>
+                </div>
+                </transition>
+            </div>
+
+        </section>
+
+
+        <section class="best-seller-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>РЕКОМЕНДУЕМ</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div v-for="product in productsRec" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
+                        <div class="product-item">
+                            <div class="img-product">
+                                <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
+                            </div>
+                            <div class="product-hover">
+                                <div class="product-meta">
+                                    <a class="add_cart" @click="addCart(product.id)"><i class="pe-7s-cart"></i>Добавить в корзину</a>
+                                </div>
+                            </div>
+                            <div class="product-title">
+                                <a href="#">
+                                    <h3>{{product.name}}</h3>
+                                    <span>{{product.price}} ₽</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>СВЯЗАТЬСЯ</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 wow fadeInLeft animated">
+                        <div class="left-content">
+                            <h1><b>К</b>омпаниия <b>Т</b>ерминал</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
+                            <div class="contact-info">
+                                <p>Адрес: </p>
+                                <p>Телефон: 8 (800) 000-00-00</p>
+                                <p>Почта: info@terminal.com</p>
+                            </div>
+                            <div class="social-media">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeInRight animated">
+                        <form action="" method="" class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Имя">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Почта">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Тема">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="textarea-form-footer">
+                                            <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder="Сообщение..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="submit" class="contact-submit" value="Отправить" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</template>
+
+<script>
+    export default {
+        data: function () {
+            return{
+                categories: {},
+                products: {},
+                showProductsUpdate: false,
+                styleSpanCountProducts: {},
+                count_all: true,
+                cart: {},
+                cartMessage: {},
+                showCartMessage: false,
+                productsRec: {},
+                showDiv2: false
+            }
+        },
+        mounted() {
+            this.getCategories();
+            this.getProducts();
+            this.getCartInfo();
+            this.getProductsRec();setTimeout(() => {
+                this.showProductsUpdate = true;
+                this.showDiv2 = true
+            }, 900);
+
+
+        },
+        methods:{
+            getCategories: function () {
+                axios({
+                    method: 'get',
+                    url: '/get_categories',
+                }).then((response) => {
+                    this.categories = response.data;
+
+                });
+            },
+            showCategory: function ($categoryId) {
+                this.showProductsUpdate = false;
+                this.count_all = false;
+                this.styleSpanCountProducts = {
+                    top: '-23px',
+                    right: '-6px'
+                };
+                axios({
+                    method: 'get',
+                    url: '/products/'+$categoryId,
+                }).then((response) => {
+                    this.products = response.data.products;
+                    this.categories = response.data.categories;
+
+                });
+                setTimeout(() => {
+                    this.showProductsUpdate = true;
+                }, 500)
+
+            },
+            getProducts: function () {
+                this.count_all = true;
+                axios({
+                    method: 'get',
+                    url: '/get_products',
+                }).then((response) => {
+                    this.products = response.data;
+
+                });
+            },
+
+            showAllCategories: function () {
+                this.showProductsUpdate = false;
+                this.count_all = true;
+                axios({
+                    method: 'get',
+                    url: '/get_products',
+                }).then((response) => {
+                    this.products = response.data;
+                    var app = this;
+                    for(var i = 0;i<response.data.length;i++){
+                        app.categories.categories[i].show = false;
+
+                    }
+                });
+                setTimeout(() => {
+                    this.showProductsUpdate = true;
+                }, 500)
+            },
+            addCart: function (id) {
+                this.addCartAnimation();
+                axios({
+                    method: 'get',
+                    url: '/cart_add/'+id,
+                }).then((response) => {
+                    this.cart = response.data;
+                    this.addCartAnimation(response.data.message);
+                });
+
+            },
+            addCartAnimation: function (message) {
+                this.showCartMessage = false;
+                this.cartMessage = message;
+                setTimeout(() => {
+                    this.showCartMessage = true;
+                }, 300);
+                setTimeout(() => {
+                    this.showCartMessage = false;
+                }, 3000)
+            },
+            getCartInfo: function(){
+                axios({
+                    method: 'get',
+                    url: '/cart_info',
+                }).then((response) => {
+                    this.cart = response.data;
+                });
+            },
+            getProductsRec: function () {
+                axios({
+                    method: 'get',
+                    url: '/get_recomended',
+                }).then((response) => {
+                    this.productsRec = response.data;
+                    console.log
+                });
+            }
+
+        }
+
+    }
+</script>

@@ -1,0 +1,394 @@
+<template>
+    <div>
+
+        <header-component></header-component>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="row subscribe-from">
+                    <div class="col-md-12">
+                        <form class="form-inline col-md-12 wow fadeInDown animated">
+                            <div class="form-group">
+                                <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
+                                <button class="suscribe-btn" ><i class="pe-7s-search"></i></button>
+                            </div>
+                        </form><!-- end /. form -->
+                    </div>
+                </div><!-- end of/. row -->
+            </div><!-- end of /.container -->
+        </section><!-- end of /.news letter section -->
+
+
+        <section class="featured-section" style="    background: whitesmoke;">
+
+            <div class="container">
+                <transition name="showDiv2" >
+                <div class="infomation_about" v-if="showDiv2">
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>ФЗ-54</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <h1 class="h1-fz text-center">Налоговый вычет за онлайн-кассу</h1><br>
+                        <h3>11 Января 2019</h3>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="bx_689919819_3563">
+                                <p>
+                                    С 1 января 2018 года некоторые предприниматели имеют право на <strong>налоговый вычет за онлайн-кассу</strong>: вступил в силу закон от 27.11.2017 №&nbsp;349-ФЗ «О внесении изменений в часть вторую Налогового кодекса Российской Федерации». Расскажем, как его получить.
+                                </p>
+
+                                <p>
+                                    Вычесть расходы на онлайн-ККТ из суммы налога разрешено индивидуальным предпринимателям, которые применяют патентную систему налогообложения или платят единый налог на вмененный доход.
+                                </p>
+                                <p>
+                                    Вернуть таким образом получится до 18&nbsp;000 рублей на каждую кассу. В эту сумму может входить не только стоимость самой ККТ: можно учесть расходы на покупку фискального накопителя, необходимых программ, услуг по настройке и прочие затраты на приведение техники в рабочий режим.
+                                </p>
+                                <div class="alert alert-warning">
+
+                                    Максимальный налоговый вычет на приобретение онлайн-кассы — 18&nbsp;000 рублей на каждую единицу. Если покупка и настройка ККТ обошлись дороже, зачесть все равно можно только эту сумму.
+                                </div>
+                                <h2>Налоговый вычет на покупку ККТ: обязательные требования</h2>
+                                <p>
+                                    Льгота распространяется не на все кассы: есть условия, которые обязательно нужно соблюдать.
+                                </p>
+                                <ul>
+                                    <li>Во-первых, налоговый вычет предоставляется только на ККТ, включенные в официальный реестр ФНС. </li>
+                                    <li>Во-вторых, кассу обязательно нужно поставить на учет, иначе вернуть потраченные на нее деньги не получится. </li>
+                                </ul>
+                                <div class="alert alert-warning">
+
+                                    Важно зарегистрировать ККТ как можно скорее — желательно сразу после покупки. Налоговый вычет по онлайн-кассам не распространяется на период, который был до регистрации.
+                                </div>
+                                <p>
+                                    Возместят ли вам расходы — зависит от вашей деятельности и даты постановки ККТ на учет:
+                                </p>
+                                <ul>
+                                    <li>ИП на ПСН или ЕНВД в сфере розничной торговли или общественного питания, имеющие сотрудников на трудовых договорах, могут получить вычет, если зарегистрировали кассу с 1&nbsp;февраля 2017 до 1&nbsp;июля 2018 года. Таким образом, они могут получить налоговый вычет при покупке онлайн-ККТ только в 2018.</li>
+                                    <li>Остальные ИП на ЕНВД и ПСН могут получить вычет, если зарегистрировали кассу с 1&nbsp;февраля 2017 до 1&nbsp;июля 2019 года. </li>
+                                </ul>
+                                <p>
+                                </p>
+
+                                <p>
+                                </p>
+                                <p>
+                                    Таким образом, в 2019 вы сможете претендовать на возмещение расходов, только если у вас нет наемных сотрудников. Если по трудовому договору в вашем кафе занят хотя бы один человек, вернуть расходы на кассу уже не получится.
+                                </p>
+                                <div class="alert alert-warning">
+
+                                    Если вы совмещаете ЕНВД и ПСН, то сможете получить налоговый вычет за онлайн-кассу только по одному режиму.
+                                </div>
+                                <h3>Вычет по ЕНВД при покупке онлайн-кассы</h3>
+                                <p>
+                                    При покупке онлайн-кассы на ЕНВД налоговый вычет нельзя получить за период, который предшествовал регистрации ККТ. Сумма налога уменьшается при исчислении за налоговые периоды 2018 и 2019 годов, но не раньше периода, в котором был зарегистрирован аппарат. Если сумма ЕНВД меньше вычета за онлайн-кассу, то можно перенести остаток на следующие периоды до конца 2019 года.
+                                </p>
+                                <h3>Налоговый вычет на ККТ для ПСН</h3>
+                                <p>
+                                    Для ИП на ПСН сумма налога уменьшается за периоды, которые начинаются в 2018 году и завершаются после регистрации ККТ. Если затраты превышают лимит, остаток учитывается при начислении налогов за следующие периоды. А если сумма налога оказалась меньше затрат, можно уменьшить патент с других видов деятельности, если для них используется касса.
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <h2>Как получить налоговый вычет при покупке онлайн-кассы</h2>
+                                <p>
+                                    Чтобы оформить вычет, индивидуальные предприниматели на ЕНВД должны подать налоговую декларацию и отразить в ней расходы на ККТ.
+                                </p>
+                                <p>
+                                    Предпринимателям на ПСН нужно предоставить в налоговую уведомление об уменьшении суммы платежа по патенту. Пока официальный шаблон этого документа не утвержден, и заполнять его можно в свободной форме.
+                                </p>
+                                <h2>Скачать шаблон уведомления на налоговый вычет за онлайн-кассу для ИП на патенте</h2>
+                                <p>
+                                    В уведомлении обязательно указать:
+                                </p>
+                                <ol>
+                                    <li>ФИО и ИНН налогоплательщика.</li>
+                                    <li>Номер и дату патента, в отношении которого производится уменьшение суммы налога, сроки уплаты уменьшаемых платежей, суммы уменьшения.</li>
+                                    <li>Модель и заводской номер купленной кассы.</li>
+                                    <li>Сумму расходов на покупку.</li>
+                                </ol>
+                                <p>
+                                    Если вы уже заплатили сумму, из которой хотите получить вычет, то необходимо подать в налоговую заявление о возврате излишне уплаченного налога.
+                                </p>
+                                <p>
+                                    К декларации или уведомлению необходимо приложить документ, подтверждающий затраты на покупку ККТ, фискального накопителя, программного обеспечения, выполнение работ по их настройке и оказание соответствующих услуг, в том числе — на модернизацию старой кассы.
+                                </p>
+                                <p>
+                                    Документы подаются в тот налоговый орган, где предприниматель состоит на учете как налогоплательщик и куда он уплатил или собирается уплатить налог, из которого хочет получить вычет.
+                                </p>
+                                <h2>Налоговый вычет на ККТ: часто задаваемые вопросы</h2>
+                                <h3>Возможен ли налоговый вычет за онлайн-кассу для ИП на УСН?</h3>
+                                <p>
+                                    Только в случае, когда ИП совмещает УСН и ЕНВД / ПСН. Тогда можно зачесть расходы на те кассы, которые используются на вмененке или патенте. Компаниям и предпринимателям на упрощенке кассовый вычет не предоставляют.
+                                </p>
+                                <h3>Можно ли получить вычет за онлайн-кассу, купленную в 2017 году?</h3>
+                                <p>
+                                    Да, но только если вы поставили ее на учет в ФНС после 1&nbsp;февраля. Если вы регистрировали онлайн-кассу в январе 2017 года, вернуть расходы на ее покупку нельзя.
+                                </p>
+                                <h3>Как получить налоговый вычет за онлайн-кассы в полном размере?</h3>
+                                <p>
+                                    Полный размер вычета, установленный законом, — 18&nbsp;000 рублей на каждую кассу. Вернуть деньги сверх этой суммы не получится, даже если ККТ обошлась дороже.
+                                </p>
+                                <h3>Как получить налоговый вычет за онлайн-кассу ИП на ПСН?</h3>
+                                <p>
+                                    Если вы применяете патентную систему налогообложения (патент), вычет за онлайн-кассу оформляется с помощью уведомления об уменьшении суммы налога.
+                                </p>
+                                <p>
+                                    Если налог уже заплачен — подайте в ФНС заявление на возврат излишне уплаченной суммы.
+                                </p>
+                                <p>
+                                    Документы предоставьте в налоговую инспекцию, где состоите на учете и куда будете платить налог. Можно отправить их в ФНС и по интернету, заверив усиленной квалифицированной электронной подписью.
+                                </p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-0"></div>
+                    </div>
+                </div>
+                </transition>
+            </div>
+
+        </section>
+
+
+        <section class="best-seller-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>РЕКОМЕНДУЕМ</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div v-for="product in productsRec" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
+                        <div class="product-item">
+                            <div class="img-product">
+                                <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
+                            </div>
+                            <div class="product-hover">
+                                <div class="product-meta">
+                                    <a class="add_cart" @click="addCart(product.id)"><i class="pe-7s-cart"></i>Добавить в корзину</a>
+                                </div>
+                            </div>
+                            <div class="product-title">
+                                <a href="#">
+                                    <h3>{{product.name}}</h3>
+                                    <span>{{product.price}} ₽</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="titie-section wow fadeInDown animated ">
+                            <h1>СВЯЗАТЬСЯ</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 wow fadeInLeft animated">
+                        <div class="left-content">
+                            <h1><b>К</b>омпаниия <b>Т</b>ерминал</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
+                            <div class="contact-info">
+                                <p>Адрес: </p>
+                                <p>Телефон: 8 (800) 000-00-00</p>
+                                <p>Почта: info@terminal.com</p>
+                            </div>
+                            <div class="social-media">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeInRight animated">
+                        <form action="" method="" class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Имя">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Почта">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Тема">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="textarea-form-footer">
+                                            <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder="Сообщение..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="submit" class="contact-submit" value="Отправить" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</template>
+
+<script>
+    export default {
+        data: function () {
+            return{
+                categories: {},
+                products: {},
+                showProductsUpdate: false,
+                styleSpanCountProducts: {},
+                count_all: true,
+                cart: {},
+                cartMessage: {},
+                showCartMessage: false,
+                productsRec: {},
+                showDiv2: false
+            }
+        },
+        mounted() {
+            this.getCategories();
+            this.getProducts();
+            this.getCartInfo();
+            this.getProductsRec();setTimeout(() => {
+                this.showProductsUpdate = true;
+                this.showDiv2 = true
+            }, 900);
+
+
+        },
+        methods:{
+            getCategories: function () {
+                axios({
+                    method: 'get',
+                    url: '/get_categories',
+                }).then((response) => {
+                    this.categories = response.data;
+
+                });
+            },
+            showCategory: function ($categoryId) {
+                this.showProductsUpdate = false;
+                this.count_all = false;
+                this.styleSpanCountProducts = {
+                    top: '-23px',
+                    right: '-6px'
+                };
+                axios({
+                    method: 'get',
+                    url: '/products/'+$categoryId,
+                }).then((response) => {
+                    this.products = response.data.products;
+                    this.categories = response.data.categories;
+
+                });
+                setTimeout(() => {
+                    this.showProductsUpdate = true;
+                }, 500)
+
+            },
+            getProducts: function () {
+                this.count_all = true;
+                axios({
+                    method: 'get',
+                    url: '/get_products',
+                }).then((response) => {
+                    this.products = response.data;
+
+                });
+            },
+
+            showAllCategories: function () {
+                this.showProductsUpdate = false;
+                this.count_all = true;
+                axios({
+                    method: 'get',
+                    url: '/get_products',
+                }).then((response) => {
+                    this.products = response.data;
+                    var app = this;
+                    for(var i = 0;i<response.data.length;i++){
+                        app.categories.categories[i].show = false;
+
+                    }
+                });
+                setTimeout(() => {
+                    this.showProductsUpdate = true;
+                }, 500)
+            },
+            addCart: function (id) {
+                this.addCartAnimation();
+                axios({
+                    method: 'get',
+                    url: '/cart_add/'+id,
+                }).then((response) => {
+                    this.cart = response.data;
+                    this.addCartAnimation(response.data.message);
+                });
+
+            },
+            addCartAnimation: function (message) {
+                this.showCartMessage = false;
+                this.cartMessage = message;
+                setTimeout(() => {
+                    this.showCartMessage = true;
+                }, 300);
+                setTimeout(() => {
+                    this.showCartMessage = false;
+                }, 3000)
+            },
+            getCartInfo: function(){
+                axios({
+                    method: 'get',
+                    url: '/cart_info',
+                }).then((response) => {
+                    this.cart = response.data;
+                });
+            },
+            getProductsRec: function () {
+                axios({
+                    method: 'get',
+                    url: '/get_recomended',
+                }).then((response) => {
+                    this.productsRec = response.data;
+                    console.log
+                });
+            }
+
+        }
+
+    }
+</script>

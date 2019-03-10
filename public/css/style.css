@@ -1730,6 +1730,12 @@ footer.footer p a{
     color: #2F2C65;
 }
 
+.alert-warning{
+    color: #4A3B77;
+    background-color: #CCAEF9;
+    border-color: #4A3B77;
+}
+
 
 
 

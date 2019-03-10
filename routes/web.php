@@ -45,12 +45,21 @@ Route::get('/cart_destroy','CartController@destroyCart');
 Route::get('/rent','RentController@index');
 Route::get('/about','PageController@aboutIndex');
 Route::get('/contacts','PageController@contactsIndex');
+
+
+/**
+ * FZ54
+ */
 Route::get('/fz-54', 'PageController@fz54Index');
 Route::get('/sofd', 'PageController@sofdIndex');
 Route::get('/kassovye-apparaty-s-2019-goda', 'PageController@kas2gIndex');
 Route::get('/kak-zaregistrirovat-onlayn-kassu-v-nalogovoy', 'PageController@kzokvn');
 Route::get('/perekhod-na-ffd-1-05-i-nds-20-atol-shtrikh-m-viki-print', 'PageController@pnf');
-Route::get('/novye-objazatelnye-rekvizity-chekov-kkt-i-bso', 'PageController@nor');
+Route::get('/novye-objazatelnye-rekvizity-chekov-kkt-i-bso', 'PageController@novyeObjazatelnyeRekvizityChekovKktIBso');
+Route::get('/onlayn-kassy-dlya-ip-na-envd-i-psn-otsrochka-do-2021-goda', 'PageController@onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021Goda');
+Route::get('/nalogovyj-vychet-za-onlajn-kassu', 'PageController@nalogovyjVychetZaOnlajnKassu');
+Route::get('/komu-nuzhno-stavit-kassovyj-apparat', 'PageController@komuNuzhnoStavitKassovyjApparat');
+Route::get('/kak-snyat-s-ucheta-online-kassu', 'PageController@kakSnyatSUchetaOnlineKassu');
 
 
 

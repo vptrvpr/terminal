@@ -1,54 +1,7 @@
 <template>
     <div>
 
-        <div id="preloader">
-            <div class="preloader-area">
-                <div class="preloader-box">
-                    <div class="preloader"></div>
-                </div>
-            </div>
-        </div>
-
-
-        <header class="header-section">
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"><b>Компания</b></a>
-                        <a class="navbar-brand" href="#"><b>Терминал</b></a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="/">Главная</a></li>
-                            <li><a href="/rent">Аренда</a></li>
-                            <li><a href="/about">О нас</a></li>
-                            <li><a href="/contacts">Контакты</a></li>
-                            <li><a href="/fz-54">ФЗ-54</a></li>
-
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right cart-menu">
-                            <li><a href="/cart"><span> Корзина - {{cart.total}}₽&nbsp;</span> <span class="shoping-cart">{{cart.count_all}}</span></a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container -->
-            </nav>
-            <transition name="cartMessage">
-            <div v-if="showCartMessage === true" id='error_box' style='z-index: 999999999999;display: block; border: 1px solid #2F2C65 !important; background: #2F2C65 !important; position: fixed; width: 370px; right: 20px; top: 20px; -webkit-box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.2); box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.2); -webkit-border-radius: 5px; border-radius: 5px; text-align: center;'>
-                <p id='error_message' style='color: white; margin-top: 10px; font-weight: bold;filter: dropshadow(color=#FFFFFF, offx=1, offy=1);'>
-                    {{cartMessage}}
-                </p>
-            </div>
-            </transition>
-        </header>
+        <header-component></header-component>
 
         <section class="search-section">
             <div class="container">
