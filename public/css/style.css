@@ -902,7 +902,7 @@ a.carousel-control.right > span {
  */
 .featured-section {
     display: block;
-    padding: 35px 0 80px;
+    padding: 0 0 80px;
     background: #e9f0fd;
     box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1);
 }
@@ -910,7 +910,6 @@ a.carousel-control.right > span {
 .filter-menu {
     display: block;
     text-align: center;
-    margin: 30px 0 50px;
 }
 
 .filter-menu ul {
@@ -1831,11 +1830,10 @@ footer.footer p a {
 
 .fade1-enter-active, .fade1-leave-active {
     transition: ease 0.5s;
-    transition-delay: 0.5s;
+    transition-delay: 0.7s;
 }
 
-.fade1-enter, .fade1-leave-to
-{
+.fade1-enter, .fade1-leave-to {
     transition: ease 0.5s;
     opacity: 0;
     transform: translateX(50px);
@@ -1847,11 +1845,34 @@ footer.footer p a {
     transition-delay: 0.5s;
 }
 
-.fade2-enter, .fade2-leave-to
-{
+.fade2-enter, .fade2-leave-to {
     transition: ease 0.5s;
     opacity: 0;
-    transform: translateX(-50px);
+
+}
+
+
+.showCategories-enter-active, .showCategories-leave-active {
+    transition: ease 0.9s;
+    transition-delay: 1s;
+}
+
+.showCategories-enter, .showCategories-leave-to {
+    transition: ease 0.9s;
+    opacity: 0;
+    transform: translateX(-150px);
+
+}
+
+.showCategoriesDelay0-enter-active, .showCategoriesDelay0-leave-active {
+    transition: ease 0.9s;
+    transition-delay: 1s;
+}
+
+.showCategoriesDelay0-enter, .showCategoriesDelay0-leave-to {
+    transition: ease 0.9s;
+    opacity: 0;
+    transform: translateX(-150px);
 
 }
 
@@ -2053,9 +2074,10 @@ div.content {
 }
 
 .category-index {
-    width: 120px;
-    height: 144px;
+    width: 110px;
+    height: 155px;
     text-align: center;
+    margin: 0 2px 0 2px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     text-decoration: none;
@@ -2139,6 +2161,142 @@ div.content {
         opacity: 0;
         transform: translateY(-30px);
     }
+}
+
+.border-img {
+    border: 4px solid #8f008f;
+}
+
+.big-checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+.under-category-name {
+    font-weight: 600;
+    font-size: 25px;
+    color: #2F2C65;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.under-category{
+    border-top: 1px solid #2F2C65;
+    transition: ease .5s ;
+}
+
+.under-category:hover{
+    cursor: pointer;
+    background: #DDE6F8;
+    transition: ease .5s ;
+}
+
+.under-category-option{
+    color: #5a6268;
+    font-size: 12px;
+}
+
+
+
+.out-right-enter-active, .out-right-leave-active {
+    transition: ease 0.9s;
+    transition-delay: 0.9s;
+}
+
+.out-right-enter, .out-right-leave-to {
+    transition: ease 0.9s;
+    opacity: 0;
+    transform: translateX(120px);
+
+}
+
+
+.out-left-enter-active, .out-left-leave-active {
+    transition: ease 0.9s;
+    transition-delay: 0.9s;
+}
+
+.out-left-enter, .out-left-leave-to {
+    transition: ease 0.9s;
+    opacity: 0;
+    transform: translateX(-120px);
+
+}
+
+.out-top-enter-active, .out-top-leave-active {
+    transition: ease 0.9s;
+    transition-delay: 0.9s;
+}
+
+.out-top-enter, .out-top-leave-to {
+    transition: ease 0.9s;
+    opacity: 0;
+    transform: translateY(120px);
+
+}
+
+.out-bottom-enter-active, .out-bottom-leave-active {
+    transition: ease 0.9s;
+    transition-delay: 0.9s;
+}
+
+.out-bottom-enter, .out-bottom-leave-to {
+    transition: ease 0.9s;
+    opacity: 0;
+    transform: translateY(120px);
+
+}
+
+.btn-primary-purple{
+    display: inline-block;
+    background: #2F2C65 !important;
+    padding: 10px 40px;
+    border: none;
+    color: #fff !important;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: ease .5s;
+}
+
+.btn-primary-purple:hover{
+    background: #444190 !important;
+    transition: ease .5s;
+}
+
+.show-product-price{
+    text-align: center;
+    color: #2F2C65 !important;
+    font-weight: 600;
+}
+
+.show-product-name{
+    font-weight: 500;
+    font-size: 33px;
+    color: #2F2C65;
+}
+
+.show-product-description{
+    font-size: 17px;
+    font-weight: 600;
+    color: #2F2C65 !important;
+}
+
+.show-product-image{
+    background: #fff;
+    box-shadow: 0 0 32px -3px rgba(0,0,0,0.35);
+}
+
+.show-product-specification{
+    color: #2F2C65;
+    font-size: 17px;
+}
+
+.tag-a-categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 

@@ -18,6 +18,9 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('img');
+            $table->boolean('under_categories')->nullable();
+            $table->integer('parent_category_id')->nullable();
+            $table->integer('parent_category_name')->nullable();
             $table->timestamps();
         });
     }

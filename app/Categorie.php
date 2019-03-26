@@ -11,6 +11,6 @@ class Categorie extends Model
     }
 
     public function underCategories(){
-        return $this->hasMany('App\UnderCategories','category_id', 'id');
+        return $this->hasMany('App\UnderCategory','category_id', 'id');
     }
 }

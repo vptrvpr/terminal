@@ -29,21 +29,13 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="images/slider.jpg" width="1648" height="600" alt="">
+                    <div  v-for="(slider,index) in sliders" :class="index === 0 ? 'item active' : 'item'">
+                        <img :src="slider.image" height="600" alt="">
                         <div class="carousel-caption">
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <h3>{{slider.title}}</h3>
 
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="images/slider.jpg" width="1648" height="600" alt="">
-                        <div class="carousel-caption">
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-
-                        </div>
-                    </div>
-
                 </div>
 
                 <!-- Controls -->
@@ -58,27 +50,24 @@
 
         <section class="featured-section">
             <div class="container-fluid">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="titie-section wow fadeInDown animated ">
-                                <h1>КАТАЛОГ</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="filter-menu">
                             <div class="row categories-list">
-                            <div class="container">
-                                <div class="categories-list-center">
-                                <a v-for="(category,index) in categories.categories" @click="showCategory(index)" class="category-index">
-                                    <img :src="category.img">
-                                    <h4>{{category.name}}</h4>
-                                </a>
+                                <div class="container">
+
+                                    <div class="categories-list-center">
+                                        <transition-group name="showCategories" tag="a" class="tag-a-categories">
+                                            <a v-for="(category,index) in categories.categories" v-if="showCategories"
+                                               :key="category.id" :href="'/catalog/category/'+category.id"
+                                               class="category-index">
+                                                <img :src="category.img">
+                                                <h4>{{category.name}}</h4>
+                                            </a>
+                                        </transition-group>
+                                    </div>
+
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
@@ -87,25 +76,50 @@
                 <div class="container">
                     <div class="description-category">
                         <transition-group name="fade1" tag="div">
-                        <div v-for="category in categories.categories" v-if="category.show" :key="category.id">
-                            <div>
-                                <h1>{{category.name}}</h1>
-                                <p>{{category.description}}</p>
+                            <div v-for="category in categories.categories" v-if="category.show" :key="category.id">
+                                <div>
+                                    <h1>{{category.name}}</h1>
+                                    <p>{{category.description}}</p>
+                                </div>
                             </div>
-                        </div>
                         </transition-group>
+                        <br><br>
+                        <transition name="out-left" tag="div">
+                            <div class="for-animate-toggle" v-if="showUnderCategories">
+                                <div v-for="category in categories.categories" v-if="category.show">
+                                    <div v-for="under_category in category.under_categories">
+                                        <div class="under-category">
+                                            <a :href="'/catalog/category/'+under_category.id"
+                                               class="under-category-link">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <img class="margin-top-10" :src="under_category.img">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h4 class="under-category-name">{{under_category.name}}</h4>
+                                                        <p>{{under_category.description}}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </transition>
+
                     </div>
 
                     <div v-for="category in categories.categories" class="row featured isotope">
                         <transition-group name="fade1" tag="div">
-                            <div v-for="product in category.products_page" v-if="category.show" :key="product.id" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
+                            <div v-for="product in category.products_page" v-if="category.show" :key="product.id"
+                                 class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
                                 <div class="product-item">
                                     <div class="img-product">
                                         <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
                                     </div>
                                     <div class="product-hover">
                                         <div class="product-meta">
-                                            <a class="add_cart"><i class="pe-7s-cart"></i>Добавить в корзину</a>
+                                            <a class="add_cart"><i class="pe-7s-cart"></i>Карточка товара</a>
                                         </div>
                                     </div>
                                     <div class="product-title">
@@ -125,40 +139,13 @@
         <section class="service-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-6 wow fadeInRight animated" data-wow-delay="0.1s">
+
+                    <div class="col-md-3 col-sm-6 wow fadeInRight animated" v-for="partner in partners"
+                         data-wow-delay="0.1s">
                         <div class="service-item">
-                            <i class="pe-7s-settings"></i>
-                            <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
-                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
-                                usu.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 wow fadeInRight animated" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <i class="pe-7s-safe"></i>
-                            <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
-                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
-                                usu.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 wow fadeInRight animated" data-wow-delay="0.3s">
-                        <div class="service-item">
-                            <i class="pe-7s-global"></i>
-                            <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
-                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
-                                usu.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 wow fadeInRight animated" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <i class="pe-7s-headphones"></i>
-                            <h3>КАЧЕСТВА КОМПАНИИ</h3>
-                            <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
-                                tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an
-                                usu.</p>
+                            <a :href="partner.link" target="_blank">
+                                <img :src="partner.image" height="70">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -283,12 +270,19 @@
                 showProductsUpdate: false,
                 count_all: true,
                 productsRec: {},
+                showCategories: false,
+                partners: [],
+                showUnderCategories: false,
+                sliders: []
 
             }
         },
         mounted() {
             this.getCategories();
             this.getProducts();
+            this.showCategoriesStartPage();
+            this.getPartners();
+            this.getSliders();
         },
         methods: {
             getCategories: function () {
@@ -306,7 +300,6 @@
                     url: '/get_recomended',
                 }).then((response) => {
                     this.productsRec = response.data;
-                    console.log
                 });
             },
             getProducts: function () {
@@ -327,7 +320,7 @@
                 }).then((response) => {
                     this.products = response.data;
                     var app = this;
-                    for(var i = 0;i<response.data.length;i++){
+                    for (var i = 0; i < response.data.length; i++) {
                         app.categories.categories[i].show = false;
                     }
                 });
@@ -335,17 +328,6 @@
                     this.showProductsUpdate = true;
                 }, 500)
             },
-            addCart: function (id) {
-                this.addCartAnimation();
-                axios({
-                    method: 'get',
-                    url: '/cart_add/'+id,
-                }).then((response) => {
-                    this.cart = response.data;
-                    this.addCartAnimation(response.data.message);
-                });
-            },
-
 
             showCategory: function (index) {
                 var i;
@@ -353,7 +335,38 @@
                     this.categories.categories[i].show = false;
                 }
                 this.categories.categories[index].show = true;
-            }
+            },
+
+
+            showCategoriesStartPage: function () {
+                var win = $(window);
+                var marker = $('.categories-list');
+                if (win.scrollTop() + win.height() >= marker.offset().top) {
+                    this.showCategories = true;
+                    this.showUnderCategories = true;
+                }
+            },
+
+
+            getPartners: function () {
+                axios({
+                    method: 'get',
+                    url: '/partners/get',
+                }).then((response) => {
+                    this.partners = response.data;
+                });
+            },
+
+
+            getSliders: function () {
+                axios({
+                    method: 'get',
+                    url: '/sliders/get',
+                }).then((response) => {
+                    this.sliders = response.data;
+
+                });
+            },
 
         }
 

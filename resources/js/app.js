@@ -22,7 +22,18 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('index-component', require('./components/IndexComponent.vue').default);
+Vue.component('category-by-id-component', require('./components/CategoryByIdComponent.vue').default);
+Vue.component('show-product-component', require('./components/ShowProductComponent.vue').default);
+
+/**
+ * Admin
+ */
 Vue.component('admin-component', require('./components/AdminComponent.vue').default);
+Vue.component('admin-product-component', require('./components/ProductAdminComponent').default);
+Vue.component('admin-partners-component', require('./components/AdminPartnersComponent').default);
+Vue.component('admin-sliders-component', require('./components/AdminSlidersComponent').default);
+
+
 Vue.component('cart-component', require('./components/CartComponent.vue').default);
 Vue.component('rent-component', require('./components/RentComponent.vue').default);
 Vue.component('about-component', require('./components/AboutComponent.vue').default);

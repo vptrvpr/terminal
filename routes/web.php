@@ -14,6 +14,8 @@
 Route::get('/', 'PostController@index');
 Route::get('/products/{campaignId}', 'ProductsController@getProductByCategory');
 Route::get('/delete_product/{id}', 'ProductsController@deleteProduct');
+Route::get('/get_form_new_product/', 'ProductsController@getFormNewProduct');
+
 
 
 /**
@@ -25,11 +27,22 @@ Route::get('/get_recomended', 'ProductsController@getRecomended');
 Route::post('/save_categories', 'ProductsController@saveCategories');
 Route::get('/delete_categories/{categoryId}', 'ProductsController@deleteCategories');
 
+Route::post('/product/changes_save','ProductsController@productChangesSave');
+Route::post('/product/update_img', 'ProductsController@productEditLoadImage');
+Route::post('/product/save_new_product', 'ProductsController@saveNewProduct');
+Route::get('/catalog/category/{categoryId}','ProductsController@categoryPage');
+Route::get('/catalog/category/product/{productId}','ProductsController@showProduct');
+Route::get('/get-product-by-id/{productId}','ProductsController@getProductById');
+Route::get('/get_categories_by_id/{categoryId}','ProductsController@getCategoryById');
+
 
 /**
  * Admin routes
  */
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin/products/','AdminController@adminProducts');
+Route::get('/admin/partners/','AdminController@adminPartners');
+Route::get('/admin/slider/','AdminController@adminSliders');
 
 /**
  * Cart
@@ -62,5 +75,27 @@ Route::get('/nalogovyj-vychet-za-onlajn-kassu', 'PageController@nalogovyjVychetZ
 Route::get('/komu-nuzhno-stavit-kassovyj-apparat', 'PageController@komuNuzhnoStavitKassovyjApparat');
 Route::get('/kak-snyat-s-ucheta-online-kassu', 'PageController@kakSnyatSUchetaOnlineKassu');
 
+
+/**
+ * Helper
+ */
+Route::post('/helper/load_image', 'HelperController@loadImage');
+Route::post('/helper/load-image-universal', 'HelperController@loadImageUniversal');
+
+
+/**
+ * Partners
+ */
+Route::post('/partners/save', 'PartnersController@save');
+Route::post('/partners/delete', 'PartnersController@delete');
+Route::get('/partners/get', 'PartnersController@get');
+
+
+/**
+ * Sliders
+ */
+Route::post('/sliders/save', 'SliderController@save');
+Route::post('/sliders/delete', 'SliderController@delete');
+Route::get('/sliders/get', 'SliderController@get');
 
 
