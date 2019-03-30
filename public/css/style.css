@@ -1912,11 +1912,6 @@ footer.footer p a {
 @keyframes show-categories {
     0% {
         transform: translateX(-150px);
-        opacity: 0;
-    }
-    50% {
-        transform: translateX(40px);
-        opacity: 0.2;
     }
     100% {
         transform: translateX(0px);
@@ -2279,7 +2274,6 @@ div.content {
 @keyframes out-right-anim {
     0% {
         transform: translateX(120px);
-        opacity: 0;
     }
     100% {
         transform: translateX(0px);
@@ -2308,7 +2302,6 @@ div.content {
 @keyframes out-left-anim {
     0% {
         transform: translateX(-120px);
-        opacity: 0;
     }
     100% {
         transform: translateX(0px);
