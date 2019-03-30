@@ -2281,10 +2281,6 @@ div.content {
         transform: translateX(120px);
         opacity: 0;
     }
-    50% {
-        transform: translateX(-40px);
-        opacity: 0.35;
-    }
     100% {
         transform: translateX(0px);
         opacity: 1;
@@ -2313,10 +2309,6 @@ div.content {
     0% {
         transform: translateX(-120px);
         opacity: 0;
-    }
-    50% {
-        transform: translateX(40px);
-        opacity: 0.35;
     }
     100% {
         transform: translateX(0px);
@@ -2416,7 +2408,7 @@ div.content {
 
 .out-right-notif-enter-active, .out-right-notif-leave-active {
     transition: ease 0.9s;
-    transition-delay: 0.9s;
+    transition-delay: 0.7s;
 }
 
 .out-right-notif-enter, .out-right-notif-leave-to {
