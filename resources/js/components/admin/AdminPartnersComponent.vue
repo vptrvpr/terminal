@@ -6,6 +6,7 @@
             <a href="/admin/products">Продукты</a>
             <a href="/admin/partners">Партнеры</a>
             <a href="/admin/slider">Слайдер</a>
+            <a href="/admin/recommended">Рекомендуемые</a>
             <a href="/admin/dashboard">Dashboard</a>
         </div>
 

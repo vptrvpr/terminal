@@ -29,7 +29,7 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div  v-for="(slider,index) in sliders" :class="index === 0 ? 'item active' : 'item'">
+                    <div v-for="(slider,index) in sliders" :class="index === 0 ? 'item active' : 'item'">
                         <img :src="slider.image" height="600" alt="">
                         <div class="carousel-caption">
                             <h3>{{slider.title}}</h3>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="container">
                     <div class="description-category">
-                        <transition-group name="fade1" tag="div">
+                        <transition-group name="out-right" tag="div">
                             <div v-for="category in categories.categories" v-if="category.show" :key="category.id">
                                 <div>
                                     <h1>{{category.name}}</h1>
@@ -93,7 +93,7 @@
                                                class="under-category-link">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <img class="margin-top-10" :src="under_category.img">
+                                                        <img class="margin-top-10" style="margin-left: 25px" :src="under_category.img">
                                                     </div>
                                                     <div class="col-md-10">
                                                         <h4 class="under-category-name">{{under_category.name}}</h4>
@@ -119,7 +119,7 @@
                                     </div>
                                     <div class="product-hover">
                                         <div class="product-meta">
-                                            <a class="add_cart"><i class="pe-7s-cart"></i>Карточка товара</a>
+                                            <a class="add_cart" :href="'product/'+product.id">Карточка товара</a>
                                         </div>
                                     </div>
                                     <div class="product-title">
@@ -153,107 +153,10 @@
         </section>
 
         <section class="best-seller-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>РЕКОМЕНДУЕМ</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
-                        <div class="product-item">
-                            <div class="img-product">
-                                <img src="img" class="img-responsive" width="255" height="322" alt="">
-                            </div>
-                            <div class="product-hover">
-                                <div class="product-meta">
-                                    <a class="add_cart"><i class="pe-7s-cart"></i>Добавить в корзину</a>
-                                </div>
-                            </div>
-                            <div class="product-title">
-                                <a href="#">
-                                    <h3>name</h3>
-                                    <span>price ₽</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <recommended-component></recommended-component>
         </section>
-
         <section class="contact-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>СВЯЗАТЬСЯ</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 wow fadeInLeft animated">
-                        <div class="left-content">
-                            <h1><b>К</b>омпаниия <b>Т</b>ерминал</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class
-                                aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut
-                                vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
-                            <div class="contact-info">
-                                <p>Адрес: </p>
-                                <p>Телефон: 8 (800) 000-00-00</p>
-                                <p>Почта: info@terminal.com</p>
-                            </div>
-                            <div class="social-media">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 wow fadeInRight animated">
-                        <form action="" method="" class="contact-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Имя">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Почта">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Тема">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="textarea-form-footer">
-                                            <textarea name="" id="" class="form-control" cols="30" rows="5"
-                                                      placeholder="Сообщение..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="submit" class="contact-submit" value="Отправить"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <footer-component></footer-component>
         </section>
 
 
@@ -273,7 +176,8 @@
                 showCategories: false,
                 partners: [],
                 showUnderCategories: false,
-                sliders: []
+                sliders: [],
+                urlSite: ''
 
             }
         },
@@ -283,6 +187,7 @@
             this.showCategoriesStartPage();
             this.getPartners();
             this.getSliders();
+
         },
         methods: {
             getCategories: function () {
@@ -367,6 +272,9 @@
 
                 });
             },
+
+
+
 
         }
 

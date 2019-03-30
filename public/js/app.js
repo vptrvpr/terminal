@@ -86,6 +86,396 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@tinymce/tinymce-vue/lib/es2015/ScriptLoader.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@tinymce/tinymce-vue/lib/es2015/ScriptLoader.js ***!
+  \**********************************************************************/
+/*! exports provided: create, load */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "create", function() { return create; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "load", function() { return load; });
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Utils */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/Utils.js");
+/**
+ * Copyright (c) 2018-present, Ephox, Inc.
+ *
+ * This source code is licensed under the Apache 2 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+var injectScriptTag = function (scriptId, doc, url, callback) {
+    var scriptTag = doc.createElement('script');
+    scriptTag.type = 'application/javascript';
+    scriptTag.id = scriptId;
+    scriptTag.addEventListener('load', callback);
+    scriptTag.src = url;
+    if (doc.head) {
+        doc.head.appendChild(scriptTag);
+    }
+};
+var create = function () {
+    return {
+        listeners: [],
+        scriptId: Object(_Utils__WEBPACK_IMPORTED_MODULE_0__["uuid"])('tiny-script'),
+        scriptLoaded: false
+    };
+};
+var load = function (state, doc, url, callback) {
+    if (state.scriptLoaded) {
+        callback();
+    }
+    else {
+        state.listeners.push(callback);
+        if (!doc.getElementById(state.scriptId)) {
+            injectScriptTag(state.scriptId, doc, url, function () {
+                state.listeners.forEach(function (fn) { return fn(); });
+                state.scriptLoaded = true;
+            });
+        }
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@tinymce/tinymce-vue/lib/es2015/TinyMCE.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@tinymce/tinymce-vue/lib/es2015/TinyMCE.js ***!
+  \*****************************************************************/
+/*! exports provided: getTinymce */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTinymce", function() { return getTinymce; });
+/**
+ * Copyright (c) 2018-present, Ephox, Inc.
+ *
+ * This source code is licensed under the Apache 2 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+var getGlobal = function () { return (typeof window !== 'undefined' ? window : global); };
+var getTinymce = function () {
+    var global = getGlobal();
+    return global && global.tinymce ? global.tinymce : null;
+};
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/@tinymce/tinymce-vue/lib/es2015/Utils.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@tinymce/tinymce-vue/lib/es2015/Utils.js ***!
+  \***************************************************************/
+/*! exports provided: bindHandlers, bindModelHandlers, initEditor, uuid, isTextarea, mergePlugins */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bindHandlers", function() { return bindHandlers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bindModelHandlers", function() { return bindModelHandlers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initEditor", function() { return initEditor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uuid", function() { return uuid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isTextarea", function() { return isTextarea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mergePlugins", function() { return mergePlugins; });
+/**
+ * Copyright (c) 2018-present, Ephox, Inc.
+ *
+ * This source code is licensed under the Apache 2 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+var validEvents = [
+    'onActivate',
+    'onAddUndo',
+    'onBeforeAddUndo',
+    'onBeforeExecCommand',
+    'onBeforeGetContent',
+    'onBeforeRenderUI',
+    'onBeforeSetContent',
+    'onBeforePaste',
+    'onBlur',
+    'onChange',
+    'onClearUndos',
+    'onClick',
+    'onContextMenu',
+    'onCopy',
+    'onCut',
+    'onDblclick',
+    'onDeactivate',
+    'onDirty',
+    'onDrag',
+    'onDragDrop',
+    'onDragEnd',
+    'onDragGesture',
+    'onDragOver',
+    'onDrop',
+    'onExecCommand',
+    'onFocus',
+    'onFocusIn',
+    'onFocusOut',
+    'onGetContent',
+    'onHide',
+    'onInit',
+    'onKeyDown',
+    'onKeyPress',
+    'onKeyUp',
+    'onLoadContent',
+    'onMouseDown',
+    'onMouseEnter',
+    'onMouseLeave',
+    'onMouseMove',
+    'onMouseOut',
+    'onMouseOver',
+    'onMouseUp',
+    'onNodeChange',
+    'onObjectResizeStart',
+    'onObjectResized',
+    'onObjectSelected',
+    'onPaste',
+    'onPostProcess',
+    'onPostRender',
+    'onPreProcess',
+    'onProgressState',
+    'onRedo',
+    'onRemove',
+    'onReset',
+    'onSaveContent',
+    'onSelectionChange',
+    'onSetAttrib',
+    'onSetContent',
+    'onShow',
+    'onSubmit',
+    'onUndo',
+    'onVisualAid'
+];
+var isValidKey = function (key) { return validEvents.indexOf(key) !== -1; };
+var bindHandlers = function (initEvent, listeners, editor) {
+    Object.keys(listeners)
+        .filter(isValidKey)
+        .forEach(function (key) {
+        var handler = listeners[key];
+        if (typeof handler === 'function') {
+            if (key === 'onInit') {
+                handler(initEvent, editor);
+            }
+            else {
+                editor.on(key.substring(2), function (e) { return handler(e, editor); });
+            }
+        }
+    });
+};
+var bindModelHandlers = function (ctx, editor) {
+    var modelEvents = ctx.$props.modelEvents ? ctx.$props.modelEvents : null;
+    var normalizedEvents = Array.isArray(modelEvents) ? modelEvents.join(' ') : modelEvents;
+    var currentContent;
+    ctx.$watch('value', function (val, prevVal) {
+        if (editor && typeof val === 'string' && val !== currentContent && val !== prevVal) {
+            editor.setContent(val);
+            currentContent = val;
+        }
+    });
+    editor.on(normalizedEvents ? normalizedEvents : 'change keyup undo redo', function () {
+        currentContent = editor.getContent();
+        ctx.$emit('input', currentContent);
+    });
+};
+var initEditor = function (initEvent, ctx, editor) {
+    var value = ctx.$props.value ? ctx.$props.value : '';
+    var initialValue = ctx.$props.initialValue ? ctx.$props.initialValue : '';
+    editor.setContent(value || initialValue);
+    // checks if the v-model shorthand is used (which sets an v-on:input listener) and then binds either
+    // specified the events or defaults to "change keyup" event and emits the editor content on that event
+    if (ctx.$listeners.input) {
+        bindModelHandlers(ctx, editor);
+    }
+    bindHandlers(initEvent, ctx.$listeners, editor);
+};
+var unique = 0;
+var uuid = function (prefix) {
+    var time = Date.now();
+    var random = Math.floor(Math.random() * 1000000000);
+    unique++;
+    return prefix + '_' + random + unique + String(time);
+};
+var isTextarea = function (element) {
+    return element !== null && element.tagName.toLowerCase() === 'textarea';
+};
+var normalizePluginArray = function (plugins) {
+    if (typeof plugins === 'undefined' || plugins === '') {
+        return [];
+    }
+    return Array.isArray(plugins) ? plugins : plugins.split(' ');
+};
+var mergePlugins = function (initPlugins, inputPlugins) {
+    return normalizePluginArray(initPlugins).concat(normalizePluginArray(inputPlugins));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@tinymce/tinymce-vue/lib/es2015/components/Editor.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@tinymce/tinymce-vue/lib/es2015/components/Editor.js ***!
+  \***************************************************************************/
+/*! exports provided: Editor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Editor", function() { return Editor; });
+/* harmony import */ var _ScriptLoader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ScriptLoader */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/ScriptLoader.js");
+/* harmony import */ var _TinyMCE__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../TinyMCE */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/TinyMCE.js");
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Utils */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/Utils.js");
+/* harmony import */ var _EditorPropTypes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EditorPropTypes */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/components/EditorPropTypes.js");
+/**
+ * Copyright (c) 2018-present, Ephox, Inc.
+ *
+ * This source code is licensed under the Apache 2 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+var scriptState = _ScriptLoader__WEBPACK_IMPORTED_MODULE_0__["create"]();
+var renderInline = function (h, id, tagName) {
+    return h(tagName ? tagName : 'div', {
+        attrs: { id: id }
+    });
+};
+var renderIframe = function (h, id) {
+    return h('textarea', {
+        attrs: { id: id },
+        style: { visibility: 'hidden' }
+    });
+};
+var initialise = function (ctx) { return function () {
+    var finalInit = __assign({}, ctx.$props.init, { readonly: ctx.$props.disabled, selector: "#" + ctx.elementId, plugins: Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["mergePlugins"])(ctx.$props.init && ctx.$props.init.plugins, ctx.$props.plugins), toolbar: ctx.$props.toolbar || (ctx.$props.init && ctx.$props.init.toolbar), inline: ctx.inlineEditor, setup: function (editor) {
+            ctx.editor = editor;
+            editor.on('init', function (e) { return Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["initEditor"])(e, ctx, editor); });
+            if (ctx.$props.init && typeof ctx.$props.init.setup === 'function') {
+                ctx.$props.init.setup(editor);
+            }
+        } });
+    if (Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["isTextarea"])(ctx.element)) {
+        ctx.element.style.visibility = '';
+    }
+    Object(_TinyMCE__WEBPACK_IMPORTED_MODULE_1__["getTinymce"])().init(finalInit);
+}; };
+var Editor = {
+    props: _EditorPropTypes__WEBPACK_IMPORTED_MODULE_3__["editorProps"],
+    created: function () {
+        this.elementId = this.$props.id || Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["uuid"])('tiny-vue');
+        this.inlineEditor = (this.$props.init && this.$props.init.inline) || this.$props.inline;
+    },
+    watch: {
+        disabled: function () {
+            this.editor.setMode(this.disabled ? 'readonly' : 'design');
+        }
+    },
+    mounted: function () {
+        this.element = this.$el;
+        if (Object(_TinyMCE__WEBPACK_IMPORTED_MODULE_1__["getTinymce"])() !== null) {
+            initialise(this)();
+        }
+        else if (this.element && this.element.ownerDocument) {
+            var doc = this.element.ownerDocument;
+            var channel = this.$props.cloudChannel ? this.$props.cloudChannel : '5';
+            var apiKey = this.$props.apiKey ? this.$props.apiKey : '';
+            var url = "https://cloud.tinymce.com/" + channel + "/tinymce.min.js?apiKey=" + apiKey;
+            _ScriptLoader__WEBPACK_IMPORTED_MODULE_0__["load"](scriptState, doc, url, initialise(this));
+        }
+    },
+    beforeDestroy: function () {
+        if (Object(_TinyMCE__WEBPACK_IMPORTED_MODULE_1__["getTinymce"])() !== null) {
+            Object(_TinyMCE__WEBPACK_IMPORTED_MODULE_1__["getTinymce"])().remove(this.editor);
+        }
+    },
+    render: function (h) {
+        return this.inlineEditor ? renderInline(h, this.elementId, this.$props.tagName) : renderIframe(h, this.elementId);
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@tinymce/tinymce-vue/lib/es2015/components/EditorPropTypes.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@tinymce/tinymce-vue/lib/es2015/components/EditorPropTypes.js ***!
+  \************************************************************************************/
+/*! exports provided: editorProps */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editorProps", function() { return editorProps; });
+/**
+ * Copyright (c) 2018-present, Ephox, Inc.
+ *
+ * This source code is licensed under the Apache 2 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+var editorProps = {
+    apiKey: String,
+    cloudChannel: String,
+    id: String,
+    init: Object,
+    initialValue: String,
+    inline: Boolean,
+    modelEvents: [String, Array],
+    plugins: [String, Array],
+    tagName: String,
+    toolbar: [String, Array],
+    value: String,
+    disabled: Boolean
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@tinymce/tinymce-vue/lib/es2015/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@tinymce/tinymce-vue/lib/es2015/index.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Editor */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/components/Editor.js");
+/**
+ * Copyright (c) 2018-present, Ephox, Inc.
+ *
+ * This source code is licensed under the Apache 2 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = (_components_Editor__WEBPACK_IMPORTED_MODULE_0__["Editor"]);
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -1862,63 +2252,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2052,483 +2385,6 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this9.productsRec = response.data;
         console.log;
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminComponent.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdminComponent.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      products: {},
-      categories: []
-    };
-  },
-  mounted: function mounted() {
-    this.getProducts();
-    this.getCategories();
-  },
-  methods: {
-    getCategories: function getCategories() {
-      var _this = this;
-
-      axios({
-        method: 'get',
-        url: '/get_categories'
-      }).then(function (response) {
-        _this.categories = response.data;
-      });
-    },
-    deleteCategory: function deleteCategory(categoryId) {
-      var _this2 = this;
-
-      axios({
-        method: 'get',
-        url: '/delete_categories/' + categoryId
-      }).then(function (response) {
-        _this2.categories = response.data;
-      });
-    },
-    addNewSlotCategory: function addNewSlotCategory() {
-      this.categories.categories.push({
-        id: '',
-        name: '',
-        img: '',
-        under_categories: false,
-        parent_category_id: null,
-        isNew: 1
-      });
-    },
-    saveNewCategories: function saveNewCategories() {
-      var _this3 = this;
-
-      axios({
-        method: 'post',
-        url: '/save_categories',
-        data: {
-          categories: this.categories.categories
-        }
-      }).then(function (response) {
-        _this3.categories = response.data;
-      });
-    },
-    getProducts: function getProducts() {
-      var _this4 = this;
-
-      axios({
-        method: 'get',
-        url: '/get_products'
-      }).then(function (response) {
-        _this4.products = response.data;
-      });
-    },
-    deleteProduct: function deleteProduct(id) {
-      var _this5 = this;
-
-      axios({
-        method: 'get',
-        url: '/delete_product/' + id
-      }).then(function (response) {
-        _this5.getProducts();
-      });
-    },
-    addCart: function addCart(id) {
-      var _this6 = this;
-
-      axios({
-        method: 'get',
-        url: '/cart_add/' + id
-      }).then(function (response) {
-        _this6.cart = response.data;
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminPartnersComponent.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdminPartnersComponent.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      partners: []
-    };
-  },
-  mounted: function mounted() {
-    this.getPartners();
-  },
-  methods: {
-    addNewSlotPartner: function addNewSlotPartner() {
-      this.partners.push({
-        id: 0,
-        name: '',
-        link: '',
-        image: ''
-      });
-    },
-    saveNewPartner: function saveNewPartner() {
-      var _this = this;
-
-      axios({
-        method: 'post',
-        url: '/partners/save',
-        data: {
-          partners: this.partners
-        }
-      }).then(function (response) {
-        _this.getPartners();
-      });
-    },
-    getPartners: function getPartners() {
-      var _this2 = this;
-
-      axios({
-        method: 'get',
-        url: '/partners/get'
-      }).then(function (response) {
-        _this2.partners = response.data;
-      });
-    },
-    deletePartner: function deletePartner(id) {
-      var _this3 = this;
-
-      axios({
-        method: 'post',
-        url: '/partners/delete',
-        data: {
-          partner_id: id
-        }
-      }).then(function (response) {
-        _this3.getPartners();
-      });
-    },
-
-    /**
-     * Сохранение картинки
-     */
-    loadImage: function loadImage(index) {
-      var app = this;
-      var data = new FormData();
-      data.append('file', document.getElementById('fileNewPartner').files[0]);
-      data.append('path', 'images/partners/');
-      axios.post('/helper/load-image-universal', data).then(function (response) {
-        app.partners[index].image = response.data;
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminSlidersComponent.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdminSlidersComponent.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      sliders: []
-    };
-  },
-  mounted: function mounted() {
-    this.getSliders();
-  },
-  methods: {
-    addNewSlotSlider: function addNewSlotSlider() {
-      this.sliders.push({
-        id: 0,
-        title: '',
-        comment: '',
-        image: ''
-      });
-    },
-    saveNewSlider: function saveNewSlider() {
-      var _this = this;
-
-      axios({
-        method: 'post',
-        url: '/sliders/save',
-        data: {
-          sliders: this.sliders
-        }
-      }).then(function (response) {
-        _this.getSliders();
-      });
-    },
-    getSliders: function getSliders() {
-      var _this2 = this;
-
-      axios({
-        method: 'get',
-        url: '/sliders/get'
-      }).then(function (response) {
-        _this2.sliders = response.data;
-      });
-    },
-    deleteSlider: function deleteSlider(id) {
-      var _this3 = this;
-
-      axios({
-        method: 'post',
-        url: '/sliders/delete',
-        data: {
-          slider_id: id
-        }
-      }).then(function (response) {
-        _this3.getSliders();
-      });
-    },
-
-    /**
-     * Сохранение картинки
-     */
-    loadImage: function loadImage(index) {
-      var app = this;
-      var data = new FormData();
-      data.append('file', document.getElementById('fileNewSlider').files[0]);
-      data.append('path', 'images/sliders/');
-      data.append('resize_width', '600');
-      axios.post('/helper/load-image-universal', data).then(function (response) {
-        app.sliders[index].image = response.data;
       });
     }
   }
@@ -3002,102 +2858,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3109,7 +2869,8 @@ __webpack_require__.r(__webpack_exports__);
       count_all: true,
       productsRec: {},
       showCategories: false,
-      showUnderCategories: false
+      showUnderCategories: false,
+      urlSite: ''
     };
   },
   mounted: function mounted() {
@@ -3117,6 +2878,7 @@ __webpack_require__.r(__webpack_exports__);
     this.getProducts();
     this.showCategoriesStartPage();
     this.getCategoriesById();
+    this.getUrlSite();
   },
   methods: {
     getCategories: function getCategories() {
@@ -3212,6 +2974,16 @@ __webpack_require__.r(__webpack_exports__);
         this.showCategories = true;
         this.showUnderCategories = true;
       }
+    },
+    getUrlSite: function getUrlSite() {
+      var _this7 = this;
+
+      axios({
+        method: 'get',
+        url: '/helper/get-url-site'
+      }).then(function (response) {
+        _this7.urlSite = response.data;
+      });
     }
   }
 });
@@ -3227,75 +2999,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3583,6 +3286,51 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4157,103 +3905,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4266,7 +3917,8 @@ __webpack_require__.r(__webpack_exports__);
       showCategories: false,
       partners: [],
       showUnderCategories: false,
-      sliders: []
+      sliders: [],
+      urlSite: ''
     };
   },
   mounted: function mounted() {
@@ -4364,446 +4016,6 @@ __webpack_require__.r(__webpack_exports__);
         url: '/sliders/get'
       }).then(function (response) {
         _this6.sliders = response.data;
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductAdminComponent.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductAdminComponent.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      products: {},
-      categories: [],
-      newProduct: {
-        name: "name",
-        description: "description",
-        price: 0,
-        categorie_id: "categorie_id",
-        specifications_get: [],
-        category: null,
-        new_category: "new_category",
-        specifications: [],
-        categorie: null,
-        img: ''
-      },
-      saveChangesSuccess: false,
-      saveChangesSuccessNewProduct: false
-    };
-  },
-  mounted: function mounted() {
-    this.getProducts();
-    this.getCategories();
-  },
-  methods: {
-    getCategories: function getCategories() {
-      var _this = this;
-
-      axios({
-        method: 'get',
-        url: '/get_categories'
-      }).then(function (response) {
-        _this.categories = response.data;
-      });
-    },
-    deleteCategory: function deleteCategory(categoryId) {
-      var _this2 = this;
-
-      axios({
-        method: 'get',
-        url: '/delete_categories/' + categoryId
-      }).then(function (response) {
-        _this2.categories = response.data;
-      });
-    },
-    addNewSlotCategory: function addNewSlotCategory() {
-      this.categories.categories.push({
-        id: '',
-        name: '',
-        img: '',
-        isNew: 1
-      });
-    },
-    saveNewCategories: function saveNewCategories() {
-      var _this3 = this;
-
-      axios({
-        method: 'post',
-        url: '/save_categories',
-        data: {
-          categories: this.categories.categories
-        }
-      }).then(function (response) {
-        _this3.categories = response.data;
-      });
-    },
-    getProducts: function getProducts() {
-      var _this4 = this;
-
-      axios({
-        method: 'get',
-        url: '/get_products'
-      }).then(function (response) {
-        _this4.products = response.data;
-      });
-    },
-    deleteProduct: function deleteProduct(id) {
-      var _this5 = this;
-
-      axios({
-        method: 'get',
-        url: '/delete_product/' + id
-      }).then(function (response) {
-        _this5.getProducts();
-      });
-    },
-    addCart: function addCart(id) {
-      var _this6 = this;
-
-      axios({
-        method: 'get',
-        url: '/cart_add/' + id
-      }).then(function (response) {
-        _this6.cart = response.data;
-      });
-    },
-    addNewSpecification: function addNewSpecification(index, isNew) {
-      if (isNew !== undefined) {
-        this.newProduct.specifications_get.push({
-          name: '',
-          parameter: '',
-          isNew: 1
-        });
-      } else {
-        this.products[index].specifications_get.push({
-          name: '',
-          parameter: '',
-          isNew: 1
-        });
-      }
-    },
-    saveChangesProduct: function saveChangesProduct(index) {
-      var _this7 = this;
-
-      axios({
-        method: 'post',
-        url: '/product/changes_save',
-        data: {
-          product: this.products[index]
-        }
-      }).then(function (response) {
-        _this7.products = response.data;
-        _this7.saveChangesSuccess = true;
-      });
-      var self = this;
-      setTimeout(function () {
-        self.saveChangesSuccess = false;
-      }, 1500);
-    },
-    productEditImageLoad: function productEditImageLoad(id) {
-      var app = this;
-      var data = new FormData();
-      data.append('file', document.getElementById('file').files[0]);
-      data.append('id', id);
-      axios.post('/product/update_img', data).then(function (response) {});
-    },
-    loadImage: function loadImage() {
-      var app = this;
-      var data = new FormData();
-      data.append('file', document.getElementById('file_new_product').files[0]);
-      axios.post('/helper/load_image', data).then(function (response) {
-        console.log(response.data);
-        app.newProduct.img = response.data;
-      });
-    },
-    saveNewProduct: function saveNewProduct() {
-      var _this8 = this;
-
-      axios({
-        method: 'post',
-        url: '/product/save_new_product',
-        data: {
-          product: this.newProduct
-        }
-      }).then(function (response) {
-        _this8.saveChangesSuccessNewProduct = true;
       });
     }
   }
@@ -5304,64 +4516,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5372,13 +4526,20 @@ __webpack_require__.r(__webpack_exports__);
       showProduct: false,
       productsRec: {},
       showCategories: false,
-      product: {}
+      product: {},
+      contacts: {
+        number: '',
+        product_id: ''
+      },
+      norificationSended: false,
+      urlSite: ''
     };
   },
   mounted: function mounted() {
     this.getCategories();
     this.loadProduct();
     this.showCategoriesStartPage();
+    this.getUrlSite();
   },
   methods: {
     getCategories: function getCategories() {
@@ -5440,8 +4601,1179 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this3.product = response.data;
       });
+    },
+    contactsSend: function contactsSend(productId) {
+      var _this4 = this;
+
+      this.contacts.product_id = productId;
+      axios({
+        method: 'post',
+        url: '/slack/order_send',
+        data: {
+          contacts: this.contacts
+        }
+      }).then(function (response) {
+        _this4.norificationSended = true;
+      });
+    },
+    getUrlSite: function getUrlSite() {
+      var _this5 = this;
+
+      axios({
+        method: 'get',
+        url: '/helper/get-url-site'
+      }).then(function (response) {
+        _this5.urlSite = response.data;
+      });
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      products: {},
+      categories: [],
+      urlSite: ''
+    };
+  },
+  mounted: function mounted() {
+    this.getProducts();
+    this.getCategories();
+    console.log(2222);
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this = this;
+
+      axios({
+        method: 'get',
+        url: '/admin/get_categories/'
+      }).then(function (response) {
+        _this.categories = response.data;
+      });
+    },
+    deleteCategory: function deleteCategory(categoryId) {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/delete_categories/' + categoryId
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    addNewSlotCategory: function addNewSlotCategory() {
+      this.categories.categories.push({
+        id: '',
+        name: '',
+        img: '',
+        under_categories: false,
+        parent_category_id: null,
+        isNew: 1
+      });
+    },
+    saveNewCategories: function saveNewCategories() {
+      var _this3 = this;
+
+      axios({
+        method: 'post',
+        url: '/save_categories',
+        data: {
+          categories: this.categories.categories
+        }
+      }).then(function (response) {
+        _this3.categories = response.data;
+      });
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    deleteProduct: function deleteProduct(id) {
+      var _this5 = this;
+
+      axios({
+        method: 'get',
+        url: '/delete_product/' + id
+      }).then(function (response) {
+        _this5.getProducts();
+      });
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+      });
+    },
+    getUrlSite: function getUrlSite() {
+      var _this7 = this;
+
+      axios({
+        method: 'get',
+        url: '/helper/get-url-site'
+      }).then(function (response) {
+        _this7.urlSite = response.data;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      partners: []
+    };
+  },
+  mounted: function mounted() {
+    this.getPartners();
+  },
+  methods: {
+    addNewSlotPartner: function addNewSlotPartner() {
+      this.partners.push({
+        id: 0,
+        name: '',
+        link: '',
+        image: ''
+      });
+    },
+    saveNewPartner: function saveNewPartner() {
+      var _this = this;
+
+      axios({
+        method: 'post',
+        url: '/partners/save',
+        data: {
+          partners: this.partners
+        }
+      }).then(function (response) {
+        _this.getPartners();
+      });
+    },
+    getPartners: function getPartners() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/partners/get'
+      }).then(function (response) {
+        _this2.partners = response.data;
+      });
+    },
+    deletePartner: function deletePartner(id) {
+      var _this3 = this;
+
+      axios({
+        method: 'post',
+        url: '/partners/delete',
+        data: {
+          partner_id: id
+        }
+      }).then(function (response) {
+        _this3.getPartners();
+      });
+    },
+
+    /**
+     * Сохранение картинки
+     */
+    loadImage: function loadImage(index) {
+      var app = this;
+      var data = new FormData();
+      data.append('file', document.getElementById('fileNewPartner').files[0]);
+      data.append('path', 'images/partners/');
+      axios.post('/helper/load-image-universal', data).then(function (response) {
+        app.partners[index].image = response.data;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      recommendeds: []
+    };
+  },
+  mounted: function mounted() {
+    this.getRecommended();
+  },
+  methods: {
+    addNewSlotRecommended: function addNewSlotRecommended() {
+      this.recommendeds.push({
+        id: 0,
+        product_id: ''
+      });
+    },
+    saveNewRecommended: function saveNewRecommended() {
+      var _this = this;
+
+      axios({
+        method: 'post',
+        url: '/recommended/save',
+        data: {
+          recommended: this.recommendeds
+        }
+      }).then(function (response) {
+        _this.getRecommended();
+      });
+    },
+    getRecommended: function getRecommended() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/recommended/get'
+      }).then(function (response) {
+        _this2.recommendeds = response.data;
+      });
+    },
+    deleteRecommended: function deleteRecommended(id) {
+      var _this3 = this;
+
+      axios({
+        method: 'post',
+        url: '/recommended/delete',
+        data: {
+          recommended_id: id
+        }
+      }).then(function (response) {
+        _this3.getRecommended();
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      sliders: []
+    };
+  },
+  mounted: function mounted() {
+    this.getSliders();
+  },
+  methods: {
+    addNewSlotSlider: function addNewSlotSlider() {
+      this.sliders.push({
+        id: 0,
+        title: '',
+        comment: '',
+        image: ''
+      });
+    },
+    saveNewSlider: function saveNewSlider() {
+      var _this = this;
+
+      axios({
+        method: 'post',
+        url: '/sliders/save',
+        data: {
+          sliders: this.sliders
+        }
+      }).then(function (response) {
+        _this.getSliders();
+      });
+    },
+    getSliders: function getSliders() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/sliders/get'
+      }).then(function (response) {
+        _this2.sliders = response.data;
+      });
+    },
+    deleteSlider: function deleteSlider(id) {
+      var _this3 = this;
+
+      axios({
+        method: 'post',
+        url: '/sliders/delete',
+        data: {
+          slider_id: id
+        }
+      }).then(function (response) {
+        _this3.getSliders();
+      });
+    },
+
+    /**
+     * Сохранение картинки
+     */
+    loadImage: function loadImage(index) {
+      var app = this;
+      var data = new FormData();
+      data.append('file', document.getElementById('fileNewSlider').files[0]);
+      data.append('path', 'images/sliders/');
+      data.append('resize_width', '600');
+      axios.post('/helper/load-image-universal', data).then(function (response) {
+        app.sliders[index].image = response.data;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/ProductAdminComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/ProductAdminComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  // es modules
+  // commonjs require
+  // NOTE: default needed after require
+  data: function data() {
+    return {
+      products: {},
+      categories: [],
+      newProduct: {
+        name: "",
+        description: "",
+        price: 0,
+        categorie_id: "categorie_id",
+        specifications_get: [],
+        category: null,
+        new_category: "new_category",
+        specifications: [],
+        categorie: null,
+        img: ''
+      },
+      saveChangesSuccess: false,
+      saveChangesSuccessNewProduct: false
+    };
+  },
+  mounted: function mounted() {
+    this.getProducts();
+    this.getCategories();
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this.categories = response.data;
+      });
+    },
+    deleteCategory: function deleteCategory(categoryId) {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/delete_categories/' + categoryId
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    addNewSlotCategory: function addNewSlotCategory() {
+      this.categories.categories.push({
+        id: '',
+        name: '',
+        img: '',
+        isNew: 1
+      });
+    },
+    saveNewCategories: function saveNewCategories() {
+      var _this3 = this;
+
+      axios({
+        method: 'post',
+        url: '/save_categories',
+        data: {
+          categories: this.categories.categories
+        }
+      }).then(function (response) {
+        _this3.categories = response.data;
+      });
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    deleteProduct: function deleteProduct(id) {
+      var _this5 = this;
+
+      axios({
+        method: 'get',
+        url: '/delete_product/' + id
+      }).then(function (response) {
+        _this5.getProducts();
+      });
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+      });
+    },
+    addNewSpecification: function addNewSpecification(index, isNew) {
+      if (isNew !== undefined) {
+        this.newProduct.specifications_get.push({
+          name: '',
+          parameter: '',
+          isNew: 1
+        });
+      } else {
+        this.products[index].specifications_get.push({
+          name: '',
+          parameter: '',
+          isNew: 1
+        });
+      }
+    },
+    saveChangesProduct: function saveChangesProduct(index) {
+      var _this7 = this;
+
+      axios({
+        method: 'post',
+        url: '/product/changes_save',
+        data: {
+          product: this.products[index]
+        }
+      }).then(function (response) {
+        _this7.products = response.data;
+        _this7.saveChangesSuccess = true;
+      });
+      var self = this;
+      setTimeout(function () {
+        self.saveChangesSuccess = false;
+      }, 1500);
+    },
+    productEditImageLoad: function productEditImageLoad(id) {
+      var app = this;
+      var data = new FormData();
+      data.append('file', document.getElementById('file').files[0]);
+      data.append('id', id);
+      axios.post('/product/update_img', data).then(function (response) {});
+    },
+    loadImage: function loadImage() {
+      var app = this;
+      var data = new FormData();
+      data.append('file', document.getElementById('file_new_product').files[0]);
+      axios.post('/helper/load_image', data).then(function (response) {
+        app.newProduct.img = response.data;
+      });
+    },
+    saveNewProduct: function saveNewProduct() {
+      var _this8 = this;
+
+      axios({
+        method: 'post',
+        url: '/product/save_new_product',
+        data: {
+          product: this.newProduct
+        }
+      }).then(function (response) {
+        _this8.saveChangesSuccessNewProduct = true;
+
+        _this8.getProducts();
+      });
+      var self = this;
+      setTimeout(function () {
+        self.saveChangesSuccessNewProduct = false;
+      }, 1500);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/FooterComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/assets/FooterComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      recommended: []
+    };
+  },
+  mounted: function mounted() {},
+  methods: {}
 });
 
 /***/ }),
@@ -5503,10 +5835,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/RecommendedComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/assets/RecommendedComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5521,6 +5853,78 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      recommended: [],
+      urlSite: ''
+    };
+  },
+  mounted: function mounted() {
+    this.getRecommended();
+    this.getUrlSite();
+  },
+  methods: {
+    getRecommended: function getRecommended() {
+      var _this = this;
+
+      axios({
+        method: 'get',
+        url: '/recommended/page/get'
+      }).then(function (response) {
+        _this.recommended = response.data;
+      });
+    },
+    getUrlSite: function getUrlSite() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/helper/get-url-site'
+      }).then(function (response) {
+        _this2.urlSite = response.data;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -6357,6 +6761,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6759,43 +7210,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6945,6 +7359,49 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7967,6 +8424,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8116,63 +8600,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -8759,25 +9186,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8927,41 +9335,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -9581,42 +9954,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -9766,32 +10103,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -45074,26 +45385,65 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
                         _c("div", { staticClass: "col-md-12" }, [
-                          _c("h1", [
+                          _c("h1", { staticClass: "text-center" }, [
+                            _vm._v("Компания «Терминал»"),
+                            _c("br"),
                             _vm._v(
-                              "Компания Vector обеспечивает комплексное снабжение промышленных и строительных объектов спецтехникой и энергетическим оборудованием, гарантируя своевременные поставки, сервисное обслуживание и пусконаладочные работы."
+                              "\n\n                                Предоставляет услуги в сфере обслуживание эквайрингового и\n                                кассового оборудования и продажи периферийных частей к нему."
                             )
                           ]),
                           _vm._v(" "),
-                          _c("ul", {}, [
+                          _c("h2", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "Мы успешно развивающаяся компания на рынке предоставляемых\n                                услуг, у нас\n                                обслуживаются более 50 предприятий, ведущие свой бизнес на всей территории\n                                ХМАО-Югры,\n                                поэтому в качестве своих клиентов мы хотели бы видеть и вашу развивающуюся\n                                компанию."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("h2", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "На сегодняшний день 80% Ваших клиентов, покупателей пользуются\n                                безналичным\n                                расчетам, проводя свои платежи через различное кассовое оборудование, которое, к\n                                сожалению,\n                                иногда выходит из строя в самый не подходящий момент, из-за чего вы несёте\n                                финансовые\n                                потери. Обратившись в техническую поддержку банков, компаний, предоставивших Вам\n                                оборудование в пользование, большинство клиентов сталкиваются с проблемой устранения\n                                неполадок в кратчайшие сроки, что опять за собой влечет потери прибыли. "
+                            )
+                          ]),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("h1", { staticClass: "text-center" }, [
+                            _vm._v("Наши услуги:")
+                          ]),
+                          _vm._v(" "),
+                          _c("ul", [
                             _c("li", [
-                              _c("h2", [
-                                _vm._v(
-                                  "Поставка оборудования в любой регион России и стран СНГ"
-                                )
-                              ])
+                              _vm._v(
+                                "Доставка чековой ленты в любую точку г. Сургута и Сургутского\n                                    района;\n                                "
+                              )
+                            ]),
+                            _vm._v("\n                                  "),
+                            _c("li", {}, [_vm._v("Доставка бесплатная;")]),
+                            _vm._v("\n                                  "),
+                            _c("li", {}, [
+                              _vm._v(
+                                "У нас самые низкие цены и гибкая ценовая политика по\n                                отношению к\n                                оптовым покупателям.\n                            "
+                              )
                             ]),
                             _vm._v(" "),
-                            _c("li", [
-                              _c("h2", [
-                                _vm._v("Пусконаладочные и сервисные работы  ")
-                              ])
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("li", {}, [
+                              _vm._v(
+                                "Предоставление услуг в обслуживание программ 1С (продажи,\n                                    бухгалтерия, склад), Далион, Фронтол;\n                                "
+                              )
                             ])
+                          ]),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("h1", [
+                            _vm._v(
+                              "Продажа, аренда, а также аренда с последующим выкупом онлайн-касс;\n                                Обслуживание касс ЭВОТОРЫ"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", [_vm._v("Регистрация кассы в ФНС РФ;")])
                           ])
                         ])
                       ])
@@ -45106,71 +45456,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -45206,986 +45504,6 @@ var staticRenderFns = [
             )
           ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminComponent.vue?vue&type=template&id=a603f2ce&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdminComponent.vue?vue&type=template&id=a603f2ce& ***!
-  \*****************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "content" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v("Категории")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("table", { staticClass: "table" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.categories.categories, function(category) {
-                return _c("tr", [
-                  _c("th", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(category.id))
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined ? category.name : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.name,
-                              expression: "category.name"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: category.name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(category, "name", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined
-                            ? category.description
-                            : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.description,
-                              expression: "category.description"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: category.description },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                category,
-                                "description",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined ? category.img : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.img,
-                              expression: "category.img"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: category.img },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(category, "img", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined
-                            ? category.under_categories
-                            : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.under_categories,
-                              expression: "category.under_categories"
-                            }
-                          ],
-                          staticClass: "form-check-input big-checkbox",
-                          attrs: { type: "checkbox" },
-                          domProps: {
-                            checked: Array.isArray(category.under_categories)
-                              ? _vm._i(category.under_categories, null) > -1
-                              : category.under_categories
-                          },
-                          on: {
-                            change: function($event) {
-                              var $$a = category.under_categories,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      category,
-                                      "under_categories",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      category,
-                                      "under_categories",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(category, "under_categories", $$c)
-                              }
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.parent_category_id,
-                              expression: "category.parent_category_id"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.$set(
-                                category,
-                                "parent_category_id",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
-                            }
-                          }
-                        },
-                        [
-                          _vm._l(_vm.categories.categories, function(
-                            categoryForSelectFirstOption
-                          ) {
-                            return categoryForSelectFirstOption.id ===
-                              category.parent_category_id
-                              ? _c(
-                                  "option",
-                                  {
-                                    domProps: {
-                                      value: categoryForSelectFirstOption.id
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(
-                                          categoryForSelectFirstOption.name
-                                        ) +
-                                        "\n                                    "
-                                    )
-                                  ]
-                                )
-                              : _vm._e()
-                          }),
-                          _vm._v(" "),
-                          _vm._l(_vm.categories.categories, function(
-                            categoryForSelect
-                          ) {
-                            return categoryForSelect.id !==
-                              category.parent_category_id
-                              ? _c(
-                                  "option",
-                                  { domProps: { value: categoryForSelect.id } },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(categoryForSelect.name) +
-                                        "\n                                    "
-                                    )
-                                  ]
-                                )
-                              : _vm._e()
-                          })
-                        ],
-                        2
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    category.isNew === undefined
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-danger",
-                            on: {
-                              click: function($event) {
-                                _vm.deleteCategory(category.id)
-                              }
-                            }
-                          },
-                          [_vm._v("Удалить")]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    category.isNew !== undefined
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-success",
-                            on: {
-                              click: function($event) {
-                                _vm.saveNewCategories()
-                              }
-                            }
-                          },
-                          [_vm._v("Сохранить")]
-                        )
-                      : _vm._e()
-                  ])
-                ])
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success",
-                on: { click: _vm.addNewSlotCategory }
-              },
-              [_vm._v("Новая категория")]
-            )
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sidebar" }, [
-      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
-        _vm._v("Компания Терминал ")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin" } }, [
-        _c("i", { staticClass: "fas fa-puzzle-piece" }),
-        _vm._v(" Категории")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Название")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Описание")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Подкатегория")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Род. категория")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae& ***!
-  \*************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "content" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v("Партнеры")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("table", { staticClass: "table" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.partners, function(partner, index) {
-                return _c("tr", [
-                  _c("th", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(partner.id))
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(partner.id !== 0 ? partner.name : "") +
-                        "\n                            "
-                    ),
-                    partner.id === 0
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: partner.name,
-                              expression: "partner.name"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: partner.name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(partner, "name", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(partner.id !== 0 ? partner.link : "") +
-                        "\n                            "
-                    ),
-                    partner.id === 0
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: partner.link,
-                              expression: "partner.link"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: partner.link },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(partner, "link", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(partner.id !== 0 ? partner.image : "") +
-                        "\n                            "
-                    ),
-                    partner.id === 0
-                      ? _c("div", { staticClass: "file-upload" }, [
-                          _c("label", [
-                            _c("input", {
-                              ref: "myFilePartner",
-                              refInFor: true,
-                              attrs: { type: "file", id: "fileNewPartner" },
-                              on: {
-                                change: function($event) {
-                                  _vm.loadImage(index)
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
-                          ])
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    partner.id !== 0
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-danger",
-                            on: {
-                              click: function($event) {
-                                _vm.deletePartner(partner.id)
-                              }
-                            }
-                          },
-                          [_vm._v("Удалить")]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    partner.id === 0
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-success",
-                            on: {
-                              click: function($event) {
-                                _vm.saveNewPartner()
-                              }
-                            }
-                          },
-                          [_vm._v("Сохранить")]
-                        )
-                      : _vm._e()
-                  ])
-                ])
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success",
-                on: { click: _vm.addNewSlotPartner }
-              },
-              [_vm._v("Новый партнер")]
-            )
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sidebar" }, [
-      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
-        _vm._v("Компания Терминал ")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin" } }, [
-        _c("i", { staticClass: "fas fa-puzzle-piece" }),
-        _vm._v(" Категории")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Название")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Ссылка")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminSlidersComponent.vue?vue&type=template&id=61082c7f&":
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdminSlidersComponent.vue?vue&type=template&id=61082c7f& ***!
-  \************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "content" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v("Сладер")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("table", { staticClass: "table" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.sliders, function(slider, index) {
-                return _c("tr", [
-                  _c("th", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(slider.id))
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(slider.id !== 0 ? slider.title : "") +
-                        "\n                            "
-                    ),
-                    slider.id === 0
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slider.title,
-                              expression: "slider.title"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: slider.title },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(slider, "title", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(slider.id !== 0 ? slider.comment : "") +
-                        "\n                            "
-                    ),
-                    slider.id === 0
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slider.comment,
-                              expression: "slider.comment"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: slider.comment },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(slider, "comment", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(slider.id !== 0 ? slider.image : "") +
-                        "\n                            "
-                    ),
-                    slider.id === 0
-                      ? _c("div", { staticClass: "file-upload" }, [
-                          _c("label", [
-                            _c("input", {
-                              ref: "myFileSlider",
-                              refInFor: true,
-                              attrs: { type: "file", id: "fileNewSlider" },
-                              on: {
-                                change: function($event) {
-                                  _vm.loadImage(index)
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
-                          ])
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    slider.id !== 0
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-danger",
-                            on: {
-                              click: function($event) {
-                                _vm.deleteSlider(slider.id)
-                              }
-                            }
-                          },
-                          [_vm._v("Удалить")]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    slider.id === 0
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-success",
-                            on: {
-                              click: function($event) {
-                                _vm.saveNewSlider()
-                              }
-                            }
-                          },
-                          [_vm._v("Сохранить")]
-                        )
-                      : _vm._e()
-                  ])
-                ])
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success",
-                on: { click: _vm.addNewSlotSlider }
-              },
-              [_vm._v("Новый партнер")]
-            )
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sidebar" }, [
-      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
-        _vm._v("Компания Терминал ")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin" } }, [
-        _c("i", { staticClass: "fas fa-puzzle-piece" }),
-        _vm._v(" Категории")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Текст")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [
-          _vm._v("Коммент(только для админа)")
-        ]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
       ])
     ])
   }
@@ -46897,6 +46215,7 @@ var render = function() {
                                     _c("div", { staticClass: "col-md-2" }, [
                                       _c("img", {
                                         staticClass: "margin-top-10",
+                                        staticStyle: { "margin-left": "25px" },
                                         attrs: { src: under_category.img }
                                       })
                                     ]),
@@ -46934,7 +46253,7 @@ var render = function() {
               [
                 _c(
                   "transition-group",
-                  { attrs: { name: "fade1", tag: "div" } },
+                  { attrs: { name: "out-right", tag: "div" } },
                   _vm._l(_vm.category.products_page, function(product) {
                     return _vm.category.show
                       ? _c(
@@ -46951,7 +46270,8 @@ var render = function() {
                                   staticClass: "img-responsive",
                                   attrs: {
                                     src:
-                                      "http://127.0.0.1:8000/images/products/" +
+                                      _vm.urlSite +
+                                      "/images/products/" +
                                       product.img,
                                     width: "255",
                                     height: "322",
@@ -46969,7 +46289,6 @@ var render = function() {
                                       attrs: { href: "product/" + product.id }
                                     },
                                     [
-                                      _c("i", { staticClass: "pe-7s-cart" }),
                                       _vm._v(
                                         "Карточка\n                                            товара"
                                       )
@@ -47001,9 +46320,19 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -47033,192 +46362,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("РЕКОМЕНДУЕМ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-            },
-            [
-              _c("div", { staticClass: "product-item" }, [
-                _c("div", { staticClass: "img-product" }, [
-                  _c("img", {
-                    staticClass: "img-responsive",
-                    attrs: { src: "img", width: "255", height: "322", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "product-hover" }, [
-                  _c("div", { staticClass: "product-meta" }, [
-                    _c("a", { staticClass: "add_cart" }, [
-                      _c("i", { staticClass: "pe-7s-cart" }),
-                      _vm._v("Добавить в корзину")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "product-title" }, [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _c("h3", [_vm._v("name")]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v("price ₽")])
-                  ])
-                ])
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class\n                            aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut\n                            vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -47278,12 +46421,19 @@ var render = function() {
                           _c("h1", [_vm._v("Информация о компании :")]),
                           _vm._v(" "),
                           _c("h2", { staticClass: "mt-1" }, [
-                            _vm._v("197376, Санкт-Петербург, Салова, д. 46")
+                            _vm._v(
+                              "628414, г. Сургут, ул.\n                                Крылова, 38, кв.97 "
+                            )
                           ]),
                           _vm._v(" "),
                           _c("h2", [
                             _vm._v(
-                              "График работы: Пн-Пт с 9.00 до 18.00 Тел: 8 (812) 380-85-00"
+                              "График работы: с 9.00 до 18.00 без выходных "
+                            ),
+                            _c("br"),
+                            _c("br"),
+                            _vm._v(
+                              "Тел: 8 (3462) 62-64-64, 65-64-44\n                            "
                             )
                           ]),
                           _vm._v(" "),
@@ -47295,7 +46445,7 @@ var render = function() {
                                 staticStyle: { color: "#2F2C65" },
                                 attrs: { href: "mailto:info@nwc-em.ru" }
                               },
-                              [_vm._v("info@telehandlers.ru")]
+                              [_vm._v("Saha2005@mail.ru")]
                             )
                           ])
                         ]
@@ -47319,39 +46469,103 @@ var render = function() {
                 _vm.showDiv2
                   ? _c("div", { staticClass: "col-md-12" }, [
                       _c("h2", [
-                        _c("b", [_vm._v("Полное наименование:")]),
-                        _vm._v(" Vector")
+                        _c("b", [
+                          _vm._v(
+                            "Полное официальное\n                            наименование предприятия\n                            (для печатн. форм. докум.):"
+                          )
+                        ]),
+                        _vm._v(
+                          " Индивидуальный\n                            предприниматель Коломиец\n                            Александр Васильевич"
+                        )
                       ]),
                       _vm._v(" "),
                       _c("h2", [
                         _c("b", [
                           _vm._v(
-                            "Сокращенное наименование на английском языке:"
+                            "Сокращенное наименование\n                            предприятия:"
                           )
                         ]),
-                        _vm._v(" Vector")
+                        _vm._v(
+                          " ИП Коломиец А.В.\n                            Терминал"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("Директор:")]),
+                        _vm._v(" Коломиец Александр Васильевич")
                       ]),
                       _vm._v(" "),
                       _c("h2", [
                         _c("b", [_vm._v("Юридический адрес:")]),
                         _vm._v(
-                          " 198095, г. Санкт-Петербург, Михайловский переулок, Дом 4А, Литер Б, помещение 5"
+                          " 198095, г. Санкт-Петербург, Михайловский переулок, Дом 4А,\n                            Литер Б, помещение 5"
                         )
                       ]),
                       _vm._v(" "),
                       _c("h2", [
                         _c("b", [_vm._v("ИНН:")]),
-                        _vm._v(" 7805314203")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("КПП:")]),
-                        _vm._v(" 780501001")
+                        _vm._v(" 860236954880")
                       ]),
                       _vm._v(" "),
                       _c("h2", [
                         _c("b", [_vm._v("ОГРН:")]),
-                        _vm._v(" 1157847162285")
+                        _vm._v(" 318861700081536")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("Юридический адрес:")]),
+                        _vm._v(
+                          " 628414, г. Сургут, ул.\n                            Крылова, 38, кв.97"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("Телефон (факс):")]),
+                        _vm._v(" 8 (922)76-30-737")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("Номер расчетного счета:")]),
+                        _vm._v(" 40802810067170012856")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [
+                          _vm._v(
+                            "Наименование учреждения\n                            банка:"
+                          )
+                        ]),
+                        _vm._v(" ПАО «Сбербанк»")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [
+                          _vm._v(
+                            "Местонахождение\n                            учреждения банка:"
+                          )
+                        ]),
+                        _vm._v(
+                          " 628400, г. Сургут\n                            ул. Дзержинского д.5"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [
+                          _vm._v(
+                            "Корреспондентский счет\n                            банка:"
+                          )
+                        ]),
+                        _vm._v(" 30101810800000000651")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("БИК:")]),
+                        _vm._v(" 047102651")
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("b", [_vm._v("e-mail:")]),
+                        _vm._v(" Saha2005@mail.ru")
                       ])
                     ])
                   : _vm._e()
@@ -47362,71 +46576,19 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(2),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(3)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -47473,149 +46635,6 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
           _c("h1", [_vm._v("Контакты")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
         ])
       ])
     ])
@@ -47727,7 +46746,7 @@ var render = function() {
                         _c("div", { staticClass: "col-md-12" }, [
                           _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "Закон 54-ФЗ «О применении контрольно-кассовой техники». Что меняется в 2018 году?"
+                              "Закон 54-ФЗ «О применении контрольно-кассовой техники».\n                                Что меняется в 2018 году?"
                             )
                           ])
                         ])
@@ -47738,21 +46757,21 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_2430" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                С прошлого года в России действуют поправки в закон "
+                                "\n                                    С прошлого года в России действуют поправки в закон "
                               ),
                               _c("strong", [
                                 _vm._v(
-                                  "54-ФЗ «О применении контрольно-кассовой техники»"
+                                  "54-ФЗ «О применении\n                                    контрольно-кассовой техники»"
                                 )
                               ]),
                               _vm._v(
-                                ". Завершился второй этап кассовой реформы, третий пройдет в 2019 году. Кто и когда должен поставить онлайн-кассу? Как зарегистрировать и где обслуживать контрольно-кассовую технику (ККТ)? Какие данные указывать в чеке и как избежать штрафов?\n                            "
+                                ". Завершился второй этап кассовой реформы,\n                                    третий пройдет в 2019 году. Кто и когда должен поставить онлайн-кассу? Как\n                                    зарегистрировать и где обслуживать контрольно-кассовую технику (ККТ)? Какие\n                                    данные указывать в чеке и как избежать штрафов?\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход на работу по новому порядку — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение. В него входит ККТ с ФН, ОФД на год и кассовая программа.\n                            "
+                                "\n                                    Переход на работу по новому порядку — это не просто покупка новой кассовой\n                                    техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД.\n                                    Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая\n                                    программа. У нас вы можете приобрести полное решение. В него входит ККТ с ФН,\n                                    ОФД на год и кассовая программа.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -47765,14 +46784,14 @@ var render = function() {
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "Основная поправка в закон 54-ФЗ «О применении контрольно-кассовой техники» 2017 года меняет схему работы торговых организаций с налоговой. Перемены касаются большинства предпринимателей. Новый порядок применения ККТ предполагает, что данные о продажах с каждого выбитого чека должны передаваться в налоговую через интернет. Отправляются они через оператора фискальных данных (ОФД). С одной из компаний-ОФД нужно обязательно заключить договор. "
+                                  "Основная поправка в закон 54-ФЗ «О применении контрольно-кассовой техники»\n                                        2017 года меняет схему работы торговых организаций с налоговой. Перемены\n                                        касаются большинства предпринимателей. Новый порядок применения ККТ\n                                        предполагает, что данные о продажах с каждого выбитого чека должны\n                                        передаваться в налоговую через интернет. Отправляются они через оператора\n                                        фискальных данных (ОФД). С одной из компаний-ОФД нужно обязательно заключить\n                                        договор. "
                                 ),
                                 _c(
                                   "a",
                                   { attrs: { href: "sofd", target: "_blank" } },
                                   [
                                     _vm._v(
-                                      "Список операторов фискальных данных — здесь >>"
+                                      "Список операторов фискальных данных\n                                            — здесь >>"
                                     )
                                   ]
                                 )
@@ -47780,7 +46799,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Предприниматели теперь могут использовать только кассы с фискальным накопителем (ФН). ФН нужен для записи и хранения информации о расчетах, которые проводятся на ККТ. Все разрешенные для использования кассы внесены в реестр ФНС. Налоговая сертифицировала уже больше 100 моделей ККТ нового образца от разных производителей. Ведется и реестр фискальных накопителей — там их уже более 15. Подробнее: "
+                                  "Предприниматели теперь могут использовать только кассы с фискальным\n                                        накопителем (ФН). ФН нужен для записи и хранения информации о расчетах,\n                                        которые проводятся на ККТ. Все разрешенные для использования кассы внесены в\n                                        реестр ФНС. Налоговая сертифицировала уже больше 100 моделей ККТ нового\n                                        образца от разных производителей. Ведется и реестр фискальных накопителей —\n                                        там их уже более 15. Подробнее: "
                                 ),
                                 _c(
                                   "a",
@@ -47790,7 +46809,11 @@ var render = function() {
                                       target: "_blank"
                                     }
                                   },
-                                  [_vm._v("кассовые аппараты в 2019 году >>")]
+                                  [
+                                    _vm._v(
+                                      "кассовые аппараты в 2019\n                                            году >>"
+                                    )
+                                  ]
                                 )
                               ]),
                               _vm._v(" "),
@@ -47806,18 +46829,18 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "Зарегистрировать онлайн-кассу в налоговой "
+                                      "Зарегистрировать\n                                        онлайн-кассу в налоговой "
                                     )
                                   ]
                                 ),
                                 _vm._v(
-                                  " можно через интернет, но только после подписания договора с ОФД. А вот в ЦТО можно уже не обращаться. Обязательное заключение договора с центром техобслуживания больше не требуется для использования ККТ. Предприниматель сам решает — выбрать ЦТО или другой сервисный центр или делать все самостоятельно. "
+                                  " можно через интернет, но только после\n                                        подписания договора с ОФД. А вот в ЦТО можно уже не обращаться. Обязательное\n                                        заключение договора с центром техобслуживания больше не требуется для\n                                        использования ККТ. Предприниматель сам решает — выбрать ЦТО или другой\n                                        сервисный центр или делать все самостоятельно.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  " С 1 января 2019 онлайн-касса должна поддерживать формат фискальных данных 1.05 и ставку НДС 20%. Без обновлений работать будет нельзя. Подробнее о "
+                                  " С 1 января 2019 онлайн-касса должна поддерживать формат фискальных данных\n                                        1.05 и ставку НДС 20%. Без обновлений работать будет нельзя. Подробнее о "
                                 ),
                                 _c(
                                   "a",
@@ -47828,19 +46851,23 @@ var render = function() {
                                         "/perekhod-na-ffd-1-05-i-nds-20-atol-shtrikh-m-viki-print"
                                     }
                                   },
-                                  [_vm._v("переходе на ФФД 1.05 и НДС 20% >>")]
+                                  [
+                                    _vm._v(
+                                      "переходе\n                                            на ФФД 1.05 и НДС 20% >>"
+                                    )
+                                  ]
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Хотя передача данных в налоговую стала онлайн-процедурой, закон 54-ФЗ «О применении ККТ» не содержит положений о том, что выдавать бумажный чек в 2019 году не надо. По желанию покупателя нужно отправить ему документ по email или SMS в дополнение к распечатанному на ККТ. Электронный чек приравнивается к бумажному."
+                                  "Хотя передача данных в налоговую стала онлайн-процедурой, закон 54-ФЗ «О\n                                        применении ККТ» не содержит положений о том, что выдавать бумажный чек в\n                                        2019 году не надо. По желанию покупателя нужно отправить ему документ по\n                                        email или SMS в дополнение к распечатанному на ККТ. Электронный чек\n                                        приравнивается к бумажному.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Закон о ККТ с 2018 года требует указывать больше данных в чеках и бланках строгой отчетности. Например, перечень пробитых товаров (с указанием цены, скидок), заводской номер фискального накопителя и номер телефона или email покупателя, если документ передается в электронной форме. "
+                                  "Закон о ККТ с 2018 года требует указывать больше данных в чеках и бланках\n                                        строгой отчетности. Например, перечень пробитых товаров (с указанием цены,\n                                        скидок), заводской номер фискального накопителя и номер телефона или email\n                                        покупателя, если документ передается в электронной форме. "
                                 ),
                                 _c(
                                   "a",
@@ -47853,7 +46880,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "Новые обязательные реквизиты чеков ККТ и БСО в 2019 году >>"
+                                      "Новые\n                                            обязательные реквизиты чеков ККТ и БСО в 2019 году >>"
                                     )
                                   ]
                                 )
@@ -47861,7 +46888,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Предпринимателей на патенте и ЕНВД тоже коснулись изменения в 54-ФЗ: с 2018 года они тоже начинают ставить кассы, хотя раньше были вообще освобождены от использования ККТ. Те, кто работает в рознице и общепите, должны были перейти на новый порядок с 1 июля этого года. А для остальных применение ККТ обязательно с 1 июля 2019 года. Читайте все об "
+                                  "Предпринимателей на патенте и ЕНВД тоже коснулись изменения в 54-ФЗ: с 2018\n                                        года они тоже начинают ставить кассы, хотя раньше были вообще освобождены от\n                                        использования ККТ. Те, кто работает в рознице и общепите, должны были\n                                        перейти на новый порядок с 1 июля этого года. А для остальных применение ККТ\n                                        обязательно с 1 июля 2019 года. Читайте все об "
                                 ),
                                 _c(
                                   "a",
@@ -47878,7 +46905,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Расходы на покупку ККТ можно вычесть из налога — до 18 000 рублей на каждый аппарат. Но не всем. "
+                                  "Расходы на покупку ККТ можно вычесть из налога — до 18 000 рублей на каждый\n                                        аппарат. Но не всем. "
                                 ),
                                 _c(
                                   "a",
@@ -47890,7 +46917,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "Налоговый вычет за онлайн-кассу: подробнее >>"
+                                      "Налоговый вычет за онлайн-кассу:\n                                            подробнее >>"
                                     )
                                   ]
                                 )
@@ -47898,7 +46925,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Закон о ККТ с 2018 года коснулся не всех. Некоторые организации освобождены от применения касс. Узнайте, "
+                                  "Закон о ККТ с 2018 года коснулся не всех. Некоторые организации освобождены\n                                        от применения касс. Узнайте, "
                                 ),
                                 _c(
                                   "a",
@@ -47911,7 +46938,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "кому можно не ставить онлайн-кассу >>"
+                                      "кому можно не ставить\n                                            онлайн-кассу >>"
                                     )
                                   ]
                                 )
@@ -47919,7 +46946,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Снять ККТ с учета можно также без посещения налоговой — через личный кабинет на сайте ФНС. Но налоговая может сделать это и принудительно. "
+                                  "Снять ККТ с учета можно также без посещения налоговой — через личный кабинет\n                                        на сайте ФНС. Но налоговая может сделать это и принудительно. "
                                 ),
                                 _c(
                                   "a",
@@ -47931,7 +46958,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "Как снять онлайн-кассу с учета — здесь >>"
+                                      "Как снять\n                                            онлайн-кассу с учета — здесь >>"
                                     )
                                   ]
                                 )
@@ -47950,7 +46977,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Порядок применения ККТ в 2018 году изменился. Предприниматель может поставить онлайн-кассу на учет через интернет. Подробно о том, "
+                                "\n                                    Порядок применения ККТ в 2018 году изменился. Предприниматель может поставить\n                                    онлайн-кассу на учет через интернет. Подробно о том, "
                               ),
                               _c(
                                 "a",
@@ -47961,13 +46988,17 @@ var render = function() {
                                     target: "_blank"
                                   }
                                 },
-                                [_vm._v("как зарегистрировать онлайн-кассу >>")]
+                                [
+                                  _vm._v(
+                                    "как\n                                    зарегистрировать онлайн-кассу >>"
+                                  )
+                                ]
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Когда кассовый аппарат зарегистрирован, с ним начинает работать продавец. Применение ККТ в 2018-2019 году в целом не отличается от привычной работы. Покупатель оплачивает товар и получает чек — теперь и электронный. Фискальный регистратор отправляет сведения о продаже или возврате оператору фискальных данных. ОФД обрабатывает информацию, посылает подтверждение обратно в кассу, а данные — в налоговую. Все сведения передаются параллельно с оформлением чека, то есть время обслуживания покупателя не меняется.\n                            "
+                                "\n                                    Когда кассовый аппарат зарегистрирован, с ним начинает работать продавец.\n                                    Применение ККТ в 2018-2019 году в целом не отличается от привычной работы.\n                                    Покупатель оплачивает товар и получает чек — теперь и электронный. Фискальный\n                                    регистратор отправляет сведения о продаже или возврате оператору фискальных\n                                    данных. ОФД обрабатывает информацию, посылает подтверждение обратно в кассу, а\n                                    данные — в налоговую. Все сведения передаются параллельно с оформлением чека, то\n                                    есть время обслуживания покупателя не меняется.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -47991,7 +47022,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Закон 54-ФЗ «О применении контрольно-кассовой техники» предполагает, что с 2018 года во все торговые точки должен быть проведен интернет. Если подключения к сети нет, то работать вы не сможете. При этом сбой связи торговле не помешает — ФН сохранит информацию о каждой покупке и передаст ее в налоговую, когда появится интернет. Устройство хранит информацию в течение 30 дней. Если за это время соединения с интернетом не будет, ФН заблокируется, и регистрировать продажи станет невозможно. Подробнее: "
+                                "\n                                    Закон 54-ФЗ «О применении контрольно-кассовой техники» предполагает, что с 2018\n                                    года во все торговые точки должен быть проведен интернет. Если подключения к\n                                    сети нет, то работать вы не сможете. При этом сбой связи торговле не помешает —\n                                    ФН сохранит информацию о каждой покупке и передаст ее в налоговую, когда\n                                    появится интернет. Устройство хранит информацию в течение 30 дней. Если за это\n                                    время соединения с интернетом не будет, ФН заблокируется, и регистрировать\n                                    продажи станет невозможно. Подробнее: "
                               ),
                               _c(
                                 "a",
@@ -48001,19 +47032,23 @@ var render = function() {
                                     target: "_blank"
                                   }
                                 },
-                                [_vm._v("кассовые аппараты в 2019 году >>")]
+                                [
+                                  _vm._v(
+                                    "кассовые аппараты в\n                                    2019 году >>"
+                                  )
+                                ]
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Новые правила применения ККМ в 2018 году помогали государству сделать торговлю прозрачной. Но для предпринимателей переоснащение места кассира — дополнительные затраты. Минфин подсчитал, что в 2018 году ККТ обошлась в среднем в 25 000 рублей.\n                            "
+                                "\n                                    Новые правила применения ККМ в 2018 году помогали государству сделать торговлю\n                                    прозрачной. Но для предпринимателей переоснащение места кассира — дополнительные\n                                    затраты. Минфин подсчитал, что в 2018 году ККТ обошлась в среднем в 25 000\n                                    рублей.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При этом ИП на патенте и ЕНВД могут вернуть за каждую ККМ до 18 000 рублей: с 2018 года в законе о ККТ есть такая поправка. Для этого нужно обратиться в ФНС за налоговым вычетом. Причем получить его можно не только за покупку кассы, но и за услуги по ее настройке и подключению к ОФД. "
+                                "\n                                    При этом ИП на патенте и ЕНВД могут вернуть за каждую ККМ до 18 000 рублей: с\n                                    2018 года в законе о ККТ есть такая поправка. Для этого нужно обратиться в ФНС\n                                    за налоговым вычетом. Причем получить его можно не только за покупку кассы, но и\n                                    за услуги по ее настройке и подключению к ОФД. "
                               ),
                               _c(
                                 "a",
@@ -48025,7 +47060,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    " Налоговый вычет на покупку ККТ: обязательные требования >>"
+                                    " Налоговый вычет на\n                                    покупку ККТ: обязательные требования >>"
                                   )
                                 ]
                               )
@@ -48041,19 +47076,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Налоговая уже выписала первые штрафы за нарушение требований 54-ФЗ. За неиспользование новой ККТ предпринимателя могут оштрафовать на 25–50% от суммы, проведенной мимо кассы, но не меньше 10 000 рублей. Организации — на 75–100%, но не менее 30 000 рублей. За использование ККТ, которая не соответствует требованиям закона, ИП грозит штраф до 3 000 рублей, а компании — до 10 000 рублей. При повторном нарушении, если сумма расчетов составит более 1 млн рублей, деятельность предпринимателя или организации может быть приостановлена на срок до 90 суток.\n                            "
+                                "\n                                    Налоговая уже выписала первые штрафы за нарушение требований 54-ФЗ. За\n                                    неиспользование новой ККТ предпринимателя могут оштрафовать на 25–50% от суммы,\n                                    проведенной мимо кассы, но не меньше 10 000 рублей. Организации — на 75–100%, но\n                                    не менее 30 000 рублей. За использование ККТ, которая не соответствует\n                                    требованиям закона, ИП грозит штраф до 3 000 рублей, а компании — до 10 000\n                                    рублей. При повторном нарушении, если сумма расчетов составит более 1 млн\n                                    рублей, деятельность предпринимателя или организации может быть приостановлена\n                                    на срок до 90 суток.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                С 1 июля 2018 года штрафов за неправильное применение касс стало больше. В Кодекс об административных нарушениях внесли поправки — теперь наказывать будут и за фиктивные чеки ККТ. С компаний смогут взыскать до 40 000 рублей, с ИП — до 10 000 руб. ФНС также сможет штрафовать за неправильно указанный маркируемый товар в чеке или несвоевременную передачу фискальных данных: организации на сумму до 100 000 рублей, предпринимателей — до 50 000 рублей. Если же ИП или компания попадутся на нарушении повторно, а сумма расчетов будет более 1 млн рублей, размер штрафа составит от 800 000 до 1 млн рублей.\n                            "
+                                "\n                                    С 1 июля 2018 года штрафов за неправильное применение касс стало больше. В\n                                    Кодекс об административных нарушениях внесли поправки — теперь наказывать будут\n                                    и за фиктивные чеки ККТ. С компаний смогут взыскать до 40 000 рублей, с ИП — до\n                                    10 000 руб. ФНС также сможет штрафовать за неправильно указанный маркируемый\n                                    товар в чеке или несвоевременную передачу фискальных данных: организации на\n                                    сумму до 100 000 рублей, предпринимателей — до 50 000 рублей. Если же ИП или\n                                    компания попадутся на нарушении повторно, а сумма расчетов будет более 1 млн\n                                    рублей, размер штрафа составит от 800 000 до 1 млн рублей.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Кроме того, у налоговиков появится право блокировать работу касс, которые использовали при нарушении. Это будет возможно в присутствии двух понятых или с применением видеозаписи.\n                            "
+                                "\n                                    Кроме того, у налоговиков появится право блокировать работу касс, которые\n                                    использовали при нарушении. Это будет возможно в присутствии двух понятых или с\n                                    применением видеозаписи.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -48061,13 +47096,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для отдельных льготников переход на новый порядок работы закончится 1 июля 2019 года, но для большинства предпринимателей он уже наступил 1 июля 2018. Поэтому покупать технику нужно уже сейчас. Откладывать уже некуда: учитывайте, что процесс может затянуться — нужной кассы может не оказаться в наличии, придется ждать поставку, регистрация кассы тоже займет какое-то время. А потом понадобится еще и настроить ККТ, выбрать и установить кассовую программу, проверить все это на совместимость и научиться работать.\n                            "
+                                "\n                                    Для отдельных льготников переход на новый порядок работы закончится 1 июля 2019\n                                    года, но для большинства предпринимателей он уже наступил 1 июля 2018. Поэтому\n                                    покупать технику нужно уже сейчас. Откладывать уже некуда: учитывайте, что\n                                    процесс может затянуться — нужной кассы может не оказаться в наличии, придется\n                                    ждать поставку, регистрация кассы тоже займет какое-то время. А потом\n                                    понадобится еще и настроить ККТ, выбрать и установить кассовую программу,\n                                    проверить все это на совместимость и научиться работать.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход пройдет намного проще и быстрее с готовым решением. Мы предлагаем онлайн-кассу под ключ: в одном комплекте — ККТ с фискальным накопителем, подписка на ОФД и удобная кассовая программа. Ждать поставки не придется — вся техника в наличии. Мы поможем все настроить и научим вас работать с программой. Решение проверенное и надежное: в прошлом году его уже испытали наши пользователи, которые попали в первую волну внедрения онлайн-касс.\n                            "
+                                "\n                                    Переход пройдет намного проще и быстрее с готовым решением. Мы предлагаем\n                                    онлайн-кассу под ключ: в одном комплекте — ККТ с фискальным накопителем,\n                                    подписка на ОФД и удобная кассовая программа. Ждать поставки не придется — вся\n                                    техника в наличии. Мы поможем все настроить и научим вас работать с программой.\n                                    Решение проверенное и надежное: в прошлом году его уже испытали наши\n                                    пользователи, которые попали в первую волну внедрения онлайн-касс.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -48077,19 +47112,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Эксперты прогнозируют дефицит фискальных накопителей на рынке, что приведет к завышению цен на них. По оценке Торгово-промышленной палаты РФ, сегодня ФН производится гораздо меньше, чем кассовых аппаратов, а задержки в поставках достигают трех месяцев.\n                            "
+                                "\n                                    Эксперты прогнозируют дефицит фискальных накопителей на рынке, что приведет к\n                                    завышению цен на них. По оценке Торгово-промышленной палаты РФ, сегодня ФН\n                                    производится гораздо меньше, чем кассовых аппаратов, а задержки в поставках\n                                    достигают трех месяцев.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Поэтому начните переход прямо сейчас — не откладывая на крайний срок. А сэкономить время, нервы и деньги поможет МойСклад. Стоимость нашего комплекта «Эконом» покрывается налоговым вычетом. А наша кассовая программа совместима с новыми моделями ККТ, не требует установки и дорогостоящего внедрения, подходит для автоматизации любого числа розничных точек.\n                            "
+                                "\n                                    Поэтому начните переход прямо сейчас — не откладывая на крайний срок. А\n                                    сэкономить время, нервы и деньги поможет МойСклад. Стоимость нашего комплекта\n                                    «Эконом» покрывается налоговым вычетом. А наша кассовая программа совместима с\n                                    новыми моделями ККТ, не требует установки и дорогостоящего внедрения, подходит\n                                    для автоматизации любого числа розничных точек.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                С нами надежно! МойСклад — официальный участник первого эксперимента с онлайн-кассами: пилотного проекта, который провели еще в 2015 году. Тогда на первые несколько тысяч касс впервые поставили модуль, передающий данные в ФНС. Проект признали успешным — и внедрили по всей России.\n                            "
+                                "\n                                    С нами надежно! МойСклад — официальный участник первого эксперимента с\n                                    онлайн-кассами: пилотного проекта, который провели еще в 2015 году. Тогда на\n                                    первые несколько тысяч касс впервые поставили модуль, передающий данные в ФНС.\n                                    Проект признали успешным — и внедрили по всей России.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -48101,7 +47136,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Спецрежимников тоже касаются изменения в 54-ФЗ: с июля 2018 года должны были перейти на онлайн-кассы фирмы и ИП на ЕНВД и патенте с наемными сотрудниками, которые занимаются розничной торговлей или оказывают услуги общепита. Остальные получили отсрочку до 1 июля 2019 года. Подробнее "
+                                "\n                                    Спецрежимников тоже касаются изменения в 54-ФЗ: с июля 2018 года должны были\n                                    перейти на онлайн-кассы фирмы и ИП на ЕНВД и патенте с наемными сотрудниками,\n                                    которые занимаются розничной торговлей или оказывают услуги общепита. Остальные\n                                    получили отсрочку до 1 июля 2019 года. Подробнее "
                               ),
                               _c(
                                 "a",
@@ -48122,7 +47157,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для ИП применение ККМ при УСН в 2018 году было необходимо, как и для юрлиц. Право на отсрочку до 1 июля 2019 года получили только те компании и предприниматели на упрощенке, которые оказывают услуги населению. Вместо использования ККТ они пока могут выдавать клиентам бланки строгой отчетности.\n                            "
+                                "\n                                    Для ИП применение ККМ при УСН в 2018 году было необходимо, как и для юрлиц.\n                                    Право на отсрочку до 1 июля 2019 года получили только те компании и\n                                    предприниматели на упрощенке, которые оказывают услуги населению. Вместо\n                                    использования ККТ они пока могут выдавать клиентам бланки строгой отчетности.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -48134,7 +47169,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нет, в 2019 это не обязательно — при условии, что ИП или компания выдает клиентам бланки строгой отчетности. "
+                                "\n                                    Нет, в 2019 это не обязательно — при условии, что ИП или компания выдает\n                                    клиентам бланки строгой отчетности. "
                               ),
                               _c(
                                 "a",
@@ -48157,7 +47192,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Действующая редакция закона о ККТ с 2018 года касается только части предпринимателей на патенте. Те из них, у кого есть сотрудники на трудовых договорах и которые торгуют в розницу или оказывают услуги общепита, обязаны были поставить ККТ к 1 июля 2018. Для остальных налогоплательщиков на ПСН переход уже отложен — до 2019. Подробнее об этом читайте в нашей статье "
+                                "\n                                    Действующая редакция закона о ККТ с 2018 года касается только части\n                                    предпринимателей на патенте. Те из них, у кого есть сотрудники на трудовых\n                                    договорах и которые торгуют в розницу или оказывают услуги общепита, обязаны\n                                    были поставить ККТ к 1 июля 2018. Для остальных налогоплательщиков на ПСН\n                                    переход уже отложен — до 2019. Подробнее об этом читайте в нашей статье "
                               ),
                               _c(
                                 "a",
@@ -48178,7 +47213,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Посмотрите также запись нашего семинара, на котором руководитель отдела продаж МоегоСклада Иван Кириллин рассказал про изменения в 54-ФЗ, как выбрать кассу, какой вариант подойдет интернет-магазину, как перейти на ФФД 1.05 и НДС 20%.\n                            "
+                                "\n                                    Посмотрите также запись нашего семинара, на котором руководитель отдела продаж\n                                    МоегоСклада Иван Кириллин рассказал про изменения в 54-ФЗ, как выбрать кассу,\n                                    какой вариант подойдет интернет-магазину, как перейти на ФФД 1.05 и НДС 20%.\n                                "
                               )
                             ])
                           ])
@@ -48195,71 +47230,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -48289,149 +47272,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -48568,7 +47408,7 @@ var render = function() {
                 [
                   _c(
                     "transition-group",
-                    { attrs: { name: "fade1", tag: "div" } },
+                    { attrs: { name: "out-right", tag: "div" } },
                     _vm._l(_vm.categories.categories, function(category) {
                       return category.show
                         ? _c("div", { key: category.id }, [
@@ -48633,6 +47473,10 @@ var render = function() {
                                                         _c("img", {
                                                           staticClass:
                                                             "margin-top-10",
+                                                          staticStyle: {
+                                                            "margin-left":
+                                                              "25px"
+                                                          },
                                                           attrs: {
                                                             src:
                                                               under_category.img
@@ -48725,10 +47569,16 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "product-hover" }, [
                                     _c("div", { staticClass: "product-meta" }, [
-                                      _c("a", { staticClass: "add_cart" }, [
-                                        _c("i", { staticClass: "pe-7s-cart" }),
-                                        _vm._v("Карточка товара")
-                                      ])
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "add_cart",
+                                          attrs: {
+                                            href: "product/" + product.id
+                                          }
+                                        },
+                                        [_vm._v("Карточка товара")]
+                                      )
                                     ])
                                   ]),
                                   _vm._v(" "),
@@ -48790,9 +47640,19 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(4),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(5)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -48902,1277 +47762,6 @@ var staticRenderFns = [
         })
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("РЕКОМЕНДУЕМ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-            },
-            [
-              _c("div", { staticClass: "product-item" }, [
-                _c("div", { staticClass: "img-product" }, [
-                  _c("img", {
-                    staticClass: "img-responsive",
-                    attrs: { src: "img", width: "255", height: "322", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "product-hover" }, [
-                  _c("div", { staticClass: "product-meta" }, [
-                    _c("a", { staticClass: "add_cart" }, [
-                      _c("i", { staticClass: "pe-7s-cart" }),
-                      _vm._v("Добавить в корзину")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "product-title" }, [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _c("h3", [_vm._v("name")]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v("price ₽")])
-                  ])
-                ])
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class\n                            aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut\n                            vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductAdminComponent.vue?vue&type=template&id=41dfb53c&":
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductAdminComponent.vue?vue&type=template&id=41dfb53c& ***!
-  \************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "content" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v("Продукты")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("table", { staticClass: "table" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.products, function(product, index) {
-                return _c("tr", [
-                  _c("th", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(product.id))
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          product.isNew === undefined ? product.name : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    product.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: product.name,
-                              expression: "product.name"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: product.name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(product, "name", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(product.isNew === undefined ? product.img : "") +
-                        "\n                            "
-                    ),
-                    product.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: product.img,
-                              expression: "product.img"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: product.img },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(product, "img", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    product.isNew === undefined
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-danger",
-                            on: {
-                              click: function($event) {
-                                _vm.deleteProduct(product.id)
-                              }
-                            }
-                          },
-                          [_vm._v("Удалить")]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    product.isNew === undefined
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-success",
-                            attrs: {
-                              "data-toggle": "modal",
-                              "data-target": ".modal-product-edit"
-                            }
-                          },
-                          [_vm._v("Изменить")]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    product.isNew !== undefined
-                      ? _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-success",
-                            on: {
-                              click: function($event) {
-                                _vm.saveNewCategories()
-                              }
-                            }
-                          },
-                          [_vm._v("Сохранить")]
-                        )
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "modal fade bd-example-modal-lg modal-product-edit",
-                      attrs: {
-                        tabindex: "-1",
-                        role: "dialog",
-                        "aria-labelledby": "myLargeModalLabel",
-                        "aria-hidden": "true"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "modal-dialog modal-lg" }, [
-                        _c("div", { staticClass: "modal-content" }, [
-                          _vm._m(2, true),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "modal-body" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-6" }, [
-                                _c("div", { staticClass: "form-group" }, [
-                                  _c("label", { attrs: { for: "usr" } }, [
-                                    _vm._v("Name:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: product.name,
-                                        expression: "product.name"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    attrs: { type: "text", id: "usr" },
-                                    domProps: { value: product.name },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          product,
-                                          "name",
-                                          $event.target.value
-                                        )
-                                      }
-                                    }
-                                  })
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "form-group" }, [
-                                  _c("label", { attrs: { for: "usr" } }, [
-                                    _vm._v("Price:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: product.price,
-                                        expression: "product.price"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    attrs: { type: "text", id: "usr" },
-                                    domProps: { value: product.price },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          product,
-                                          "price",
-                                          $event.target.value
-                                        )
-                                      }
-                                    }
-                                  })
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "form-group" }, [
-                                  _c("h6", [_vm._v("Категория")]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "select",
-                                    {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: product.category.id,
-                                          expression: "product.category.id"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      on: {
-                                        change: function($event) {
-                                          var $$selectedVal = Array.prototype.filter
-                                            .call(
-                                              $event.target.options,
-                                              function(o) {
-                                                return o.selected
-                                              }
-                                            )
-                                            .map(function(o) {
-                                              var val =
-                                                "_value" in o
-                                                  ? o._value
-                                                  : o.value
-                                              return val
-                                            })
-                                          _vm.$set(
-                                            product.category,
-                                            "id",
-                                            $event.target.multiple
-                                              ? $$selectedVal
-                                              : $$selectedVal[0]
-                                          )
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c("option", [
-                                        _vm._v(_vm._s(product.category.name))
-                                      ]),
-                                      _vm._v(" "),
-                                      _vm._l(
-                                        _vm.categories.categories,
-                                        function(category) {
-                                          return [
-                                            category.name !==
-                                            product.category.name
-                                              ? _c(
-                                                  "option",
-                                                  {
-                                                    domProps: {
-                                                      value: category.id
-                                                    }
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                                                " +
-                                                        _vm._s(category.name) +
-                                                        "\n                                                            "
-                                                    )
-                                                  ]
-                                                )
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm._l(
-                                              category.under_categories,
-                                              function(under_category) {
-                                                return under_category.name !==
-                                                  _vm.newProduct.category
-                                                  ? _c(
-                                                      "option",
-                                                      {
-                                                        staticClass:
-                                                          "under-category-option",
-                                                        domProps: {
-                                                          value:
-                                                            under_category.id
-                                                        }
-                                                      },
-                                                      [
-                                                        _vm._v(
-                                                          "\n                                                                   --" +
-                                                            _vm._s(
-                                                              under_category.name
-                                                            ) +
-                                                            "\n                                                            "
-                                                        )
-                                                      ]
-                                                    )
-                                                  : _vm._e()
-                                              }
-                                            )
-                                          ]
-                                        }
-                                      )
-                                    ],
-                                    2
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-6" }, [
-                                _c("img", {
-                                  staticClass: "border-img",
-                                  attrs: {
-                                    src: "/images/products/" + product.img,
-                                    width: "322px"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "file-upload" }, [
-                                  _c("label", [
-                                    _c("input", {
-                                      ref: "myFiles",
-                                      refInFor: true,
-                                      attrs: { type: "file", id: "file" },
-                                      on: {
-                                        change: function($event) {
-                                          _vm.productEditImageLoad(product.id)
-                                        }
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-2" }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-8" }, [
-                                _c("div", { staticClass: "form-group" }, [
-                                  _c("label", { attrs: { for: "comment" } }, [
-                                    _vm._v("Описание:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("textarea", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: product.description,
-                                        expression: "product.description"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    attrs: { rows: "5", id: "comment" },
-                                    domProps: { value: product.description },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          product,
-                                          "description",
-                                          $event.target.value
-                                        )
-                                      }
-                                    }
-                                  })
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-2" })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c("h1", [_vm._v("Характеристики:")]),
-                              _vm._v(" "),
-                              _c("table", { staticClass: "table" }, [
-                                _vm._m(3, true),
-                                _vm._v(" "),
-                                _c(
-                                  "tbody",
-                                  [
-                                    _vm._l(product.specifications_get, function(
-                                      specification
-                                    ) {
-                                      return _c("tr", [
-                                        _c("td", [
-                                          _c("input", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: specification.name,
-                                                expression: "specification.name"
-                                              }
-                                            ],
-                                            staticClass: "form-control",
-                                            attrs: { type: "text" },
-                                            domProps: {
-                                              value: specification.name
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.$set(
-                                                  specification,
-                                                  "name",
-                                                  $event.target.value
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _c("input", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: specification.parameter,
-                                                expression:
-                                                  "specification.parameter"
-                                              }
-                                            ],
-                                            staticClass: "form-control",
-                                            attrs: { type: "text" },
-                                            domProps: {
-                                              value: specification.parameter
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.$set(
-                                                  specification,
-                                                  "parameter",
-                                                  $event.target.value
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ])
-                                      ])
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "button",
-                                      {
-                                        staticClass: "btn btn-success ml-2",
-                                        on: {
-                                          click: function($event) {
-                                            _vm.addNewSpecification(index)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "Add new specification\n                                                "
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  2
-                                )
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "modal-footer" }, [
-                            _vm.saveChangesSuccess
-                              ? _c(
-                                  "div",
-                                  {
-                                    staticClass: "alert alert-success",
-                                    attrs: { role: "alert" }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                                            Изменения успешно сохраненны!\n                                        "
-                                    )
-                                  ]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-secondary",
-                                attrs: {
-                                  type: "button",
-                                  "data-dismiss": "modal"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Close\n                                        "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-primary",
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.saveChangesProduct(index)
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Save changes\n                                        "
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ])
-                    ]
-                  )
-                ])
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success",
-                attrs: {
-                  "data-toggle": "modal",
-                  "data-target": ".bd-example-modal-lg-1"
-                }
-              },
-              [
-                _vm._v(
-                  "Новый\n                        продукт\n                    "
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "modal fade bd-example-modal-lg-1",
-                attrs: {
-                  tabindex: "-1",
-                  role: "dialog",
-                  "aria-labelledby": "myLargeModalLabel",
-                  "aria-hidden": "true"
-                }
-              },
-              [
-                _c("div", { staticClass: "modal-dialog modal-lg" }, [
-                  _c("div", { staticClass: "modal-content" }, [
-                    _vm._m(4),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "modal-body" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-6" }, [
-                          _c("div", { staticClass: "form-group" }, [
-                            _c("label", { attrs: { for: "usr" } }, [
-                              _vm._v("Name:")
-                            ]),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.newProduct.name,
-                                  expression: "newProduct.name"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: { type: "text", id: "usr" },
-                              domProps: { value: _vm.newProduct.name },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.newProduct,
-                                    "name",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _c("label", { attrs: { for: "usr" } }, [
-                              _vm._v("Price:")
-                            ]),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.newProduct.price,
-                                  expression: "newProduct.price"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: { type: "text", id: "usr" },
-                              domProps: { value: _vm.newProduct.price },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.newProduct,
-                                    "price",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _c(
-                              "select",
-                              {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.newProduct.category,
-                                    expression: "newProduct.category"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                on: {
-                                  change: function($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call($event.target.options, function(o) {
-                                        return o.selected
-                                      })
-                                      .map(function(o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.$set(
-                                      _vm.newProduct,
-                                      "category",
-                                      $event.target.multiple
-                                        ? $$selectedVal
-                                        : $$selectedVal[0]
-                                    )
-                                  }
-                                }
-                              },
-                              [
-                                _c("option", [
-                                  _vm._v(_vm._s(_vm.newProduct.category))
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.categories.categories, function(
-                                  category
-                                ) {
-                                  return [
-                                    category.name !== _vm.newProduct.category
-                                      ? _c("option", [
-                                          _vm._v(
-                                            "\n                                                            " +
-                                              _vm._s(category.name) +
-                                              "\n                                                        "
-                                          )
-                                        ])
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _vm._l(category.under_categories, function(
-                                      under_category
-                                    ) {
-                                      return under_category.name !==
-                                        _vm.newProduct.category
-                                        ? _c(
-                                            "option",
-                                            {
-                                              staticClass:
-                                                "under-category-option",
-                                              domProps: {
-                                                value: under_category.id
-                                              }
-                                            },
-                                            [
-                                              _vm._v(
-                                                "\n                                                               --" +
-                                                  _vm._s(under_category.name) +
-                                                  "\n                                                        "
-                                              )
-                                            ]
-                                          )
-                                        : _vm._e()
-                                    })
-                                  ]
-                                })
-                              ],
-                              2
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6" }, [
-                          _c("img", {
-                            staticClass: "border-img",
-                            attrs: {
-                              src: "/images/products/" + _vm.newProduct.img,
-                              width: "322px"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "file-upload" }, [
-                            _c("label", [
-                              _c("input", {
-                                ref: "myFilesProduct",
-                                attrs: { type: "file", id: "file_new_product" },
-                                on: {
-                                  change: function($event) {
-                                    _vm.loadImage()
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-2" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-8" }, [
-                          _c("div", { staticClass: "form-group" }, [
-                            _c("label", { attrs: { for: "comment" } }, [
-                              _vm._v("Описание:")
-                            ]),
-                            _vm._v(" "),
-                            _c("textarea", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.newProduct.description,
-                                  expression: "newProduct.description"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: { rows: "5", id: "comment" },
-                              domProps: { value: _vm.newProduct.description },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.newProduct,
-                                    "description",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-2" })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("h1", [_vm._v("Характеристики:")]),
-                        _vm._v(" "),
-                        _c("table", { staticClass: "table" }, [
-                          _vm._m(5),
-                          _vm._v(" "),
-                          _c(
-                            "tbody",
-                            [
-                              _vm._l(
-                                _vm.newProduct.specifications_get,
-                                function(specification) {
-                                  return specification.name !== undefined
-                                    ? _c("tr", [
-                                        _c("td", [
-                                          _c("input", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: specification.name,
-                                                expression: "specification.name"
-                                              }
-                                            ],
-                                            staticClass: "form-control",
-                                            attrs: { type: "text" },
-                                            domProps: {
-                                              value: specification.name
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.$set(
-                                                  specification,
-                                                  "name",
-                                                  $event.target.value
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _c("input", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: specification.parameter,
-                                                expression:
-                                                  "specification.parameter"
-                                              }
-                                            ],
-                                            staticClass: "form-control",
-                                            attrs: { type: "text" },
-                                            domProps: {
-                                              value: specification.parameter
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.$set(
-                                                  specification,
-                                                  "parameter",
-                                                  $event.target.value
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ])
-                                      ])
-                                    : _vm._e()
-                                }
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-success ml-2",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.addNewSpecification(_vm.newProduct, 1)
-                                    }
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Add new specification\n                                            "
-                                  )
-                                ]
-                              )
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "modal-footer" }, [
-                      _vm.saveChangesSuccess
-                        ? _c(
-                            "div",
-                            {
-                              staticClass: "alert alert-success",
-                              attrs: { role: "alert" }
-                            },
-                            [
-                              _vm._v(
-                                "\n                                        Изменения успешно сохраненны!\n                                    "
-                              )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-secondary",
-                          attrs: { type: "button", "data-dismiss": "modal" }
-                        },
-                        [_vm._v("Close\n                                    ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-primary",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.saveNewProduct()
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Save changes\n                                    "
-                          )
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sidebar" }, [
-      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
-        _vm._v("Компания Терминал ")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin" } }, [
-        _c("i", { staticClass: "fas fa-puzzle-piece" }),
-        _vm._v(" Категории")
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Название")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      ),
-      _vm._v(" "),
-      _c("h4", { staticClass: "modal-title", attrs: { id: "myModalLabel" } }, [
-        _vm._v("Редактирование товара")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Характеристика")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("First")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      ),
-      _vm._v(" "),
-      _c("h4", { staticClass: "modal-title", attrs: { id: "myModalLabel" } }, [
-        _vm._v("Редактирование товара")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Характеристика")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("First")])
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -50747,8 +48336,181 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "button",
-                            { staticClass: "btn btn-primary-purple" },
-                            [_vm._v("Купить")]
+                            {
+                              staticClass: "btn btn-primary-purple",
+                              attrs: {
+                                "data-toggle": "modal",
+                                "data-target": "#buy"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Купить\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "modal fade",
+                              attrs: {
+                                id: "buy",
+                                tabindex: "-1",
+                                role: "dialog",
+                                "aria-labelledby": "exampleModalLabel",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "modal-dialog",
+                                  staticStyle: { "margin-top": "200px" },
+                                  attrs: { role: "document" }
+                                },
+                                [
+                                  _c("div", { staticClass: "modal-content" }, [
+                                    _c(
+                                      "div",
+                                      { staticClass: "modal-body" },
+                                      [
+                                        _c(
+                                          "transition",
+                                          { attrs: { name: "out-left" } },
+                                          [
+                                            !_vm.norificationSended
+                                              ? _c(
+                                                  "div",
+                                                  { staticClass: "form-group" },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass:
+                                                          "col-form-label",
+                                                        attrs: {
+                                                          for: "recipient-name"
+                                                        }
+                                                      },
+                                                      [_vm._v("Ваш телефон:")]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value:
+                                                            _vm.contacts.number,
+                                                          expression:
+                                                            "contacts.number"
+                                                        }
+                                                      ],
+                                                      staticClass:
+                                                        "form-control",
+                                                      attrs: {
+                                                        type: "text",
+                                                        id: "recipient-name"
+                                                      },
+                                                      domProps: {
+                                                        value:
+                                                          _vm.contacts.number
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.$set(
+                                                            _vm.contacts,
+                                                            "number",
+                                                            $event.target.value
+                                                          )
+                                                        }
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              : _vm._e()
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "transition",
+                                          { attrs: { name: "out-right" } },
+                                          [
+                                            _vm.norificationSended
+                                              ? _c("div", [
+                                                  _c("h3", [
+                                                    _vm._v(
+                                                      "Спасибо,\n                                                            ваша заявка принята!"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("h4", [
+                                                    _vm._v(
+                                                      "Мы свяжемся с вами в ближайшее время."
+                                                    )
+                                                  ])
+                                                ])
+                                              : _vm._e()
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "modal-footer" }, [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass: "btn btn-secondary",
+                                          attrs: {
+                                            type: "button",
+                                            "data-dismiss": "modal"
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "Закрыть\n                                                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      !_vm.norificationSended
+                                        ? _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn btn-primary-purple",
+                                              attrs: { type: "button" },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.contactsSend(
+                                                    _vm.product.id
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "Перезвонить\n                                                    мне!\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    ])
+                                  ])
+                                ]
+                              )
+                            ]
                           )
                         ])
                       : _vm._e()
@@ -50766,11 +48528,12 @@ var render = function() {
                 [
                   _c("transition", { attrs: { name: "out-left" } }, [
                     _vm.showProduct
-                      ? _c("div", { staticClass: "col-md-6" }, [
-                          _c("p", { staticClass: "show-product-description" }, [
-                            _vm._v(_vm._s(_vm.product.description))
-                          ])
-                        ])
+                      ? _c("div", {
+                          staticClass: "col-md-6 product-description",
+                          domProps: {
+                            innerHTML: _vm._s(_vm.product.description)
+                          }
+                        })
                       : _vm._e()
                   ]),
                   _vm._v(" "),
@@ -50841,9 +48604,19 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(2),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(3)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -50890,59 +48663,2031 @@ var staticRenderFns = [
       _c("br"),
       _c("br")
     ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminComponent.vue?vue&type=template&id=2073db19&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminComponent.vue?vue&type=template&id=2073db19& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "content" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Категории")]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("table", { staticClass: "table" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.categories.categories, function(category) {
+                return _c("tr", [
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _vm._v(_vm._s(category.id))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          category.isNew === undefined ? category.name : ""
+                        ) +
+                        "\n                            "
+                    ),
+                    category.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: category.name,
+                              expression: "category.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: category.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(category, "name", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          category.isNew === undefined
+                            ? category.description
+                            : ""
+                        ) +
+                        "\n                            "
+                    ),
+                    category.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: category.description,
+                              expression: "category.description"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: category.description },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                category,
+                                "description",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          category.isNew === undefined ? category.img : ""
+                        ) +
+                        "\n                            "
+                    ),
+                    category.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: category.img,
+                              expression: "category.img"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: category.img },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(category, "img", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-center" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          category.isNew === undefined
+                            ? category.under_categories
+                            : ""
+                        ) +
+                        "\n                            "
+                    ),
+                    category.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: category.under_categories,
+                              expression: "category.under_categories"
+                            }
+                          ],
+                          staticClass: "form-check-input big-checkbox",
+                          attrs: { type: "checkbox" },
+                          domProps: {
+                            checked: Array.isArray(category.under_categories)
+                              ? _vm._i(category.under_categories, null) > -1
+                              : category.under_categories
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$a = category.under_categories,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = null,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    _vm.$set(
+                                      category,
+                                      "under_categories",
+                                      $$a.concat([$$v])
+                                    )
+                                } else {
+                                  $$i > -1 &&
+                                    _vm.$set(
+                                      category,
+                                      "under_categories",
+                                      $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1))
+                                    )
+                                }
+                              } else {
+                                _vm.$set(category, "under_categories", $$c)
+                              }
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: category.parent_category_id,
+                              expression: "category.parent_category_id"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                category,
+                                "parent_category_id",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _vm._l(_vm.categories.categories, function(
+                            categoryForSelectFirstOption
+                          ) {
+                            return categoryForSelectFirstOption.id ===
+                              category.parent_category_id
+                              ? _c(
+                                  "option",
+                                  {
+                                    domProps: {
+                                      value: categoryForSelectFirstOption.id
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(
+                                          categoryForSelectFirstOption.name
+                                        ) +
+                                        "\n                                    "
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          }),
+                          _vm._v(" "),
+                          _vm._l(_vm.categories.categories, function(
+                            categoryForSelect
+                          ) {
+                            return categoryForSelect.id !==
+                              category.parent_category_id
+                              ? _c(
+                                  "option",
+                                  { domProps: { value: categoryForSelect.id } },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(categoryForSelect.name) +
+                                        "\n                                    "
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    category.isNew === undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function($event) {
+                                _vm.deleteCategory(category.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Удалить")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    category.isNew !== undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            on: {
+                              click: function($event) {
+                                _vm.saveNewCategories()
+                              }
+                            }
+                          },
+                          [_vm._v("Сохранить")]
+                        )
+                      : _vm._e()
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                on: { click: _vm.addNewSlotCategory }
+              },
+              [_vm._v("Новая категория")]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidebar" }, [
+      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
+        _vm._v("Компания Терминал ")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin" } }, [
+        _c("i", { staticClass: "fas fa-puzzle-piece" }),
+        _vm._v(" Категории")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/recommended" } }, [
+        _vm._v("Рекомендуемые")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "best-seller-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("РЕКОМЕНДУЕМ")])]
-            )
-          ])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-            },
-            [
-              _c("div", { staticClass: "product-item" }, [
-                _c("div", { staticClass: "img-product" }, [
-                  _c("img", {
-                    staticClass: "img-responsive",
-                    attrs: { src: "img", width: "255", height: "322", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "product-hover" }, [
-                  _c("div", { staticClass: "product-meta" }, [
-                    _c("a", { staticClass: "add_cart" }, [
-                      _c("i", { staticClass: "pe-7s-cart" }),
-                      _vm._v("Добавить в корзину")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "product-title" }, [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _c("h3", [_vm._v("name")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Название")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Описание")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Подкатегория")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Род. категория")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=template&id=274b382e&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=template&id=274b382e& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "content" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Партнеры")]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("table", { staticClass: "table" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.partners, function(partner, index) {
+                return _c("tr", [
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _vm._v(_vm._s(partner.id))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(partner.id !== 0 ? partner.name : "") +
+                        "\n                            "
+                    ),
+                    partner.id === 0
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: partner.name,
+                              expression: "partner.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: partner.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(partner, "name", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(partner.id !== 0 ? partner.link : "") +
+                        "\n                            "
+                    ),
+                    partner.id === 0
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: partner.link,
+                              expression: "partner.link"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: partner.link },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(partner, "link", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(partner.id !== 0 ? partner.image : "") +
+                        "\n                            "
+                    ),
+                    partner.id === 0
+                      ? _c("div", { staticClass: "file-upload" }, [
+                          _c("label", [
+                            _c("input", {
+                              ref: "myFilePartner",
+                              refInFor: true,
+                              attrs: { type: "file", id: "fileNewPartner" },
+                              on: {
+                                change: function($event) {
+                                  _vm.loadImage(index)
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
+                          ])
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    partner.id !== 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function($event) {
+                                _vm.deletePartner(partner.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Удалить")]
+                        )
+                      : _vm._e(),
                     _vm._v(" "),
-                    _c("span", [_vm._v("price ₽")])
+                    partner.id === 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            on: {
+                              click: function($event) {
+                                _vm.saveNewPartner()
+                              }
+                            }
+                          },
+                          [_vm._v("Сохранить")]
+                        )
+                      : _vm._e()
                   ])
                 ])
-              ])
-            ]
-          )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                on: { click: _vm.addNewSlotPartner }
+              },
+              [_vm._v("Новый партнер")]
+            )
+          ])
         ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidebar" }, [
+      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
+        _vm._v("Компания Терминал ")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin" } }, [
+        _c("i", { staticClass: "fas fa-puzzle-piece" }),
+        _vm._v(" Категории")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/recommended" } }, [
+        _vm._v("Рекомендуемые")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Название")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Ссылка")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=template&id=98c16c14&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=template&id=98c16c14& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "content" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Рекуомендуемые")]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("table", { staticClass: "table" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.recommendeds, function(recommended, index) {
+                return _c("tr", [
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _vm._v(_vm._s(recommended.id))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          recommended.id !== 0 ? recommended.product_id : ""
+                        ) +
+                        "\n                            "
+                    ),
+                    recommended.id === 0
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: recommended.product_id,
+                              expression: "recommended.product_id"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: recommended.product_id },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                recommended,
+                                "product_id",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    recommended.id !== 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function($event) {
+                                _vm.deleteRecommended(recommended.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Удалить")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    recommended.id === 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            on: {
+                              click: function($event) {
+                                _vm.saveNewRecommended()
+                              }
+                            }
+                          },
+                          [_vm._v("Сохранить")]
+                        )
+                      : _vm._e()
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                on: { click: _vm.addNewSlotRecommended }
+              },
+              [_vm._v("Новый рекомендуемый товар")]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidebar" }, [
+      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
+        _vm._v("Компания Терминал ")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin" } }, [
+        _c("i", { staticClass: "fas fa-puzzle-piece" }),
+        _vm._v(" Категории")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/recommended" } }, [
+        _vm._v("Рекомендуемые")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("id продукта")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=template&id=79b247ff&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=template&id=79b247ff& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "content" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Сладер")]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("table", { staticClass: "table" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.sliders, function(slider, index) {
+                return _c("tr", [
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _vm._v(_vm._s(slider.id))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(slider.id !== 0 ? slider.title : "") +
+                        "\n                            "
+                    ),
+                    slider.id === 0
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: slider.title,
+                              expression: "slider.title"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: slider.title },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(slider, "title", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(slider.id !== 0 ? slider.comment : "") +
+                        "\n                            "
+                    ),
+                    slider.id === 0
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: slider.comment,
+                              expression: "slider.comment"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: slider.comment },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(slider, "comment", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(slider.id !== 0 ? slider.image : "") +
+                        "\n                            "
+                    ),
+                    slider.id === 0
+                      ? _c("div", { staticClass: "file-upload" }, [
+                          _c("label", [
+                            _c("input", {
+                              ref: "myFileSlider",
+                              refInFor: true,
+                              attrs: { type: "file", id: "fileNewSlider" },
+                              on: {
+                                change: function($event) {
+                                  _vm.loadImage(index)
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
+                          ])
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    slider.id !== 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function($event) {
+                                _vm.deleteSlider(slider.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Удалить")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    slider.id === 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            on: {
+                              click: function($event) {
+                                _vm.saveNewSlider()
+                              }
+                            }
+                          },
+                          [_vm._v("Сохранить")]
+                        )
+                      : _vm._e()
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                on: { click: _vm.addNewSlotSlider }
+              },
+              [_vm._v("Новый слайдер")]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidebar" }, [
+      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
+        _vm._v("Компания Терминал ")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin" } }, [
+        _c("i", { staticClass: "fas fa-puzzle-piece" }),
+        _vm._v(" Категории")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/recommended" } }, [
+        _vm._v("Рекомендуемые")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Текст")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("Коммент(только для админа)")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/ProductAdminComponent.vue?vue&type=template&id=108b7e3c&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/ProductAdminComponent.vue?vue&type=template&id=108b7e3c& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "content" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Продукты")]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("table", { staticClass: "table" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.products, function(product, index) {
+                return _c("tr", [
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _vm._v(_vm._s(product.id))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          product.isNew === undefined ? product.name : ""
+                        ) +
+                        "\n                            "
+                    ),
+                    product.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: product.name,
+                              expression: "product.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: product.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(product, "name", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(product.isNew === undefined ? product.img : "") +
+                        "\n                            "
+                    ),
+                    product.isNew !== undefined
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: product.img,
+                              expression: "product.img"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: product.img },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(product, "img", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    product.isNew === undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function($event) {
+                                _vm.deleteProduct(product.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Удалить")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    product.isNew === undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            attrs: {
+                              "data-toggle": "modal",
+                              "data-target": ".modal-product-edit" + product.id
+                            }
+                          },
+                          [_vm._v("Изменить")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    product.isNew !== undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            on: {
+                              click: function($event) {
+                                _vm.saveNewCategories()
+                              }
+                            }
+                          },
+                          [_vm._v("Сохранить")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      class:
+                        "modal fade bd-example-modal-lg modal-product-edit" +
+                        product.id,
+                      attrs: {
+                        tabindex: "-1",
+                        role: "dialog",
+                        "aria-labelledby": "myLargeModalLabel",
+                        "aria-hidden": "true"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "modal-dialog modal-lg" }, [
+                        _c("div", { staticClass: "modal-content" }, [
+                          _vm._m(2, true),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "modal-body" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-6" }, [
+                                _c("div", { staticClass: "form-group" }, [
+                                  _c("label", { attrs: { for: "usr" } }, [
+                                    _vm._v("Name:")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: product.name,
+                                        expression: "product.name"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: { type: "text", id: "usr" },
+                                    domProps: { value: product.name },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          product,
+                                          "name",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "form-group" }, [
+                                  _c("label", { attrs: { for: "usr" } }, [
+                                    _vm._v("Price:")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: product.price,
+                                        expression: "product.price"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: { type: "text", id: "usr" },
+                                    domProps: { value: product.price },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          product,
+                                          "price",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "form-group" }, [
+                                  _c("h6", [_vm._v("Категория")]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: product.category.id,
+                                          expression: "product.category.id"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            product.category,
+                                            "id",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("option", [
+                                        _vm._v(_vm._s(product.category.name))
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm._l(
+                                        _vm.categories.categories,
+                                        function(category) {
+                                          return [
+                                            category.name !==
+                                            product.category.name
+                                              ? _c(
+                                                  "option",
+                                                  {
+                                                    domProps: {
+                                                      value: category.id
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                                " +
+                                                        _vm._s(category.name) +
+                                                        "\n                                                            "
+                                                    )
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              category.under_categories,
+                                              function(under_category) {
+                                                return under_category.name !==
+                                                  _vm.newProduct.category
+                                                  ? _c(
+                                                      "option",
+                                                      {
+                                                        staticClass:
+                                                          "under-category-option",
+                                                        domProps: {
+                                                          value:
+                                                            under_category.id
+                                                        }
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "\n                                                                   --" +
+                                                            _vm._s(
+                                                              under_category.name
+                                                            ) +
+                                                            "\n                                                            "
+                                                        )
+                                                      ]
+                                                    )
+                                                  : _vm._e()
+                                              }
+                                            )
+                                          ]
+                                        }
+                                      )
+                                    ],
+                                    2
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-6" }, [
+                                _c("img", {
+                                  staticClass: "border-img",
+                                  attrs: {
+                                    src: "/images/products/" + product.img,
+                                    width: "322px"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "file-upload" }, [
+                                  _c("label", [
+                                    _c("input", {
+                                      ref: "myFiles",
+                                      refInFor: true,
+                                      attrs: { type: "file", id: "file" },
+                                      on: {
+                                        change: function($event) {
+                                          _vm.productEditImageLoad(product.id)
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
+                                  ])
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-2" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-8" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "form-group" },
+                                  [
+                                    _c("label", { attrs: { for: "comment" } }, [
+                                      _vm._v("Описание:")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("editor", {
+                                      attrs: {
+                                        "api-key":
+                                          "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
+                                        init: { plugins: "lists" }
+                                      },
+                                      model: {
+                                        value: product.description,
+                                        callback: function($$v) {
+                                          _vm.$set(product, "description", $$v)
+                                        },
+                                        expression: "product.description"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-2" })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("h1", [_vm._v("Характеристики:")]),
+                              _vm._v(" "),
+                              _c("table", { staticClass: "table" }, [
+                                _vm._m(3, true),
+                                _vm._v(" "),
+                                _c(
+                                  "tbody",
+                                  [
+                                    _vm._l(product.specifications_get, function(
+                                      specification
+                                    ) {
+                                      return _c("tr", [
+                                        _c("td", [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: specification.name,
+                                                expression: "specification.name"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: { type: "text" },
+                                            domProps: {
+                                              value: specification.name
+                                            },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.$set(
+                                                  specification,
+                                                  "name",
+                                                  $event.target.value
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: specification.parameter,
+                                                expression:
+                                                  "specification.parameter"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: { type: "text" },
+                                            domProps: {
+                                              value: specification.parameter
+                                            },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.$set(
+                                                  specification,
+                                                  "parameter",
+                                                  $event.target.value
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ])
+                                      ])
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-success ml-2",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.addNewSpecification(index)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Add new specification\n                                                "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  2
+                                )
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "modal-footer" }, [
+                            _vm.saveChangesSuccess
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass: "alert alert-success",
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                            Изменения успешно сохраненны!\n                                        "
+                                    )
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-secondary",
+                                attrs: {
+                                  type: "button",
+                                  "data-dismiss": "modal"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Close\n                                        "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-primary",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.saveChangesProduct(index)
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Save changes\n                                        "
+                                )
+                              ]
+                            )
+                          ])
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": ".bd-example-modal-lg-1"
+                }
+              },
+              [
+                _vm._v(
+                  "Новый\n                        продукт\n                    "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "modal fade bd-example-modal-lg-1",
+                attrs: {
+                  tabindex: "-1",
+                  role: "dialog",
+                  "aria-labelledby": "myLargeModalLabel",
+                  "aria-hidden": "true"
+                }
+              },
+              [
+                _c("div", { staticClass: "modal-dialog modal-lg" }, [
+                  _c("div", { staticClass: "modal-content" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-body" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", { attrs: { for: "usr" } }, [
+                              _vm._v("Name:")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.newProduct.name,
+                                  expression: "newProduct.name"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", id: "usr" },
+                              domProps: { value: _vm.newProduct.name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.newProduct,
+                                    "name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", { attrs: { for: "usr" } }, [
+                              _vm._v("Price:")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.newProduct.price,
+                                  expression: "newProduct.price"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", id: "usr" },
+                              domProps: { value: _vm.newProduct.price },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.newProduct,
+                                    "price",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.newProduct.category,
+                                    expression: "newProduct.category"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.newProduct,
+                                      "category",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", [
+                                  _vm._v(_vm._s(_vm.newProduct.category))
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(_vm.categories.categories, function(
+                                  category
+                                ) {
+                                  return [
+                                    category.name !== _vm.newProduct.category
+                                      ? _c("option", [
+                                          _vm._v(
+                                            "\n                                                            " +
+                                              _vm._s(category.name) +
+                                              "\n                                                        "
+                                          )
+                                        ])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _vm._l(category.under_categories, function(
+                                      under_category
+                                    ) {
+                                      return under_category.name !==
+                                        _vm.newProduct.category
+                                        ? _c(
+                                            "option",
+                                            {
+                                              staticClass:
+                                                "under-category-option",
+                                              domProps: {
+                                                value: under_category.id
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                               --" +
+                                                  _vm._s(under_category.name) +
+                                                  "\n                                                        "
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    })
+                                  ]
+                                })
+                              ],
+                              2
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("img", {
+                            staticClass: "border-img",
+                            attrs: {
+                              src: "/images/products/" + _vm.newProduct.img,
+                              width: "322px"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "file-upload" }, [
+                            _c("label", [
+                              _c("input", {
+                                ref: "myFilesProduct",
+                                attrs: { type: "file", id: "file_new_product" },
+                                on: {
+                                  change: function($event) {
+                                    _vm.loadImage()
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
+                            ])
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-2" }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-8" }, [
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("label", { attrs: { for: "comment" } }, [
+                                _vm._v("Описание:")
+                              ]),
+                              _vm._v(" "),
+                              _c("editor", {
+                                attrs: {
+                                  "api-key":
+                                    "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
+                                  init: { plugins: "" }
+                                },
+                                model: {
+                                  value: _vm.newProduct.description,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.newProduct, "description", $$v)
+                                  },
+                                  expression: "newProduct.description"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-2" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("h1", [_vm._v("Характеристики:")]),
+                        _vm._v(" "),
+                        _c("table", { staticClass: "table" }, [
+                          _vm._m(5),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            [
+                              _vm._l(
+                                _vm.newProduct.specifications_get,
+                                function(specification) {
+                                  return specification.name !== undefined
+                                    ? _c("tr", [
+                                        _c("td", [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: specification.name,
+                                                expression: "specification.name"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: { type: "text" },
+                                            domProps: {
+                                              value: specification.name
+                                            },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.$set(
+                                                  specification,
+                                                  "name",
+                                                  $event.target.value
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: specification.parameter,
+                                                expression:
+                                                  "specification.parameter"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: { type: "text" },
+                                            domProps: {
+                                              value: specification.parameter
+                                            },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.$set(
+                                                  specification,
+                                                  "parameter",
+                                                  $event.target.value
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ])
+                                      ])
+                                    : _vm._e()
+                                }
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-success ml-2",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.addNewSpecification(_vm.newProduct, 1)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Add new specification\n                                            "
+                                  )
+                                ]
+                              )
+                            ],
+                            2
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-footer" }, [
+                      _vm.saveChangesSuccessNewProduct
+                        ? _c(
+                            "div",
+                            {
+                              staticClass: "alert alert-success",
+                              attrs: { role: "alert" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                        Изменения успешно сохраненны!\n                                    "
+                              )
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-secondary",
+                          attrs: { type: "button", "data-dismiss": "modal" }
+                        },
+                        [_vm._v("Close\n                                    ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.saveNewProduct()
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Save changes\n                                    "
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidebar" }, [
+      _c("a", { staticClass: "active", attrs: { href: "#home" } }, [
+        _vm._v("Компания Терминал ")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin" } }, [
+        _c("i", { staticClass: "fas fa-puzzle-piece" }),
+        _vm._v(" Категории")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/products" } }, [_vm._v("Продукты")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/partners" } }, [_vm._v("Партнеры")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/slider" } }, [_vm._v("Слайдер")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/recommended" } }, [
+        _vm._v("Рекомендуемые")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "/admin/dashboard" } }, [_vm._v("Dashboard")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Название")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Функции")])
       ])
     ])
   },
@@ -50950,129 +50695,209 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title", attrs: { id: "myModalLabel" } }, [
+        _vm._v("Редактирование товара")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Характеристика")]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("First")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      ),
+      _vm._v(" "),
+      _c("h3", { staticClass: "modal-title", attrs: { id: "myModalLabel" } }, [
+        _vm._v("Новый товар")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Характеристика")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("First")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/FooterComponent.vue?vue&type=template&id=6c754801&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/assets/FooterComponent.vue?vue&type=template&id=6c754801&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-12" }, [
+          _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+            _c("h1", [_vm._v("СВЯЗАТЬСЯ")])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+          _c("div", { staticClass: "left-content" }, [
+            _c("h1", [
+              _c("b", [_vm._v("К")]),
+              _vm._v("омпаниия "),
+              _c("b", [_vm._v("Т")]),
+              _vm._v("ерминал")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Компания Терминал предоставляет услуги для бизнеса Сургутского района и Ханты-Мансийского Автономного округа"
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "contact-info" }, [
               _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class\n                            aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut\n                            vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
+                _vm._v("Адрес: 628414, г. Сургут, ул. Крылова, 38, кв.97")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
+              _c("p", [_vm._v("Телефон: 8 (3462) 62-64-64, 65-64-44")]),
               _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
+              _c("p", [_vm._v("Почта: Saha2005@mail.ru")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "social-media" }, [
+              _c("ul", [
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "https://vk.com/evotorsurgut",
+                        target: "_blank"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-vk" })]
+                  )
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+          _c(
+            "form",
+            { staticClass: "contact-form", attrs: { action: "", method: "" } },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "name", placeholder: "Имя" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "name", placeholder: "Почта" }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "name", placeholder: "Тема" }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row mt-2" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("div", { staticClass: "textarea-form-footer" }, [
+                      _c("textarea", {
                         staticClass: "form-control",
                         attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
+                          name: "",
+                          id: "",
+                          cols: "30",
+                          rows: "5",
+                          placeholder: "Сообщение..."
                         }
                       })
                     ])
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      staticClass: "contact-submit",
+                      attrs: { type: "submit", value: "Отправить" }
+                    })
                   ])
                 ])
-              ]
-            )
-          ])
+              ])
+            ]
+          )
         ])
       ])
     ])
@@ -51192,6 +51017,104 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/assets/RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c(
+          "transition-group",
+          { attrs: { name: "fade1", tag: "div" } },
+          _vm._l(_vm.recommended, function(product) {
+            return _c(
+              "div",
+              {
+                key: product.id,
+                staticClass:
+                  "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+              },
+              [
+                _c("div", { staticClass: "product-item" }, [
+                  _c("div", { staticClass: "img-product" }, [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: _vm.urlSite + "/images/products/" + product.img,
+                        width: "255",
+                        height: "322",
+                        alt: ""
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product-hover" }, [
+                    _c("div", { staticClass: "product-meta" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "add_cart",
+                          attrs: { href: "product/" + product.id }
+                        },
+                        [_vm._v("Карточка товара")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product-title" }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("h3", [_vm._v(_vm._s(product.name))]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                    ])
+                  ])
+                ])
+              ]
+            )
+          }),
+          0
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=template&id=30f945cc&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fz54/Kas2gComponent.vue?vue&type=template&id=30f945cc& ***!
@@ -51245,7 +51168,7 @@ var render = function() {
                         _c("div", { staticClass: "col-md-12" }, [
                           _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "Введение кассовых аппаратов с 2018 года: ККТ установят почти все"
+                              "Введение кассовых аппаратов с 2018 года: ККТ установят\n                                почти все"
                             )
                           ])
                         ])
@@ -51256,7 +51179,7 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_2430" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                Вступили в силу поправки в закон 54-ФЗ «О применении контрольно-кассовой техники»:  "
+                                "\n                                    Вступили в силу поправки в закон 54-ФЗ «О применении контрольно-кассовой\n                                    техники»: "
                               ),
                               _c("strong", [
                                 _vm._v(
@@ -51264,13 +51187,13 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(
-                                " затрагивает даже предпринимателей на спецрежимах. Большинство из них должно было установить новую ККТ уже к 1 июля.\n                            "
+                                " затрагивает\n                                    даже предпринимателей на спецрежимах. Большинство из них должно было установить\n                                    новую ККТ уже к 1 июля.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход на новую кассу — процесс поэтапный. Купить новую технику недостаточно. Перед регистрацией ККТ в налоговой нужно заключить договор с ОФД, а также установить кассовую программу, потому что в чеках теперь надо пробивать наименования товаров. У нас вы можете купить готовое решение. В него входит ККТ с ФН, ОФД на год и кассовая программа.\n                            "
+                                "\n                                    Переход на новую кассу — процесс поэтапный. Купить новую технику недостаточно.\n                                    Перед регистрацией ККТ в налоговой нужно заключить договор с ОФД, а также\n                                    установить кассовую программу, потому что в чеках теперь надо пробивать\n                                    наименования товаров. У нас вы можете купить готовое решение. В него входит ККТ\n                                    с ФН, ОФД на год и кассовая программа.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51282,7 +51205,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В этом году установка ККТ затронула малый бизнес: кассы должны были установить почти все, кто платит налог по спецрежимам — УСН, патент и ЕНВД.  Отсрочку получили только те, кто работает в рознице или общепите и не имеет наемных сотрудников. Правда, всего на год — с 1 июля 2019 года онлайн-ККТ должна быть у всех. Узнайте из нашего подробного обзора, когда нужно ставить кассу именно вам >>\n                            "
+                                "\n                                    В этом году установка ККТ затронула малый бизнес: кассы должны были установить\n                                    почти все, кто платит налог по спецрежимам — УСН, патент и ЕНВД. Отсрочку\n                                    получили только те, кто работает в рознице или общепите и не имеет наемных\n                                    сотрудников. Правда, всего на год — с 1 июля 2019 года онлайн-ККТ должна быть у\n                                    всех. Узнайте из нашего подробного обзора, когда нужно ставить кассу именно вам\n                                    >>\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51294,27 +51217,27 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Да, но не для всех. До 1 июля 2019 году могут обойтись без касс те, кто:\n                            "
+                                "\n                                    Да, но не для всех. До 1 июля 2019 году могут обойтись без касс те, кто:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "оказывает услуги населению, оформляя их бланками строгой отчетности. Подробнее о требованиях к БСО — здесь >>"
+                                  "оказывает услуги населению, оформляя их бланками строгой отчетности.\n                                        Подробнее о требованиях к БСО — здесь >>\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "применяет ЕНВД и ПСН, работает в рознице или общепите и не имеет наемных сотрудников."
+                                  "применяет ЕНВД и ПСН, работает в рознице или общепите и не имеет наемных\n                                        сотрудников.\n                                    "
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Остальные должны были поставить новую ККТ уже к лету 2018 года.\n                            "
+                                "\n                                    Остальные должны были поставить новую ККТ уже к лету 2018 года.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51327,43 +51250,43 @@ var render = function() {
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "Изменено понятие расчетов. Теперь к ним относится не только движение денежных средств, но и зачет предоплаты и получение за товар других вещей."
+                                  "Изменено понятие расчетов. Теперь к ним относится не только движение\n                                        денежных средств, но и зачет предоплаты и получение за товар других вещей.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "После получения онлайн-платежа чек нужно сформировать не позднее следующего рабочего дня."
+                                  "После получения онлайн-платежа чек нужно сформировать не позднее следующего\n                                        рабочего дня.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  " С 1 июля 2019 года при зачете предоплаты нужно будет пробивать два чека: при получении денег и при передаче товара.\n                                "
+                                  " С 1 июля 2019 года при зачете предоплаты нужно будет пробивать два чека:\n                                        при получении денег и при передаче товара.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "ИП на вмененке или патенте\n                                    могут вернуть до 18 000 рублей в виде налогового вычета за покупку или настройку новой кассы. "
+                                  "ИП на вмененке или патенте\n                                        могут вернуть до 18 000 рублей в виде налогового вычета за покупку или\n                                        настройку новой кассы.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Предпринимателей и компании на спецрежимах (УСН, ЕНВД и патент) будут штрафовать до 10 000 рублей за использование фискальных накопителей на 13 месяцев. Налоговая разъяснила — малый бизнес может применять только ФН на 36 месяцев. "
+                                  "Предпринимателей и компании на спецрежимах (УСН, ЕНВД и патент) будут\n                                        штрафовать до 10 000 рублей за использование фискальных накопителей на 13\n                                        месяцев. Налоговая разъяснила — малый бизнес может применять только ФН на 36\n                                        месяцев.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Зарегистрировать ККМ с 2017 года можно через интернет — это удобно и быстро. Подробнее о регистрации кассы >>"
+                                  "Зарегистрировать ККМ с 2017 года можно через интернет — это удобно и быстро.\n                                        Подробнее о регистрации кассы >>\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Если предприниматель не будет соблюдать требования 54-ФЗ, ему грозит штраф до 50% от суммы, полученной за время работы без кассы (но не меньше 10 000 рублей). С июля 2018 года ИП могут оштрафовать на 10 000 рублей за проведение через ККТ расчетов, которых на самом деле не было, а также за неправильно указанный в чеке маркируемый товар — на 50 000 рублей. Такой же штраф грозит и за несвоевременную передачу фискальных данных. "
+                                  "Если предприниматель не будет соблюдать требования 54-ФЗ, ему грозит штраф\n                                        до 50% от суммы, полученной за время работы без кассы (но не меньше 10 000\n                                        рублей). С июля 2018 года ИП могут оштрафовать на 10 000 рублей за\n                                        проведение через ККТ расчетов, которых на самом деле не было, а также за\n                                        неправильно указанный в чеке маркируемый товар — на 50 000 рублей. Такой же\n                                        штраф грозит и за несвоевременную передачу фискальных данных.\n                                    "
                                 )
                               ])
                             ]),
@@ -51374,7 +51297,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В 2018 году почти все предприниматели должны зарегистрировать кассу. Всего, по оценкам экспертов, в этом году перешли на новый порядок около 1 млн бизнесменов. Остальные предприниматели должны поставить кассу к 1 июля 2019 года. Рекомендуем уже сейчас задуматься о покупке комплектов кассовой техники: возможен дефицит фискальных накопителей и моделей нового образца. Откладывать покупку опасно: как показала практика прошлого года, тянут до последнего большинство предпринимателей — а их более 1 млн! "
+                                "\n                                    В 2018 году почти все предприниматели должны зарегистрировать кассу. Всего, по\n                                    оценкам экспертов, в этом году перешли на новый порядок около 1 млн бизнесменов.\n                                    Остальные предприниматели должны поставить кассу к 1 июля 2019 года. Рекомендуем\n                                    уже сейчас задуматься о покупке комплектов кассовой техники: возможен дефицит\n                                    фискальных накопителей и моделей нового образца. Откладывать покупку опасно: как\n                                    показала практика прошлого года, тянут до последнего большинство\n                                    предпринимателей — а их более 1 млн! "
                               )
                             ]),
                             _vm._v(" "),
@@ -51390,13 +51313,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Да, интернет-магазины тоже должны установить ККТ. Чек нужен всегда — даже когда клиент дистанционно оплачивает покупку картой. В такой ситуации надо отправить документ на email покупателя. Если происходит доставка за наличные — чек выдает курьер.\n                            "
+                                "\n                                    Да, интернет-магазины тоже должны установить ККТ. Чек нужен всегда — даже когда\n                                    клиент дистанционно оплачивает покупку картой. В такой ситуации надо отправить\n                                    документ на email покупателя. Если происходит доставка за наличные — чек выдает\n                                    курьер.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Вендинговые автоматы могут работать без ККТ до 1 июля 2018 года. Но если вы — ИП без сотрудников, можете не ставить кассу до 1 июля 2019 года.\n                            "
+                                "\n                                    Вендинговые автоматы могут работать без ККТ до 1 июля 2018 года. Но если вы — ИП\n                                    без сотрудников, можете не ставить кассу до 1 июля 2019 года.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51408,7 +51331,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Все разрешенные к использованию модели ККТ есть в реестре на сайте ФНС. Онлайн-ККТ с 2017 года должны подключаться к интернету — добавился Ethernet-порт, встроенный GPRS- или WiFi-модем. Самые бюджетные образцы используют интернет на компьютере, к которому подключаются по USB-порту. В новой ККМ с 2017 года должен быть фискальный накопитель — аналог электронной ленты (ЭКЛЗ). Сама ЭКЛЗ ушла в прошлое — кассы с ней уже не выпускают.\n                            "
+                                "\n                                    Все разрешенные к использованию модели ККТ есть в реестре на сайте ФНС.\n                                    Онлайн-ККТ с 2017 года должны подключаться к интернету — добавился\n                                    Ethernet-порт, встроенный GPRS- или WiFi-модем. Самые бюджетные образцы\n                                    используют интернет на компьютере, к которому подключаются по USB-порту. В новой\n                                    ККМ с 2017 года должен быть фискальный накопитель — аналог электронной ленты\n                                    (ЭКЛЗ). Сама ЭКЛЗ ушла в прошлое — кассы с ней уже не выпускают.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51420,25 +51343,25 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Менять ККТ предпринимателям приходится за свой счет. Часто покупка новой кассы выходит дешевле, чем доработка старой. Стоимость модернизации зависит от количества техники и ее моделей.\n                            "
+                                "\n                                    Менять ККТ предпринимателям приходится за свой счет. Часто покупка новой кассы\n                                    выходит дешевле, чем доработка старой. Стоимость модернизации зависит от\n                                    количества техники и ее моделей.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В среднем с 2017 года изменения по кассовым аппаратам обходятся примерно в 20 000 рублей. ИП на патенте и ЕНВД могут вычесть расходы на покупку кассы из налоговой базы до 18 000 рублей. Можно учесть расходы и на настройку ККТ. У нас можно купить комплект, стоимость которого покроет налоговый вычет. Узнайте цены здесь >>\n                            "
+                                "\n                                    В среднем с 2017 года изменения по кассовым аппаратам обходятся примерно в 20\n                                    000 рублей. ИП на патенте и ЕНВД могут вычесть расходы на покупку кассы из\n                                    налоговой базы до 18 000 рублей. Можно учесть расходы и на настройку ККТ. У нас\n                                    можно купить комплект, стоимость которого покроет налоговый вычет. Узнайте цены\n                                    здесь >>\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Еще одна статья расходов — услуги ОФД. Они обходятся около 3 000 рублей в год за одну кассу. Стоит учесть и затраты на подключение к интернету — закон предполагает, что каждая торговая точка должна быть подключена к сети. Кроме того, раз в 13 месяцев надо менять фискальный накопитель. Юрлицам на ЕНВД, УСН или патенте — раз в три года.\n                            "
+                                "\n                                    Еще одна статья расходов — услуги ОФД. Они обходятся около 3 000 рублей в год за\n                                    одну кассу. Стоит учесть и затраты на подключение к интернету — закон\n                                    предполагает, что каждая торговая точка должна быть подключена к сети. Кроме\n                                    того, раз в 13 месяцев надо менять фискальный накопитель. Юрлицам на ЕНВД, УСН\n                                    или патенте — раз в три года.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Новые кассовые аппараты требуют и расходов на обслуживание. Но сегодня предприниматель может выбирать: платить за постоянное обслуживание в сервисном центре или обращаться туда только по факту поломки.\n                            "
+                                "\n                                    Новые кассовые аппараты требуют и расходов на обслуживание. Но сегодня\n                                    предприниматель может выбирать: платить за постоянное обслуживание в сервисном\n                                    центре или обращаться туда только по факту поломки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51450,7 +51373,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для перерегистрации уже имеющейся кассы необходимо узнать, можно ли ее модернизировать — у ККТ должна быть возможность подключаться к интернету. Надо также проверить, можно ли установить на ККТ фискальный накопитель. Узнайте подробнее в своем сервисном центре. Если вашу кассу доработать нельзя, придется покупать новую. Затем нужно заключить договор с ОФД и поставить ККТ на учет, это можно сделать через интернет.\n                            "
+                                "\n                                    Для перерегистрации уже имеющейся кассы необходимо узнать, можно ли ее\n                                    модернизировать — у ККТ должна быть возможность подключаться к интернету. Надо\n                                    также проверить, можно ли установить на ККТ фискальный накопитель. Узнайте\n                                    подробнее в своем сервисном центре. Если вашу кассу доработать нельзя, придется\n                                    покупать новую. Затем нужно заключить договор с ОФД и поставить ККТ на учет, это\n                                    можно сделать через интернет.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51464,13 +51387,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Фискализацию можно пройти в интернете — предпринимателю не нужно идти в налоговую или обращаться в центр технического обслуживания. Для этого потребуется квалифицированная электронная подпись (КЭП) — аналог личной подписи.\n                            "
+                                "\n                                    Фискализацию можно пройти в интернете — предпринимателю не нужно идти в\n                                    налоговую или обращаться в центр технического обслуживания. Для этого\n                                    потребуется квалифицированная электронная подпись (КЭП) — аналог личной подписи.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Получить КЭП можно в удостоверяющем центре, аккредитованном Минкомсвязи. Адреса опубликованы на сайте ведомства — забирать электронную подпись надо лично.\n                            "
+                                "\n                                    Получить КЭП можно в удостоверяющем центре, аккредитованном Минкомсвязи. Адреса\n                                    опубликованы на сайте ведомства — забирать электронную подпись надо лично.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51482,7 +51405,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Необязательно. Кассовую технику поддерживает  производитель, который может привлекать партнерские сервис-центры, которым теперь не надо получать разрешения в налоговой. Таким образом, нет ничего страшного, если с 1 января 2017 года новые кассы не обслуживаются там на постоянной основе. Для регистрации ККТ в налоговой договор с ЦТО больше не является обязательным условием.\n                            "
+                                "\n                                    Необязательно. Кассовую технику поддерживает производитель, который может\n                                    привлекать партнерские сервис-центры, которым теперь не надо получать разрешения\n                                    в налоговой. Таким образом, нет ничего страшного, если с 1 января 2017 года\n                                    новые кассы не обслуживаются там на постоянной основе. Для регистрации ККТ в\n                                    налоговой договор с ЦТО больше не является обязательным условием.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51494,13 +51417,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Есть виды деятельности, которых 54-ФЗ не коснулся. И не важно, ведет такой бизнес ИП или ООО, — кассовый аппарат в 2018 году ему не нужен.\n                            "
+                                "\n                                    Есть виды деятельности, которых 54-ФЗ не коснулся. И не важно, ведет такой\n                                    бизнес ИП или ООО, — кассовый аппарат в 2018 году ему не нужен.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Так, могут не использовать кассы и дальше те, кто торгует:\n                            "
+                                "\n                                    Так, могут не использовать кассы и дальше те, кто торгует:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51519,7 +51442,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых павильонах или магазинах);"
+                                  "вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых\n                                        павильонах или магазинах);\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
@@ -51529,7 +51452,7 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("li", [_vm._v("газетами и журналами; ")]),
+                              _c("li", [_vm._v("газетами и журналами;")]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
@@ -51540,7 +51463,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Освобождены от применения ККТ и те, кто оказывает услуги:\n                            "
+                                "\n                                    Освобождены от применения ККТ и те, кто оказывает услуги:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51566,19 +51489,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Также в списке освобожденных от использования ККТ — точки по приему утильсырья и стекла, аптечные и фельдшерские пункты в сельской местности и прочие медицинские учреждения.\n                            "
+                                "\n                                    Также в списке освобожденных от использования ККТ — точки по приему утильсырья и\n                                    стекла, аптечные и фельдшерские пункты в сельской местности и прочие медицинские\n                                    учреждения.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h2", [
                               _vm._v(
-                                "Как новые правила будут работать в труднодоступных местностях, где нет интернета?"
+                                "Как новые правила будут работать в труднодоступных местностях, где нет\n                                    интернета?"
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В отдаленных деревнях и поселках можно работать без передачи данных в налоговую через интернет. Но замену кассовых аппаратов в 2018 году никто не отменял даже там: во всех кассах все равно должен быть фискальный накопитель. Список населенных пунктов, в которых можно работать без подключения к интернету, определяют местные власти.\n                            "
+                                "\n                                    В отдаленных деревнях и поселках можно работать без передачи данных в налоговую\n                                    через интернет. Но замену кассовых аппаратов в 2018 году никто не отменял даже\n                                    там: во всех кассах все равно должен быть фискальный накопитель. Список\n                                    населенных пунктов, в которых можно работать без подключения к интернету,\n                                    определяют местные власти.\n                                "
                               )
                             ])
                           ])
@@ -51595,71 +51518,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -51689,149 +51560,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -51912,15 +51640,15 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_2430" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                Благодаря поправкам к 54-ФЗ порядок работы с кассовой техникой заметно изменился, как и процесс регистрации ККТ в налоговой. Целые категории предпринимателей, которые раньше были освобождены от использования ККТ, должны будут поставить кассу на учет в налоговом органе в 2018 или следующем году. Это не так сложно, как кажется. Ниже мы расскажем, "
+                                "\n                                    Благодаря поправкам к 54-ФЗ порядок работы с кассовой техникой заметно\n                                    изменился, как и процесс регистрации ККТ в налоговой. Целые категории\n                                    предпринимателей, которые раньше были освобождены от использования ККТ, должны\n                                    будут поставить кассу на учет в налоговом органе в 2018 или следующем году. Это\n                                    не так сложно, как кажется. Ниже мы расскажем, "
                               ),
                               _c("strong", [
                                 _vm._v(
-                                  "как зарегистрировать онлайн-кассу в налоговой"
+                                  "как зарегистрировать\n                                    онлайн-кассу в налоговой"
                                 )
                               ]),
                               _vm._v(
-                                ", и дадим пошаговую инструкцию регистрации ККТ для тех, кого коснулось изменение закона или кто впервые открывает собственный бизнес.\n                            "
+                                ", и дадим пошаговую инструкцию регистрации ККТ\n                                    для тех, кого коснулось изменение закона или кто впервые открывает собственный\n                                    бизнес.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51953,37 +51681,37 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нововведения нужно учесть уже при выборе кассы. С 2017 года необходима современная техника — с фискальным накопителем и возможностью передавать данные онлайн. Подходящие модели включены в Государственный реестр ККТ, который ведет ФНС. Проверьте, есть ли в нем касса, которую вы выбрали для покупки.\n                            "
+                                "\n                                    Нововведения нужно учесть уже при выборе кассы. С 2017 года необходима\n                                    современная техника — с фискальным накопителем и возможностью передавать данные\n                                    онлайн. Подходящие модели включены в Государственный реестр ККТ, который ведет\n                                    ФНС. Проверьте, есть ли в нем касса, которую вы выбрали для покупки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Требования закона теперь включают в цепочку передачи данных новое обязательное звено — оператора фискальных данных (ОФД). Именно через него информация будет поступать в ФНС. С 1 июля 2017 использование ККТ без ОФД невозможно (кроме списка исключений). Поэтому сразу после покупки новой техники подключитесь к одному из утвержденного ФНС списка ОФД.\n                            "
+                                "\n                                    Требования закона теперь включают в цепочку передачи данных новое обязательное\n                                    звено — оператора фискальных данных (ОФД). Именно через него информация будет\n                                    поступать в ФНС. С 1 июля 2017 использование ККТ без ОФД невозможно (кроме\n                                    списка исключений). Поэтому сразу после покупки новой техники подключитесь к\n                                    одному из утвержденного ФНС списка ОФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Итак, вы приобрели ККТ и выбрали оператора. Теперь можно приступать к регистрации онлайн-кассы в налоговой.\n                            "
+                                "\n                                    Итак, вы приобрели ККТ и выбрали оператора. Теперь можно приступать к\n                                    регистрации онлайн-кассы в налоговой.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Сделать это можно разными способами: загрузить документы через интернет или подать в налоговую «по старинке» — принести лично, передать через представителя по нотариально заверенной доверенности или отправить почтой.\n                            "
+                                "\n                                    Сделать это можно разными способами: загрузить документы через интернет или\n                                    подать в налоговую «по старинке» — принести лично, передать через представителя\n                                    по нотариально заверенной доверенности или отправить почтой.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Постановка кассового аппарата на учет в налоговой обязательна и бесплатна — никто не имеет права брать с вас деньги за регистрацию как таковую, только за посреднические услуги. Посредниками могут стать представители ЦТО или ОФД: их сотрудники за плату сделают все за вас. Но если вы не планируете обращаться за помощью к специалистам, то справитесь и самостоятельно.\n                            "
+                                "\n                                    Постановка кассового аппарата на учет в налоговой обязательна и бесплатна —\n                                    никто не имеет права брать с вас деньги за регистрацию как таковую, только за\n                                    посреднические услуги. Посредниками могут стать представители ЦТО или ОФД: их\n                                    сотрудники за плату сделают все за вас. Но если вы не планируете обращаться за\n                                    помощью к специалистам, то справитесь и самостоятельно.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Проще всего будет зарегистрировать онлайн-кассу через интернет: весь процесс происходит в личном кабинете налогоплательщика на сайте nalog.ru. Не понадобится ни собирать и заполнять бумажные документы, ни нести кассовый аппарат в налоговую для осмотра и фискализации: вы просто введете нужные данные в веб-форму.\n                            "
+                                "\n                                    Проще всего будет зарегистрировать онлайн-кассу через интернет: весь процесс\n                                    происходит в личном кабинете налогоплательщика на сайте nalog.ru. Не понадобится\n                                    ни собирать и заполнять бумажные документы, ни нести кассовый аппарат в\n                                    налоговую для осмотра и фискализации: вы просто введете нужные данные в\n                                    веб-форму.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -51999,65 +51727,65 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Вот как выглядела раньше пошаговая инструкция по регистрации ККТ в налоговой: "
+                                "\n                                    Вот как выглядела раньше пошаговая инструкция по регистрации ККТ в налоговой:\n                                    "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 1. Заключение договора с ЦТО. "
+                                "\n                                    Шаг 1. Заключение договора с ЦТО. "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 2. Подготовка необходимых документов. "
+                                "\n                                    Шаг 2. Подготовка необходимых документов. "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 3. Подача документов в ИФНС. "
+                                "\n                                    Шаг 3. Подача документов в ИФНС. "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 4. Осмотр и фискализация кассы в ИФНС. "
+                                "\n                                    Шаг 4. Осмотр и фискализация кассы в ИФНС. "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 5. Получение карточки регистрации ККМ.\n                            "
+                                "\n                                    Шаг 5. Получение карточки регистрации ККМ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Сейчас добавился новый пункт: "
+                                "\n                                    Сейчас добавился новый пункт: "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 6. Заключение договора и регистрация кассы в ОФД.\n                            "
+                                "\n                                    Шаг 6. Заключение договора и регистрация кассы в ОФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При желании вы можете действовать по такому сценарию, но сравните, насколько все проще, если проводить регистрацию ККТ онлайн. Предварительное заключение договора с ЦТО по закону больше не требуется, шаги упрощены, а главное — все можно сделать дистанционно. Раньше процедура растягивалась на несколько дней, а теперь занимает минуты, и не нужно приходить в ИФНС и приносить туда кассу.\n                            "
+                                "\n                                    При желании вы можете действовать по такому сценарию, но сравните, насколько все\n                                    проще, если проводить регистрацию ККТ онлайн. Предварительное заключение\n                                    договора с ЦТО по закону больше не требуется, шаги упрощены, а главное — все\n                                    можно сделать дистанционно. Раньше процедура растягивалась на несколько дней, а\n                                    теперь занимает минуты, и не нужно приходить в ИФНС и приносить туда кассу.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В результате получаем новый порядок регистрации кассы онлайн в ФНС и ОФД: "
+                                "\n                                    В результате получаем новый порядок регистрации кассы онлайн в ФНС и ОФД: "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 1. Подача заявления на регистрацию кассы в ИФНС через личный кабинет налогоплательщика онлайн на сайте nalog.ru. И сразу же — получение регистрационного номера ККТ. "
+                                "\n                                    Шаг 1. Подача заявления на регистрацию кассы в ИФНС через личный кабинет\n                                    налогоплательщика онлайн на сайте nalog.ru. И сразу же — получение\n                                    регистрационного номера ККТ. "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 2. Самостоятельная фискализация. (В нашем примере использована утилита для регистрации ККТ АТОЛ.) "
+                                "\n                                    Шаг 2. Самостоятельная фискализация. (В нашем примере использована утилита для\n                                    регистрации ККТ АТОЛ.) "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 3. Получение карточки регистрации ККТ из ФНС. "
+                                "\n                                    Шаг 3. Получение карточки регистрации ККТ из ФНС. "
                               ),
                               _c("br"),
                               _vm._v(
-                                "\n                                Шаг 4. Регистрация кассы в личном кабинете ОФД.\n                            "
+                                "\n                                    Шаг 4. Регистрация кассы в личном кабинете ОФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52069,26 +51797,26 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Регистрация ККТ осуществляется через личный кабинет налогоплательщика на сайте налоговой nalog.ru. Для этого вам понадобится действующая электронная подпись (КЭП), выпущенная на имя ИП или генерального директора ООО. И не забудьте заранее выбрать ОФД — в процессе регистрации вы обязаны его указать.\n                            "
+                                "\n                                    Регистрация ККТ осуществляется через личный кабинет налогоплательщика на сайте\n                                    налоговой nalog.ru. Для этого вам понадобится действующая электронная подпись\n                                    (КЭП), выпущенная на имя ИП или генерального директора ООО. И не забудьте\n                                    заранее выбрать ОФД — в процессе регистрации вы обязаны его указать.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h4", [
                               _vm._v(
-                                "Шаг 1. Подача заявления на регистрацию ККТ и получение регистрационного номера ККТ."
+                                "Шаг 1. Подача заявления на регистрацию ККТ и получение регистрационного номера\n                                    ККТ."
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                На главной странице личного кабинета откройте вкладку "
+                                "\n                                    На главной странице личного кабинета откройте вкладку "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Учет контрольно-кассовой техники")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
@@ -52106,7 +51834,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                На этой странице содержится вся информация о всех ККТ, которые зарегистрированы на данное юрлицо с данной КЭП. Чтобы зарегистрировать новую ККТ, нажмите кнопку "
+                                "\n                                    На этой странице содержится вся информация о всех ККТ, которые зарегистрированы\n                                    на данное юрлицо с данной КЭП. Чтобы зарегистрировать новую ККТ, нажмите кнопку\n                                    "
                               ),
                               _c(
                                 "span",
@@ -52123,7 +51851,7 @@ var render = function() {
                                   )
                                 ]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
@@ -52141,13 +51869,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Здесь же вы можете загрузить самостоятельно заполненное заявление о регистрации ККТ (форма по КНД-1110061). Тогда вам не придется заполнять онлайн-форму.\n                            "
+                                "\n                                    Здесь же вы можете загрузить самостоятельно заполненное заявление о регистрации\n                                    ККТ (форма по КНД-1110061). Тогда вам не придется заполнять онлайн-форму.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В первую очередь нужно заполнить адрес непосредственной установки. Нажмите кнопку "
+                                "\n                                    В первую очередь нужно заполнить адрес непосредственной установки. Нажмите\n                                    кнопку "
                               ),
                               _c(
                                 "span",
@@ -52155,7 +51883,7 @@ var render = function() {
                                 [_vm._v("Выбрать адрес")]
                               ),
                               _vm._v(
-                                ". Заполните открывшуюся форму. Индекс подставится автоматически. В поле "
+                                ". Заполните\n                                    открывшуюся форму. Индекс подставится автоматически. В поле "
                               ),
                               _c(
                                 "span",
@@ -52163,7 +51891,7 @@ var render = function() {
                                 [_vm._v("Наименование места установки ККТ")]
                               ),
                               _vm._v(
-                                " опишите место более подробно. Затем введите информацию о модели своей ККТ. Нажмите кнопку "
+                                " опишите место\n                                    более подробно. Затем введите информацию о модели своей ККТ. Нажмите кнопку\n                                    "
                               ),
                               _c(
                                 "span",
@@ -52171,37 +51899,37 @@ var render = function() {
                                 [_vm._v("Выбрать модель ККТ")]
                               ),
                               _vm._v(
-                                " и выберите модель из списка.\n                            "
+                                " и выберите модель из\n                                    списка.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                После выбора модели появится поле ввода заводского номера ККТ. Этот номер можно посмотреть в паспорте ККТ, а также на шильдике, который находится на корпусе ККТ. Введите номер в поле и нажмите кнопку "
+                                "\n                                    После выбора модели появится поле ввода заводского номера ККТ. Этот номер можно\n                                    посмотреть в паспорте ККТ, а также на шильдике, который находится на корпусе\n                                    ККТ. Введите номер в поле и нажмите кнопку "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Выбрать")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При вводе серийного номера и номера фискального регистратора в кабинете налогоплательщика происходит автоматическая проверка на включение в Государственный реестр ККТ. Если номер введен неправильно (или если устройство не включено в реестр), будет показано сообщение об ошибке.\n                            "
+                                "\n                                    При вводе серийного номера и номера фискального регистратора в кабинете\n                                    налогоплательщика происходит автоматическая проверка на включение в\n                                    Государственный реестр ККТ. Если номер введен неправильно (или если устройство\n                                    не включено в реестр), будет показано сообщение об ошибке.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Затем выберите модель фискального накопителя и введите его заводской номер, который указан в его паспорте. Здесь также работает автоматическая проверка.\n                            "
+                                "\n                                    Затем выберите модель фискального накопителя и введите его заводской номер,\n                                    который указан в его паспорте. Здесь также работает автоматическая проверка.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Следующий этап — выбор оператора фискальных данных. Если ваша деятельность не совпадает с перечисленными в полях видами деятельности, оставьте поля пустыми и выберите ОФД из выпадающего списка. ИНН ОФД заполнится автоматически.\n                            "
+                                "\n                                    Следующий этап — выбор оператора фискальных данных. Если ваша деятельность не\n                                    совпадает с перечисленными в полях видами деятельности, оставьте поля пустыми и\n                                    выберите ОФД из выпадающего списка. ИНН ОФД заполнится автоматически.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52220,7 +51948,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нажмите кнопку "
+                                "\n                                    Нажмите кнопку "
                               ),
                               _c(
                                 "span",
@@ -52228,13 +51956,13 @@ var render = function() {
                                 [_vm._v("Подписать и отправить")]
                               ),
                               _vm._v(
-                                ". Появится предупреждение о том, что будет использована цифровая подпись.\n                            "
+                                ".\n                                    Появится предупреждение о том, что будет использована цифровая подпись.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Чтобы узнать информацию о состоянии заявления на регистрацию, пройдите по ссылке или откройте раздел "
+                                "\n                                    Чтобы узнать информацию о состоянии заявления на регистрацию, пройдите по ссылке\n                                    или откройте раздел "
                               ),
                               _c(
                                 "span",
@@ -52246,14 +51974,14 @@ var render = function() {
                                 ]
                               ),
                               _vm._v(
-                                ". Здесь отображаются все документы, которые отправлялись с данной КЭП. Проверьте статус документа "
+                                ".\n                                    Здесь отображаются все документы, которые отправлялись с данной КЭП. Проверьте\n                                    статус документа "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Заявление о регистрации")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
@@ -52271,25 +51999,25 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Когда заявление будет обработано, на главной странице кабинета налогоплательщика снова войдите в раздел "
+                                "\n                                    Когда заявление будет обработано, на главной странице кабинета налогоплательщика\n                                    снова войдите в раздел "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Учет контрольно-кассовой техники")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Здесь появилась запись о том, что ККТ присвоен регистрационный номер. Чтобы просмотреть параметры ККТ, кликните на присвоенный номер.\n                            "
+                                "\n                                    Здесь появилась запись о том, что ККТ присвоен регистрационный номер. Чтобы\n                                    просмотреть параметры ККТ, кликните на присвоенный номер.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Чтобы просмотреть и скачать уведомление о присвоении регистрационного номера, перейдите на вкладку "
+                                "\n                                    Чтобы просмотреть и скачать уведомление о присвоении регистрационного номера,\n                                    перейдите на вкладку "
                               ),
                               _c(
                                 "span",
@@ -52297,7 +52025,7 @@ var render = function() {
                                 [_vm._v("История заявлений")]
                               ),
                               _vm._v(
-                                " и скачайте PDF-документ.\n                            "
+                                " и\n                                    скачайте PDF-документ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52322,7 +52050,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                После присвоения регистрационного номера касса должна пройти фискализацию. При регистрации онлайн вы сможете провести ее самостоятельно. Для этого понадобятся данные, которые присутствовали в заявлении, поэтому заранее в отдельных окнах откройте детальную информацию по ККТ и уведомление о присвоении регистрационного номера.\n                            "
+                                "\n                                    После присвоения регистрационного номера касса должна пройти фискализацию. При\n                                    регистрации онлайн вы сможете провести ее самостоятельно. Для этого понадобятся\n                                    данные, которые присутствовали в заявлении, поэтому заранее в отдельных окнах\n                                    откройте детальную информацию по ККТ и уведомление о присвоении регистрационного\n                                    номера.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52341,7 +52069,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Запустите утилиту фискализации. Ее предоставляет производитель фискального регистратора: в примере использована утилита для регистрации ККТ АТОЛ.\n                            "
+                                "\n                                    Запустите утилиту фискализации. Ее предоставляет производитель фискального\n                                    регистратора: в примере использована утилита для регистрации ККТ АТОЛ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52360,14 +52088,14 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если ККМ подключена по USB, то она определится сама. Если под другим интерфейсом — зайдите в настройки и укажите параметры подключения. Нажмите "
+                                "\n                                    Если ККМ подключена по USB, то она определится сама. Если под другим интерфейсом\n                                    — зайдите в настройки и укажите параметры подключения. Нажмите "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Зарегистрировать")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
@@ -52385,7 +52113,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Проверьте дату и время. Если они отличаются от времени на компьютере, то проведите синхронизацию. Если совпадают — нажмите "
+                                "\n                                    Проверьте дату и время. Если они отличаются от времени на компьютере, то\n                                    проведите синхронизацию. Если совпадают — нажмите "
                               ),
                               _c(
                                 "span",
@@ -52393,13 +52121,13 @@ var render = function() {
                                 [_vm._v("Далее")]
                               ),
                               _vm._v(
-                                " для перехода на вкладку ввода параметров.\n                            "
+                                " для перехода на вкладку ввода параметров.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Теперь понадобятся документы, о которых говорилось выше: информация по ККТ и уведомление о присвоении регистрационного номера. Чтобы данные полностью совпадали, скопируйте их из документов и вставьте в соответствующие поля.\n                            "
+                                "\n                                    Теперь понадобятся документы, о которых говорилось выше: информация по ККТ и\n                                    уведомление о присвоении регистрационного номера. Чтобы данные полностью\n                                    совпадали, скопируйте их из документов и вставьте в соответствующие поля.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52418,14 +52146,14 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Впишите параметры вашего ОФД. Нажмите "
+                                "\n                                    Впишите параметры вашего ОФД. Нажмите "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Далее")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
@@ -52443,14 +52171,14 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                На следующей вкладке укажите систему налогообложения. Можно выбрать сразу несколько вариантов. Нажмите "
+                                "\n                                    На следующей вкладке укажите систему налогообложения. Можно выбрать сразу\n                                    несколько вариантов. Нажмите "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Далее")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
@@ -52468,7 +52196,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Проверьте правильность введенной информации. Если есть ошибка, нажмите "
+                                "\n                                    Проверьте правильность введенной информации. Если есть ошибка, нажмите "
                               ),
                               _c(
                                 "span",
@@ -52476,19 +52204,19 @@ var render = function() {
                                 [_vm._v("Назад ")]
                               ),
                               _vm._v(
-                                "и внесите правки. Если все в порядке, нажмите "
+                                "и внесите правки. Если все в порядке,\n                                    нажмите "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Выполнить")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Происходит регистрация ККТ. Отчет о регистрации будет напечатан на чеке.\n                            "
+                                "\n                                    Происходит регистрация ККТ. Отчет о регистрации будет напечатан на чеке.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52507,21 +52235,23 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Вернитесь в личный кабинет налогоплательщика на сайте nalog.ru. Нажмите кнопку "
+                                "\n                                    Вернитесь в личный кабинет налогоплательщика на сайте nalog.ru. Нажмите кнопку\n                                    "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Завершить регистрацию")]
                               ),
-                              _vm._v(". Заполните открывшуюся форму "),
+                              _vm._v(
+                                ". Заполните\n                                    открывшуюся форму "
+                              ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Отчет о регистрации ККТ")]
                               ),
                               _vm._v(
-                                ". Используйте данные отчета, напечатанного на чеке при фискализации кассы. \n                            "
+                                ".\n                                    Используйте данные отчета, напечатанного на чеке при фискализации кассы. \n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52539,7 +52269,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Внимание! Закон дает всего одни сутки на то, чтобы после фискализации внести фискальный признак в личный кабинет налогоплательщика. Время и дата в форме должны точно совпадать с чеком.\n                            "
+                                "\n                                    Внимание! Закон дает всего одни сутки на то, чтобы после фискализации внести\n                                    фискальный признак в личный кабинет налогоплательщика. Время и дата в форме\n                                    должны точно совпадать с чеком.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52568,7 +52298,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                После регистрации карточка ККТ будет доступна в личном кабинете налогоплательщика в разделе "
+                                "\n                                    После регистрации карточка ККТ будет доступна в личном кабинете\n                                    налогоплательщика в разделе "
                               ),
                               _c(
                                 "span",
@@ -52579,7 +52309,7 @@ var render = function() {
                                   )
                                 ]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("h3", [
@@ -52588,7 +52318,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                После регистрации кассы в личном кабинете налогоплательщика в разделе "
+                                "\n                                    После регистрации кассы в личном кабинете налогоплательщика в разделе "
                               ),
                               _c(
                                 "span",
@@ -52600,19 +52330,19 @@ var render = function() {
                                 ]
                               ),
                               _vm._v(
-                                ", напротив вашей кассы появится электронная карточка регистрации ККТ. С этого момента касса легализована, а работа с ней законна. Датой регистрации в ФНС считается дата выдачи карточки.\n                            "
+                                ",\n                                    напротив вашей кассы появится электронная карточка регистрации ККТ. С этого\n                                    момента касса легализована, а работа с ней законна. Датой регистрации в ФНС\n                                    считается дата выдачи карточки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Карточка подписывается усиленной квалифицированной электронной подписью. В нее вносятся изменения при изменении указанных при регистрации параметров, а также при замене фискального накопителя. При покупке подержанной кассы карточка регистрации ККТ передается новому владельцу.\n                            "
+                                "\n                                    Карточка подписывается усиленной квалифицированной электронной подписью. В нее\n                                    вносятся изменения при изменении указанных при регистрации параметров, а также\n                                    при замене фискального накопителя. При покупке подержанной кассы карточка\n                                    регистрации ККТ передается новому владельцу.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При необходимости в ИФНС можно получить бумажный экземпляр. Если карточка повреждена или утеряна — выдается дубликат. При этом не назначается штрафов.\n                            "
+                                "\n                                    При необходимости в ИФНС можно получить бумажный экземпляр. Если карточка\n                                    повреждена или утеряна — выдается дубликат. При этом не назначается штрафов.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52622,31 +52352,31 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                После получения карточки регистрации работа с кассой уже законна, но еще невозможна: она пока не передает данные в ОФД (в договоре с ОФД, который вы уже заключили, нет регистрационной информации о конкретной кассе). Чтобы запустить онлайн-передачу данных, нужно зарегистрировать кассу в ОФД. Это финальный шаг, и он очень простой.\n                            "
+                                "\n                                    После получения карточки регистрации работа с кассой уже законна, но еще\n                                    невозможна: она пока не передает данные в ОФД (в договоре с ОФД, который вы уже\n                                    заключили, нет регистрационной информации о конкретной кассе). Чтобы запустить\n                                    онлайн-передачу данных, нужно зарегистрировать кассу в ОФД. Это финальный шаг, и\n                                    он очень простой.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Войдите в личный кабинет вашего ОФД.\n                            "
+                                "\n                                    Войдите в личный кабинет вашего ОФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Откройте вкладку ККТ, выберите "
+                                "\n                                    Откройте вкладку ККТ, выберите "
                               ),
                               _c(
                                 "span",
                                 { staticStyle: { "font-weight": "bold" } },
                                 [_vm._v("Подключить ККТ")]
                               ),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В открывшемся окне "
+                                "\n                                    В открывшемся окне "
                               ),
                               _c(
                                 "span",
@@ -52654,7 +52384,7 @@ var render = function() {
                                 [_vm._v("Регистрация ККТ")]
                               ),
                               _vm._v(
-                                " заполните все поля.\n                            "
+                                "\n                                    заполните все поля.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52673,13 +52403,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Всю информацию возьмите из отчета о регистрации, который был напечатан на предыдущем шаге.\n                            "
+                                "\n                                    Всю информацию возьмите из отчета о регистрации, который был напечатан на\n                                    предыдущем шаге.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В поле "
+                                "\n                                    В поле "
                               ),
                               _c(
                                 "span",
@@ -52687,7 +52417,7 @@ var render = function() {
                                 [_vm._v("Внутреннее наименование ККТ")]
                               ),
                               _vm._v(
-                                " можно присвоить ФР произвольное имя.\n                            "
+                                " можно\n                                    присвоить ФР произвольное имя.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52706,7 +52436,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нажмите "
+                                "\n                                    Нажмите "
                               ),
                               _c(
                                 "span",
@@ -52714,7 +52444,7 @@ var render = function() {
                                 [_vm._v("Сохранить")]
                               ),
                               _vm._v(
-                                ". Появится сообщение об успешной регистрации кассы в ОФД.\n                            "
+                                ". Появится сообщение об\n                                    успешной регистрации кассы в ОФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -52726,37 +52456,37 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Хотя делать все онлайн гораздо проще и удобнее, регистрация ККТ в налоговой «по старинке», через отделение ФНС, по-прежнему возможна и легальна.\n                            "
+                                "\n                                    Хотя делать все онлайн гораздо проще и удобнее, регистрация ККТ в налоговой «по\n                                    старинке», через отделение ФНС, по-прежнему возможна и легальна.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Внимание! Используйте распечатанный бланк заявления по форме КНД-1110061. Заявление по форме КНД-1110021 (старого образца) не содержит полей, необходимых для ввода полной информации об онлайн-кассе (например, модели и номера ФН). Поэтому оно не подходит для регистрации ККТ.\n                            "
+                                "\n                                    Внимание! Используйте распечатанный бланк заявления по форме КНД-1110061.\n                                    Заявление по форме КНД-1110021 (старого образца) не содержит полей, необходимых\n                                    для ввода полной информации об онлайн-кассе (например, модели и номера ФН).\n                                    Поэтому оно не подходит для регистрации ККТ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если вы собираетесь регистрировать кассу через отделение ФНС, не забудьте взять с собой паспорта ККТ и ФН, а также документ, подтверждающий ваши полномочия в организации. Закон не обязывает предоставлять эти документ, но они могут понадобиться для правильного оформления регистрации кассового аппарата в налоговой.\n                            "
+                                "\n                                    Если вы собираетесь регистрировать кассу через отделение ФНС, не забудьте взять\n                                    с собой паспорта ККТ и ФН, а также документ, подтверждающий ваши полномочия в\n                                    организации. Закон не обязывает предоставлять эти документ, но они могут\n                                    понадобиться для правильного оформления регистрации кассового аппарата в\n                                    налоговой.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                На сегодняшний день закон предусматривает общую систему регистрации контрольно-кассовой техники. Раньше регистрация кассового аппарата в налоговой для ООО осуществлялась по месту установки кассы, для ИП — по месту прописки предпринимателя. А сейчас вы можете обратиться в любую ИФНС. Регистрация кассового аппарата для ИП и организаций происходит одинаково: вы можете подать заявление в любой налоговый орган.\n                            "
+                                "\n                                    На сегодняшний день закон предусматривает общую систему регистрации\n                                    контрольно-кассовой техники. Раньше регистрация кассового аппарата в налоговой\n                                    для ООО осуществлялась по месту установки кассы, для ИП — по месту прописки\n                                    предпринимателя. А сейчас вы можете обратиться в любую ИФНС. Регистрация\n                                    кассового аппарата для ИП и организаций происходит одинаково: вы можете подать\n                                    заявление в любой налоговый орган.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Срок регистрации ККМ в ИФНС от даты подачи заявления составляет 5 рабочих дней: согласно пп. 7 и 11 ст. 4.2 закона от 22.05.2003 № 54-ФЗ карточка регистрации ККТ выдается налоговой по истечении этого срока со дня подачи заявления на регистрацию.\n                            "
+                                "\n                                    Срок регистрации ККМ в ИФНС от даты подачи заявления составляет 5 рабочих дней:\n                                    согласно пп. 7 и 11 ст. 4.2 закона от 22.05.2003 № 54-ФЗ карточка регистрации\n                                    ККТ выдается налоговой по истечении этого срока со дня подачи заявления на\n                                    регистрацию.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Старый способ постановки на учет — когда вы приносите документы в ИФНС и потом в назначенный сотрудниками день приносите туда же кассу для осмотра и фискализации — по-прежнему действителен, его не отменили. Но регистрировать кассу намного удобнее через интернет. Возможность удаленной постановки на учет — одно из заметных преимуществ новой системы применения ККТ.\n                            "
+                                "\n                                    Старый способ постановки на учет — когда вы приносите документы в ИФНС и потом в\n                                    назначенный сотрудниками день приносите туда же кассу для осмотра и фискализации\n                                    — по-прежнему действителен, его не отменили. Но регистрировать кассу намного\n                                    удобнее через интернет. Возможность удаленной постановки на учет — одно из\n                                    заметных преимуществ новой системы применения ККТ.\n                                "
                               )
                             ])
                           ])
@@ -52773,71 +52503,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -52867,149 +52545,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -53079,7 +52614,7 @@ var render = function() {
                         _c("div", { staticClass: "col-md-12" }, [
                           _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "Введение кассовых аппаратов с 2018 года: ККТ установят почти все"
+                              "Введение кассовых аппаратов с 2018 года: ККТ установят\n                                почти все"
                             )
                           ])
                         ])
@@ -53090,15 +52625,15 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_2430" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                Недавно принятые изменения в правилах применения контрольно-кассовой техники влекут за собой и дополнительные требования к кассовым чекам и бланкам строгой отчетности. Это логично, поскольку появилось новое звено в цепочке взаимодействия между предпринимателями и налоговой – оператор фискальных данных. Поэтому данные ОФД, к которому подключен продавец-пользователь онлайн-кассы, включены в "
+                                "\n                                    Недавно принятые изменения в правилах применения контрольно-кассовой техники\n                                    влекут за собой и дополнительные требования к кассовым чекам и бланкам строгой\n                                    отчетности. Это логично, поскольку появилось новое звено в цепочке\n                                    взаимодействия между предпринимателями и налоговой – оператор фискальных данных.\n                                    Поэтому данные ОФД, к которому подключен продавец-пользователь онлайн-кассы,\n                                    включены в "
                               ),
                               _c("strong", [
                                 _vm._v(
-                                  "обязательные реквизиты бсо и кассового чека в 2019 году"
+                                  "обязательные реквизиты бсо и кассового чека в 2019\n                                    году"
                                 )
                               ]),
                               _vm._v(
-                                ". А так как изменения в законодательстве направлены на увеличение прозрачности бизнеса, в документах помимо даты и времени покупки появляется место осуществления расчета и многие другие параметры.\n                            "
+                                ". А так как изменения в законодательстве направлены на увеличение\n                                    прозрачности бизнеса, в документах помимо даты и времени покупки появляется\n                                    место осуществления расчета и многие другие параметры.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53108,13 +52643,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.\n                            "
+                                "\n                                    Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы\n                                    зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках\n                                    обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы\n                                    можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для новых реквизитов в чеках онлайн-касс и бланков строгой отчетности нет унифицированных форм, но в них должны содержаться определенные данные. Это данные, которые добавились с вступлением закона 54-ФЗ в силу. Вот новые реквизиты в чеках онлайн-касс:\n                            "
+                                "\n                                    Для новых реквизитов в чеках онлайн-касс и бланков строгой отчетности нет\n                                    унифицированных форм, но в них должны содержаться определенные данные. Это\n                                    данные, которые добавились с вступлением закона 54-ФЗ в силу. Вот новые\n                                    реквизиты в чеках онлайн-касс:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53143,7 +52678,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Список приобретенных товаров со стоимостью, ценой и примененными скидками."
+                                  "Список приобретенных товаров со стоимостью, ценой и примененными скидками.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
@@ -53178,13 +52713,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При этом в законе в списке обязательных реквизитов чека онлайн-кассы QR-код не значится, однако в разделе требований к контрольно-кассовой технике указано, что кассовый аппарат должен «обеспечивать возможность печати на кассовом чеке (бланке строгой отчетности) двухмерного штрихового кода (QR-код размером не менее 20Х20 мм), содержащего в кодированном виде реквизиты проверки кассового чека или бланка строгой отчетности в отдельной выделенной области кассового чека или бланка строгой отчетности». Таким образом QR-кода на новых чеках онлайн-касс вполне может и не быть, но онлайн-кассы должны уметь его печатать.\n                            "
+                                "\n                                    При этом в законе в списке обязательных реквизитов чека онлайн-кассы QR-код не\n                                    значится, однако в разделе требований к контрольно-кассовой технике указано, что\n                                    кассовый аппарат должен «обеспечивать возможность печати на кассовом чеке\n                                    (бланке строгой отчетности) двухмерного штрихового кода (QR-код размером не\n                                    менее 20Х20 мм), содержащего в кодированном виде реквизиты проверки кассового\n                                    чека или бланка строгой отчетности в отдельной выделенной области кассового чека\n                                    или бланка строгой отчетности». Таким образом QR-кода на новых чеках онлайн-касс\n                                    вполне может и не быть, но онлайн-кассы должны уметь его печатать.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Что должно быть зашифровано в QR-коде на кассовом чеке по новым правилам? Закон говорит, что там должны содержаться сведения о покупке (дата и время платежа, порядковый номер фискального документа, признак расчета, сумма расчета, заводской номер фискального накопителя, фискальный признак документа).\n                            "
+                                "\n                                    Что должно быть зашифровано в QR-коде на кассовом чеке по новым правилам? Закон\n                                    говорит, что там должны содержаться сведения о покупке (дата и время платежа,\n                                    порядковый номер фискального документа, признак расчета, сумма расчета,\n                                    заводской номер фискального накопителя, фискальный признак документа).\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53196,7 +52731,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Вот список реквизитов чека — 54-ФЗ строго предписывает их печатать на каждом документе, подтверждающем продажу:\n                            "
+                                "\n                                    Вот список реквизитов чека — 54-ФЗ строго предписывает их печатать на каждом\n                                    документе, подтверждающем продажу:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53263,7 +52798,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "если покупатель захотел получить чек на e-mail или смс, то должен быть указан его адрес электронной почты или номер телефона, а также в этом случае должен значиться электронный адрес почты отправителя чека."
+                                  "если покупатель захотел получить чек на e-mail или смс, то должен быть\n                                        указан его адрес электронной почты или номер телефона, а также в этом случае\n                                        должен значиться электронный адрес почты отправителя чека.\n                                    "
                                 )
                               ])
                             ]),
@@ -53277,7 +52812,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В этом чеке отмечены следующие реквизиты:\n                            "
+                                "\n                                    В этом чеке отмечены следующие реквизиты:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53354,7 +52889,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [_vm._v("Порядковый номер чека.")]),
                               _vm._v(" "),
-                              _c("li", [_vm._v("Дата и время выдачи чека. ")]),
+                              _c("li", [_vm._v("Дата и время выдачи чека.")]),
                               _vm._v(" "),
                               _c("li", [_vm._v("Регистрационный номер ККТ.")]),
                               _vm._v(" "),
@@ -53373,7 +52908,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Все эти данные – обязательные реквизиты чека онлайн-кассы. Если на чеке отсутствует хотя бы один из них, то по закону чек считается не действительным, а предприниматель должен будет приложить все усилия, чтобы доказать проверяющему органу применение онлайн-кассы, иначе он будет оштрафован за несоблюдение нового закона. Более подробно про реквизиты чека, требуемые 54-ФЗ, можно прочитать в самом тексте закона. При этом контролировать соответствие реквизитов на чеках закону может даже сам покупатель, поэтому не только предпринимателям необходимо быть в курсе, какие реквизиты должны быть в кассовом чеке.\n                            "
+                                "\n                                    Все эти данные – обязательные реквизиты чека онлайн-кассы. Если на чеке\n                                    отсутствует хотя бы один из них, то по закону чек считается не действительным, а\n                                    предприниматель должен будет приложить все усилия, чтобы доказать проверяющему\n                                    органу применение онлайн-кассы, иначе он будет оштрафован за несоблюдение нового\n                                    закона. Более подробно про реквизиты чека, требуемые 54-ФЗ, можно прочитать в\n                                    самом тексте закона. При этом контролировать соответствие реквизитов на чеках\n                                    закону может даже сам покупатель, поэтому не только предпринимателям необходимо\n                                    быть в курсе, какие реквизиты должны быть в кассовом чеке.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53406,7 +52941,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Важно! Индивидуальные предприниматели, использующие ПСН, УСН и ЕНВД, за исключением тех, кто торгует подакцизными товарами, могут не указывать на чеках наименование и количество купленных товаров или услуг. Такое послабление для малого бизнеса дано до 1 февраля 2021 года (ФЗ от 03.07.2016 N 290-ФЗ). После этой даты они должны работать, как все остальные предприятия. Читайте подробнее о сроках, когда надо будет начать указывать товары в чеке, а также об "
+                                "\n                                    Важно! Индивидуальные предприниматели, использующие ПСН, УСН и ЕНВД, за\n                                    исключением тех, кто торгует подакцизными товарами, могут не указывать на чеках\n                                    наименование и количество купленных товаров или услуг. Такое послабление для\n                                    малого бизнеса дано до 1 февраля 2021 года (ФЗ от 03.07.2016 N 290-ФЗ). После\n                                    этой даты они должны работать, как все остальные предприятия. Читайте подробнее\n                                    о сроках, когда надо будет начать указывать товары в чеке, а также об "
                               ),
                               _c(
                                 "a",
@@ -53429,13 +52964,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Что касается обязательных реквизитов БСО, то в случае, если организация находится в труднодоступной области, последние три пункта из списка обязательных реквизитов чека онлайн-кассы могут не указываться. Кроме того, Правительство РФ предупреждает в законе, что оно может дополнить список еще одним обязательным реквизитом – кодом товарной номенклатуры – в случае, если он определен. В остальном, все реквизиты БСО ничем не отличаются от реквизитов чека онлайн-кассы.\n                            "
+                                "\n                                    Что касается обязательных реквизитов БСО, то в случае, если организация\n                                    находится в труднодоступной области, последние три пункта из списка обязательных\n                                    реквизитов чека онлайн-кассы могут не указываться. Кроме того, Правительство РФ\n                                    предупреждает в законе, что оно может дополнить список еще одним обязательным\n                                    реквизитом – кодом товарной номенклатуры – в случае, если он определен. В\n                                    остальном, все реквизиты БСО ничем не отличаются от реквизитов чека\n                                    онлайн-кассы.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                А именно:\n                            "
+                                "\n                                    А именно:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53482,7 +53017,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("p", [
                                 _vm._v(
-                                  "\n                                    Если у бланка документа нет отрывной части, то при его заполнении необходимо делать копию. Дублировать серию и номер бланка документа запрещено. Кроме того, БСО должен быть изготовлен либо с применением автоматизированной системы, либо отпечатан в типографии – в последнем варианте на нем должна быть указана информация об этой типографии (название, ИНН), значиться тираж печати, номер заказа и год его исполнения.\n                                "
+                                  "\n                                        Если у бланка документа нет отрывной части, то при его заполнении необходимо\n                                        делать копию. Дублировать серию и номер бланка документа запрещено. Кроме\n                                        того, БСО должен быть изготовлен либо с применением автоматизированной\n                                        системы, либо отпечатан в типографии – в последнем варианте на нем должна\n                                        быть указана информация об этой типографии (название, ИНН), значиться тираж\n                                        печати, номер заказа и год его исполнения.\n                                    "
                                 )
                               ])
                             ])
@@ -53500,71 +53035,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -53594,149 +53077,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -53806,7 +53146,7 @@ var render = function() {
                         _c("div", { staticClass: "col-md-12" }, [
                           _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "Переход на ФФД 1.05 и НДС 20%: АТОЛ, ШТРИХ-М, Viki Print"
+                              "Переход на ФФД 1.05 и НДС 20%: АТОЛ, ШТРИХ-М, Viki\n                                Print"
                             )
                           ])
                         ])
@@ -53817,13 +53157,13 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_2430" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                С 1 января 2019 действуют два новых обязательных требования к онлайн-кассам. Во-первых, меняется формат фискальных данных (ФФД): набор правил, по которым кассы передают информацию в налоговую через оператора фискальных данных. Новая версия ФФД — 1.05. Если ваша касса была зарегистрирована с указанием предыдущей версии ФФД 1.0 — ее придется перерегистрировать.\n                            "
+                                "\n                                    С 1 января 2019 действуют два новых обязательных требования к онлайн-кассам.\n                                    Во-первых, меняется формат фискальных данных (ФФД): набор правил, по которым\n                                    кассы передают информацию в налоговую через оператора фискальных данных. Новая\n                                    версия ФФД — 1.05. Если ваша касса была зарегистрирована с указанием предыдущей\n                                    версии ФФД 1.0 — ее придется перерегистрировать.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Во-вторых, меняется ставка НДС: с 1 января 2019 — 20%. И онлайн-кассы должны будут печатать чеки с указанием именно такой ставки.\n                            "
+                                "\n                                    Во-вторых, меняется ставка НДС: с 1 января 2019 — 20%. И онлайн-кассы должны\n                                    будут печатать чеки с указанием именно такой ставки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53833,13 +53173,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Новые требования — обязательные. ФНС намерена строго следить за их выполнением и назначать штрафы в случае нарушений. Отсрочка по штрафам для опоздавших допустима только на короткое время (согласно письму службы ЕД-4-20/24234@ от 13 декабря, в первом квартале 2019 предпринимателей не будут наказывать за чек, пробитый с указанием ставки НДС 18%, при условии, что товар был продан со ставкой 20%). До конца года нужно успеть настроить онлайн-кассы так, чтобы они соответствовали новым требованиям. Что для этого нужно предпринять? Кто поможет, сколько это стоит и можно ли сделать все самостоятельно? Разберемся вместе.\n                            "
+                                "\n                                    Новые требования — обязательные. ФНС намерена строго следить за их выполнением и\n                                    назначать штрафы в случае нарушений. Отсрочка по штрафам для опоздавших\n                                    допустима только на короткое время (согласно письму службы ЕД-4-20/24234@ от\n                                    13 декабря, в первом квартале 2019 предпринимателей не будут наказывать за чек,\n                                    пробитый с указанием ставки НДС 18%, при условии, что товар был продан со\n                                    ставкой 20%). До конца года нужно успеть настроить онлайн-кассы так, чтобы\n                                    они соответствовали новым требованиям. Что для этого нужно предпринять? Кто\n                                    поможет, сколько это стоит и можно ли сделать все самостоятельно? Разберемся\n                                    вместе.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                О том, как в ваших документах — накладных, счетах-фактурах, договорах — уже сейчас учесть повышение НДС с 1 января 2019 года >>.\n                            "
+                                "\n                                    О том, как в ваших документах — накладных, счетах-фактурах, договорах — уже\n                                    сейчас учесть повышение НДС с 1 января 2019 года >>.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53847,25 +53187,25 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход на ФФД 1.05 закреплен в приказе ФНС от 21.03.2017 №ММВ-7-20/229@ и приказе ФНС с изменениями от 09.04.2018 №ММВ-7-20/207@. В последнем есть важная поправка: переход на ФФД 1.05 разрешается осуществлять без замены фискального накопителя. Это важно, поскольку значительно облегчает переход и снижает затраты.\n                            "
+                                "\n                                    Переход на ФФД 1.05 закреплен в приказе ФНС от 21.03.2017 №ММВ-7-20/229@ и\n                                    приказе ФНС с изменениями от 09.04.2018 №ММВ-7-20/207@. В последнем есть важная\n                                    поправка: переход на ФФД 1.05 разрешается осуществлять без замены фискального\n                                    накопителя. Это важно, поскольку значительно облегчает переход и снижает\n                                    затраты.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                Различайте версию фискального накопителя (ФН) и версию ФФД. Фискальные накопители могут иметь одну из двух версий: 1.0 или 1.1, — и поддерживают разные форматы фискальных данных. Версия 1.0 поддерживает ФФД 1.0 и 1.05 — поэтому с фискальным накопителем 1.0 можно спокойно перейти на новый формат фискальных данных 1 января 2019 года. Версия 1.1 поддерживает ФФД 1.1 — переход на этот формат фискальных данных еще предстоит в будущем.\n                            "
+                                "\n                                    Различайте версию фискального накопителя (ФН) и версию ФФД. Фискальные\n                                    накопители могут иметь одну из двух версий: 1.0 или 1.1, — и поддерживают разные\n                                    форматы фискальных данных. Версия 1.0 поддерживает ФФД 1.0 и 1.05 — поэтому с\n                                    фискальным накопителем 1.0 можно спокойно перейти на новый формат фискальных\n                                    данных 1 января 2019 года. Версия 1.1 поддерживает ФФД 1.1 — переход на этот\n                                    формат фискальных данных еще предстоит в будущем.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Как узнать, какую версию ФФД поддерживает ваша касса?\n                            "
+                                "\n                                    Как узнать, какую версию ФФД поддерживает ваша касса?\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Проще всего узнать это из чека информации о ККТ. Чтобы его напечатать, включите кассу с нажатой кнопкой промотки чековой ленты. Когда устройство издаст однократный звуковой сигнал — отпустите кнопку. Касса напечатает чек, в котором будет указана версия ФФД.\n                            "
+                                "\n                                    Проще всего узнать это из чека информации о ККТ. Чтобы его напечатать, включите\n                                    кассу с нажатой кнопкой промотки чековой ленты. Когда устройство издаст\n                                    однократный звуковой сигнал — отпустите кнопку. Касса напечатает чек, в котором\n                                    будет указана версия ФФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53875,7 +53215,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если в чеке указан ФФД 1.05 — вам ничего не нужно делать. Если 1.0 — вам предстоит переход.\n                            "
+                                "\n                                    Если в чеке указан ФФД 1.05 — вам ничего не нужно делать. Если 1.0 — вам\n                                    предстоит переход.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53883,13 +53223,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                С 1 июля 2019 года предприниматели обязаны пробивать чеки по предоплате. Полная и частичная предоплаты — это варианты расчета, поддерживаемые в ФФД 1.05 и требующие дополнительного учета на фискальных документах. Это значит, что для правильно оформить предоплату без перехода на ФФД 1.05 будет невозможно.\n                            "
+                                "\n                                    С 1 июля 2019 года предприниматели обязаны пробивать чеки по предоплате. Полная\n                                    и частичная предоплаты — это варианты расчета, поддерживаемые в ФФД 1.05 и\n                                    требующие дополнительного учета на фискальных документах. Это значит, что для\n                                    правильно оформить предоплату без перехода на ФФД 1.05 будет невозможно.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                В чем отличие предоплаты от аванса? В случае предоплаты всегда точно определен список покупаемых позиций, по которым впоследствии будет осуществлен расчет. А аванс — это ситуация, когда предприниматель просто получил на счет определенную сумму.\n                            "
+                                "\n                                    В чем отличие предоплаты от аванса? В случае предоплаты всегда точно определен\n                                    список покупаемых позиций, по которым впоследствии будет осуществлен расчет. А\n                                    аванс — это ситуация, когда предприниматель просто получил на счет определенную\n                                    сумму.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -53897,85 +53237,87 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход на новую ставку НДС закреплен в федеральном законе 303-ФЗ от 3 августа 2018 года. Если вы применяете ставку 18% — с 1 января 2019 года вы должны применять 20%. Если (для предоплаты) 18/118% — меняете на 20/120%.\n                            "
+                                "\n                                    Переход на новую ставку НДС закреплен в федеральном законе 303-ФЗ от 3 августа\n                                    2018 года. Если вы применяете ставку 18% — с 1 января 2019 года вы должны\n                                    применять 20%. Если (для предоплаты) 18/118% — меняете на 20/120%.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Кого это касается?\n                            "
+                                "\n                                    Кого это касается?\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Всех плательщиков НДС. Если вы не платите НДС — ничего менять не нужно. Если платите — к 1 января 2019 года вам нужно привести кассу в соответствие требованию о новой ставке.\n                            "
+                                "\n                                    Всех плательщиков НДС. Если вы не платите НДС — ничего менять не нужно. Если\n                                    платите — к 1 января 2019 года вам нужно привести кассу в соответствие\n                                    требованию о новой ставке.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                ФНС пока не дала окончательных разъяснений о том, как именно будет происходить переход на новую ставку НДС в 2019 году. Пока, по предварительным данным, ожидаемая схема работы такая:"
+                                "\n                                    ФНС пока не дала окончательных разъяснений о том, как именно будет происходить\n                                    переход на новую ставку НДС в 2019 году. Пока, по предварительным данным,\n                                    ожидаемая схема работы такая:"
                               ),
                               _c("br"),
                               _vm._v(" "),
                               _c("br"),
                               _vm._v(
-                                "\n                                — Если вы продаете товары или оказываете услуги с 1 января 2019 года, включая договоры, заключенные до 1.01.19, предоплаченные или частично предоплаченные до 1.01.19) — вам нужно использовать ставку НДС 20%."
+                                "\n                                    — Если вы продаете товары или оказываете услуги с 1 января 2019 года, включая\n                                    договоры, заключенные до 1.01.19, предоплаченные или частично предоплаченные до\n                                    1.01.19) — вам нужно использовать ставку НДС 20%."
                               ),
                               _c("br"),
                               _vm._v(" "),
                               _c("br"),
                               _vm._v(
-                                "\n                                — Если вы в 2018 году собираетесь взять оплату или частичную оплату за товары или услуги, которые отгрузите в 2019 году, — используйте ставку 18/118%. При этом в 2019 году у вас возникнет сложность, поскольку окончательный расчет при поставке или реализации нужно будет сделать по ставке 20%. При авансе или предоплате в 2018 с поставкой в 2019 возникнет разница в ставке НДС, которую потребуется вашему клиенту или вам (то есть оформить в виде скидки)."
+                                "\n                                    — Если вы в 2018 году собираетесь взять оплату или частичную оплату за товары\n                                    или услуги, которые отгрузите в 2019 году, — используйте ставку 18/118%. При\n                                    этом в 2019 году у вас возникнет сложность, поскольку окончательный расчет при\n                                    поставке или реализации нужно будет сделать по ставке 20%. При авансе или\n                                    предоплате в 2018 с поставкой в 2019 возникнет разница в ставке НДС, которую\n                                    потребуется вашему клиенту или вам (то есть оформить в виде скидки)."
                               ),
                               _c("br"),
                               _vm._v(" "),
                               _c("br"),
                               _vm._v(
-                                "\n                                — Возврат товаров, которые были проданы в 2018 году, но возвращены будут в 2019, надо будет делать по ставке НДС 18%.\n                            "
+                                "\n                                    — Возврат товаров, которые были проданы в 2018 году, но возвращены будут в 2019,\n                                    надо будет делать по ставке НДС 18%.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _c("strong", [_vm._v("Важно!")]),
                               _vm._v(
-                                " Перейти на новую ставку НДС необходимо строго к 1 января. Норма закона 54-ФЗ П.8 ст.1.2, которая разрешает в случае появления дополнительных требований к ККТ привести технику в соответствие новому закону в течение года, в данном случае НЕ действует. Никаких юридических лазеек нет. Уже 1 января 2019 года ставка НДС в любом чеке должна быть именно 20%. ФНС намерена отслеживать исполнение и штрафовать за нарушения. Таким образом, лучше обновить кассы заранее, чтобы с 1 января в чеке гарантированно печаталась правильная ставка НДС.\n                            "
+                                " Перейти на новую ставку НДС необходимо строго к 1\n                                    января. Норма закона 54-ФЗ П.8 ст.1.2, которая разрешает в случае появления\n                                    дополнительных требований к ККТ привести технику в соответствие новому закону в\n                                    течение года, в данном случае НЕ действует. Никаких юридических лазеек нет. Уже\n                                    1 января 2019 года ставка НДС в любом чеке должна быть именно 20%. ФНС намерена\n                                    отслеживать исполнение и штрафовать за нарушения. Таким образом, лучше обновить\n                                    кассы заранее, чтобы с 1 января в чеке гарантированно печаталась правильная\n                                    ставка НДС.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                Хорошие новости для пользователей МоегоСклада. Мы автоматически обновим драйвер ККТ и версию Кассы МойСклад под новую ставку НДС. Для этого в настройках компании ("
+                                "\n                                    Хорошие новости для пользователей МоегоСклада. Мы автоматически обновим драйвер\n                                    ККТ и версию Кассы МойСклад под новую ставку НДС. Для этого в настройках\n                                    компании ("
                               ),
                               _c("strong", [_vm._v("Меню пользователя")]),
                               _vm._v(" — "),
                               _c("strong", [_vm._v("Настройки")]),
-                              _vm._v(" — "),
+                              _vm._v(
+                                " —\n                                    "
+                              ),
                               _c("strong", [_vm._v("Справочники")]),
                               _vm._v(" — "),
                               _c("strong", [_vm._v("Юр. лица")]),
                               _vm._v(
-                                ") должно быть отмечено, что вы платите НДС.\n                            "
+                                ") должно быть отмечено,\n                                    что вы платите НДС.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Итак, вот короткий чек-лист подготовки вашей кассы к Новому году:\n                            "
+                                "\n                                    Итак, вот короткий чек-лист подготовки вашей кассы к Новому году:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ol", [
                               _c("li", [
                                 _vm._v(
-                                  "Проверьте версию ФФД на кассе. Если 1.0 — требуется апгрейд. Если 1.05 — ничего менять не нужно!"
+                                  "Проверьте версию ФФД на кассе. Если 1.0 — требуется апгрейд. Если 1.05 —\n                                        ничего менять не нужно!\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Проверьте, платите ли вы НДС. Если да — приготовьтесь менять прошивку кассы. Если нет — ничего делать не нужно."
+                                  "Проверьте, платите ли вы НДС. Если да — приготовьтесь менять прошивку кассы.\n                                        Если нет — ничего делать не нужно.\n                                    "
                                 )
                               ])
                             ]),
@@ -53988,13 +53330,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Все кассы Viki Print поддерживают НДС 20% и ФФД 1.05. Но самостоятельно проапгрейдить их не получится: обновить прошивку устройства смогут только специалисты. Для этого вам обязательно нужно обратиться в сервисный центр Дримкас, который обслуживает вашу технику. Лучше сделать это как можно скорее. Обновление уже доступно, и если вы еще не обратились в сервисный центр — не теряйте времени, чтобы потом не ждать в очереди.\n                            "
+                                "\n                                    Все кассы Viki Print поддерживают НДС 20% и ФФД 1.05. Но самостоятельно\n                                    проапгрейдить их не получится: обновить прошивку устройства смогут только\n                                    специалисты. Для этого вам обязательно нужно обратиться в сервисный центр\n                                    Дримкас, который обслуживает вашу технику. Лучше сделать это как можно скорее.\n                                    Обновление уже доступно, и если вы еще не обратились в сервисный центр — не\n                                    теряйте времени, чтобы потом не ждать в очереди.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Обратите внимание, что такое обновление не является гарантийным обязательством — то есть будет платным. Стоимость зависит от выбранного сервисного центра: каждый из них сам устанавливает цены на услуги. Если вы считаете, что цена слишком высокая, то можете попробовать другой авторизованный сервисный центр Дримкас.\n                            "
+                                "\n                                    Обратите внимание, что такое обновление не является гарантийным обязательством —\n                                    то есть будет платным. Стоимость зависит от выбранного сервисного центра: каждый\n                                    из них сам устанавливает цены на услуги. Если вы считаете, что цена слишком\n                                    высокая, то можете попробовать другой авторизованный сервисный центр Дримкас.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54002,39 +53344,39 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Под ФФД 1.05 кассы ШТРИХ-М можно обновить самостоятельно и бесплатно. Для этого:\n                            "
+                                "\n                                    Под ФФД 1.05 кассы ШТРИХ-М можно обновить самостоятельно и бесплатно. Для этого:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", { attrs: { type: "square" } }, [
                               _c("li", [
                                 _vm._v(
-                                  "Найдите на сайте ШТРИХ-М в разделе Продукты свою модель кассы, откройте вкладку Скачать и загрузите программу «Драйвер ФР ШТРИХ-М». Или скачайте ее из личного кабинета ЦТО. Актуальная версия драйвера — 4.14.0.701."
+                                  "Найдите на сайте ШТРИХ-М в разделе Продукты свою модель кассы, откройте\n                                        вкладку Скачать и загрузите программу «Драйвер ФР ШТРИХ-М». Или скачайте ее\n                                        из личного кабинета ЦТО. Актуальная версия драйвера — 4.14.0.701.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Выполните переход с ФФД 1.0 на ФФД 1.05 по инструкции >>  "
+                                  "Выполните переход с ФФД 1.0 на ФФД 1.05 по инструкции >>"
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Выполните отчет о перерегистрации. Это можно сделать через драйвер ККТ или через упрощенную утилиту «Программа мастер фискализации/модернизации (v.1.1.27)». Ее можно скачать из личного кабинета ЦТО в разделе «Дополнительные материалы» для своей модели ФР. "
+                                  "Выполните отчет о перерегистрации. Это можно сделать через драйвер ККТ или\n                                        через упрощенную утилиту «Программа мастер фискализации/модернизации\n                                        (v.1.1.27)». Ее можно скачать из личного кабинета ЦТО в разделе\n                                        «Дополнительные материалы» для своей модели ФР.\n                                    "
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход на ФФД 1.05 ШТРИХ-М рекомендует сделать уже сейчас: все ОФД уже принимают документы по новому стандарту. Проапгрейдите кассу как можно скорее: важно успеть все сделать вовремя, не позднее 31 декабря 2018 года.\n                            "
+                                "\n                                    Переход на ФФД 1.05 ШТРИХ-М рекомендует сделать уже сейчас: все ОФД уже\n                                    принимают документы по новому стандарту. Проапгрейдите кассу как можно скорее:\n                                    важно успеть все сделать вовремя, не позднее 31 декабря 2018 года.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если вы не хотите заниматься обновлением сами — обратитесь к партнерам: выберите подходящего из списка и договоритесь в рамках обслуживания.\n                            "
+                                "\n                                    Если вы не хотите заниматься обновлением сами — обратитесь к партнерам: выберите\n                                    подходящего из списка и договоритесь в рамках обслуживания.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54042,13 +53384,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Обновить прошивку касс ШТРИХ-М под НДС 20% самостоятельно невозможно. Для этого необходимо обратиться в сервисный центр производителя, где вам понадобится купить лицензию на каждую кассу. При этом вы получите файл лицензии. Затем обновите прошивку и драйвер ККТ до последней версии, как описано в пункте выше. После этого вы сможете работать в нем с лицензиями. Добавьте файл купленной лицензии. После этого касса будет готова к работе с НДС 20%.\n                            "
+                                "\n                                    Обновить прошивку касс ШТРИХ-М под НДС 20% самостоятельно невозможно. Для этого\n                                    необходимо обратиться в сервисный центр производителя, где вам понадобится\n                                    купить лицензию на каждую кассу. При этом вы получите файл лицензии. Затем\n                                    обновите прошивку и драйвер ККТ до последней версии, как описано в пункте выше.\n                                    После этого вы сможете работать в нем с лицензиями. Добавьте файл купленной\n                                    лицензии. После этого касса будет готова к работе с НДС 20%.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если ваш сервисный центр ШТРИХ-М занимается поддержкой и настройкой ККТ, лучше обратитесь к специалисту для выполнения этих операций.\n                            "
+                                "\n                                    Если ваш сервисный центр ШТРИХ-М занимается поддержкой и настройкой ККТ, лучше\n                                    обратитесь к специалисту для выполнения этих операций.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54056,19 +53398,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Кассы АТОЛ можно проапгрейдить самостоятельно или с помощью партнеров.\n                            "
+                                "\n                                    Кассы АТОЛ можно проапгрейдить самостоятельно или с помощью партнеров.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Чтобы узнать, можете ли вы сделать все сами, проверьте версию прошивки ККТ. Если она меньше, чем 4555, ее нужно обновить с помощью партнеров АТОЛ. Если 4555 и выше, то можно переходить на ФФД 1.05 без изменения прошивки.\n                            "
+                                "\n                                    Чтобы узнать, можете ли вы сделать все сами, проверьте версию прошивки ККТ. Если\n                                    она меньше, чем 4555, ее нужно обновить с помощью партнеров АТОЛ. Если 4555 и\n                                    выше, то можно переходить на ФФД 1.05 без изменения прошивки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Чтобы перейти на ФФД 1.05:\n                            "
+                                "\n                                    Чтобы перейти на ФФД 1.05:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54077,19 +53419,19 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Убедитесь, что все ранее сформированные фискальные документы переданы в ОФД."
+                                  "Убедитесь, что все ранее сформированные фискальные документы переданы в\n                                        ОФД.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Скачайте, установите и запустите приложение Утилита регистрации ККТ АТОЛ. Выполните в нем перерегистрацию кассы. При этом укажите причину перерегистрации — изменение параметров ККТ. На следующем экране поменяйте версию ФФД: укажите 1.05."
+                                  "Скачайте, установите и запустите приложение Утилита регистрации ККТ АТОЛ.\n                                        Выполните в нем перерегистрацию кассы. При этом укажите причину\n                                        перерегистрации — изменение параметров ККТ. На следующем экране поменяйте\n                                        версию ФФД: укажите 1.05.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Подайте заявление о перерегистрации ККТ в ФНС. Это можно сделать на сайте ФНС. "
+                                  "Подайте заявление о перерегистрации ККТ в ФНС. Это можно сделать на сайте\n                                        ФНС.\n                                    "
                                 )
                               ])
                             ]),
@@ -54098,62 +53440,62 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                АТОЛ выпустила новую прошивку: внутреннее ПО кассы, которое автоматически изменит НДС с 18 на 20% в 00 часов 00 минут 1 января 2019 года. Для этого нужно: \n                            "
+                                "\n                                    АТОЛ выпустила новую прошивку: внутреннее ПО кассы, которое автоматически\n                                    изменит НДС с 18 на 20% в 00 часов 00 минут 1 января 2019 года. Для этого нужно: \n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                — установить саму новую прошивку — она вышла в октябре 2018, \n                            "
+                                "\n                                    — установить саму новую прошивку — она вышла в октябре 2018, \n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                — закрыть смену до 24 часов 31 декабря 2018.\n                            "
+                                "\n                                    — закрыть смену до 24 часов 31 декабря 2018.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Также пользователям АТОЛ понадобится обновить драйвер ККТ и обновить версию кассовой программы — в случае, если ставку НДС считает не касса. Владельцам ньюджеров АТОЛ и экономных касс АТОЛ 90Ф понадобится только обновить прошивку.\n                            "
+                                "\n                                    Также пользователям АТОЛ понадобится обновить драйвер ККТ и обновить версию\n                                    кассовой программы — в случае, если ставку НДС считает не касса. Владельцам\n                                    ньюджеров АТОЛ и экономных касс АТОЛ 90Ф понадобится только обновить прошивку.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                Хорошие новости для пользователей связки АТОЛ + МойСклад: драйвер ККТ и кассовую программу МойСклад обновит автоматически, от вас потребуется только обновить прошивку в кассе.\n                            "
+                                "\n                                    Хорошие новости для пользователей связки АТОЛ + МойСклад: драйвер ККТ и кассовую\n                                    программу МойСклад обновит автоматически, от вас потребуется только обновить\n                                    прошивку в кассе.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Как обновить прошивку ККТ АТОЛ под НДС 20%?\n                            "
+                                "\n                                    Как обновить прошивку ККТ АТОЛ под НДС 20%?\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Займитесь обновлением уже сейчас, если вы этого еще не сделали! Обновить прошивку касс АТОЛ можно:\n                            "
+                                "\n                                    Займитесь обновлением уже сейчас, если вы этого еще не сделали! Обновить\n                                    прошивку касс АТОЛ можно:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "В офисе сервисного партнера АТОЛ: для этого вам понадобится привезти туда кассу. "
+                                  "В офисе сервисного партнера АТОЛ: для этого вам понадобится привезти туда\n                                        кассу.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "В месте установки кассовой техники: для этого вызовите к себе инженера, чтобы он настроил вашу кассу."
+                                  "В месте установки кассовой техники: для этого вызовите к себе инженера,\n                                        чтобы он настроил вашу кассу.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Дистанционно — с помощью облачных инструментов АТОЛ Сервис. Компания АТОЛ готовит надежный, понятный и быстрый способ обновить прошивку самостоятельно и удаленно."
+                                  "Дистанционно — с помощью облачных инструментов АТОЛ Сервис. Компания АТОЛ\n                                        готовит надежный, понятный и быстрый способ обновить прошивку самостоятельно\n                                        и удаленно.\n                                    "
                                 )
                               ])
                             ]),
@@ -54166,7 +53508,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Не все производители касс предоставляют пользователям возможность самостоятельно обновить прошивку. Но и не все пользователи достаточно технически подкованы для этого. Если у вас одна касса, и вам предстоит разовая процедура, — лучше обратитесь к специалистам. Не стоит пытаться сэкономить деньги: если что-то пойдет не так, стоимость потерь превысит выгоду. Погружаться в технические нюансы самостоятельно имеет смысл, только если у вас несколько касс и есть собственные технические специалисты для подстраховки.\n                            "
+                                "\n                                    Не все производители касс предоставляют пользователям возможность самостоятельно\n                                    обновить прошивку. Но и не все пользователи достаточно технически подкованы для\n                                    этого. Если у вас одна касса, и вам предстоит разовая процедура, — лучше\n                                    обратитесь к специалистам. Не стоит пытаться сэкономить деньги: если что-то\n                                    пойдет не так, стоимость потерь превысит выгоду. Погружаться в технические\n                                    нюансы самостоятельно имеет смысл, только если у вас несколько касс и есть\n                                    собственные технические специалисты для подстраховки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54180,7 +53522,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Напечатайте чек информации: включите кассу с нажатой кнопкой промотки чековой ленты, после однократного звукового сигнала отпустите кнопку. Касса напечатает чек, в котором будет указана версия ФФД.\n                            "
+                                "\n                                    Напечатайте чек информации: включите кассу с нажатой кнопкой промотки чековой\n                                    ленты, после однократного звукового сигнала отпустите кнопку. Касса напечатает\n                                    чек, в котором будет указана версия ФФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54192,7 +53534,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нет, не нужно. Это официальная информация от ФНС. Фискальный накопитель нужно менять только по истечении его срока действия.\n                            "
+                                "\n                                    Нет, не нужно. Это официальная информация от ФНС. Фискальный накопитель нужно\n                                    менять только по истечении его срока действия.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54204,7 +53546,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Продолжайте работать с этим фискальным накопителем. Менять ФН при переходе с ФФД 1.00 на 1.05 не нужно.\n                            "
+                                "\n                                    Продолжайте работать с этим фискальным накопителем. Менять ФН при переходе с ФФД\n                                    1.00 на 1.05 не нужно.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54216,7 +53558,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нет, не нужно.\n                            "
+                                "\n                                    Нет, не нужно.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54228,19 +53570,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Дистанционно — через облачные инструменты АТОЛ Сервис.\n                            "
+                                "\n                                    Дистанционно — через облачные инструменты АТОЛ Сервис.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h3", [
                               _vm._v(
-                                "Как быть с арендуемыми кассами АТОЛ? Когда можно обновить прошивку и куда обратиться?"
+                                "Как быть с арендуемыми кассами АТОЛ? Когда можно обновить прошивку и куда\n                                    обратиться?"
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для онлайн-касс также потребуется обновление прошивки. Нужно связаться с АТОЛ Онлайн, там помогут спланировать обновление.\n                            "
+                                "\n                                    Для онлайн-касс также потребуется обновление прошивки. Нужно связаться с АТОЛ\n                                    Онлайн, там помогут спланировать обновление.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54252,19 +53594,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                «БЕЗ НДС» — это тоже тип налоговой ставки.\n                            "
+                                "\n                                    «БЕЗ НДС» — это тоже тип налоговой ставки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h3", [
                               _vm._v(
-                                "Почему на чеках пишется строка про НДС под каждым товаром, если я не использую НДС? Можно ее убрать?"
+                                "Почему на чеках пишется строка про НДС под каждым товаром, если я не использую\n                                    НДС? Можно ее убрать?"
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Пока это убрать нельзя.\n                            "
+                                "\n                                    Пока это убрать нельзя.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54276,7 +53618,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Срок пока не определен, прогноз — 2021 год.\n                            "
+                                "\n                                    Срок пока не определен, прогноз — 2021 год.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54288,7 +53630,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нужно — после смены ФФД.\n                            "
+                                "\n                                    Нужно — после смены ФФД.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54300,7 +53642,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                До перехода на ФФД 1.05 нет строгих рекомендаций. Мы рекомендуем пробивать чек на товар «Предоплата», а потом при передаче товаров делать 100% скидку на чек с товарами.\n                            "
+                                "\n                                    До перехода на ФФД 1.05 нет строгих рекомендаций. Мы рекомендуем пробивать чек\n                                    на товар «Предоплата», а потом при передаче товаров делать 100% скидку на чек с\n                                    товарами.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54312,31 +53654,31 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                На ПК нужно установить программу «Драйвер ФР ШТРИХ-М», которую можно бесплатно скачать с сайта. Актуальная версия драйвера 4.14.0.701.\n                            "
+                                "\n                                    На ПК нужно установить программу «Драйвер ФР ШТРИХ-М», которую можно бесплатно\n                                    скачать с сайта. Актуальная версия драйвера 4.14.0.701.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h3", [
                               _vm._v(
-                                "Кассу регистрировали с ФФД 1.05, при распечатке тест-листа версия ФФД ФН — 1.0. В какой версии работает ФН?"
+                                "Кассу регистрировали с ФФД 1.05, при распечатке тест-листа версия ФФД ФН — 1.0.\n                                    В какой версии работает ФН?"
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Не надо смешивать версию ФН и версию ФФД ККТ.\n                            "
+                                "\n                                    Не надо смешивать версию ФН и версию ФФД ККТ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Есть два вида ФН: ФН 1.0 и ФН 1.1. И есть три версии ФФД: 1.0, 1.05, 1.1.\n                            "
+                                "\n                                    Есть два вида ФН: ФН 1.0 и ФН 1.1. И есть три версии ФФД: 1.0, 1.05, 1.1.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В случае работы с ФН 1.0 под ФФД 1.05 сам ФН никак не видит ФФД 1.05 и не участвует в тех изменениях, которые прошли в ФФД. Поэтому на ФН 1.0 версия ФФД 1.05 никак не повлияет и будет отображаться версия ФН 1.0.\n                            "
+                                "\n                                    В случае работы с ФН 1.0 под ФФД 1.05 сам ФН никак не видит ФФД 1.05 и не\n                                    участвует в тех изменениях, которые прошли в ФФД. Поэтому на ФН 1.0 версия ФФД\n                                    1.05 никак не повлияет и будет отображаться версия ФН 1.0.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54348,7 +53690,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нет. Тот тег, что был использован для ставки НДС 18%, будет заменен на 20%.\n                            "
+                                "\n                                    Нет. Тот тег, что был использован для ставки НДС 18%, будет заменен на 20%.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54358,7 +53700,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нет, партнеры оказывают услуги за деньги.\n                            "
+                                "\n                                    Нет, партнеры оказывают услуги за деньги.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54370,7 +53712,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Код товара содержится в теге 1162, данный тег реализован в кассах. Значение данного тега нужно заполнять только для маркированных товаров, которые уже будут обязательны к маркировке.\n                            "
+                                "\n                                    Код товара содержится в теге 1162, данный тег реализован в кассах. Значение\n                                    данного тега нужно заполнять только для маркированных товаров, которые уже будут\n                                    обязательны к маркировке.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54382,25 +53724,25 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Позже. Об этом сообщат дополнительно. Но это будет только изменение в наименовании на чеке. Сделать его можно только после того, как будут приняты изменения к приказу ФНС о Форматах фискальных документов. К настоящему моменту этот документ не принят, поэтому у производителей касс нет оснований делать переименование реквизита.\n                            "
+                                "\n                                    Позже. Об этом сообщат дополнительно. Но это будет только изменение в\n                                    наименовании на чеке. Сделать его можно только после того, как будут приняты\n                                    изменения к приказу ФНС о Форматах фискальных документов. К настоящему моменту\n                                    этот документ не принят, поэтому у производителей касс нет оснований делать\n                                    переименование реквизита.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h3", [
                               _vm._v(
-                                "Для каких случаев автоматически поменяется ставка, если ставка у товара явно не указана?"
+                                "Для каких случаев автоматически поменяется ставка, если ставка у товара явно не\n                                    указана?"
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для тех, у которых в карточке товара указана была ставка НДС 18%.\n                            "
+                                "\n                                    Для тех, у которых в карточке товара указана была ставка НДС 18%.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Смотрите также запись вебинара, который мы провели совместно коллегами из компании АТОЛ. Мы рассказали о грядущих изменениях и разобрали, как и что надо перенастроить.\n                            "
+                                "\n                                    Смотрите также запись вебинара, который мы провели совместно коллегами из\n                                    компании АТОЛ. Мы рассказали о грядущих изменениях и разобрали, как и что надо\n                                    перенастроить.\n                                "
                               )
                             ])
                           ])
@@ -54417,71 +53759,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -54511,149 +53801,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -54732,37 +53879,37 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_2430" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                Представляем "
+                                "\n                                    Представляем "
                               ),
                               _c("strong", [
                                 _vm._v("список операторов фискальных данных")
                               ]),
                               _vm._v(
-                                " в России. Заключение договора с одним из них — обязательное требование последней версии закона 54-ФЗ, если вы используете кассовую технику при расчетах с покупателями.\n                            "
+                                " в России.\n                                    Заключение договора с одним из них — обязательное требование последней версии\n                                    закона 54-ФЗ, если вы используете кассовую технику при расчетах с покупателями.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.\n                            "
+                                "\n                                    Переход на онлайн-кассы — это не просто покупка новой кассовой техники. Чтобы\n                                    зарегистрировать кассу в налоговой, придется подключиться к ОФД. Теперь в чеках\n                                    обязательны наименования товаров, поэтому вам нужна кассовая программа. У нас вы\n                                    можете приобрести полное решение: ККТ с ФН, ОФД на год и кассовую программу.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Что такое оператор фискальных данных (ОФД) и почему с 1 февраля 2017 года необходимо заключать с ним договор?\n                            "
+                                "\n                                    Что такое оператор фискальных данных (ОФД) и почему с 1 февраля 2017 года\n                                    необходимо заключать с ним договор?\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Напоминаем, что поправки к закону «О применении контрольно-кассовой техники» уже вступили в силу. Меняется схема расчета бизнеса с покупателями и схема взаимодействия с ФНС. Предприниматели обязаны использовать кассовую технику с доступом в интернет. А заключение договора с оператором фискальных данных, список которых утвердила налоговая, — теперь одно из обязательных требований.\n                            "
+                                "\n                                    Напоминаем, что поправки к закону «О применении контрольно-кассовой техники» уже\n                                    вступили в силу. Меняется схема расчета бизнеса с покупателями и схема\n                                    взаимодействия с ФНС. Предприниматели обязаны использовать кассовую технику с\n                                    доступом в интернет. А заключение договора с оператором фискальных данных,\n                                    список которых утвердила налоговая, — теперь одно из обязательных\n                                    требований.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Задача организаций из списка ОФД — собирать данные о продажах, отправляемые ККТ нового образца, хранить их и передавать в ФНС по защищенному каналу.\n                            "
+                                "\n                                    Задача организаций из списка ОФД — собирать данные о продажах, отправляемые ККТ\n                                    нового образца, хранить их и передавать в ФНС по защищенному каналу.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54778,11 +53925,11 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В конце августа на сайте налоговой появился первый "
+                                "\n                                    В конце августа на сайте налоговой появился первый "
                               ),
                               _c("strong", [_vm._v("список ОФД")]),
                               _vm._v(
-                                ", сертифицированных для работы в России. На сегодняшний день официальный статус оператора фискальных данных получили 20 компаний.\n                            "
+                                ",\n                                    сертифицированных для работы в России. На сегодняшний день официальный статус\n                                    оператора фискальных данных получили 20 компаний.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -54800,7 +53947,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            ООО «Такском» разрабатывает системы электронного документооборота и обеспечивает обмен информацией по защищенным каналам связи с 2000 года. Собственный учебный центр и центр сертификации ключей ЭЦП. В числе тех, кто сотрудничает с «Такскомом» — Управление делами Президента РФ, МИД России, ФНС и Сбербанк. Один из крупнейших игроков на рынке, без этого оператора фискальных данных список представить сложно. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                        "\n                                                ООО «Такском» разрабатывает системы электронного документооборота и\n                                                обеспечивает обмен информацией по защищенным каналам связи с 2000\n                                                года. Собственный учебный центр и центр сертификации ключей ЭЦП. В\n                                                числе тех, кто сотрудничает с «Такскомом» — Управление делами\n                                                Президента РФ, МИД России, ФНС и Сбербанк. Один из крупнейших\n                                                игроков на рынке, без этого оператора фискальных данных список\n                                                представить сложно. Разрешение на обработку фискальных данных\n                                                получено 31.08.2016.\n                                            "
                                       )
                                     ])
                                   ])
@@ -54824,7 +53971,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Эвотор ОФД — совместный проект Сбербанка и производителя кассового оборудования АТОЛ. Основной профиль деятельности компании — создание решений для автоматизации малого бизнеса. В планах компании сотрудничество с ЦТО и развитие партнерства с производителями ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                        "\n                                                Эвотор ОФД — совместный проект Сбербанка и производителя кассового\n                                                оборудования АТОЛ. Основной профиль деятельности компании — создание\n                                                решений для автоматизации малого бизнеса. В планах компании\n                                                сотрудничество с ЦТО и развитие партнерства с производителями ККТ.\n                                                Разрешение на обработку фискальных данных получено 31.08.2016.\n                                            "
                                       )
                                     ])
                                   ])
@@ -54848,7 +53995,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            ООО «Ярус» создает банковское оборудование и разрабатывает программное обеспечение с 2007 года. Принадлежащий компании спецоператор ОФД-Я уже получил разрешительную документацию для ведения деятельности в статусе ОФД. В начале сентября 2016 года ОФД-Я договорился о партнерстве с производителем контрольно-кассовой техники «ШТРИХ-М». Компании обещают клиентам комплексный подход при переходе на новый порядок применения ККТ. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                        "\n                                                ООО «Ярус» создает банковское оборудование и разрабатывает\n                                                программное обеспечение с 2007 года. Принадлежащий компании\n                                                спецоператор ОФД-Я уже получил разрешительную документацию для\n                                                ведения деятельности в статусе ОФД. В начале сентября 2016 года\n                                                ОФД-Я договорился о партнерстве с производителем контрольно-кассовой\n                                                техники «ШТРИХ-М». Компании обещают клиентам комплексный подход при\n                                                переходе на новый порядок применения ККТ. Разрешение на обработку\n                                                фискальных данных получено 31.08.2016.\n                                            "
                                       )
                                     ])
                                   ])
@@ -54863,7 +54010,7 @@ var render = function() {
                                       [
                                         _c("ae", [
                                           _vm._v(
-                                            "  АО «ЭСК», бренд «Первый ОФД»"
+                                            " АО «ЭСК», бренд «Первый ОФД»"
                                           )
                                         ])
                                       ],
@@ -54872,7 +54019,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            У АО «Энергетические системы и коммуникации» большой опыт взаимодействия с налоговыми органами, а в 2014 году участие в предварительном эксперименте по применению онлайн-касс. Одно из главных направлений деятельности АО «ЭСК» — разработка технологий для передачи данных. Информация об этом операторе уже появилась в списке ОФД на сайте ФНС. Разрешение на обработку фискальных данных получено 31.08.2016.\n                                        "
+                                        "\n                                                У АО «Энергетические системы и коммуникации» большой опыт\n                                                взаимодействия с налоговыми органами, а в 2014 году участие в\n                                                предварительном эксперименте по применению онлайн-касс. Одно из\n                                                главных направлений деятельности АО «ЭСК» — разработка технологий\n                                                для передачи данных. Информация об этом операторе уже появилась в\n                                                списке ОФД на сайте ФНС. Разрешение на обработку фискальных данных\n                                                получено 31.08.2016.\n                                            "
                                       )
                                     ])
                                   ])
@@ -54886,7 +54033,7 @@ var render = function() {
                                       "p",
                                       [
                                         _c("ae", [
-                                          _vm._v("    ПЕТЕР-СЕРВИС, OFD.RU")
+                                          _vm._v(" ПЕТЕР-СЕРВИС, OFD.RU")
                                         ])
                                       ],
                                       1
@@ -54894,7 +54041,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            OFD.RU создан на базе дочерней компании ПЕТЕР-СЕРВИС, входящей в состав USM Holdings. ПЕТЕР-СЕРВИС уже более 20 лет создает программное обеспечение для рынка телекоммуникаций. На сайте указано, что OFD.RU оказывает услуги малому, среднему и крупному бизнесу по всей России. Разрешение на обработку фискальных данных получено 18.10.2016.\n                                        "
+                                        "\n                                                OFD.RU создан на базе дочерней компании ПЕТЕР-СЕРВИС, входящей в\n                                                состав USM Holdings. ПЕТЕР-СЕРВИС уже более 20 лет создает\n                                                программное обеспечение для рынка телекоммуникаций. На сайте\n                                                указано, что OFD.RU оказывает услуги малому, среднему и крупному\n                                                бизнесу по всей России. Разрешение на обработку фискальных данных\n                                                получено 18.10.2016.\n                                            "
                                       )
                                     ])
                                   ])
@@ -54907,11 +54054,11 @@ var render = function() {
                                     "td",
                                     { attrs: { colspan: "1" } },
                                     [
-                                      _c("ae", [_vm._v("  Яндекс.ОФД ")]),
+                                      _c("ae", [_vm._v(" Яндекс.ОФД ")]),
                                       _vm._v(" "),
                                       _c("p"),
                                       _vm._v(
-                                        "\n                                        «Яндекс» владеет одноименной системой поиска, интернет-порталами и службами в нескольких странах, а теперь намерен работать с крупным и мелким бизнесом, используя собственные технологии. Яндекс.ОФД начнет оказание услуг оператора фискальных данных после проведения настроек, связанных с интеграцией систем и обеспечением безопасности данных. Разрешение на обработку фискальных данных получено 10.04.2017.\n                                        "
+                                        "\n                                            «Яндекс» владеет одноименной системой поиска, интернет-порталами и\n                                            службами в нескольких странах, а теперь намерен работать с крупным и\n                                            мелким бизнесом, используя собственные технологии. Яндекс.ОФД начнет\n                                            оказание услуг оператора фискальных данных после проведения настроек,\n                                            связанных с интеграцией систем и обеспечением безопасности данных.\n                                            Разрешение на обработку фискальных данных получено 10.04.2017.\n                                            "
                                       ),
                                       _c("p")
                                     ],
@@ -54927,13 +54074,14 @@ var render = function() {
                                     { attrs: { colspan: "1" } },
                                     [
                                       _c("ae", [
-                                        _vm._v("  ООО «Электронный экспресс»")
+                                        _vm._v(" ООО «Электронный экспресс»")
                                       ]),
+                                      _vm._v(" "),
                                       _c("br"),
                                       _vm._v(" "),
                                       _c("br"),
                                       _vm._v(
-                                        "\n                                        Компания «Электронный экспресс» — разработчик первой в России массовой компьютерной правовой системы ГАРАНТ и комплекса информационно-правового обеспечения. ИПО ГАРАНТ с 1990 года используют сотни тысяч юристов, бухгалтеров, руководителей по всей стране. Услуги компании лицензированы ФСБ России, Минкомсвязи РФ, ФСТЭК. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                        "
+                                        "\n                                            Компания «Электронный экспресс» — разработчик первой в России\n                                            массовой компьютерной правовой системы ГАРАНТ и комплекса\n                                            информационно-правового обеспечения. ИПО ГАРАНТ с 1990 года используют\n                                            сотни тысяч юристов, бухгалтеров, руководителей по всей стране. Услуги\n                                            компании лицензированы ФСБ России, Минкомсвязи РФ, ФСТЭК. Разрешение на\n                                            обработку фискальных данных получено 14.04.2017.\n                                            "
                                       ),
                                       _c("p")
                                     ],
@@ -54953,11 +54101,12 @@ var render = function() {
                                           " ЗАО «КАЛУГА АСТРАЛ», бренд «Астрал.ОФД»"
                                         )
                                       ]),
+                                      _vm._v(" "),
                                       _c("br"),
                                       _vm._v(" "),
                                       _c("br"),
                                       _vm._v(
-                                        "\n                                        Компания создает программное обеспечение и разрабатывает системы электронного документооборота с 1993 года. Продукт имеет сертификаты соответствия Росстандарта России и заключение ФСБ России, подтверждающее обоснованность устройства системы криптографической защиты. Калуга Астрал — одна из участниц эксперимента по внедрению онлайн-касс в 2014 году. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                    "
+                                        "\n                                            Компания создает программное обеспечение и разрабатывает системы\n                                            электронного документооборота с 1993 года. Продукт имеет\n                                            сертификаты соответствия Росстандарта России и заключение ФСБ России,\n                                            подтверждающее обоснованность устройства системы криптографической\n                                            защиты. Калуга Астрал — одна из участниц эксперимента по внедрению\n                                            онлайн-касс в 2014 году. Разрешение на обработку фискальных данных\n                                            получено 14.04.2017.\n                                        "
                                       )
                                     ],
                                     1
@@ -54981,7 +54130,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("br"),
                                       _vm._v(
-                                        "\n                                        Компания «Тензор» на рынке программного обеспечения с 1996 года. Аккредитованный ФНС, ПФ и Росстатом оператор электронного документооборота, сертифицированный EDI-провайдер. «Тензор» разрабатывает сеть деловых коммуникаций СБИС и выпускает ключи электронной подписи. В СБИС работает 1 000 000 пользователей, ежедневно подключается около 1 000 новых организаций. Разрешение на обработку фискальных данных получено 14.04.2017.\n                                    "
+                                        "\n                                            Компания «Тензор» на рынке программного обеспечения с 1996 года.\n                                            Аккредитованный ФНС, ПФ и Росстатом оператор электронного\n                                            документооборота, сертифицированный EDI-провайдер. «Тензор»\n                                            разрабатывает сеть деловых коммуникаций СБИС и выпускает ключи\n                                            электронной подписи. В СБИС работает 1 000 000 пользователей, ежедневно\n                                            подключается около 1 000 новых организаций. Разрешение на обработку\n                                            фискальных данных получено 14.04.2017.\n                                        "
                                       )
                                     ],
                                     1
@@ -55005,7 +54154,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("br"),
                                       _vm._v(
-                                        "\n                                        «КОРУС Консалтинг СНГ» входит в группу компаний ПАО Сбербанк и с 2005 года предоставляет услуги электронного обмена данными между участниками торговых сделок в ритейле, логистике, фарминдустрии, промышленности, ЖКХ, телекоммуникациях, финансах. Общий трафик электронного документооборота превышает 10 млн документов ежемесячно. Услуги компании лицензированы ФСБ России, ФСТЭК и другими организациями, их качество подтверждено сертификатом Комитета по технологическому обеспечению ECR-Rus российских EDI-провайдеров. Разрешение на обработку фискальных данных получено 12.05.2017."
+                                        "\n                                            «КОРУС Консалтинг СНГ» входит в группу компаний ПАО Сбербанк и с\n                                            2005 года предоставляет услуги электронного обмена данными между\n                                            участниками торговых сделок в ритейле, логистике, фарминдустрии,\n                                            промышленности, ЖКХ, телекоммуникациях, финансах. Общий трафик\n                                            электронного документооборота превышает 10 млн документов ежемесячно.\n                                            Услуги компании лицензированы ФСБ России, ФСТЭК и другими организациями,\n                                            их качество подтверждено сертификатом Комитета по технологическому\n                                            обеспечению ECR-Rus российских EDI-провайдеров. Разрешение на обработку\n                                            фискальных данных получено 12.05.2017."
                                       ),
                                       _c("br")
                                     ],
@@ -55021,7 +54170,7 @@ var render = function() {
                                       "p",
                                       [
                                         _c("ae", [
-                                          _vm._v("  СКБ Контур, Контур ОФД")
+                                          _vm._v(" СКБ Контур, Контур ОФД")
                                         ])
                                       ],
                                       1
@@ -55029,7 +54178,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            СКБ Контур разрабатывает и внедряет программы для бухучета, электронной отчетности и документооборота, предоставляет сервисы для обеспечения информационной безопасности. Разрешение на обработку фискальных данных получено 29.06.2017.\n                                        "
+                                        "\n                                                СКБ Контур разрабатывает и внедряет программы для бухучета,\n                                                электронной отчетности и документооборота, предоставляет\n                                                сервисы для обеспечения информационной безопасности. Разрешение на\n                                                обработку фискальных данных получено 29.06.2017.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55051,7 +54200,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Акционерное общество «Тандер» – операционная компания «Магнита» – получило разрешение на обработку фискальных данных 11.07.2017. В магазинах розничной сети «Магнит» работает около 50 тысяч онлайн-касс, в 2016 году было выдано больше 3,8 млрд чеков. «Магнит» первым из ритейлеров в России будет использовать в работе услуги собственного ОФД. Сервисом оператора смогут пользоваться и другие организации. Сейчас клиентам доступен личный кабинет ОФД, отдельный сайт находится в разработке.\n                                        "
+                                        "\n                                                Акционерное общество «Тандер» – операционная компания «Магнита» –\n                                                получило разрешение на обработку фискальных данных 11.07.2017. В\n                                                магазинах розничной сети «Магнит» работает около 50 тысяч\n                                                онлайн-касс, в 2016 году было выдано больше 3,8 млрд чеков. «Магнит»\n                                                первым из ритейлеров в России будет использовать в работе услуги\n                                                собственного ОФД. Сервисом оператора смогут пользоваться и другие\n                                                организации. Сейчас клиентам доступен личный кабинет ОФД, отдельный\n                                                сайт находится в разработке.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55063,13 +54212,13 @@ var render = function() {
                                   _c("td", [
                                     _c(
                                       "p",
-                                      [_c("ae", [_vm._v("   ОФД Инитпро")])],
+                                      [_c("ae", [_vm._v(" ОФД Инитпро")])],
                                       1
                                     ),
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Пермский удостоверяющий центр «ИнитПро» получил разрешение на обработку фискальных данных 12.09.2017. Клиентам доступны сайт и личный кабинет.\n                                        "
+                                        "\n                                                Пермский удостоверяющий центр «ИнитПро» получил разрешение\n                                                на обработку фискальных данных 12.09.2017. Клиентам доступны сайт и\n                                                личный кабинет.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55083,7 +54232,7 @@ var render = function() {
                                       "p",
                                       [
                                         _c("ae", [
-                                          _vm._v("  ООО «ГРУППА ЭЛЕМЕНТ»")
+                                          _vm._v(" ООО «ГРУППА ЭЛЕМЕНТ»")
                                         ])
                                       ],
                                       1
@@ -55091,7 +54240,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            ООО «ГРУППА ЭЛЕМЕНТ» — компания с частным российским капиталом. Ядро группы — предприятие «Микротех», системный интегратор и производитель контрольно-кассовой техники с 1990 года. Разрешение на обработку фискальных данных получено в соответствии с Приказом ФНС России от 12.09.2017 № ЕД-7-20/721@.\n                                        "
+                                        "\n                                                ООО «ГРУППА ЭЛЕМЕНТ» — компания с частным российским капиталом. Ядро\n                                                группы — предприятие «Микротех», системный интегратор и\n                                                производитель контрольно-кассовой техники с 1990 года. Разрешение на\n                                                обработку фискальных данных получено в соответствии с Приказом ФНС\n                                                России от 12.09.2017 № ЕД-7-20/721@.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55109,7 +54258,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Акционерное общество «Энвижн групп» — системный интегратор с 2001 года, принадлежит ПАО «МТС», имеет филиалы во всех федеральных округах РФ. Разрешение на обработку фискальных данных получено 06.12.2017.\n                                        "
+                                        "\n                                                Акционерное общество «Энвижн групп» — системный интегратор с 2001\n                                                года, принадлежит ПАО «МТС», имеет филиалы во всех федеральных\n                                                округах РФ. Разрешение на обработку фискальных данных получено\n                                                06.12.2017.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55131,7 +54280,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Публичное акционерное общество «Вымпел-Коммуникации», предоставляющее услуги под брендом «Билайн», получило разрешение на обработку фискальных данных 26.12.2017. На сайте компании клиентам доступен личный кабинет, а также сервис по проверке чеков.\n                                        "
+                                        "\n                                                Публичное акционерное общество «Вымпел-Коммуникации»,\n                                                предоставляющее услуги под брендом «Билайн», получило разрешение на\n                                                обработку фискальных данных 26.12.2017. На сайте компании клиентам\n                                                доступен личный кабинет, а также сервис по проверке чеков.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55151,7 +54300,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Общество с ограниченной ответственностью «МультиКарта» является дочерним предприятием ПАО «Почта Банк». Компания с 1994 года работает на рынке высокотехнологичных услуг для банковской отрасли. Разрешение на обработку фискальных данных получено 12.02.2018.\n                                        "
+                                        "\n                                                Общество с ограниченной ответственностью «МультиКарта» является\n                                                дочерним предприятием ПАО «Почта Банк». Компания с 1994 года\n                                                работает на рынке высокотехнологичных услуг для банковской отрасли.\n                                                Разрешение на обработку фискальных данных получено 12.02.2018.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55169,7 +54318,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Общество с ограниченной ответственностью «Дримкас» занимается автоматизацией розничной торговли. Компания работает на рынке с 2016 года, она появилась после реорганизации другого крупного предприятия — «Кристалл Сервис». Разрешение на обработку фискальных данных получено 05.04.2018.\n                                        "
+                                        "\n                                                Общество с ограниченной ответственностью «Дримкас» занимается\n                                                автоматизацией розничной торговли. Компания работает на рынке с 2016\n                                                года, она появилась после реорганизации другого крупного предприятия\n                                                — «Кристалл Сервис». Разрешение на обработку фискальных данных\n                                                получено 05.04.2018.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55181,15 +54330,13 @@ var render = function() {
                                   _c("td", [
                                     _c(
                                       "p",
-                                      [
-                                        _c("ae", [_vm._v("  ООО «Контур НТТ»")])
-                                      ],
+                                      [_c("ae", [_vm._v(" ООО «Контур НТТ»")])],
                                       1
                                     ),
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            Общество с ограниченной ответственностью «Контур НТТ» является дочерней компанией АО «ПФ «СКБ Контур». Контур.ОФД совместим с любыми моделями кассовой техники, фискальных накопителей и кассового программного обеспечения. Разрешение на обработку фискальных данных получено 11.07.2018.\n                                        "
+                                        "\n                                                Общество с ограниченной ответственностью «Контур НТТ» является\n                                                дочерней компанией АО «ПФ «СКБ Контур». Контур.ОФД совместим с\n                                                любыми моделями кассовой техники, фискальных накопителей и кассового\n                                                программного обеспечения. Разрешение на обработку фискальных данных\n                                                получено 11.07.2018.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55213,7 +54360,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", [
                                       _vm._v(
-                                        "\n                                            ОФД Онлайн предлагает комплексное решение по реализации работы ККТ в рамках 54-ФЗ. Разрешение на обработку фискальных данных получено 26.12.2018.\n                                        "
+                                        "\n                                                ОФД Онлайн предлагает комплексное решение по реализации работы ККТ в\n                                                рамках 54-ФЗ. Разрешение на обработку фискальных данных получено\n                                                26.12.2018.\n                                            "
                                       )
                                     ])
                                   ])
@@ -55223,7 +54370,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Договор на оказание услуг по передаче фискальной информации вы можете заключать с каким-то из этих ОФД уже сейчас. С 1 февраля 2017 это стало обязательным при регистрации кассовой техники. Примерная стоимость услуг по передаче фискальных данных — около 3000 рублей в год за одну подключенную кассу или фискальный регистратор.\n                            "
+                                "\n                                    Договор на оказание услуг по передаче фискальной информации вы можете заключать\n                                    с каким-то из этих ОФД уже сейчас. С 1 февраля 2017 это стало обязательным при\n                                    регистрации кассовой техники. Примерная стоимость услуг по передаче\n                                    фискальных данных — около 3000 рублей в год за одну подключенную кассу или\n                                    фискальный регистратор.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55239,7 +54386,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В 2019 году число ОФД, к которым можно подключить кассовую технику, будет расти. "
+                                "\n                                    В 2019 году число ОФД, к которым можно подключить кассовую технику, будет расти. "
                               ),
                               _c(
                                 "span",
@@ -55260,31 +54407,31 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Обязательно нужна квалифицированная электронная подпись (КЭП). Если у вас ее нет, то для получения обратитесь в удостоверяющий центр, аккредитованный в Минкомсвязи. Подсказка: все или почти все ОФД с радостью продадут вам и необходимую электронную подпись.\n                            "
+                                "\n                                    Обязательно нужна квалифицированная электронная подпись (КЭП). Если у вас ее\n                                    нет, то для получения обратитесь в удостоверяющий центр, аккредитованный в\n                                    Минкомсвязи. Подсказка: все или почти все ОФД с радостью продадут вам и\n                                    необходимую электронную подпись.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Свяжитесь с оператором фискальных данных, с которым вы решили сотрудничать, и заключите с ним договор.\n                            "
+                                "\n                                    Свяжитесь с оператором фискальных данных, с которым вы решили сотрудничать, и\n                                    заключите с ним договор.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Обеспечьте доступ в интернет на точке продаж.\n                            "
+                                "\n                                    Обеспечьте доступ в интернет на точке продаж.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Пройдите регистрацию кассового аппарата с встроенным фискальным накопителем на сайте ФНС, получите регистрационный номер.\n                            "
+                                "\n                                    Пройдите регистрацию кассового аппарата с встроенным фискальным накопителем на\n                                    сайте ФНС, получите регистрационный номер.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                И спокойно работайте по новым требованиям.\n                            "
+                                "\n                                    И спокойно работайте по новым требованиям.\n                                "
                               )
                             ])
                           ])
@@ -55301,71 +54448,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -55395,149 +54490,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -55616,12 +54568,12 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_3774" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                Есть несколько вариантов снятия ККТ с учета: при обращении в налоговую или через личный кабинет на сайте ФНС. Но налоговики могут сделать это и принудительно. Разберем подробнее, "
+                                "\n                                    Есть несколько вариантов снятия ККТ с учета: при обращении в налоговую или через\n                                    личный кабинет на сайте ФНС. Но налоговики могут сделать это и принудительно.\n                                    Разберем подробнее, "
                               ),
                               _c("strong", [
                                 _vm._v("как снять с учета онлайн-кассу")
                               ]),
-                              _vm._v(".\n                            ")
+                              _vm._v(".\n                                ")
                             ]),
                             _vm._v(" "),
                             _c("p"),
@@ -55630,7 +54582,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Владелец может сделать это по своей инициативе, если:\n                            "
+                                "\n                                    Владелец может сделать это по своей инициативе, если:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55640,15 +54592,15 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("li", [
-                                _vm._v("технику украли или потеряли, ")
+                                _vm._v("технику украли или потеряли,")
                               ]),
                               _vm._v(" "),
-                              _c("li", [_vm._v("устройство сломалось. ")])
+                              _c("li", [_vm._v("устройство сломалось.")])
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нужно подать в налоговую инспекцию заявление о снятии ККТ с учета (форма по КНД 1110062) не позднее одного рабочего дня после передачи или обнаружения кражи. Отнесите документ лично или отправьте по интернету. Ниже на странице — шаблон заявления и инструкция, как снять онлайн-кассу с учета через личный кабинет на сайте ФНС.\n                            "
+                                "\n                                    Нужно подать в налоговую инспекцию заявление о снятии ККТ с учета (форма по КНД\n                                    1110062) не позднее одного рабочего дня после передачи или обнаружения кражи.\n                                    Отнесите документ лично или отправьте по интернету. Ниже на странице — шаблон\n                                    заявления и инструкция, как снять онлайн-кассу с учета через личный кабинет на\n                                    сайте ФНС.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55658,7 +54610,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В заявлении укажите:\n                            "
+                                "\n                                    В заявлении укажите:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55684,37 +54636,37 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                ФНС внесла изменения в форму бланка (приказ от 07.09.2018 № ММВ-7-20/527@). У нас вы можете скачать новый образец бланка заявления о снятии ККТ с учета.\n                            "
+                                "\n                                    ФНС внесла изменения в форму бланка (приказ от 07.09.2018 № ММВ-7-20/527@). У\n                                    нас вы можете скачать новый образец бланка заявления о снятии ККТ с учета.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                Если заявление на снятие с учета онлайн-кассы подает представитель, укажите реквизиты доверенности.\n                            "
+                                "\n                                    Если заявление на снятие с учета онлайн-кассы подает представитель, укажите\n                                    реквизиты доверенности.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При передаче ККТ другому пользователю к заявлению надо приложить отчет о закрытии фискального накопителя. Его можно сделать через меню онлайн-кассы.\n                            "
+                                "\n                                    При передаче ККТ другому пользователю к заявлению надо приложить отчет о\n                                    закрытии фискального накопителя. Его можно сделать через меню онлайн-кассы.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если ККТ сломалась или ее украли — отчет не нужен. В этом случае лучше снять с учета онлайн-кассу как можно скорее. Сделайте это через интернет: это самый простой и быстрый способ. Дополнительных документов при поломке или краже не понадобится. Как снять кассу с учета через личный кабинет — ниже на странице.\n                            "
+                                "\n                                    Если ККТ сломалась или ее украли — отчет не нужен. В этом случае лучше снять с\n                                    учета онлайн-кассу как можно скорее. Сделайте это через интернет: это самый\n                                    простой и быстрый способ. Дополнительных документов при поломке или краже не\n                                    понадобится. Как снять кассу с учета через личный кабинет — ниже на странице.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если техника работала без передачи данных в ОФД (например, в отдаленных регионах), надо приложить все фискальные данные, записанные в накопитель.\n                            "
+                                "\n                                    Если техника работала без передачи данных в ОФД (например, в отдаленных\n                                    регионах), надо приложить все фискальные данные, записанные в накопитель.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Рекомендуем снимать онлайн-кассы с учета через личный кабинет — это просто и удобно. Для этого вам потребуется электронная цифровая подпись. Несколько действий — и все готово. Далее пошагово разберем снятие онлайн-кассы с учета через личный кабинет.\n                            "
+                                "\n                                    Рекомендуем снимать онлайн-кассы с учета через личный кабинет — это просто и\n                                    удобно. Для этого вам потребуется электронная цифровая подпись. Несколько\n                                    действий — и все готово. Далее пошагово разберем снятие онлайн-кассы с учета\n                                    через личный кабинет.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55730,7 +54682,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для начала войдите в личный кабинет на сайте налоговой и откройте раздел «Учет ККТ».\n                            "
+                                "\n                                    Для начала войдите в личный кабинет на сайте налоговой и откройте раздел «Учет\n                                    ККТ».\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55746,7 +54698,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Далее выберите кассу, которую нужно закрыть, и нажмите кнопку «Снять с регистрации».\n                            "
+                                "\n                                    Далее выберите кассу, которую нужно закрыть, и нажмите кнопку «Снять с\n                                    регистрации».\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55762,7 +54714,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Откроется заявление о снятии ККТ с учета в налоговой инспекции. Заполните дату и время закрытия ФН, номер фискального документа и фискальный признак. После этого нажмите кнопку «Подписать и отправить» — заявление будет заверено цифровой подписью.\n                            "
+                                "\n                                    Откроется заявление о снятии ККТ с учета в налоговой инспекции. Заполните дату и\n                                    время закрытия ФН, номер фискального документа и фискальный признак. После этого\n                                    нажмите кнопку «Подписать и отправить» — заявление будет заверено цифровой\n                                    подписью.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55778,7 +54730,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                После этих действий вы увидите, что запрос на снятие с учета онлайн-кассы добавлен.\n                            "
+                                "\n                                    После этих действий вы увидите, что запрос на снятие с учета онлайн-кассы\n                                    добавлен.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55798,7 +54750,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                После выполнения всех действий на сайте появится оповещение.\n                            "
+                                "\n                                    После выполнения всех действий на сайте появится оповещение.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55814,13 +54766,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Кроме того, налоговая в течение 5 дней после получения заявления на снятие с учета онлайн-кассы пришлет через личный кабинет подтверждающую карточку. Можно также прийти в ИФНС и забрать бумажный вариант документа.\n                            "
+                                "\n                                    Кроме того, налоговая в течение 5 дней после получения заявления на снятие с\n                                    учета онлайн-кассы пришлет через личный кабинет подтверждающую карточку. Можно\n                                    также прийти в ИФНС и забрать бумажный вариант документа.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Налоговая может снять ККТ с учета и принудительно. Разберемся, что делать в этом случае.\n                            "
+                                "\n                                    Налоговая может снять ККТ с учета и принудительно. Разберемся, что делать в этом\n                                    случае.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55830,27 +54782,27 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если снятие ККТ с регистрационного учета произошло по инициативе налоговой — подавать заявление не нужно. ФНС может сделать это, если:\n                            "
+                                "\n                                    Если снятие ККТ с регистрационного учета произошло по инициативе налоговой —\n                                    подавать заявление не нужно. ФНС может сделать это, если:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "есть нарушения в использовании — повторно зарегистрировать кассу можно будет после их устранения; "
+                                  "есть нарушения в использовании — повторно зарегистрировать кассу можно будет\n                                        после их устранения;\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "истек срок эксплуатации фискального накопителя — надо в течение 30 дней передать налоговикам записанные на ФН платежные данные."
+                                  "истек срок эксплуатации фискального накопителя — надо в течение 30 дней\n                                        передать налоговикам записанные на ФН платежные данные.\n                                    "
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                Компаниям на ОСНО надо менять ФН раз в 13 месяцев, а на спецрежимах (ЕНВД, УСН, ПСН) — раз в 36.\n                            "
+                                "\n                                    Компаниям на ОСНО надо менять ФН раз в 13 месяцев, а на спецрежимах (ЕНВД, УСН,\n                                    ПСН) — раз в 36.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -55869,71 +54821,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -55963,149 +54863,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -56185,19 +54942,19 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_1476" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                По закону 54-ФЗ «О применении контрольно-кассовой техники» торговля в стране поэтапно переходит на онлайн-ККТ — сегодня зарегистрировано более 2,3 млн новых касс. Чтобы разобраться, "
+                                "\n                                    По закону 54-ФЗ «О применении контрольно-кассовой техники» торговля в стране\n                                    поэтапно переходит на онлайн-ККТ — сегодня зарегистрировано более 2,3 млн новых\n                                    касс. Чтобы разобраться, "
                               ),
                               _c("strong", [
                                 _vm._v("кому нужно ставить кассовый аппарат")
                               ]),
                               _vm._v(
-                                " в этом году, читайте нашу статью.\n                            "
+                                " в\n                                    этом году, читайте нашу статью.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Все, что связано с использованием ККТ, регулирует 54-ФЗ. Этот закон отвечает и на вопросы, кто и когда должен ставить кассу, обязан ли ИП иметь кассовый аппарат, кто вообще освобожден от установки новой техники. Разберем для начала, зависит ли применение ККТ от формы собственности бизнеса.\n                            "
+                                "\n                                    Все, что связано с использованием ККТ, регулирует 54-ФЗ. Этот закон отвечает и\n                                    на вопросы, кто и когда должен ставить кассу, обязан ли ИП иметь кассовый\n                                    аппарат, кто вообще освобожден от установки новой техники. Разберем для начала,\n                                    зависит ли применение ККТ от формы собственности бизнеса.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56209,13 +54966,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Нужен ли кассовый аппарат для ИП — раньше решали сами предприниматели: они могли выбирать, чем подтверждать покупку. Можно было использовать не только кассовые чеки, но и другие документы — например, товарный чек. После принятия поправок в 54-ФЗ порядок изменился.\n                            "
+                                "\n                                    Нужен ли кассовый аппарат для ИП — раньше решали сами предприниматели: они могли\n                                    выбирать, чем подтверждать покупку. Можно было использовать не только кассовые\n                                    чеки, но и другие документы — например, товарный чек. После принятия поправок в\n                                    54-ФЗ порядок изменился.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Так обязательно ли ИП иметь кассовый аппарат сегодня? Для некоторых предпринимателей, например, тех, кто занят в рознице и общепите и имеет наемных сотрудников, эта обязанность наступила уже в июле 2018.\n                            "
+                                "\n                                    Так обязательно ли ИП иметь кассовый аппарат сегодня? Для некоторых\n                                    предпринимателей, например, тех, кто занят в рознице и общепите и имеет наемных\n                                    сотрудников, эта обязанность наступила уже в июле 2018.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56225,7 +54982,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                А к июлю 2019 года поставить кассы обязаны уже все — и ИП, и организации. Важно, что техника должна быть нового образца — с подключением к интернету для онлайн-передачи данных в налоговую.\n                            "
+                                "\n                                    А к июлю 2019 года поставить кассы обязаны уже все — и ИП, и организации. Важно,\n                                    что техника должна быть нового образца — с подключением к интернету для\n                                    онлайн-передачи данных в налоговую.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56235,7 +54992,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Применение ККТ не зависит от формы собственности организации, то есть ООО тоже должны использовать новые кассы. При этом срок перехода на новый порядок определяется налоговым режимом. Далее мы подробно разберем, кому и когда надо ставить кассу в зависимости от формы налогообложения.\n                            "
+                                "\n                                    Применение ККТ не зависит от формы собственности организации, то есть ООО тоже\n                                    должны использовать новые кассы. При этом срок перехода на новый порядок\n                                    определяется налоговым режимом. Далее мы подробно разберем, кому и когда надо\n                                    ставить кассу в зависимости от формы налогообложения.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56245,31 +55002,31 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Раньше отдельным категориям предпринимателей на вмененке можно было не использовать ККТ, но поправки в закон обязали их установить новую технику. Теперь при ЕНВД кассовые аппараты обязательны для всех. Различается только срок установки: кто-то должен был поставить кассу уже в этом году, а кому-то дали еще год отсрочки. Подробнее об этом — ниже.\n                            "
+                                "\n                                    Раньше отдельным категориям предпринимателей на вмененке можно было не\n                                    использовать ККТ, но поправки в закон обязали их установить новую технику.\n                                    Теперь при ЕНВД кассовые аппараты обязательны для всех. Различается только срок\n                                    установки: кто-то должен был поставить кассу уже в этом году, а кому-то дали еще\n                                    год отсрочки. Подробнее об этом — ниже.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h3", [
                               _vm._v(
-                                "Кассовый аппарат для ИП на ЕНВД: нужен ли, когда ставить, штрафы за отсутствие"
+                                "Кассовый аппарат для ИП на ЕНВД: нужен ли, когда ставить, штрафы за\n                                    отсутствие"
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                К июлю 2019 года должны поставить ККТ те, кто оказывает услуги населению. Для ИП, работающих в рознице, общепите или торгующих подакцизными товарами, все зависит от того, есть ли наемные сотрудники. Если их нет — с установкой кассы можно немного подождать (хотя мы не рекомендуем тянуть до самого дедлайна в июле 2019), если есть — установить ККТ надо было еще в прошлом году.\n                            "
+                                "\n                                    К июлю 2019 года должны поставить ККТ те, кто оказывает услуги населению. Для\n                                    ИП, работающих в рознице, общепите или торгующих подакцизными товарами, все\n                                    зависит от того, есть ли наемные сотрудники. Если их нет — с установкой кассы\n                                    можно немного подождать (хотя мы не рекомендуем тянуть до самого дедлайна в июле\n                                    2019), если есть — установить ККТ надо было еще в прошлом году.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При установке кассы надо не забыть про оснащение рабочего места продавца. Но клиентам МоегоСклада можно об этом не думать — мы предлагаем уже готовое АРМ кассира. Это альтернатива дорогим POS-системам, которая позволит потратить на автоматизацию рабочего места продавца вполовину меньше. С удобным АРМ кассира МойСклад можно вести складской учет, регистрировать продажи, пробивать чеки. Просто запустите программу на компьютере или ноутбуке, а затем подключите к нему фискальный регистратор и сканер.\n                            "
+                                "\n                                    При установке кассы надо не забыть про оснащение рабочего места продавца. Но\n                                    клиентам МоегоСклада можно об этом не думать — мы предлагаем уже готовое АРМ\n                                    кассира. Это альтернатива дорогим POS-системам, которая позволит потратить на\n                                    автоматизацию рабочего места продавца вполовину меньше. С удобным АРМ кассира\n                                    МойСклад можно вести складской учет, регистрировать продажи, пробивать чеки.\n                                    Просто запустите программу на компьютере или ноутбуке, а затем подключите к нему\n                                    фискальный регистратор и сканер.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если предприниматель проигнорирует закон, его оштрафуют — до 50% выручки, прошедшей «мимо кассы» (не меньше 10 000 рублей). За повторное нарушение, если сумма расчетов в совокупности будет 1 млн рублей и более, с 1 июля 2018 года грозит штраф от 800 000 до 1 млн рублей или приостановление деятельности на срок до 90 суток.\n                            "
+                                "\n                                    Если предприниматель проигнорирует закон, его оштрафуют — до 50% выручки,\n                                    прошедшей «мимо кассы» (не меньше 10 000 рублей). За повторное нарушение, если\n                                    сумма расчетов в совокупности будет 1 млн рублей и более, с 1 июля 2018 года\n                                    грозит штраф от 800 000 до 1 млн рублей или приостановление деятельности на срок\n                                    до 90 суток.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56281,13 +55038,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Организации на вмененке тоже должны поставить ККТ. Те, кто занят в рознице, общепите или продаже подакцизных товаров — уже должны были обзавестись кассой к 1 июля прошлого года, остальные — обязаны успеть до 1 июля 2019.\n                            "
+                                "\n                                    Организации на вмененке тоже должны поставить ККТ. Те, кто занят в рознице,\n                                    общепите или продаже подакцизных товаров — уже должны были обзавестись кассой к\n                                    1 июля прошлого года, остальные — обязаны успеть до 1 июля 2019.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                За несоблюдение закона организациям грозит штраф до 100% выручки, полученной без применения ККТ, но не менее 30 000 рублей. С июля этого года, если компанию поймают повторно, а сумма расчетов составит более 1 млн рублей, налоговики смогут взыскать от 800 000 до 1 млн рублей.\n                            "
+                                "\n                                    За несоблюдение закона организациям грозит штраф до 100% выручки, полученной без\n                                    применения ККТ, но не менее 30 000 рублей. С июля этого года, если компанию\n                                    поймают повторно, а сумма расчетов составит более 1 млн рублей, налоговики\n                                    смогут взыскать от 800 000 до 1 млн рублей.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56299,7 +55056,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Раньше организациям и ИП, применяющим патентную систему налогообложения, разрешалось выдавать покупателям документы, заменяющие кассовые чеки. Но с июля 2018 они должны перейти на новую ККТ. До лета 2019 года подождать с установкой кассы могут те, кто работает в рознице и общепите и не имеет наемных сотрудников.\n                            "
+                                "\n                                    Раньше организациям и ИП, применяющим патентную систему налогообложения,\n                                    разрешалось выдавать покупателям документы, заменяющие кассовые чеки. Но с июля\n                                    2018 они должны перейти на новую ККТ. До лета 2019 года подождать с установкой\n                                    кассы могут те, кто работает в рознице и общепите и не имеет наемных\n                                    сотрудников.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56309,13 +55066,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Однозначно — да. Если вы выбираете упрощенную систему налогообложения, то должны использовать ККТ. При этом, если юрлицо (ИП или ООО) на УСН оказывает услуги населению, кассовый аппарат не нужен до 1 июля 2019 года — при условии, что выдаются бланки строгой отчетности. Для тех, кто занят в общепите, отсрочка зависит от наличия наемных сотрудников. Если их нет — кассу надо установить к 1 июля 2019 года, если есть — она должна была появиться к июлю 2018.\n                            "
+                                "\n                                    Однозначно — да. Если вы выбираете упрощенную систему налогообложения, то должны\n                                    использовать ККТ. При этом, если юрлицо (ИП или ООО) на УСН оказывает услуги\n                                    населению, кассовый аппарат не нужен до 1 июля 2019 года — при условии, что\n                                    выдаются бланки строгой отчетности. Для тех, кто занят в общепите, отсрочка\n                                    зависит от наличия наемных сотрудников. Если их нет — кассу надо установить к 1\n                                    июля 2019 года, если есть — она должна была появиться к июлю 2018.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Затягивать с покупкой не стоит — в прошлом году на новый порядок перешли около 1 млн предпринимателей! В этом году возможен дефицит фискальных накопителей — а значит, цены взлетят, причем на фоне ажиотажа и задержек в поставках: как показал прошлый опыт, большинство бизнесменов тянут буквально до последних недель. Чтобы сэкономить время, деньги и нервы, подумайте о приобретении новой ККТ заранее — сейчас действуют выгодные акции, а вся техника в наличии.\n                            "
+                                "\n                                    Затягивать с покупкой не стоит — в прошлом году на новый порядок перешли около 1\n                                    млн предпринимателей! В этом году возможен дефицит фискальных накопителей — а\n                                    значит, цены взлетят, причем на фоне ажиотажа и задержек в поставках: как\n                                    показал прошлый опыт, большинство бизнесменов тянут буквально до последних\n                                    недель. Чтобы сэкономить время, деньги и нервы, подумайте о приобретении новой\n                                    ККТ заранее — сейчас действуют выгодные акции, а вся техника в наличии.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56331,13 +55088,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Онлайн-торговля как вид деятельности не попадает в список освобожденных от использования ККТ. А это значит, что кассовый аппарат для интернет-магазина нужен.\n                            "
+                                "\n                                    Онлайн-торговля как вид деятельности не попадает в список освобожденных от\n                                    использования ККТ. А это значит, что кассовый аппарат для интернет-магазина\n                                    нужен.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Рекомендуем заранее просчитать все затраты. Возможно, одной кассы будет недостаточно. Если платеж был проведен онлайн, нужна ККТ, зарегистрированная по url интернет-магазина. Когда оплату принимает курьер, ему требуется специальная "
+                                "\n                                    Рекомендуем заранее просчитать все затраты. Возможно, одной кассы будет\n                                    недостаточно. Если платеж был проведен онлайн, нужна ККТ, зарегистрированная по\n                                    url интернет-магазина. Когда оплату принимает курьер, ему требуется специальная\n                                    "
                               ),
                               _c(
                                 "a",
@@ -56350,7 +55107,7 @@ var render = function() {
                                 [_vm._v(" мобильная касса")]
                               ),
                               _vm._v(
-                                ". Если же у интернет-магазина есть пункт самовывоза, где можно оплатить покупку, там должна быть еще одна ККМ. Ее надо регистрировать по физическому адресу этой точки.\n                            "
+                                ".\n                                    Если же у интернет-магазина есть пункт самовывоза, где можно оплатить покупку,\n                                    там должна быть еще одна ККМ. Ее надо регистрировать по физическому адресу этой\n                                    точки.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56362,13 +55119,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Зависит от того, чем занимается компания. Если это розничный магазин, то ответ однозначный — да. При этом квитанции терминала по приему платежных карт (или, как его называют, слипа) недостаточно. Нужен полноценный кассовый аппарат, который может напечатать наименования купленных товаров с ценами, скидками и стоимостью по каждой позиции.\n                            "
+                                "\n                                    Зависит от того, чем занимается компания. Если это розничный магазин, то ответ\n                                    однозначный — да. При этом квитанции терминала по приему платежных карт (или,\n                                    как его называют, слипа) недостаточно. Нужен полноценный кассовый аппарат,\n                                    который может напечатать наименования купленных товаров с ценами, скидками и\n                                    стоимостью по каждой позиции.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если вы оказываете услуги населению, то кассу нужно применять с 1 июля 2019 года. При этом до этой даты каждому клиенту надо выдавать бланки строгой отчетности.\n                            "
+                                "\n                                    Если вы оказываете услуги населению, то кассу нужно применять с 1 июля 2019\n                                    года. При этом до этой даты каждому клиенту надо выдавать бланки строгой\n                                    отчетности.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56380,7 +55137,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", { attrs: { id: "bezcheka" } }, [
                               _vm._v(
-                                "\n                                Некоторые виды деятельности закон вообще освобождает от выдачи покупателям каких-либо документов. ИП и организации на любой системе налогообложения могут не использовать кассовый аппарат при торговле:\n                            "
+                                "\n                                    Некоторые виды деятельности закон вообще освобождает от выдачи покупателям\n                                    каких-либо документов. ИП и организации на любой системе налогообложения могут\n                                    не использовать кассовый аппарат при торговле:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56399,7 +55156,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых павильонах или магазинах);"
+                                  "вразнос и на розничных рынках и ярмарках (кроме торговли в отдельных крытых\n                                        павильонах или магазинах);\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
@@ -56424,7 +55181,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Среди предпринимателей, кому можно не ставить кассовый аппарат в 2018 году, есть те, кто оказывает услуги:\n                            "
+                                "\n                                    Среди предпринимателей, кому можно не ставить кассовый аппарат в 2018 году, есть\n                                    те, кто оказывает услуги:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56450,7 +55207,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Кроме того, освобождены от использования ККТ аптечные и фельдшерские пункты в селах, а также точки по приему утильсырья и стекла, библиотеки.\n                            "
+                                "\n                                    Кроме того, освобождены от использования ККТ аптечные и фельдшерские пункты в\n                                    селах, а также точки по приему утильсырья и стекла, библиотеки.\n                                "
                               )
                             ])
                           ])
@@ -56467,71 +55224,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -56561,149 +55266,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -56785,31 +55347,33 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_3563" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                С 1 января 2018 года некоторые предприниматели имеют право на "
+                                "\n                                    С 1 января 2018 года некоторые предприниматели имеют право на "
                               ),
                               _c("strong", [
-                                _vm._v("налоговый вычет за онлайн-кассу")
+                                _vm._v(
+                                  "налоговый\n                                    вычет за онлайн-кассу"
+                                )
                               ]),
                               _vm._v(
-                                ": вступил в силу закон от 27.11.2017 № 349-ФЗ «О внесении изменений в часть вторую Налогового кодекса Российской Федерации». Расскажем, как его получить.\n                            "
+                                ": вступил в силу закон от 27.11.2017 № 349-ФЗ\n                                    «О внесении изменений в часть вторую Налогового кодекса Российской Федерации».\n                                    Расскажем, как его получить.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Вычесть расходы на онлайн-ККТ из суммы налога разрешено индивидуальным предпринимателям, которые применяют патентную систему налогообложения или платят единый налог на вмененный доход.\n                            "
+                                "\n                                    Вычесть расходы на онлайн-ККТ из суммы налога разрешено индивидуальным\n                                    предпринимателям, которые применяют патентную систему налогообложения или платят\n                                    единый налог на вмененный доход.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Вернуть таким образом получится до 18 000 рублей на каждую кассу. В эту сумму может входить не только стоимость самой ККТ: можно учесть расходы на покупку фискального накопителя, необходимых программ, услуг по настройке и прочие затраты на приведение техники в рабочий режим.\n                            "
+                                "\n                                    Вернуть таким образом получится до 18 000 рублей на каждую кассу. В эту\n                                    сумму может входить не только стоимость самой ККТ: можно учесть расходы на\n                                    покупку фискального накопителя, необходимых программ, услуг по настройке и\n                                    прочие затраты на приведение техники в рабочий режим.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n\n                                Максимальный налоговый вычет на приобретение онлайн-кассы — 18 000 рублей на каждую единицу. Если покупка и настройка ККТ обошлись дороже, зачесть все равно можно только эту сумму.\n                            "
+                                "\n\n                                    Максимальный налоговый вычет на приобретение онлайн-кассы — 18 000 рублей\n                                    на каждую единицу. Если покупка и настройка ККТ обошлись дороже, зачесть все\n                                    равно можно только эту сумму.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56821,46 +55385,46 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Льгота распространяется не на все кассы: есть условия, которые обязательно нужно соблюдать.\n                            "
+                                "\n                                    Льгота распространяется не на все кассы: есть условия, которые обязательно нужно\n                                    соблюдать.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "Во-первых, налоговый вычет предоставляется только на ККТ, включенные в официальный реестр ФНС. "
+                                  "Во-первых, налоговый вычет предоставляется только на ККТ, включенные в\n                                        официальный реестр ФНС.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Во-вторых, кассу обязательно нужно поставить на учет, иначе вернуть потраченные на нее деньги не получится. "
+                                  "Во-вторых, кассу обязательно нужно поставить на учет, иначе вернуть\n                                        потраченные на нее деньги не получится.\n                                    "
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n\n                                Важно зарегистрировать ККТ как можно скорее — желательно сразу после покупки. Налоговый вычет по онлайн-кассам не распространяется на период, который был до регистрации.\n                            "
+                                "\n\n                                    Важно зарегистрировать ККТ как можно скорее — желательно сразу после покупки.\n                                    Налоговый вычет по онлайн-кассам не распространяется на период, который был до\n                                    регистрации.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Возместят ли вам расходы — зависит от вашей деятельности и даты постановки ККТ на учет:\n                            "
+                                "\n                                    Возместят ли вам расходы — зависит от вашей деятельности и даты постановки ККТ\n                                    на учет:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "ИП на ПСН или ЕНВД в сфере розничной торговли или общественного питания, имеющие сотрудников на трудовых договорах, могут получить вычет, если зарегистрировали кассу с 1 февраля 2017 до 1 июля 2018 года. Таким образом, они могут получить налоговый вычет при покупке онлайн-ККТ только в 2018."
+                                  "ИП на ПСН или ЕНВД в сфере розничной торговли или общественного питания,\n                                        имеющие сотрудников на трудовых договорах, могут получить вычет, если\n                                        зарегистрировали кассу с 1 февраля 2017 до 1 июля 2018 года. Таким\n                                        образом, они могут получить налоговый вычет при покупке онлайн-ККТ только в\n                                        2018.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Остальные ИП на ЕНВД и ПСН могут получить вычет, если зарегистрировали кассу с 1 февраля 2017 до 1 июля 2019 года. "
+                                  "Остальные ИП на ЕНВД и ПСН могут получить вычет, если зарегистрировали кассу\n                                        с 1 февраля 2017 до 1 июля 2019 года.\n                                    "
                                 )
                               ])
                             ]),
@@ -56871,13 +55435,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Таким образом, в 2019 вы сможете претендовать на возмещение расходов, только если у вас нет наемных сотрудников. Если по трудовому договору в вашем кафе занят хотя бы один человек, вернуть расходы на кассу уже не получится.\n                            "
+                                "\n                                    Таким образом, в 2019 вы сможете претендовать на возмещение расходов, только\n                                    если у вас нет наемных сотрудников. Если по трудовому договору в вашем кафе\n                                    занят хотя бы один человек, вернуть расходы на кассу уже не получится.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n\n                                Если вы совмещаете ЕНВД и ПСН, то сможете получить налоговый вычет за онлайн-кассу только по одному режиму.\n                            "
+                                "\n\n                                    Если вы совмещаете ЕНВД и ПСН, то сможете получить налоговый вычет за\n                                    онлайн-кассу только по одному режиму.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56887,7 +55451,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При покупке онлайн-кассы на ЕНВД налоговый вычет нельзя получить за период, который предшествовал регистрации ККТ. Сумма налога уменьшается при исчислении за налоговые периоды 2018 и 2019 годов, но не раньше периода, в котором был зарегистрирован аппарат. Если сумма ЕНВД меньше вычета за онлайн-кассу, то можно перенести остаток на следующие периоды до конца 2019 года.\n                            "
+                                "\n                                    При покупке онлайн-кассы на ЕНВД налоговый вычет нельзя получить за период,\n                                    который предшествовал регистрации ККТ. Сумма налога уменьшается при исчислении\n                                    за налоговые периоды 2018 и 2019 годов, но не раньше периода, в котором был\n                                    зарегистрирован аппарат. Если сумма ЕНВД меньше вычета за онлайн-кассу, то можно\n                                    перенести остаток на следующие периоды до конца 2019 года.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56897,7 +55461,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для ИП на ПСН сумма налога уменьшается за периоды, которые начинаются в 2018 году и завершаются после регистрации ККТ. Если затраты превышают лимит, остаток учитывается при начислении налогов за следующие периоды. А если сумма налога оказалась меньше затрат, можно уменьшить патент с других видов деятельности, если для них используется касса.\n                            "
+                                "\n                                    Для ИП на ПСН сумма налога уменьшается за периоды, которые начинаются в 2018\n                                    году и завершаются после регистрации ККТ. Если затраты превышают лимит, остаток\n                                    учитывается при начислении налогов за следующие периоды. А если сумма налога\n                                    оказалась меньше затрат, можно уменьшить патент с других видов деятельности,\n                                    если для них используется касса.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56913,25 +55477,25 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Чтобы оформить вычет, индивидуальные предприниматели на ЕНВД должны подать налоговую декларацию и отразить в ней расходы на ККТ.\n                            "
+                                "\n                                    Чтобы оформить вычет, индивидуальные предприниматели на ЕНВД должны подать\n                                    налоговую декларацию и отразить в ней расходы на ККТ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Предпринимателям на ПСН нужно предоставить в налоговую уведомление об уменьшении суммы платежа по патенту. Пока официальный шаблон этого документа не утвержден, и заполнять его можно в свободной форме.\n                            "
+                                "\n                                    Предпринимателям на ПСН нужно предоставить в налоговую уведомление об уменьшении\n                                    суммы платежа по патенту. Пока официальный шаблон этого документа не утвержден,\n                                    и заполнять его можно в свободной форме.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("h2", [
                               _vm._v(
-                                "Скачать шаблон уведомления на налоговый вычет за онлайн-кассу для ИП на патенте"
+                                "Скачать шаблон уведомления на налоговый вычет за онлайн-кассу для ИП на\n                                    патенте"
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В уведомлении обязательно указать:\n                            "
+                                "\n                                    В уведомлении обязательно указать:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56942,7 +55506,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Номер и дату патента, в отношении которого производится уменьшение суммы налога, сроки уплаты уменьшаемых платежей, суммы уменьшения."
+                                  "Номер и дату патента, в отношении которого производится уменьшение суммы\n                                        налога, сроки уплаты уменьшаемых платежей, суммы уменьшения.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
@@ -56957,19 +55521,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если вы уже заплатили сумму, из которой хотите получить вычет, то необходимо подать в налоговую заявление о возврате излишне уплаченного налога.\n                            "
+                                "\n                                    Если вы уже заплатили сумму, из которой хотите получить вычет, то необходимо\n                                    подать в налоговую заявление о возврате излишне уплаченного налога.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                К декларации или уведомлению необходимо приложить документ, подтверждающий затраты на покупку ККТ, фискального накопителя, программного обеспечения, выполнение работ по их настройке и оказание соответствующих услуг, в том числе — на модернизацию старой кассы.\n                            "
+                                "\n                                    К декларации или уведомлению необходимо приложить документ, подтверждающий\n                                    затраты на покупку ККТ, фискального накопителя, программного обеспечения,\n                                    выполнение работ по их настройке и оказание соответствующих услуг, в том числе —\n                                    на модернизацию старой кассы.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Документы подаются в тот налоговый орган, где предприниматель состоит на учете как налогоплательщик и куда он уплатил или собирается уплатить налог, из которого хочет получить вычет.\n                            "
+                                "\n                                    Документы подаются в тот налоговый орган, где предприниматель состоит на учете\n                                    как налогоплательщик и куда он уплатил или собирается уплатить налог, из\n                                    которого хочет получить вычет.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56987,7 +55551,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Только в случае, когда ИП совмещает УСН и ЕНВД / ПСН. Тогда можно зачесть расходы на те кассы, которые используются на вмененке или патенте. Компаниям и предпринимателям на упрощенке кассовый вычет не предоставляют.\n                            "
+                                "\n                                    Только в случае, когда ИП совмещает УСН и ЕНВД / ПСН. Тогда можно зачесть\n                                    расходы на те кассы, которые используются на вмененке или патенте. Компаниям и\n                                    предпринимателям на упрощенке кассовый вычет не предоставляют.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -56999,7 +55563,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Да, но только если вы поставили ее на учет в ФНС после 1 февраля. Если вы регистрировали онлайн-кассу в январе 2017 года, вернуть расходы на ее покупку нельзя.\n                            "
+                                "\n                                    Да, но только если вы поставили ее на учет в ФНС после 1 февраля. Если вы\n                                    регистрировали онлайн-кассу в январе 2017 года, вернуть расходы на ее покупку\n                                    нельзя.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57011,7 +55575,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Полный размер вычета, установленный законом, — 18 000 рублей на каждую кассу. Вернуть деньги сверх этой суммы не получится, даже если ККТ обошлась дороже.\n                            "
+                                "\n                                    Полный размер вычета, установленный законом, — 18 000 рублей на каждую\n                                    кассу. Вернуть деньги сверх этой суммы не получится, даже если ККТ обошлась\n                                    дороже.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57023,19 +55587,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если вы применяете патентную систему налогообложения (патент), вычет за онлайн-кассу оформляется с помощью уведомления об уменьшении суммы налога.\n                            "
+                                "\n                                    Если вы применяете патентную систему налогообложения (патент), вычет за\n                                    онлайн-кассу оформляется с помощью уведомления об уменьшении суммы налога.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Если налог уже заплачен — подайте в ФНС заявление на возврат излишне уплаченной суммы.\n                            "
+                                "\n                                    Если налог уже заплачен — подайте в ФНС заявление на возврат излишне уплаченной\n                                    суммы.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Документы предоставьте в налоговую инспекцию, где состоите на учете и куда будете платить налог. Можно отправить их в ФНС и по интернету, заверив усиленной квалифицированной электронной подписью.\n                            "
+                                "\n                                    Документы предоставьте в налоговую инспекцию, где состоите на учете и куда\n                                    будете платить налог. Можно отправить их в ФНС и по интернету, заверив усиленной\n                                    квалифицированной электронной подписью.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57054,71 +55618,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -57148,149 +55660,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -57360,7 +55729,7 @@ var render = function() {
                         _c("div", { staticClass: "col-md-12" }, [
                           _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "Обязательные реквизиты кассового чека и БСО в 2019 году"
+                              "Обязательные реквизиты кассового чека и БСО в 2019\n                                году"
                             )
                           ])
                         ])
@@ -57371,21 +55740,21 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_1349" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                Недавно принятые поправки в правила применения контрольно-кассовой техники влекут за собой и дополнительные требования к кассовым чекам и бланкам строгой отчетности. Данные ОФД, к которому подключена онлайн-касса, включены в "
+                                "\n                                    Недавно принятые поправки в правила применения контрольно-кассовой техники\n                                    влекут за собой и дополнительные требования к кассовым чекам и бланкам строгой\n                                    отчетности. Данные ОФД, к которому подключена онлайн-касса, включены в "
                               ),
                               _c("strong", [
                                 _vm._v(
-                                  "обязательные реквизиты БСО и кассового чека в 2019 году"
+                                  "обязательные\n                                    реквизиты БСО и кассового чека в 2019 году"
                                 )
                               ]),
                               _vm._v(
-                                ". В документах теперь надо указывать разные параметры. В чеках нужно пробивать наименования товаров, для этого необходима кассовая программа, которая это умеет. Наше бесплатнное приложение Касса МойСклад поддерживает это и все остальные требования 54-ФЗ. Скачайте и попробуйте его прямо сейчас.\n                            "
+                                ". В документах теперь надо\n                                    указывать разные параметры. В чеках нужно пробивать наименования товаров, для\n                                    этого необходима кассовая программа, которая это умеет. Наше бесплатнное\n                                    приложение Касса МойСклад поддерживает это и все остальные требования 54-ФЗ.\n                                    Скачайте и попробуйте его прямо сейчас.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Для новых реквизитов в чеках онлайн-касс и бланков строгой отчетности нет унифицированных форм, но в них должны содержаться определенные данные. Это данные, которые добавились с вступлением закона 54-ФЗ в силу. Вот новые реквизиты в чеках онлайн-касс:\n                            "
+                                "\n                                    Для новых реквизитов в чеках онлайн-касс и бланков строгой отчетности нет\n                                    унифицированных форм, но в них должны содержаться определенные данные. Это\n                                    данные, которые добавились с вступлением закона 54-ФЗ в силу. Вот новые\n                                    реквизиты в чеках онлайн-касс:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57414,7 +55783,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Список приобретенных товаров со стоимостью, ценой и примененными скидками."
+                                  "Список приобретенных товаров со стоимостью, ценой и примененными скидками.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
@@ -57449,13 +55818,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При этом в законе в списке обязательных реквизитов чека онлайн-кассы QR-код не значится, однако в разделе требований к контрольно-кассовой технике указано, что кассовый аппарат должен «обеспечивать возможность печати на кассовом чеке (бланке строгой отчетности) двухмерного штрихового кода (QR-код размером не менее 20Х20 мм), содержащего в кодированном виде реквизиты проверки кассового чека или бланка строгой отчетности в отдельной выделенной области кассового чека или бланка строгой отчетности». Таким образом QR-кода на новых чеках онлайн-касс вполне может и не быть, но онлайн-кассы должны уметь его печатать.\n                            "
+                                "\n                                    При этом в законе в списке обязательных реквизитов чека онлайн-кассы QR-код не\n                                    значится, однако в разделе требований к контрольно-кассовой технике указано, что\n                                    кассовый аппарат должен «обеспечивать возможность печати на кассовом чеке\n                                    (бланке строгой отчетности) двухмерного штрихового кода (QR-код размером не\n                                    менее 20Х20 мм), содержащего в кодированном виде реквизиты проверки кассового\n                                    чека или бланка строгой отчетности в отдельной выделенной области кассового чека\n                                    или бланка строгой отчетности». Таким образом QR-кода на новых чеках онлайн-касс\n                                    вполне может и не быть, но онлайн-кассы должны уметь его печатать.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Что должно быть зашифровано в QR-коде на кассовом чеке по новым правилам? Закон говорит, что там должны содержаться сведения о покупке (дата и время платежа, порядковый номер фискального документа, признак расчета, сумма расчета, заводской номер фискального накопителя, фискальный признак документа).\n                            "
+                                "\n                                    Что должно быть зашифровано в QR-коде на кассовом чеке по новым правилам? Закон\n                                    говорит, что там должны содержаться сведения о покупке (дата и время платежа,\n                                    порядковый номер фискального документа, признак расчета, сумма расчета,\n                                    заводской номер фискального накопителя, фискальный признак документа).\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57467,7 +55836,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Вот список реквизитов чека — 54-ФЗ строго предписывает их печатать на каждом документе, подтверждающем продажу:\n                            "
+                                "\n                                    Вот список реквизитов чека — 54-ФЗ строго предписывает их печатать на каждом\n                                    документе, подтверждающем продажу:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57534,7 +55903,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "если покупатель захотел получить чек на e-mail или смс, то должен быть указан его адрес электронной почты или номер телефона, а также в этом случае должен значиться электронный адрес почты отправителя чека."
+                                  "если покупатель захотел получить чек на e-mail или смс, то должен быть\n                                        указан его адрес электронной почты или номер телефона, а также в этом случае\n                                        должен значиться электронный адрес почты отправителя чека.\n                                    "
                                 )
                               ])
                             ]),
@@ -57582,7 +55951,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                В этом чеке отмечены следующие реквизиты:\n                            "
+                                "\n                                    В этом чеке отмечены следующие реквизиты:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57659,7 +56028,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [_vm._v("Порядковый номер чека.")]),
                               _vm._v(" "),
-                              _c("li", [_vm._v("Дата и время выдачи чека. ")]),
+                              _c("li", [_vm._v("Дата и время выдачи чека.")]),
                               _vm._v(" "),
                               _c("li", [_vm._v("Регистрационный номер ККТ.")]),
                               _vm._v(" "),
@@ -57678,7 +56047,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Все эти данные – обязательные реквизиты чека онлайн-кассы. Если на чеке отсутствует хотя бы один из них, то по закону чек считается не действительным, а предприниматель должен будет приложить все усилия, чтобы доказать проверяющему органу применение онлайн-кассы, иначе он будет оштрафован за несоблюдение нового закона. Более подробно про реквизиты чека, требуемые 54-ФЗ, можно прочитать в самом тексте закона. При этом контролировать соответствие реквизитов на чеках закону может даже сам покупатель, поэтому не только предпринимателям необходимо быть в курсе, какие реквизиты должны быть в кассовом чеке.\n                            "
+                                "\n                                    Все эти данные – обязательные реквизиты чека онлайн-кассы. Если на чеке\n                                    отсутствует хотя бы один из них, то по закону чек считается не действительным, а\n                                    предприниматель должен будет приложить все усилия, чтобы доказать проверяющему\n                                    органу применение онлайн-кассы, иначе он будет оштрафован за несоблюдение нового\n                                    закона. Более подробно про реквизиты чека, требуемые 54-ФЗ, можно прочитать в\n                                    самом тексте закона. При этом контролировать соответствие реквизитов на чеках\n                                    закону может даже сам покупатель, поэтому не только предпринимателям необходимо\n                                    быть в курсе, какие реквизиты должны быть в кассовом чеке.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57688,7 +56057,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Важно! Индивидуальные предприниматели, использующие ПСН, УСН и ЕНВД, за исключением тех, кто торгует подакцизными товарами, могут не указывать на чеках наименование и количество купленных товаров или услуг. Такое послабление для малого бизнеса дано до 1 февраля 2021 года (ФЗ от 03.07.2016 N 290-ФЗ). После этой даты они должны работать, как все остальные предприятия. Читайте подробнее о сроках, когда надо будет начать указывать товары в чеке, а также об отсрочке онлайн-касс до 2019 года здесь\n                            "
+                                "\n                                    Важно! Индивидуальные предприниматели, использующие ПСН, УСН и ЕНВД, за\n                                    исключением тех, кто торгует подакцизными товарами, могут не указывать на чеках\n                                    наименование и количество купленных товаров или услуг. Такое послабление для\n                                    малого бизнеса дано до 1 февраля 2021 года (ФЗ от 03.07.2016 N 290-ФЗ). После\n                                    этой даты они должны работать, как все остальные предприятия. Читайте подробнее\n                                    о сроках, когда надо будет начать указывать товары в чеке, а также об отсрочке\n                                    онлайн-касс до 2019 года здесь\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57696,13 +56065,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Что касается обязательных реквизитов БСО, то в случае, если организация находится в труднодоступной области, последние три пункта из списка обязательных реквизитов чека онлайн-кассы могут не указываться. Кроме того, Правительство РФ предупреждает в законе, что оно может дополнить список еще одним обязательным реквизитом – кодом товарной номенклатуры – в случае, если он определен. В остальном, все реквизиты БСО ничем не отличаются от реквизитов чека онлайн-кассы.\n                            "
+                                "\n                                    Что касается обязательных реквизитов БСО, то в случае, если организация\n                                    находится в труднодоступной области, последние три пункта из списка обязательных\n                                    реквизитов чека онлайн-кассы могут не указываться. Кроме того, Правительство РФ\n                                    предупреждает в законе, что оно может дополнить список еще одним обязательным\n                                    реквизитом – кодом товарной номенклатуры – в случае, если он определен. В\n                                    остальном, все реквизиты БСО ничем не отличаются от реквизитов чека\n                                    онлайн-кассы.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                А именно:\n                            "
+                                "\n                                    А именно:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -57749,13 +56118,13 @@ var render = function() {
                               _vm._v(" "),
                               _c("p", [
                                 _vm._v(
-                                  "\n                                    Если у бланка документа нет отрывной части, то при его заполнении необходимо делать копию. Дублировать серию и номер бланка документа запрещено. Кроме того, БСО должен быть изготовлен либо с применением автоматизированной системы, либо отпечатан в типографии – в последнем варианте на нем должна быть указана информация об этой типографии (название, ИНН), значиться тираж печати, номер заказа и год его исполнения.\n                                "
+                                  "\n                                        Если у бланка документа нет отрывной части, то при его заполнении необходимо\n                                        делать копию. Дублировать серию и номер бланка документа запрещено. Кроме\n                                        того, БСО должен быть изготовлен либо с применением автоматизированной\n                                        системы, либо отпечатан в типографии – в последнем варианте на нем должна\n                                        быть указана информация об этой типографии (название, ИНН), значиться тираж\n                                        печати, номер заказа и год его исполнения.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("p", [
                                 _vm._v(
-                                  "\n                                    Подробнее об оформлении БСО см. Положение об осуществлении наличных денежных расчетов и (или) расчетов с использованием платежных карт без применения ККТ Постановления Правительства РФ от 6 мая 2008 г. № 359.\n                                "
+                                  "\n                                        Подробнее об оформлении БСО см. Положение об осуществлении наличных денежных\n                                        расчетов и (или) расчетов с использованием платежных карт без применения ККТ\n                                        Постановления Правительства РФ от 6 мая 2008 г. № 359.\n                                    "
                                 )
                               ])
                             ])
@@ -57773,71 +56142,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -57867,149 +56184,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -58079,7 +56253,7 @@ var render = function() {
                         _c("div", { staticClass: "col-md-12" }, [
                           _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "Онлайн-кассы для ИП на ЕНВД и ПСН: отсрочка до 2021 года не прошла"
+                              "Онлайн-кассы для ИП на ЕНВД и ПСН: отсрочка до 2021 года\n                                не прошла"
                             )
                           ])
                         ])
@@ -58090,53 +56264,53 @@ var render = function() {
                           _c("div", { attrs: { id: "bx_689919819_3591" } }, [
                             _c("p", [
                               _vm._v(
-                                "\n                                Госдума рассмотрела возможность отложить переход на "
+                                "\n                                    Госдума рассмотрела возможность отложить переход на "
                               ),
                               _c("strong", [
                                 _vm._v(
-                                  "онлайн-кассы: отсрочка до 2021 года для ИП на ЕНВД"
+                                  "онлайн-кассы:\n                                    отсрочка до 2021 года для ИП на ЕНВД"
                                 )
                               ]),
                               _vm._v(
-                                " и других налогоплательщиков предлагалась сразу в нескольких законопроектах. В итоге некоторым разрешили вообще не использовать ККТ, а все остальные должны поставить кассы к 1 июля 2019 года.\n                            "
+                                " и других налогоплательщиков\n                                    предлагалась сразу в нескольких законопроектах. В итоге некоторым разрешили\n                                    вообще не использовать ККТ, а все остальные должны поставить кассы к 1 июля 2019\n                                    года.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Учтите, что покупкой ККТ и регистрацией ее в налоговой вы не ограничитесь. В чеках теперь надо пробивать наименования товаров — а значит, вам потребуется кассовая программа, которая это умеет.\n                            "
+                                "\n                                    Учтите, что покупкой ККТ и регистрацией ее в налоговой вы не ограничитесь. В\n                                    чеках теперь надо пробивать наименования товаров — а значит, вам потребуется\n                                    кассовая программа, которая это умеет.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Далее разберем, кому и когда надо ставить онлайн-кассу.\n                            "
+                                "\n                                    Далее разберем, кому и когда надо ставить онлайн-кассу.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Еще одна поправка к закону об онлайн-кассах — изменение понятия расчетов:\n                            "
+                                "\n                                    Еще одна поправка к закону об онлайн-кассах — изменение понятия расчетов:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "Теперь к ним относится не только любое движение денег в наличной форме и по безналу, но и зачет предоплаты (например, продажа по подарочным картам). Из текста закона убрали понятие «электронное средство платежа», которое вызывало вопрос, нужна ли касса, если покупатель-физлицо перевел деньги на банковский счет продавца. "
+                                  "Теперь к ним относится не только любое движение денег в наличной форме и по\n                                        безналу, но и зачет предоплаты (например, продажа по подарочным картам). Из\n                                        текста закона убрали понятие «электронное средство платежа», которое\n                                        вызывало вопрос, нужна ли касса, если покупатель-физлицо перевел деньги на\n                                        банковский счет продавца.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Расчетом также признается получение за товар других предметов. Например, передача старой вещи в зачет стоимости новой (trade-in)."
+                                  "Расчетом также признается получение за товар других предметов. Например,\n                                        передача старой вещи в зачет стоимости новой (trade-in).\n                                    "
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Это значит, что теперь в законе перечислены все случаи, когда нужно использовать ККТ.\n                            "
+                                "\n                                    Это значит, что теперь в законе перечислены все случаи, когда нужно использовать\n                                    ККТ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58146,13 +56320,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Хотя полная отмена онлайн-касс для ИП и юрлиц на специальных режимах налогообложения даже не обсуждалась, депутаты все же отложили до 1 июля 2019 года переход для:\n                            "
+                                "\n                                    Хотя полная отмена онлайн-касс для ИП и юрлиц на специальных режимах\n                                    налогообложения даже не обсуждалась, депутаты все же отложили до 1 июля 2019\n                                    года переход для:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
-                                _vm._v("ИП и организаций на вмененке, ")
+                                _vm._v("ИП и организаций на вмененке,")
                               ]),
                               _vm._v(" "),
                               _c("li", [
@@ -58164,14 +56338,14 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Отсрочку получили ИП на патенте, которые:\n                            "
+                                "\n                                    Отсрочку получили ИП на патенте, которые:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "чинят одежду, обувь и ювелирные изделия, "
+                                  "чинят одежду, обувь и ювелирные изделия,"
                                 )
                               ]),
                               _vm._v(" "),
@@ -58189,7 +56363,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "содержат химчистку, прачечную или фотоателье, "
+                                  "содержат химчистку, прачечную или фотоателье,"
                                 )
                               ]),
                               _vm._v(" "),
@@ -58201,36 +56375,36 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "ремонтируют бытовую технику, транспорт, компьютеры, радиоэлектронную аппаратуры, мебель, жилье,"
+                                  "ремонтируют бытовую технику, транспорт, компьютеры, радиоэлектронную\n                                        аппаратуры, мебель, жилье,\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "оказывают ветеринарные, ритуальные, автотранспортные, монтажные, сварочные и прочие производственные услуги,"
+                                  "оказывают ветеринарные, ритуальные, автотранспортные, монтажные, сварочные и\n                                        прочие производственные услуги,\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
-                                _vm._v("сдают в аренду недвижимость, ")
+                                _vm._v("сдают в аренду недвижимость,")
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "изготавливают изделия народных промыслов. "
+                                  "изготавливают изделия народных промыслов."
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Полный список перечислен в статье 346.43 НК.\n                            "
+                                "\n                                    Полный список перечислен в статье 346.43 НК.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Таким образом, речь идет об отсрочке онлайн-касс для ИП практически во всех сферах малого бизнеса. Цель — поддержать предпринимателей, дать им время подготовиться: и к работе по новому порядку, и к расходам на технику. К тому же поэтапное введение онлайн-касс позволяет избежать очередей на поставку и дефицита техники. В 2018 году более 1,5 млн предпринимателей поставили онлайн-кассы в срок и без задержек.\n                            "
+                                "\n                                    Таким образом, речь идет об отсрочке онлайн-касс для ИП практически во всех\n                                    сферах малого бизнеса. Цель — поддержать предпринимателей, дать им время\n                                    подготовиться: и к работе по новому порядку, и к расходам на технику. К тому же\n                                    поэтапное введение онлайн-касс позволяет избежать очередей на поставку и\n                                    дефицита техники. В 2018 году более 1,5 млн предпринимателей поставили\n                                    онлайн-кассы в срок и без задержек.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58240,7 +56414,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Переход упрощают не только отсрочки. Онлайн-кассы для ИП на ЕНВД и ПСН обойдутся гораздо дешевле, потому что на их покупку можно получить налоговый вычет — правда, не больше 18 000 рублей. Это разрешает закон № 349-ФЗ.\n                            "
+                                "\n                                    Переход упрощают не только отсрочки. Онлайн-кассы для ИП на ЕНВД и ПСН обойдутся\n                                    гораздо дешевле, потому что на их покупку можно получить налоговый вычет —\n                                    правда, не больше 18 000 рублей. Это разрешает закон № 349-ФЗ.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58250,7 +56424,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Первой отсрочкой онлайн-касс — до 2018 года — уже воспользовались те, кто торгует в розницу или оказывает услуги общественного питания с привлечением наемных работников:\n                            "
+                                "\n                                    Первой отсрочкой онлайн-касс — до 2018 года — уже воспользовались те, кто\n                                    торгует в розницу или оказывает услуги общественного питания с привлечением\n                                    наемных работников:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58264,7 +56438,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Сейчас все эти предприниматели уже обязаны применять ККТ нового образца: с 1 июля 2018 года техника должна быть установлена.\n                            "
+                                "\n                                    Сейчас все эти предприниматели уже обязаны применять ККТ нового образца: с 1\n                                    июля 2018 года техника должна быть установлена.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58274,7 +56448,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Сейчас идет второй этап отсрочки онлайн-касс — до 1 июля 2019 года. Согласно Федеральному закону от 27.11.2017 № 337-ФЗ это касается:\n                            "
+                                "\n                                    Сейчас идет второй этап отсрочки онлайн-касс — до 1 июля 2019 года. Согласно\n                                    Федеральному закону от 27.11.2017 № 337-ФЗ это касается:\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58287,37 +56461,37 @@ var render = function() {
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "ИП на патенте с определенными видами деятельности. Полный список /li>\n                                "
+                                  "ИП на патенте с определенными видами деятельности. Полный список /li>\n                                    "
                                 )
                               ]),
                               _c("li", [
                                 _vm._v(
-                                  "Предпринимателей на ЕНВД и ПСН с розницей или общепитом — при условии, что у них нет наемных работников. Как только такой ИП наймет сотрудника, на него перестанет распространяться отсрочка применения онлайн-касс. Это касается даже тех, кто нанял всего одного работника: при заключении первого же трудового договора нужно купить и зарегистрировать в ФНС новую ККТ в течение 30 календарных дней."
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _vm._v(
-                                  "ООО и ИП, оказывающих услуги или выполняющих работы, если они выдают клиентам бланки строгой отчетности. Право выдавать бумажные БСО также продлено до 1 июля 2019 года для предпринимателей и организаций с услугами, кроме общепита."
+                                  "Предпринимателей на ЕНВД и ПСН с розницей или общепитом — при условии, что у\n                                        них нет наемных работников. Как только такой ИП наймет сотрудника, на него\n                                        перестанет распространяться отсрочка применения онлайн-касс. Это касается\n                                        даже тех, кто нанял всего одного работника: при заключении первого же\n                                        трудового договора нужно купить и зарегистрировать в ФНС новую ККТ в течение\n                                        30 календарных дней.\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
                               _c("li", [
                                 _vm._v(
-                                  "Предпринимателей, которые используют вендинговые автоматы, при условии, что у них нет наемных работников. Подробнее "
+                                  "ООО и ИП, оказывающих услуги или выполняющих работы, если они выдают\n                                        клиентам бланки строгой отчетности. Право выдавать бумажные БСО также\n                                        продлено до 1 июля 2019 года для предпринимателей и организаций с услугами,\n                                        кроме общепита.\n                                    "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Предпринимателей, которые используют вендинговые автоматы, при условии, что\n                                        у них нет наемных работников. Подробнее\n                                    "
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Отмена онлайн-касс для этих категорий — временная мера. До 1 июля 2019 года все перечисленные предприниматели и организации обязаны купить ККТ нового образца и зарегистрировать их в ФНС.\n                            "
+                                "\n                                    Отмена онлайн-касс для этих категорий — временная мера. До 1 июля 2019 года все\n                                    перечисленные предприниматели и организации обязаны купить ККТ нового образца и\n                                    зарегистрировать их в ФНС.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                С 1 июля 2019 года нужно использовать ККТ при любых безналичных расчетах с физлицами. Кассовый документ должен быть сформирован не позднее одного рабочего дня после оплаты. Сейчас при безналичной оплате без карт пробивать чеки не нужно.\n                            "
+                                "\n                                    С 1 июля 2019 года нужно использовать ККТ при любых безналичных расчетах с\n                                    физлицами. Кассовый документ должен быть сформирован не позднее одного рабочего\n                                    дня после оплаты. Сейчас при безналичной оплате без карт пробивать чеки не\n                                    нужно.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58327,7 +56501,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Предпринимателям, у которых нет наемных работников и которые торгуют с использованием вендинговых аппаратов, тоже положена отсрочка онлайн-ККТ до 2019 года. Но к 1 июля они должны будут поставить кассовую технику.\n                            "
+                                "\n                                    Предпринимателям, у которых нет наемных работников и которые торгуют с\n                                    использованием вендинговых аппаратов, тоже положена отсрочка онлайн-ККТ до 2019\n                                    года. Но к 1 июля они должны будут поставить кассовую технику.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58337,14 +56511,14 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                При этом владельцам вендинговых аппаратов разрешили использовать одну кассу для нескольких автоматов при условии, что:\n                            "
+                                "\n                                    При этом владельцам вендинговых аппаратов разрешили использовать одну кассу для\n                                    нескольких автоматов при условии, что:\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("ul", [
                               _c("li", [
                                 _vm._v(
-                                  "не продаются подакцизные, технически сложные и подлежащие обязательной маркировке товары,"
+                                  "не продаются подакцизные, технически сложные и подлежащие обязательной\n                                        маркировке товары,\n                                    "
                                 )
                               ]),
                               _vm._v(" "),
@@ -58357,13 +56531,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Кроме того, с 1 февраля 2020 можно будет не печатать чек, если на экране аппарата будет отображен QR-код.\n                            "
+                                "\n                                    Кроме того, с 1 февраля 2020 можно будет не печатать чек, если на экране\n                                    аппарата будет отображен QR-код.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "alert alert-warning" }, [
                               _vm._v(
-                                "\n                                Тем, кто использует механические автоматы (например, по продаже конфет), кассы ставить не нужно вообще.\n                            "
+                                "\n                                    Тем, кто использует механические автоматы (например, по продаже конфет), кассы\n                                    ставить не нужно вообще.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58375,19 +56549,19 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Все предложения по отсрочке до 2021 года Госдума отклонила. Окончание кассовой реформы отодвинули только на год. К 1 июля 2019 кассы поставить придется уже всем, кроме отдельныхисключений.\n                            "
+                                "\n                                    Все предложения по отсрочке до 2021 года Госдума отклонила. Окончание кассовой\n                                    реформы отодвинули только на год. К 1 июля 2019 кассы поставить придется уже\n                                    всем, кроме отдельныхисключений.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Сдвиг сроков не коснулся и других спецрежимов: организации и предприниматели на УСН (кроме перечисленных выше) и плательщики ЕСХН уже давно обязаны использовать ККТ нового образца.\n                            "
+                                "\n                                    Сдвиг сроков не коснулся и других спецрежимов: организации и предприниматели на\n                                    УСН (кроме перечисленных выше) и плательщики ЕСХН уже давно обязаны использовать\n                                    ККТ нового образца.\n                                "
                               )
                             ]),
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                Правда, расширился список исключений — то есть тех, кому вообще можно не применять онлайн-кассы. Среди них те, кто торгует безалкогольными напитками, молоком и питьевой водой, оказывает библиотечные услуги и содержит платные парковки. Полный перечень такой\n                            "
+                                "\n                                    Правда, расширился список исключений — то есть тех, кому вообще можно не\n                                    применять онлайн-кассы. Среди них те, кто торгует безалкогольными напитками,\n                                    молоком и питьевой водой, оказывает библиотечные услуги и содержит платные\n                                    парковки. Полный перечень такой\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58397,7 +56571,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                                До 2021 года отложено только требование указывать в чеке наименования товаров. Это тоже касается отдельных групп налогоплательщиков: повезло индивидуальным предпринимателям на УСН, ПСН и ЕНВД (кроме торгующих подакцизными товарами). Они могут не указывать товар в кассовом чеке и на электронном бланке строгой отчетности до 1 февраля 2021 года.\n                            "
+                                "\n                                    До 2021 года отложено только требование указывать в чеке наименования товаров.\n                                    Это тоже касается отдельных групп налогоплательщиков: повезло индивидуальным\n                                    предпринимателям на УСН, ПСН и ЕНВД (кроме торгующих подакцизными товарами). Они\n                                    могут не указывать товар в кассовом чеке и на электронном бланке строгой\n                                    отчетности до 1 февраля 2021 года.\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -58416,71 +56590,19 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "best-seller-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productsRec, function(product) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
-                            on: {
-                              click: function($event) {
-                                _vm.addCart(product.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "pe-7s-cart" }),
-                            _vm._v("Добавить в корзину")
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
     ],
     1
   )
@@ -58510,149 +56632,6 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("button", { staticClass: "suscribe-btn" }, [
                     _c("i", { staticClass: "pe-7s-search" })
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("РЕКОМЕНДУЕМ")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12" }, [
-            _c(
-              "div",
-              { staticClass: "titie-section wow fadeInDown animated " },
-              [_c("h1", [_vm._v("СВЯЗАТЬСЯ")])]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-            _c("div", { staticClass: "left-content" }, [
-              _c("h1", [
-                _c("b", [_vm._v("К")]),
-                _vm._v("омпаниия "),
-                _c("b", [_vm._v("Т")]),
-                _vm._v("ерминал")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "contact-info" }, [
-                _c("p", [_vm._v("Адрес: ")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Телефон: 8 (800) 000-00-00")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Почта: info@terminal.com")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-media" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-instagram" })
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Имя" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "name",
-                          placeholder: "Почта"
-                        }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "name", placeholder: "Тема" }
-                      })
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "textarea-form-footer" }, [
-                        _c("textarea", {
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "",
-                            id: "",
-                            cols: "30",
-                            rows: "5",
-                            placeholder: "Сообщение..."
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("input", {
-                        staticClass: "contact-submit",
-                        attrs: { type: "submit", value: "Отправить" }
-                      })
-                    ])
                   ])
                 ])
               ]
@@ -69957,10 +67936,11 @@ Vue.component('show-product-component', __webpack_require__(/*! ./components/Sho
  * Admin
  */
 
-Vue.component('admin-component', __webpack_require__(/*! ./components/AdminComponent.vue */ "./resources/js/components/AdminComponent.vue").default);
-Vue.component('admin-product-component', __webpack_require__(/*! ./components/ProductAdminComponent */ "./resources/js/components/ProductAdminComponent.vue").default);
-Vue.component('admin-partners-component', __webpack_require__(/*! ./components/AdminPartnersComponent */ "./resources/js/components/AdminPartnersComponent.vue").default);
-Vue.component('admin-sliders-component', __webpack_require__(/*! ./components/AdminSlidersComponent */ "./resources/js/components/AdminSlidersComponent.vue").default);
+Vue.component('admin-component', __webpack_require__(/*! ./components/admin/AdminComponent.vue */ "./resources/js/components/admin/AdminComponent.vue").default);
+Vue.component('admin-product-component', __webpack_require__(/*! ./components/admin/ProductAdminComponent */ "./resources/js/components/admin/ProductAdminComponent.vue").default);
+Vue.component('admin-partners-component', __webpack_require__(/*! ./components/admin/AdminPartnersComponent */ "./resources/js/components/admin/AdminPartnersComponent.vue").default);
+Vue.component('admin-sliders-component', __webpack_require__(/*! ./components/admin/AdminSlidersComponent */ "./resources/js/components/admin/AdminSlidersComponent.vue").default);
+Vue.component('admin-recommended-component', __webpack_require__(/*! ./components/admin/AdminRecommendedComponent */ "./resources/js/components/admin/AdminRecommendedComponent.vue").default);
 Vue.component('cart-component', __webpack_require__(/*! ./components/CartComponent.vue */ "./resources/js/components/CartComponent.vue").default);
 Vue.component('rent-component', __webpack_require__(/*! ./components/RentComponent.vue */ "./resources/js/components/RentComponent.vue").default);
 Vue.component('about-component', __webpack_require__(/*! ./components/AboutComponent.vue */ "./resources/js/components/AboutComponent.vue").default);
@@ -69985,6 +67965,9 @@ Vue.component('kak-snyat-s-ucheta-online-kassu-component', __webpack_require__(/
  */
 
 Vue.component('header-component', __webpack_require__(/*! ./components/assets/HeaderComponent */ "./resources/js/components/assets/HeaderComponent.vue").default);
+Vue.component('recommended-component', __webpack_require__(/*! ./components/assets/RecommendedComponent */ "./resources/js/components/assets/RecommendedComponent.vue").default);
+Vue.component('footer-component', __webpack_require__(/*! ./components/assets/FooterComponent */ "./resources/js/components/assets/FooterComponent.vue").default);
+Vue.component('editor', __webpack_require__(/*! @tinymce/tinymce-vue */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/index.js").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -70119,213 +68102,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutComponent_vue_vue_type_template_id_5049bb1b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutComponent_vue_vue_type_template_id_5049bb1b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminComponent.vue":
-/*!****************************************************!*\
-  !*** ./resources/js/components/AdminComponent.vue ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AdminComponent_vue_vue_type_template_id_a603f2ce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminComponent.vue?vue&type=template&id=a603f2ce& */ "./resources/js/components/AdminComponent.vue?vue&type=template&id=a603f2ce&");
-/* harmony import */ var _AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AdminComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AdminComponent_vue_vue_type_template_id_a603f2ce___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AdminComponent_vue_vue_type_template_id_a603f2ce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/AdminComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminComponent.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/components/AdminComponent.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AdminComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminComponent.vue?vue&type=template&id=a603f2ce&":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/components/AdminComponent.vue?vue&type=template&id=a603f2ce& ***!
-  \***********************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_template_id_a603f2ce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AdminComponent.vue?vue&type=template&id=a603f2ce& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminComponent.vue?vue&type=template&id=a603f2ce&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_template_id_a603f2ce___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_template_id_a603f2ce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminPartnersComponent.vue":
-/*!************************************************************!*\
-  !*** ./resources/js/components/AdminPartnersComponent.vue ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AdminPartnersComponent_vue_vue_type_template_id_2ab1e3ae___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae& */ "./resources/js/components/AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae&");
-/* harmony import */ var _AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminPartnersComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AdminPartnersComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AdminPartnersComponent_vue_vue_type_template_id_2ab1e3ae___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AdminPartnersComponent_vue_vue_type_template_id_2ab1e3ae___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/AdminPartnersComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminPartnersComponent.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/AdminPartnersComponent.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AdminPartnersComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminPartnersComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae&":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/components/AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae& ***!
-  \*******************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_template_id_2ab1e3ae___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminPartnersComponent.vue?vue&type=template&id=2ab1e3ae&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_template_id_2ab1e3ae___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_template_id_2ab1e3ae___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminSlidersComponent.vue":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/AdminSlidersComponent.vue ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AdminSlidersComponent_vue_vue_type_template_id_61082c7f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminSlidersComponent.vue?vue&type=template&id=61082c7f& */ "./resources/js/components/AdminSlidersComponent.vue?vue&type=template&id=61082c7f&");
-/* harmony import */ var _AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminSlidersComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AdminSlidersComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AdminSlidersComponent_vue_vue_type_template_id_61082c7f___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AdminSlidersComponent_vue_vue_type_template_id_61082c7f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/AdminSlidersComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminSlidersComponent.vue?vue&type=script&lang=js&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/AdminSlidersComponent.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AdminSlidersComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminSlidersComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminSlidersComponent.vue?vue&type=template&id=61082c7f&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/components/AdminSlidersComponent.vue?vue&type=template&id=61082c7f& ***!
-  \******************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_template_id_61082c7f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AdminSlidersComponent.vue?vue&type=template&id=61082c7f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdminSlidersComponent.vue?vue&type=template&id=61082c7f&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_template_id_61082c7f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_template_id_61082c7f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -70745,75 +68521,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/ProductAdminComponent.vue":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/ProductAdminComponent.vue ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ProductAdminComponent_vue_vue_type_template_id_41dfb53c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductAdminComponent.vue?vue&type=template&id=41dfb53c& */ "./resources/js/components/ProductAdminComponent.vue?vue&type=template&id=41dfb53c&");
-/* harmony import */ var _ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductAdminComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ProductAdminComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ProductAdminComponent_vue_vue_type_template_id_41dfb53c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ProductAdminComponent_vue_vue_type_template_id_41dfb53c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/ProductAdminComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/ProductAdminComponent.vue?vue&type=script&lang=js&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/ProductAdminComponent.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductAdminComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductAdminComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/ProductAdminComponent.vue?vue&type=template&id=41dfb53c&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/components/ProductAdminComponent.vue?vue&type=template&id=41dfb53c& ***!
-  \******************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_template_id_41dfb53c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductAdminComponent.vue?vue&type=template&id=41dfb53c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductAdminComponent.vue?vue&type=template&id=41dfb53c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_template_id_41dfb53c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_template_id_41dfb53c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/components/RentComponent.vue":
 /*!***************************************************!*\
   !*** ./resources/js/components/RentComponent.vue ***!
@@ -70952,6 +68659,420 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/admin/AdminComponent.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/admin/AdminComponent.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AdminComponent_vue_vue_type_template_id_2073db19___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminComponent.vue?vue&type=template&id=2073db19& */ "./resources/js/components/admin/AdminComponent.vue?vue&type=template&id=2073db19&");
+/* harmony import */ var _AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/AdminComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AdminComponent_vue_vue_type_template_id_2073db19___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AdminComponent_vue_vue_type_template_id_2073db19___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/admin/AdminComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminComponent.vue?vue&type=template&id=2073db19&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminComponent.vue?vue&type=template&id=2073db19& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_template_id_2073db19___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminComponent.vue?vue&type=template&id=2073db19& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminComponent.vue?vue&type=template&id=2073db19&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_template_id_2073db19___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminComponent_vue_vue_type_template_id_2073db19___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminPartnersComponent.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/admin/AdminPartnersComponent.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AdminPartnersComponent_vue_vue_type_template_id_274b382e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminPartnersComponent.vue?vue&type=template&id=274b382e& */ "./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=template&id=274b382e&");
+/* harmony import */ var _AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminPartnersComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AdminPartnersComponent_vue_vue_type_template_id_274b382e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AdminPartnersComponent_vue_vue_type_template_id_274b382e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/admin/AdminPartnersComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminPartnersComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=template&id=274b382e&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=template&id=274b382e& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_template_id_274b382e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminPartnersComponent.vue?vue&type=template&id=274b382e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminPartnersComponent.vue?vue&type=template&id=274b382e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_template_id_274b382e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminPartnersComponent_vue_vue_type_template_id_274b382e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminRecommendedComponent.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/admin/AdminRecommendedComponent.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AdminRecommendedComponent_vue_vue_type_template_id_98c16c14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminRecommendedComponent.vue?vue&type=template&id=98c16c14& */ "./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=template&id=98c16c14&");
+/* harmony import */ var _AdminRecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminRecommendedComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AdminRecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AdminRecommendedComponent_vue_vue_type_template_id_98c16c14___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AdminRecommendedComponent_vue_vue_type_template_id_98c16c14___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/admin/AdminRecommendedComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminRecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminRecommendedComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminRecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=template&id=98c16c14&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=template&id=98c16c14& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminRecommendedComponent_vue_vue_type_template_id_98c16c14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminRecommendedComponent.vue?vue&type=template&id=98c16c14& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminRecommendedComponent.vue?vue&type=template&id=98c16c14&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminRecommendedComponent_vue_vue_type_template_id_98c16c14___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminRecommendedComponent_vue_vue_type_template_id_98c16c14___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminSlidersComponent.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/admin/AdminSlidersComponent.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AdminSlidersComponent_vue_vue_type_template_id_79b247ff___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminSlidersComponent.vue?vue&type=template&id=79b247ff& */ "./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=template&id=79b247ff&");
+/* harmony import */ var _AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminSlidersComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AdminSlidersComponent_vue_vue_type_template_id_79b247ff___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AdminSlidersComponent_vue_vue_type_template_id_79b247ff___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/admin/AdminSlidersComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminSlidersComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=template&id=79b247ff&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=template&id=79b247ff& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_template_id_79b247ff___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AdminSlidersComponent.vue?vue&type=template&id=79b247ff& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/AdminSlidersComponent.vue?vue&type=template&id=79b247ff&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_template_id_79b247ff___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminSlidersComponent_vue_vue_type_template_id_79b247ff___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/ProductAdminComponent.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/admin/ProductAdminComponent.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ProductAdminComponent_vue_vue_type_template_id_108b7e3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductAdminComponent.vue?vue&type=template&id=108b7e3c& */ "./resources/js/components/admin/ProductAdminComponent.vue?vue&type=template&id=108b7e3c&");
+/* harmony import */ var _ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductAdminComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/ProductAdminComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ProductAdminComponent_vue_vue_type_template_id_108b7e3c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ProductAdminComponent_vue_vue_type_template_id_108b7e3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/admin/ProductAdminComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/ProductAdminComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/admin/ProductAdminComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ProductAdminComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/ProductAdminComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/ProductAdminComponent.vue?vue&type=template&id=108b7e3c&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/admin/ProductAdminComponent.vue?vue&type=template&id=108b7e3c& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_template_id_108b7e3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ProductAdminComponent.vue?vue&type=template&id=108b7e3c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/ProductAdminComponent.vue?vue&type=template&id=108b7e3c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_template_id_108b7e3c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductAdminComponent_vue_vue_type_template_id_108b7e3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/FooterComponent.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/assets/FooterComponent.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FooterComponent_vue_vue_type_template_id_6c754801_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FooterComponent.vue?vue&type=template&id=6c754801&scoped=true& */ "./resources/js/components/assets/FooterComponent.vue?vue&type=template&id=6c754801&scoped=true&");
+/* harmony import */ var _FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FooterComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/assets/FooterComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FooterComponent_vue_vue_type_template_id_6c754801_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FooterComponent_vue_vue_type_template_id_6c754801_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6c754801",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/assets/FooterComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/FooterComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/assets/FooterComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./FooterComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/FooterComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/FooterComponent.vue?vue&type=template&id=6c754801&scoped=true&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/assets/FooterComponent.vue?vue&type=template&id=6c754801&scoped=true& ***!
+  \*******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_6c754801_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FooterComponent.vue?vue&type=template&id=6c754801&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/FooterComponent.vue?vue&type=template&id=6c754801&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_6c754801_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_6c754801_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/assets/HeaderComponent.vue":
 /*!************************************************************!*\
   !*** ./resources/js/components/assets/HeaderComponent.vue ***!
@@ -71016,6 +69137,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_50a19762_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/RecommendedComponent.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/assets/RecommendedComponent.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RecommendedComponent_vue_vue_type_template_id_4d96cbda_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true& */ "./resources/js/components/assets/RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true&");
+/* harmony import */ var _RecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecommendedComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/assets/RecommendedComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RecommendedComponent_vue_vue_type_template_id_4d96cbda_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RecommendedComponent_vue_vue_type_template_id_4d96cbda_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "4d96cbda",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/assets/RecommendedComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/RecommendedComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/assets/RecommendedComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./RecommendedComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/RecommendedComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecommendedComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/assets/RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/assets/RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecommendedComponent_vue_vue_type_template_id_4d96cbda_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/assets/RecommendedComponent.vue?vue&type=template&id=4d96cbda&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecommendedComponent_vue_vue_type_template_id_4d96cbda_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecommendedComponent_vue_vue_type_template_id_4d96cbda_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

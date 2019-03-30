@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -28,10 +30,11 @@ Vue.component('show-product-component', require('./components/ShowProductCompone
 /**
  * Admin
  */
-Vue.component('admin-component', require('./components/AdminComponent.vue').default);
-Vue.component('admin-product-component', require('./components/ProductAdminComponent').default);
-Vue.component('admin-partners-component', require('./components/AdminPartnersComponent').default);
-Vue.component('admin-sliders-component', require('./components/AdminSlidersComponent').default);
+Vue.component('admin-component', require('./components/admin/AdminComponent.vue').default);
+Vue.component('admin-product-component', require('./components/admin/ProductAdminComponent').default);
+Vue.component('admin-partners-component', require('./components/admin/AdminPartnersComponent').default);
+Vue.component('admin-sliders-component', require('./components/admin/AdminSlidersComponent').default);
+Vue.component('admin-recommended-component', require('./components/admin/AdminRecommendedComponent').default);
 
 
 Vue.component('cart-component', require('./components/CartComponent.vue').default);
@@ -59,6 +62,9 @@ Vue.component('kak-snyat-s-ucheta-online-kassu-component', require('./components
  * Assets component
  */
 Vue.component('header-component', require('./components/assets/HeaderComponent').default);
+Vue.component('recommended-component', require('./components/assets/RecommendedComponent').default);
+Vue.component('footer-component', require('./components/assets/FooterComponent').default);
+Vue.component('editor', require('@tinymce/tinymce-vue').default);
 
 
 /**
@@ -67,6 +73,9 @@ Vue.component('header-component', require('./components/assets/HeaderComponent')
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
 });

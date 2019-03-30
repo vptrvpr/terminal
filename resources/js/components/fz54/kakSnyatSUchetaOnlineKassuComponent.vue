@@ -10,7 +10,7 @@
                         <form class="form-inline col-md-12 wow fadeInDown animated">
                             <div class="form-group">
                                 <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
-                                <button class="suscribe-btn" ><i class="pe-7s-search"></i></button>
+                                <button class="suscribe-btn"><i class="pe-7s-search"></i></button>
                             </div>
                         </form><!-- end /. form -->
                     </div>
@@ -22,128 +22,164 @@
         <section class="featured-section" style="    background: whitesmoke;">
 
             <div class="container">
-                <transition name="showDiv2" >
-                <div class="infomation_about" v-if="showDiv2">
-                <div class="row">
-                    <div class="col-md-12" >
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>ФЗ-54</h1>
+                <transition name="showDiv2">
+                    <div class="infomation_about" v-if="showDiv2">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="titie-section wow fadeInDown animated ">
+                                    <h1>ФЗ-54</h1>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                      <h1 class="h1-fz text-center">Как снять с учета онлайн-кассу</h1>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="h1-fz text-center">Как снять с учета онлайн-кассу</h1>
 
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="bx_689919819_3774">
-                                <p>
-                                    Есть несколько вариантов снятия ККТ с учета: при обращении в налоговую или через личный кабинет на сайте ФНС. Но налоговики могут сделать это и принудительно. Разберем подробнее, <strong>как снять с учета онлайн-кассу</strong>.
-                                </p>
-                                <p>
-                                </p>
-                                <p>
-                                </p>
-                                <p>
-                                    Владелец может сделать это по своей инициативе, если:
-                                </p>
-                                <ul>
-                                    <li>передает ККТ другому пользователю,</li>
-                                    <li>технику украли или потеряли, </li>
-                                    <li>устройство сломалось. </li>
-                                </ul>
-                                <p>
-                                    Нужно подать в налоговую инспекцию заявление о снятии ККТ с учета (форма по КНД 1110062) не позднее одного рабочего дня после передачи или обнаружения кражи. Отнесите документ лично или отправьте по интернету. Ниже на странице — шаблон заявления и инструкция, как снять онлайн-кассу с учета через личный кабинет на сайте ФНС.
-                                </p>
-                                <h2>Заявление на снятие с учета онлайн-кассы</h2>
-                                <p>
-                                    В заявлении укажите:
-                                </p>
-                                <ul>
-                                    <li>название компании или ФИО предпринимателя,</li>
-                                    <li>ИНН,</li>
-                                    <li>модель и заводской номер ККТ,</li>
-                                    <li>подробные сведения о краже или потере (если они есть).</li>
-                                </ul>
-                                <p>
-                                    ФНС внесла изменения в форму бланка (приказ от 07.09.2018 № ММВ-7-20/527@). У нас вы можете скачать новый образец бланка заявления о снятии ККТ с учета.
-                                </p>
-                                <div class="alert alert-warning">
-                                    Если заявление на снятие с учета онлайн-кассы подает представитель, укажите реквизиты доверенности.
-                                </div>
-                                <p>
-                                    При передаче ККТ другому пользователю к заявлению надо приложить отчет о закрытии фискального накопителя. Его можно сделать через меню онлайн-кассы.
-                                </p>
-                                <p>
-                                    Если ККТ сломалась или ее украли — отчет не нужен. В этом случае лучше снять с учета онлайн-кассу как можно скорее. Сделайте это через интернет: это самый простой и быстрый способ. Дополнительных документов при поломке или краже не понадобится. Как снять кассу с учета через личный кабинет — ниже на странице.
-                                </p>
-                                <p>
-                                    Если техника работала без передачи данных в ОФД (например, в отдаленных регионах), надо приложить все фискальные данные, записанные в накопитель.
-                                </p>
-                                <p>
-                                    Рекомендуем снимать онлайн-кассы с учета через личный кабинет — это просто и удобно. Для этого вам потребуется электронная цифровая подпись. Несколько действий — и все готово. Далее пошагово разберем снятие онлайн-кассы с учета через личный кабинет.
-                                </p>
-                                <p>
-                                </p>
-                                <p>
-                                </p>
-                                <h2>Как снять кассу с учета через личный кабинет</h2>
-                                <p>
-                                    Для начала войдите в личный кабинет на сайте налоговой и откройте раздел «Учет ККТ».
-                                </p>
-                                <p>
-                                    <img width="450" src="/upload/docs/snyatie KKT-1.jpg" style=" border: 1px solid #121212;">
-                                </p>
-                                <p>
-                                    Далее выберите кассу, которую нужно закрыть, и нажмите кнопку «Снять с регистрации».
-                                </p>
-                                <p>
-                                    <img width="500" src="/upload/docs/snyatie KKT-2.jpg" style=" border: 1px solid #121212;">
-                                </p>
-                                <p>
-                                    Откроется заявление о снятии ККТ с учета в налоговой инспекции. Заполните дату и время закрытия ФН, номер фискального документа и фискальный признак. После этого нажмите кнопку «Подписать и отправить» — заявление будет заверено цифровой подписью.
-                                </p>
-                                <p>
-                                    <img width="500" src="/upload/docs/snyatie KKT-3.jpg" style=" border: 1px solid #121212;">
-                                </p>
-                                <p>
-                                    После этих действий вы увидите, что запрос на снятие с учета онлайн-кассы добавлен.
-                                </p>
-                                <p>
-                                    <img width="500" src="/upload/docs/snyatie%20KKT-4.jpg" style=" border: 1px solid #121212;">
-                                </p>
-                                <h2>Как узнать, снята ККМ с учета или нет</h2>
-                                <p>
-                                    После выполнения всех действий на сайте появится оповещение.
-                                </p>
-                                <p>
-                                    <img width="300" src="/upload/docs/snyatie%20KKT-55.jpg" style=" border: 1px solid #121212;">
-                                </p>
-                                <p>
-                                    Кроме того, налоговая в течение 5 дней после получения заявления на снятие с учета онлайн-кассы пришлет через личный кабинет подтверждающую карточку. Можно также прийти в ИФНС и забрать бумажный вариант документа.
-                                </p>
-                                <p>
-                                    Налоговая может снять ККТ с учета и принудительно. Разберемся, что делать в этом случае.
-                                </p>
-                                <span class="likeh2">Кассу с учета сняла ФНС: что делать</span>
-                                <p>
-                                    Если снятие ККТ с регистрационного учета произошло по инициативе налоговой — подавать заявление не нужно. ФНС может сделать это, если:
-                                </p>
-                                <ul>
-                                    <li>есть нарушения в использовании — повторно зарегистрировать кассу можно будет после их устранения; </li>
-                                    <li>истек срок эксплуатации фискального накопителя — надо в течение 30 дней передать налоговикам записанные на ФН платежные данные.</li>
-                                </ul>
-                                <div class="alert alert-warning">
-                                    Компаниям на ОСНО надо менять ФН раз в 13 месяцев, а на спецрежимах (ЕНВД, УСН, ПСН) — раз в 36.
-                                </div>
-                                <br>    </div>
+                            </div>
                         </div>
-                        <div class="col-md-0"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="bx_689919819_3774">
+                                    <p>
+                                        Есть несколько вариантов снятия ККТ с учета: при обращении в налоговую или через
+                                        личный кабинет на сайте ФНС. Но налоговики могут сделать это и принудительно.
+                                        Разберем подробнее, <strong>как снять с учета онлайн-кассу</strong>.
+                                    </p>
+                                    <p>
+                                    </p>
+                                    <p>
+                                    </p>
+                                    <p>
+                                        Владелец может сделать это по своей инициативе, если:
+                                    </p>
+                                    <ul>
+                                        <li>передает ККТ другому пользователю,</li>
+                                        <li>технику украли или потеряли,</li>
+                                        <li>устройство сломалось.</li>
+                                    </ul>
+                                    <p>
+                                        Нужно подать в налоговую инспекцию заявление о снятии ККТ с учета (форма по КНД
+                                        1110062) не позднее одного рабочего дня после передачи или обнаружения кражи.
+                                        Отнесите документ лично или отправьте по интернету. Ниже на странице — шаблон
+                                        заявления и инструкция, как снять онлайн-кассу с учета через личный кабинет на
+                                        сайте ФНС.
+                                    </p>
+                                    <h2>Заявление на снятие с учета онлайн-кассы</h2>
+                                    <p>
+                                        В заявлении укажите:
+                                    </p>
+                                    <ul>
+                                        <li>название компании или ФИО предпринимателя,</li>
+                                        <li>ИНН,</li>
+                                        <li>модель и заводской номер ККТ,</li>
+                                        <li>подробные сведения о краже или потере (если они есть).</li>
+                                    </ul>
+                                    <p>
+                                        ФНС внесла изменения в форму бланка (приказ от 07.09.2018 № ММВ-7-20/527@). У
+                                        нас вы можете скачать новый образец бланка заявления о снятии ККТ с учета.
+                                    </p>
+                                    <div class="alert alert-warning">
+                                        Если заявление на снятие с учета онлайн-кассы подает представитель, укажите
+                                        реквизиты доверенности.
+                                    </div>
+                                    <p>
+                                        При передаче ККТ другому пользователю к заявлению надо приложить отчет о
+                                        закрытии фискального накопителя. Его можно сделать через меню онлайн-кассы.
+                                    </p>
+                                    <p>
+                                        Если ККТ сломалась или ее украли — отчет не нужен. В этом случае лучше снять с
+                                        учета онлайн-кассу как можно скорее. Сделайте это через интернет: это самый
+                                        простой и быстрый способ. Дополнительных документов при поломке или краже не
+                                        понадобится. Как снять кассу с учета через личный кабинет — ниже на странице.
+                                    </p>
+                                    <p>
+                                        Если техника работала без передачи данных в ОФД (например, в отдаленных
+                                        регионах), надо приложить все фискальные данные, записанные в накопитель.
+                                    </p>
+                                    <p>
+                                        Рекомендуем снимать онлайн-кассы с учета через личный кабинет — это просто и
+                                        удобно. Для этого вам потребуется электронная цифровая подпись. Несколько
+                                        действий — и все готово. Далее пошагово разберем снятие онлайн-кассы с учета
+                                        через личный кабинет.
+                                    </p>
+                                    <p>
+                                    </p>
+                                    <p>
+                                    </p>
+                                    <h2>Как снять кассу с учета через личный кабинет</h2>
+                                    <p>
+                                        Для начала войдите в личный кабинет на сайте налоговой и откройте раздел «Учет
+                                        ККТ».
+                                    </p>
+                                    <p>
+                                        <img width="450" src="/upload/docs/snyatie KKT-1.jpg"
+                                             style=" border: 1px solid #121212;">
+                                    </p>
+                                    <p>
+                                        Далее выберите кассу, которую нужно закрыть, и нажмите кнопку «Снять с
+                                        регистрации».
+                                    </p>
+                                    <p>
+                                        <img width="500" src="/upload/docs/snyatie KKT-2.jpg"
+                                             style=" border: 1px solid #121212;">
+                                    </p>
+                                    <p>
+                                        Откроется заявление о снятии ККТ с учета в налоговой инспекции. Заполните дату и
+                                        время закрытия ФН, номер фискального документа и фискальный признак. После этого
+                                        нажмите кнопку «Подписать и отправить» — заявление будет заверено цифровой
+                                        подписью.
+                                    </p>
+                                    <p>
+                                        <img width="500" src="/upload/docs/snyatie KKT-3.jpg"
+                                             style=" border: 1px solid #121212;">
+                                    </p>
+                                    <p>
+                                        После этих действий вы увидите, что запрос на снятие с учета онлайн-кассы
+                                        добавлен.
+                                    </p>
+                                    <p>
+                                        <img width="500" src="/upload/docs/snyatie%20KKT-4.jpg"
+                                             style=" border: 1px solid #121212;">
+                                    </p>
+                                    <h2>Как узнать, снята ККМ с учета или нет</h2>
+                                    <p>
+                                        После выполнения всех действий на сайте появится оповещение.
+                                    </p>
+                                    <p>
+                                        <img width="300" src="/upload/docs/snyatie%20KKT-55.jpg"
+                                             style=" border: 1px solid #121212;">
+                                    </p>
+                                    <p>
+                                        Кроме того, налоговая в течение 5 дней после получения заявления на снятие с
+                                        учета онлайн-кассы пришлет через личный кабинет подтверждающую карточку. Можно
+                                        также прийти в ИФНС и забрать бумажный вариант документа.
+                                    </p>
+                                    <p>
+                                        Налоговая может снять ККТ с учета и принудительно. Разберемся, что делать в этом
+                                        случае.
+                                    </p>
+                                    <span class="likeh2">Кассу с учета сняла ФНС: что делать</span>
+                                    <p>
+                                        Если снятие ККТ с регистрационного учета произошло по инициативе налоговой —
+                                        подавать заявление не нужно. ФНС может сделать это, если:
+                                    </p>
+                                    <ul>
+                                        <li>есть нарушения в использовании — повторно зарегистрировать кассу можно будет
+                                            после их устранения;
+                                        </li>
+                                        <li>истек срок эксплуатации фискального накопителя — надо в течение 30 дней
+                                            передать налоговикам записанные на ФН платежные данные.
+                                        </li>
+                                    </ul>
+                                    <div class="alert alert-warning">
+                                        Компаниям на ОСНО надо менять ФН раз в 13 месяцев, а на спецрежимах (ЕНВД, УСН,
+                                        ПСН) — раз в 36.
+                                    </div>
+                                    <br></div>
+                            </div>
+                            <div class="col-md-0"></div>
+                        </div>
                     </div>
-                </div>
                 </transition>
             </div>
 
@@ -151,104 +187,11 @@
 
 
         <section class="best-seller-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>РЕКОМЕНДУЕМ</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div v-for="product in productsRec" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
-                        <div class="product-item">
-                            <div class="img-product">
-                                <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
-                            </div>
-                            <div class="product-hover">
-                                <div class="product-meta">
-                                    <a class="add_cart" @click="addCart(product.id)"><i class="pe-7s-cart"></i>Добавить в корзину</a>
-                                </div>
-                            </div>
-                            <div class="product-title">
-                                <a href="#">
-                                    <h3>{{product.name}}</h3>
-                                    <span>{{product.price}} ₽</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <recommended-component></recommended-component>
         </section>
 
         <section class="contact-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>СВЯЗАТЬСЯ</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 wow fadeInLeft animated">
-                        <div class="left-content">
-                            <h1><b>К</b>омпаниия <b>Т</b>ерминал</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
-                            <div class="contact-info">
-                                <p>Адрес: </p>
-                                <p>Телефон: 8 (800) 000-00-00</p>
-                                <p>Почта: info@terminal.com</p>
-                            </div>
-                            <div class="social-media">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 wow fadeInRight animated">
-                        <form action="" method="" class="contact-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Имя">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Почта">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Тема">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="textarea-form-footer">
-                                            <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder="Сообщение..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="submit" class="contact-submit" value="Отправить" />
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <footer-component></footer-component>
         </section>
 
 
@@ -258,7 +201,7 @@
 <script>
     export default {
         data: function () {
-            return{
+            return {
                 categories: {},
                 products: {},
                 showProductsUpdate: false,
@@ -275,14 +218,15 @@
             this.getCategories();
             this.getProducts();
             this.getCartInfo();
-            this.getProductsRec();setTimeout(() => {
+            this.getProductsRec();
+            setTimeout(() => {
                 this.showProductsUpdate = true;
                 this.showDiv2 = true
             }, 900);
 
 
         },
-        methods:{
+        methods: {
             getCategories: function () {
                 axios({
                     method: 'get',
@@ -301,7 +245,7 @@
                 };
                 axios({
                     method: 'get',
-                    url: '/products/'+$categoryId,
+                    url: '/products/' + $categoryId,
                 }).then((response) => {
                     this.products = response.data.products;
                     this.categories = response.data.categories;
@@ -332,7 +276,7 @@
                 }).then((response) => {
                     this.products = response.data;
                     var app = this;
-                    for(var i = 0;i<response.data.length;i++){
+                    for (var i = 0; i < response.data.length; i++) {
                         app.categories.categories[i].show = false;
 
                     }
@@ -345,7 +289,7 @@
                 this.addCartAnimation();
                 axios({
                     method: 'get',
-                    url: '/cart_add/'+id,
+                    url: '/cart_add/' + id,
                 }).then((response) => {
                     this.cart = response.data;
                     this.addCartAnimation(response.data.message);
@@ -362,7 +306,7 @@
                     this.showCartMessage = false;
                 }, 3000)
             },
-            getCartInfo: function(){
+            getCartInfo: function () {
                 axios({
                     method: 'get',
                     url: '/cart_info',

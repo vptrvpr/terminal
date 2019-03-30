@@ -6,6 +6,7 @@
             <a href="/admin/products">Продукты</a>
             <a href="/admin/partners">Партнеры</a>
             <a href="/admin/slider">Слайдер</a>
+            <a href="/admin/recommended">Рекомендуемые</a>
             <a href="/admin/dashboard">Dashboard</a>
         </div>
 
@@ -87,6 +88,7 @@
             return {
                 products: {},
                 categories: [],
+                urlSite: ''
 
 
             }
@@ -94,12 +96,13 @@
         mounted() {
             this.getProducts();
             this.getCategories();
+            console.log(2222);
         },
         methods: {
             getCategories: function () {
                 axios({
                     method: 'get',
-                    url: '/get_categories',
+                    url: '/admin/get_categories/',
                 }).then((response) => {
                     this.categories = response.data;
                 });
@@ -156,6 +159,15 @@
                     this.cart = response.data;
                 });
 
+            },
+
+            getUrlSite: function () {
+                axios({
+                    method: 'get',
+                    url: '/helper/get-url-site',
+                }).then((response) => {
+                    this.urlSite = response.data;
+                });
             }
         }
 

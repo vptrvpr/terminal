@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css">
+    <link rel="stylesheet" href="{{ env('APP_URL') }}css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -21,13 +21,13 @@
     @yield('content')
 </div>
 
-<script src="http://127.0.0.1:8000/js/vendor/jquery-1.11.2.min.js"></script>
-<script src="http://127.0.0.1:8000/js/vendor/bootstrap.min.js"></script>
-<script src="http://127.0.0.1:8000/js/isotope.pkgd.min.js"></script>
-<script src="http://127.0.0.1:8000/js/owl.carousel.min.js"></script>
-<script src="http://127.0.0.1:8000/js/wow.min.js"></script>
-<script src="http://127.0.0.1:8000/js/custom.js"></script>
-<script src="http://127.0.0.1:8000/js/app.js"></script><!-- /#wrapper -->
+<script src="{{ env('APP_URL') }}js/vendor/jquery-1.11.2.min.js"></script>
+<script src="{{ env('APP_URL') }}js/vendor/bootstrap.min.js"></script>
+<script src="{{ env('APP_URL') }}js/isotope.pkgd.min.js"></script>
+<script src="{{ env('APP_URL') }}js/owl.carousel.min.js"></script>
+<script src="{{ env('APP_URL') }}js/wow.min.js"></script>
+<script src="{{ env('APP_URL') }}js/custom.js"></script>
+<script src="{{ env('APP_URL') }}js/app.js"></script><!-- /#wrapper -->
 
 </body>
 

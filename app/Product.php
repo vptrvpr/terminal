@@ -12,11 +12,20 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
-    public function categorie(){
+    public function categorie()
+    {
         return $this->belongsTo('App\Categorie');
     }
 
-    public function specifications(){
-    return $this->hasMany(Specification::class,'product_id','id');
-}
+    public function specifications()
+    {
+        return $this->hasMany(Specification::class, 'product_id', 'id');
+    }
+
+
+    public function recommended()
+    {
+        return $this->hasOne(Recommended::class,'product_id','id');
+    }
+
 }

@@ -6,6 +6,7 @@
             <a href="/admin/products">Продукты</a>
             <a href="/admin/partners">Партнеры</a>
             <a href="/admin/slider">Слайдер</a>
+            <a href="/admin/recommended">Рекомендуемые</a>
             <a href="/admin/dashboard">Dashboard</a>
         </div>
 
@@ -41,19 +42,16 @@
                                 <a v-if="product.isNew === undefined" class="btn btn-danger"
                                    @click="deleteProduct(product.id)">Удалить</a>
                                 <a v-if="product.isNew === undefined" class="btn btn-success" data-toggle="modal"
-                                   data-target=".modal-product-edit">Изменить</a>
+                                   :data-target="'.modal-product-edit'+product.id">Изменить</a>
                                 <a v-if="product.isNew !== undefined" class="btn btn-success"
                                    @click="saveNewCategories()">Сохранить</a>
                             </td>
 
-                            <div class="modal fade bd-example-modal-lg modal-product-edit" tabindex="-1" role="dialog"
+                            <div :class="'modal fade bd-example-modal-lg modal-product-edit'+product.id" tabindex="-1" role="dialog"
                                  aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
                                             <h4 class="modal-title" id="myModalLabel">Редактирование товара</h4>
                                         </div>
                                         <div class="modal-body">
@@ -105,8 +103,7 @@
                                                 <div class="col-md-8">
                                                     <div class="form-group">
                                                         <label for="comment">Описание:</label>
-                                                        <textarea class="form-control" v-model="product.description"
-                                                                  rows="5" id="comment"></textarea>
+                                                        <editor v-model="product.description" api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v" :init="{plugins:'lists'}"></editor>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2"></div>
@@ -164,7 +161,7 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                        <h4 class="modal-title" id="myModalLabel">Редактирование товара</h4>
+                                        <h3 class="modal-title" id="myModalLabel">Новый товар</h3>
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
@@ -206,6 +203,7 @@
                                                         <span>ВЫБЕРИТЕ ФОТО</span>
                                                     </label>
                                                 </div>
+
                                             </div>
                                         </div>
                                         <div class="row">
@@ -213,9 +211,11 @@
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <label for="comment">Описание:</label>
-                                                    <textarea class="form-control" v-model="newProduct.description"
-                                                              rows="5" id="comment"></textarea>
+                                                    <!--<textarea class="form-control" -->
+                                                              <!--rows="5" id="comment"></textarea>-->
+                                                    <editor v-model="newProduct.description" api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v" :init="{plugins:''}"></editor>
                                                 </div>
+
                                             </div>
                                             <div class="col-md-2"></div>
                                         </div>
@@ -246,7 +246,7 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        <div v-if="saveChangesSuccess" class="alert alert-success" role="alert">
+                                        <div v-if="saveChangesSuccessNewProduct" class="alert alert-success" role="alert">
                                             Изменения успешно сохраненны!
                                         </div>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -266,14 +266,21 @@
 </template>
 
 <script>
+
     export default {
+
+        // es modules
+
+    // commonjs require
+    // NOTE: default needed after require
+
         data: function () {
             return {
                 products: {},
                 categories: [],
                 newProduct: {
-                    name: "name",
-                    description: "description",
+                    name: "",
+                    description: "",
                     price: 0,
                     categorie_id: "categorie_id",
                     specifications_get: [],
@@ -289,6 +296,7 @@
 
             }
         },
+
         mounted() {
             this.getProducts();
             this.getCategories();
@@ -403,9 +411,7 @@
                 let data = new FormData();
                 data.append('file', document.getElementById('file_new_product').files[0]);
                 axios.post('/helper/load_image', data).then(function (response) {
-                    console.log(response.data);
                     app.newProduct.img = response.data;
-
                 });
             },
 
@@ -417,7 +423,12 @@
                     data: {product: this.newProduct}
                 }).then((response) => {
                     this.saveChangesSuccessNewProduct = true;
+                    this.getProducts();
                 });
+                var self = this;
+                setTimeout(function () {
+                    self.saveChangesSuccessNewProduct = false;
+                }, 1500);
             }
         }
 

@@ -20,7 +20,7 @@ class ProductsController extends Controller
             $under_category = Categorie::where('under_categories', 1)->where('parent_category_id', $category->id)->get();
 
             $category->products_count = $category->products->count();
-            $category->show = $category->id == 1 ? true : false;
+            $category->show = $category->id == 2 ? true : false;
             $category->products_page = $category->products;
             $category->under_categories = $under_category;
 

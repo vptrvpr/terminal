@@ -6,6 +6,7 @@
             <a href="/admin/products">Продукты</a>
             <a href="/admin/partners">Партнеры</a>
             <a href="/admin/slider">Слайдер</a>
+            <a href="/admin/recommended">Рекомендуемые</a>
             <a href="/admin/dashboard">Dashboard</a>
         </div>
 
@@ -56,7 +57,7 @@
                             </td>
                         </tr>
                         </tbody>
-                        <button class="btn btn-success" @click="addNewSlotSlider">Новый партнер</button>
+                        <button class="btn btn-success" @click="addNewSlotSlider">Новый слайдер</button>
                     </table>
                 </div>
             </div>

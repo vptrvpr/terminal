@@ -49,4 +49,12 @@ class HelperController extends Controller
 
         }
     }
+
+
+    /**
+     * @return mixed
+     */
+    public function getUrlSite(){
+        return env('MIX_URL_SITE');
+    }
 }

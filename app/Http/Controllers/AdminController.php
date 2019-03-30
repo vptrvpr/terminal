@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
 use Illuminate\Http\Request;
 use App\Product;
 
@@ -35,6 +36,18 @@ class AdminController extends Controller
      */
     public function adminSliders(){
         return view('admin.sliders');
+    }
+
+
+    public function adminRecommendeds(){
+        return view('admin.recommended');
+    }
+
+
+    public function getCategories(){
+        return [
+            'categories'=> Categorie::all()
+        ];
     }
 
 

@@ -10,7 +10,7 @@
                         <form class="form-inline col-md-12 wow fadeInDown animated">
                             <div class="form-group">
                                 <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
-                                <button class="suscribe-btn" ><i class="pe-7s-search"></i></button>
+                                <button class="suscribe-btn"><i class="pe-7s-search"></i></button>
                             </div>
                         </form><!-- end /. form -->
                     </div>
@@ -22,27 +22,63 @@
         <section class="featured-section" style="    background: whitesmoke;">
 
             <div class="container">
-                <transition name="showDiv2" >
-                <div class="infomation_about" v-if="showDiv2">
-                <div class="row">
-                    <div class="col-md-12" >
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>О НАС</h1>
+                <transition name="showDiv2">
+                    <div class="infomation_about" v-if="showDiv2">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="titie-section wow fadeInDown animated ">
+                                    <h1>О НАС</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center">Компания «Терминал»<br>
+
+                                    Предоставляет услуги в сфере обслуживание эквайрингового и
+                                    кассового оборудования и продажи периферийных частей к нему.</h1>
+
+                                <h2 class="text-center">Мы успешно развивающаяся компания на рынке предоставляемых
+                                    услуг, у нас
+                                    обслуживаются более 50 предприятий, ведущие свой бизнес на всей территории
+                                    ХМАО-Югры,
+                                    поэтому в качестве своих клиентов мы хотели бы видеть и вашу развивающуюся
+                                    компанию.</h2>
+                                <h2 class="text-center">На сегодняшний день 80% Ваших клиентов, покупателей пользуются
+                                    безналичным
+                                    расчетам, проводя свои платежи через различное кассовое оборудование, которое, к
+                                    сожалению,
+                                    иногда выходит из строя в самый не подходящий момент, из-за чего вы несёте
+                                    финансовые
+                                    потери. Обратившись в техническую поддержку банков, компаний, предоставивших Вам
+                                    оборудование в пользование, большинство клиентов сталкиваются с проблемой устранения
+                                    неполадок в кратчайшие сроки, что опять за собой влечет потери прибыли. </h2><br>
+                                <h1 class="text-center">Наши услуги:</h1>
+                                <ul>
+                                    <li>Доставка чековой ленты в любую точку г. Сургута и Сургутского
+                                        района;
+                                    </li>
+                                    &nbsp;&nbsp;<li class="">Доставка бесплатная;</li>
+                                    &nbsp;&nbsp;<li class="">У нас самые низкие цены и гибкая ценовая политика по
+                                    отношению к
+                                    оптовым покупателям.
+                                </li>
+                                    <br>
+                                    <li class="">Предоставление услуг в обслуживание программ 1С (продажи,
+                                        бухгалтерия, склад), Далион, Фронтол;
+                                    </li>
+                                </ul>
+                                <br>
+                                <h1>Продажа, аренда, а также аренда с последующим выкупом онлайн-касс;
+                                    Обслуживание касс ЭВОТОРЫ</h1>
+                                <ul>
+                                    <li>Регистрация кассы в ФНС РФ;</li>
+                                </ul>
+
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>Компания Vector обеспечивает комплексное снабжение промышленных и строительных объектов спецтехникой и энергетическим оборудованием, гарантируя своевременные поставки, сервисное обслуживание и пусконаладочные работы.</h1>
-                        <ul class="" >
-                            <li><h2>Поставка оборудования в любой регион России и стран СНГ</h2> </li>
-                            <li><h2>Пусконаладочные и сервисные работы  </h2></li>
-                        </ul>
-
-
-                    </div>
-                </div>
-                </div>
                 </transition>
             </div>
 
@@ -50,104 +86,11 @@
 
 
         <section class="best-seller-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>РЕКОМЕНДУЕМ</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div v-for="product in productsRec" class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
-                        <div class="product-item">
-                            <div class="img-product">
-                                <img :src="product.img" class="img-responsive" width="255" height="322" alt="">
-                            </div>
-                            <div class="product-hover">
-                                <div class="product-meta">
-                                    <a class="add_cart" @click="addCart(product.id)"><i class="pe-7s-cart"></i>Добавить в корзину</a>
-                                </div>
-                            </div>
-                            <div class="product-title">
-                                <a href="#">
-                                    <h3>{{product.name}}</h3>
-                                    <span>{{product.price}} ₽</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <recommended-component></recommended-component>
         </section>
 
         <section class="contact-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="titie-section wow fadeInDown animated ">
-                            <h1>СВЯЗАТЬСЯ</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 wow fadeInLeft animated">
-                        <div class="left-content">
-                            <h1><b>К</b>омпаниия <b>Т</b>ерминал</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
-                            <div class="contact-info">
-                                <p>Адрес: </p>
-                                <p>Телефон: 8 (800) 000-00-00</p>
-                                <p>Почта: info@terminal.com</p>
-                            </div>
-                            <div class="social-media">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 wow fadeInRight animated">
-                        <form action="" method="" class="contact-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Имя">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Почта">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Тема">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="textarea-form-footer">
-                                            <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder="Сообщение..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="submit" class="contact-submit" value="Отправить" />
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <footer-component></footer-component>
         </section>
 
 
@@ -157,7 +100,7 @@
 <script>
     export default {
         data: function () {
-            return{
+            return {
                 categories: {},
                 products: {},
                 showProductsUpdate: false,
@@ -174,14 +117,15 @@
             this.getCategories();
             this.getProducts();
             this.getCartInfo();
-            this.getProductsRec();setTimeout(() => {
+            this.getProductsRec();
+            setTimeout(() => {
                 this.showProductsUpdate = true;
                 this.showDiv2 = true
             }, 900);
 
 
         },
-        methods:{
+        methods: {
             getCategories: function () {
                 axios({
                     method: 'get',
@@ -200,7 +144,7 @@
                 };
                 axios({
                     method: 'get',
-                    url: '/products/'+$categoryId,
+                    url: '/products/' + $categoryId,
                 }).then((response) => {
                     this.products = response.data.products;
                     this.categories = response.data.categories;
@@ -231,7 +175,7 @@
                 }).then((response) => {
                     this.products = response.data;
                     var app = this;
-                    for(var i = 0;i<response.data.length;i++){
+                    for (var i = 0; i < response.data.length; i++) {
                         app.categories.categories[i].show = false;
 
                     }
@@ -244,7 +188,7 @@
                 this.addCartAnimation();
                 axios({
                     method: 'get',
-                    url: '/cart_add/'+id,
+                    url: '/cart_add/' + id,
                 }).then((response) => {
                     this.cart = response.data;
                     this.addCartAnimation(response.data.message);
@@ -261,7 +205,7 @@
                     this.showCartMessage = false;
                 }, 3000)
             },
-            getCartInfo: function(){
+            getCartInfo: function () {
                 axios({
                     method: 'get',
                     url: '/cart_info',

@@ -43,7 +43,8 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/admin/products/','AdminController@adminProducts');
 Route::get('/admin/partners/','AdminController@adminPartners');
 Route::get('/admin/slider/','AdminController@adminSliders');
-
+Route::get('/admin/recommended/','AdminController@adminRecommendeds');
+Route::get('/admin/get_categories/','AdminController@getCategories');
 /**
  * Cart
  */
@@ -81,6 +82,7 @@ Route::get('/kak-snyat-s-ucheta-online-kassu', 'PageController@kakSnyatSUchetaOn
  */
 Route::post('/helper/load_image', 'HelperController@loadImage');
 Route::post('/helper/load-image-universal', 'HelperController@loadImageUniversal');
+Route::get('/helper/get-url-site', 'HelperController@getUrlSite');
 
 
 /**
@@ -98,4 +100,18 @@ Route::post('/sliders/save', 'SliderController@save');
 Route::post('/sliders/delete', 'SliderController@delete');
 Route::get('/sliders/get', 'SliderController@get');
 
+
+/**
+ * Recommended
+ */
+Route::post('/recommended/save', 'RecommendedController@save');
+Route::post('/recommended/delete', 'RecommendedController@delete');
+Route::get('/recommended/get', 'RecommendedController@get');
+Route::get('/recommended/page/get', 'RecommendedController@getPage');
+
+
+/**
+ * Slack notifications
+ */
+Route::post('/slack/order_send', 'SlackController@sendOrder');
 
