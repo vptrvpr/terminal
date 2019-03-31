@@ -769,8 +769,8 @@ a.carousel-control.right > span {
 }
 
 .product-item img {
-    width: 100%;
-    height: auto;
+    max-height: 300px;
+    width: auto;
 }
 
 .product-hover {
@@ -1759,6 +1759,8 @@ footer.footer p a {
     height: 322px;
     background: white;
     padding-top: 15%;
+    display: flex;
+    justify-content: center;
 }
 
 .textarea-form-footer {
