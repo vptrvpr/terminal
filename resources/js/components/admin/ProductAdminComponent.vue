@@ -106,7 +106,15 @@
                                                         <label for="comment">Описание:</label>
                                                         <editor v-model="product.description"
                                                                 api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
-                                                                :init="{selector: 'textarea'}"></editor>
+                                                                plugins="advlist autolink link image lists charmap print preview"
+                                                                custom_colors="true"
+                                                                dialog_type="modal"
+                                                                selector="textarea"
+                                                                toolbar="forecolor | undo redo | styleselect | bold italic | link image"
+                                                                :init="{height: 600,color_map: [
+                                                    '2F2C65', 'Default',
+                                                    ]}"
+                                                        ></editor>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2"></div>
@@ -214,12 +222,17 @@
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <label for="comment">Описание:</label>
-                                                    <!--<textarea class="form-control" -->
-                                                    <!--rows="5" id="comment"></textarea>-->
                                                     <editor v-model="newProduct.description"
                                                             api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
-                                                            :init="{selector: 'textarea',
-                                                    toolbar: 'forecolor backcolor',custom_colors: true,plugins : 'advlist autolink link image lists charmap print preview'}"></editor>
+                                                            plugins="advlist autolink link image lists charmap print preview"
+                                                            custom_colors="true"
+                                                            dialog_type="modal"
+                                                            selector="textarea"
+                                                            toolbar="forecolor | undo redo | styleselect | bold italic | link image"
+                                                            :init="{height: 600,color_map: [
+                                                    '2F2C65', 'Default',
+                                                    ]}"
+                                                    ></editor>
                                                 </div>
 
                                             </div>
@@ -265,6 +278,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </table>
                 </div>
             </div>
@@ -306,6 +320,11 @@
         mounted() {
             this.getProducts();
             this.getCategories();
+            $( document ).on( 'focusin', function ( e ) {
+                if ( $( e.target ).closest( ".mce-window" ).length ) {
+                    e.stopImmediatePropagation();
+                }
+            } );
         },
         methods: {
             getCategories: function () {

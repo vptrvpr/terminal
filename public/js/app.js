@@ -5551,6 +5551,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // es modules
   // commonjs require
@@ -5578,6 +5592,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getProducts();
     this.getCategories();
+    $(document).on('focusin', function (e) {
+      if ($(e.target).closest(".mce-window").length) {
+        e.stopImmediatePropagation();
+      }
+    });
   },
   methods: {
     getCategories: function getCategories() {
@@ -50640,7 +50659,17 @@ var render = function() {
                                       attrs: {
                                         "api-key":
                                           "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
-                                        init: { selector: "textarea" }
+                                        plugins:
+                                          "advlist autolink link image lists charmap print preview",
+                                        custom_colors: "true",
+                                        dialog_type: "modal",
+                                        selector: "textarea",
+                                        toolbar:
+                                          "forecolor | undo redo | styleselect | bold italic | link image",
+                                        init: {
+                                          height: 600,
+                                          color_map: ["2F2C65", "Default"]
+                                        }
                                       },
                                       model: {
                                         value: product.description,
@@ -51043,12 +51072,16 @@ var render = function() {
                                 attrs: {
                                   "api-key":
                                     "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
+                                  plugins:
+                                    "advlist autolink link image lists charmap print preview",
+                                  custom_colors: "true",
+                                  dialog_type: "modal",
+                                  selector: "textarea",
+                                  toolbar:
+                                    "forecolor | undo redo | styleselect | bold italic | link image",
                                   init: {
-                                    selector: "textarea",
-                                    toolbar: "forecolor backcolor",
-                                    custom_colors: true,
-                                    plugins:
-                                      "advlist autolink link image lists charmap print preview"
+                                    height: 600,
+                                    color_map: ["2F2C65", "Default"]
                                   }
                                 },
                                 model: {
