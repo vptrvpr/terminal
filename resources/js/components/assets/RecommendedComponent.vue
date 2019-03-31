@@ -7,13 +7,15 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="container">
+        <div class="row featured isotope">
             <transition-group name="fade1" tag="div">
                 <div v-for="product in recommended" :key="product.id"
                      class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
                     <div class="product-item">
                         <div class="img-product">
-                            <img :src="urlSite+'/images/products/'+product.img" class="img-responsive" width="255" height="322" alt="">
+                            <img :src="urlSite+'/images/products/'+product.img" class="img-responsive" width="255"
+                                 height="322" alt="">
                         </div>
                         <div class="product-hover">
                             <div class="product-meta">
@@ -30,6 +32,7 @@
                 </div>
             </transition-group>
         </div>
+        </div>
     </div>
 </template>
 
@@ -44,7 +47,7 @@
         },
 
 
-        mounted(){
+        mounted() {
             this.getRecommended();
             this.getUrlSite();
         },
@@ -52,23 +55,23 @@
 
         methods: {
             getRecommended: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/recommended/page/get',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.recommended = response.data;
 
-                });
+                } );
             },
 
 
             getUrlSite: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/helper/get-url-site',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.urlSite = response.data;
-                });
+                } );
             },
         }
     }

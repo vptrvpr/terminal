@@ -571,7 +571,7 @@ span.shoping-cart {
 
 .carousel-inner {
     position: relative;
-    height: 450px;
+    max-height: 450px;
 }
 
 .carousel-inner .item {
