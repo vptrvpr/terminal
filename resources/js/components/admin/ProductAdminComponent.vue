@@ -106,7 +106,7 @@
                                                         <label for="comment">Описание:</label>
                                                         <editor v-model="product.description"
                                                                 api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
-                                                                :init="{plugins:'lists,textcolor,colorpicker'}"></editor>
+                                                                :init="{selector: 'textarea'}"></editor>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2"></div>
@@ -218,7 +218,8 @@
                                                     <!--rows="5" id="comment"></textarea>-->
                                                     <editor v-model="newProduct.description"
                                                             api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
-                                                            :init="{plugins:'lists,textcolor,colorpicker'}"></editor>
+                                                            :init="{selector: 'textarea',
+                                                    toolbar: 'forecolor backcolor',custom_colors: true,plugins : 'advlist autolink link image lists charmap print preview'}"></editor>
                                                 </div>
 
                                             </div>
@@ -308,132 +309,132 @@
         },
         methods: {
             getCategories: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_categories',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.categories = response.data;
-                });
+                } );
             },
 
-            deleteCategory: function (categoryId) {
-                axios({
+            deleteCategory: function ( categoryId ) {
+                axios( {
                     method: 'get',
                     url: '/delete_categories/' + categoryId,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.categories = response.data;
-                });
+                } );
             },
 
 
             addNewSlotCategory: function () {
-                this.categories.categories.push({id: '', name: '', img: '', isNew: 1});
+                this.categories.categories.push( { id: '', name: '', img: '', isNew: 1 } );
             },
 
 
             saveNewCategories: function () {
-                axios({
+                axios( {
                     method: 'post',
                     url: '/save_categories',
-                    data: {categories: this.categories.categories}
-                }).then((response) => {
+                    data: { categories: this.categories.categories }
+                } ).then( ( response ) => {
                     this.categories = response.data;
-                });
+                } );
             },
 
 
             getProducts: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_products',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.products = response.data;
 
-                });
+                } );
             },
 
 
-            deleteProduct: function (id) {
-                axios({
+            deleteProduct: function ( id ) {
+                axios( {
                     method: 'get',
                     url: '/delete_product/' + id,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.getProducts();
-                });
+                } );
             },
 
 
-            addCart: function (id) {
-                axios({
+            addCart: function ( id ) {
+                axios( {
                     method: 'get',
                     url: '/cart_add/' + id,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.cart = response.data;
-                });
+                } );
 
             },
 
 
-            addNewSpecification: function (index, isNew) {
-                if (isNew !== undefined) {
-                    this.newProduct.specifications_get.push({name: '', parameter: '', isNew: 1});
+            addNewSpecification: function ( index, isNew ) {
+                if ( isNew !== undefined ) {
+                    this.newProduct.specifications_get.push( { name: '', parameter: '', isNew: 1 } );
                 } else {
-                    this.products[index].specifications_get.push({name: '', parameter: '', isNew: 1});
+                    this.products[ index ].specifications_get.push( { name: '', parameter: '', isNew: 1 } );
                 }
 
             },
 
 
-            saveChangesProduct: function (index) {
-                axios({
+            saveChangesProduct: function ( index ) {
+                axios( {
                     method: 'post',
                     url: '/product/changes_save',
-                    data: {product: this.products[index]}
-                }).then((response) => {
+                    data: { product: this.products[ index ] }
+                } ).then( ( response ) => {
                     this.products = response.data;
                     this.saveChangesSuccess = true;
-                });
+                } );
                 var self = this;
-                setTimeout(function () {
+                setTimeout( function () {
                     self.saveChangesSuccess = false;
-                }, 1500);
+                }, 1500 );
             },
 
 
-            productEditImageLoad: function (id) {
+            productEditImageLoad: function ( id ) {
                 let app = this;
                 let data = new FormData();
-                data.append('file', document.getElementById('file').files[0]);
-                data.append('id', id);
-                axios.post('/product/update_img', data).then(function (response) {
+                data.append( 'file', document.getElementById( 'file' ).files[ 0 ] );
+                data.append( 'id', id );
+                axios.post( '/product/update_img', data ).then( function ( response ) {
 
-                });
+                } );
             },
 
 
             loadImage: function () {
                 let app = this;
                 let data = new FormData();
-                data.append('file', document.getElementById('file_new_product').files[0]);
-                axios.post('/helper/load_image', data).then(function (response) {
+                data.append( 'file', document.getElementById( 'file_new_product' ).files[ 0 ] );
+                axios.post( '/helper/load_image', data ).then( function ( response ) {
                     app.newProduct.img = response.data;
-                });
+                } );
             },
 
 
             saveNewProduct: function () {
-                axios({
+                axios( {
                     method: 'post',
                     url: '/product/save_new_product',
-                    data: {product: this.newProduct}
-                }).then((response) => {
+                    data: { product: this.newProduct }
+                } ).then( ( response ) => {
                     this.saveChangesSuccessNewProduct = true;
                     this.getProducts();
-                });
+                } );
                 var self = this;
-                setTimeout(function () {
+                setTimeout( function () {
                     self.saveChangesSuccessNewProduct = false;
-                }, 1500);
+                }, 1500 );
             }
         }
 

@@ -5550,6 +5550,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // es modules
   // commonjs require
@@ -50639,9 +50640,7 @@ var render = function() {
                                       attrs: {
                                         "api-key":
                                           "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
-                                        init: {
-                                          plugins: "lists,textcolor,colorpicker"
-                                        }
+                                        init: { selector: "textarea" }
                                       },
                                       model: {
                                         value: product.description,
@@ -51045,7 +51044,11 @@ var render = function() {
                                   "api-key":
                                     "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
                                   init: {
-                                    plugins: "lists,textcolor,colorpicker"
+                                    selector: "textarea",
+                                    toolbar: "forecolor backcolor",
+                                    custom_colors: true,
+                                    plugins:
+                                      "advlist autolink link image lists charmap print preview"
                                   }
                                 },
                                 model: {
