@@ -2517,3 +2517,7 @@ div.content {
     font-weight: 600;
     color: #2F2C65;
 }
+
+.scroll-bottom-a:hover{
+    cursor: pointer;
+}

@@ -51671,9 +51671,14 @@ var render = function() {
                 _vm._m(6),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { on: { click: _vm.scrollToBottom } }, [
-                    _vm._v("Тех. поддержка")
-                  ])
+                  _c(
+                    "a",
+                    {
+                      staticClass: "scroll-bottom-a",
+                      on: { click: _vm.scrollToBottom }
+                    },
+                    [_vm._v("Тех. поддержка")]
+                  )
                 ])
               ])
             ]

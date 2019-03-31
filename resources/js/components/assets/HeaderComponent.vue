@@ -32,7 +32,7 @@
                         <li><a href="/contacts">Контакты</a></li>
                         <li><a href="/fz-54">ФЗ-54</a></li>
                         <li><a href="/tax-deduction">Налоговый вычет</a></li>
-                        <li><a @click="scrollToBottom">Тех. поддержка</a></li>
+                        <li><a @click="scrollToBottom" class="scroll-bottom-a">Тех. поддержка</a></li>
                         
 
                     </ul>
