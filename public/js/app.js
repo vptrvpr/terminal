@@ -3100,6 +3100,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5908,8 +5913,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "HeaderComponent"
+  methods: {
+    scrollToBottom: function scrollToBottom() {
+      console.log(1);
+      $("html, body").animate({
+        scrollTop: $(document).height()
+      }, "slow");
+      return false;
+    }
+  }
 });
 
 /***/ }),
@@ -10275,6 +10291,315 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      categories: {},
+      products: {},
+      showProductsUpdate: false,
+      styleSpanCountProducts: {},
+      count_all: true,
+      cart: {},
+      cartMessage: {},
+      showCartMessage: false,
+      productsRec: {},
+      showDiv2: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.getCategories();
+    this.getProducts();
+    this.getCartInfo();
+    this.getProductsRec();
+    setTimeout(function () {
+      _this.showProductsUpdate = true;
+      _this.showDiv2 = true;
+    }, 900);
+  },
+  methods: {
+    getCategories: function getCategories() {
+      var _this2 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_categories'
+      }).then(function (response) {
+        _this2.categories = response.data;
+      });
+    },
+    showCategory: function showCategory($categoryId) {
+      var _this3 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = false;
+      this.styleSpanCountProducts = {
+        top: '-23px',
+        right: '-6px'
+      };
+      axios({
+        method: 'get',
+        url: '/products/' + $categoryId
+      }).then(function (response) {
+        _this3.products = response.data.products;
+        _this3.categories = response.data.categories;
+      });
+      setTimeout(function () {
+        _this3.showProductsUpdate = true;
+      }, 500);
+    },
+    getProducts: function getProducts() {
+      var _this4 = this;
+
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this4.products = response.data;
+      });
+    },
+    showAllCategories: function showAllCategories() {
+      var _this5 = this;
+
+      this.showProductsUpdate = false;
+      this.count_all = true;
+      axios({
+        method: 'get',
+        url: '/get_products'
+      }).then(function (response) {
+        _this5.products = response.data;
+        var app = _this5;
+
+        for (var i = 0; i < response.data.length; i++) {
+          app.categories.categories[i].show = false;
+        }
+      });
+      setTimeout(function () {
+        _this5.showProductsUpdate = true;
+      }, 500);
+    },
+    addCart: function addCart(id) {
+      var _this6 = this;
+
+      this.addCartAnimation();
+      axios({
+        method: 'get',
+        url: '/cart_add/' + id
+      }).then(function (response) {
+        _this6.cart = response.data;
+
+        _this6.addCartAnimation(response.data.message);
+      });
+    },
+    addCartAnimation: function addCartAnimation(message) {
+      var _this7 = this;
+
+      this.showCartMessage = false;
+      this.cartMessage = message;
+      setTimeout(function () {
+        _this7.showCartMessage = true;
+      }, 300);
+      setTimeout(function () {
+        _this7.showCartMessage = false;
+      }, 3000);
+    },
+    getCartInfo: function getCartInfo() {
+      var _this8 = this;
+
+      axios({
+        method: 'get',
+        url: '/cart_info'
+      }).then(function (response) {
+        _this8.cart = response.data;
+      });
+    },
+    getProductsRec: function getProductsRec() {
+      var _this9 = this;
+
+      axios({
+        method: 'get',
+        url: '/get_recomended'
+      }).then(function (response) {
+        _this9.productsRec = response.data;
+        console.log;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/taxDeductionComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/taxDeductionComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -46531,6 +46856,37 @@ var render = function() {
                             )
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "contact-product-button",
+                          staticStyle: { "margin-top": "20px" },
+                          attrs: {
+                            href: "dowloads-for-users/enterprise_map.doc",
+                            download: ""
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Скачать карточку\n                            предприятия"
+                          )
+                        ]
+                      ),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "contact-product-button",
+                          staticStyle: { "margin-top": "20px" },
+                          attrs: {
+                            href: "dowloads-for-users/vizitka.png",
+                            target: "_blank"
+                          }
+                        },
+                        [_vm._v("Визитка")]
                       )
                     ])
                   : _vm._e()
@@ -51235,7 +51591,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Компания Терминал предоставляет услуги для бизнеса Сургутского района и Ханты-Мансийского\n                    Автономного округа"
+            "Компания «ТЕРМИНАЛ»Предоставляет услуги в сфере полной автоматизации торговли, продажи и\n                    обслуживания торгового оборудования «под ключ» в г. Сургут и в Сургутском районе"
           )
         ]),
         _vm._v(" "),
@@ -51288,89 +51644,129 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("header", { staticClass: "header-section" }, [
+      _c("nav", { staticClass: "navbar navbar-default" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse",
+              attrs: { id: "bs-example-navbar-collapse-1" }
+            },
+            [
+              _c("ul", { staticClass: "nav navbar-nav" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _vm._m(6),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { on: { click: _vm.scrollToBottom } }, [
+                    _vm._v("Тех. поддержка")
+                  ])
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("div", { attrs: { id: "preloader" } }, [
-        _c("div", { staticClass: "preloader-area" }, [
-          _c("div", { staticClass: "preloader-box" }, [
-            _c("div", { staticClass: "preloader" })
-          ])
+    return _c("div", { attrs: { id: "preloader" } }, [
+      _c("div", { staticClass: "preloader-area" }, [
+        _c("div", { staticClass: "preloader-box" }, [
+          _c("div", { staticClass: "preloader" })
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "navbar-toggle collapsed",
+          attrs: {
+            type: "button",
+            "data-toggle": "collapse",
+            "data-target": "#bs-example-navbar-collapse-1",
+            "aria-expanded": "false"
+          }
+        },
+        [
+          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon-bar" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon-bar" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon-bar" })
+        ]
+      ),
+      _vm._v(" "),
+      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+        _c("b", [_vm._v("Компания")])
       ]),
       _vm._v(" "),
-      _c("header", { staticClass: "header-section" }, [
-        _c("nav", { staticClass: "navbar navbar-default" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "navbar-header" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "navbar-toggle collapsed",
-                  attrs: {
-                    type: "button",
-                    "data-toggle": "collapse",
-                    "data-target": "#bs-example-navbar-collapse-1",
-                    "aria-expanded": "false"
-                  }
-                },
-                [
-                  _c("span", { staticClass: "sr-only" }, [
-                    _vm._v("Toggle navigation")
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "icon-bar" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "icon-bar" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "icon-bar" })
-                ]
-              ),
-              _vm._v(" "),
-              _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-                _c("b", [_vm._v("Компания")])
-              ]),
-              _vm._v(" "),
-              _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-                _c("b", [_vm._v("Терминал")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "bs-example-navbar-collapse-1" }
-              },
-              [
-                _c("ul", { staticClass: "nav navbar-nav" }, [
-                  _c("li", { staticClass: "active" }, [
-                    _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "/contacts" } }, [
-                      _vm._v("Контакты")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
+      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+        _c("b", [_vm._v("Терминал")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "active" }, [
+      _c("a", { attrs: { href: "/" } }, [_vm._v("Главная")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("О нас")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/contacts" } }, [_vm._v("Контакты")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "/fz-54" } }, [_vm._v("ФЗ-54")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/tax-deduction" } }, [
+        _vm._v("Налоговый вычет")
       ])
     ])
   }
@@ -57010,6 +57406,365 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/taxDeductionComponent.vue?vue&type=template&id=41cdebc6&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/taxDeductionComponent.vue?vue&type=template&id=41cdebc6& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header-component"),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "featured-section",
+          staticStyle: { background: "whitesmoke" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _c("transition", { attrs: { name: "showDiv2" } }, [
+                _vm.showDiv2
+                  ? _c("div", { staticClass: "infomation_about" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "titie-section wow fadeInDown animated "
+                            },
+                            [
+                              _c("h1", [
+                                _vm._v("Налоговый вычет за онлайн-кассу"),
+                                _c("br"),
+                                _vm._v(
+                                  "\n                                    11 Января 2019"
+                                )
+                              ])
+                            ]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-md-12 page-info",
+                            staticStyle: { "margin-top": "50px" }
+                          },
+                          [
+                            _c("p", [
+                              _vm._v(
+                                "С 1 января 2018 года некоторые предприниматели имеют право на "
+                              ),
+                              _c("strong", [
+                                _vm._v(
+                                  "налоговый вычет\n                                за\n                                онлайн-кассу"
+                                )
+                              ]),
+                              _vm._v(
+                                ": вступил в силу закон от 27.11.2017 № 349-ФЗ «О внесении\n                                изменений в\n                                часть вторую Налогового кодекса Российской Федерации»."
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Вычесть расходы на онлайн-ККТ из суммы налога разрешено индивидуальным\n                                предпринимателям, которые применяют патентную систему налогообложения или платят\n                                единый налог на вмененный доход."
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Вернуть таким образом получится до 18 000 рублей на каждую кассу. В эту сумму может\n                                входить не только стоимость самой ККТ: можно учесть расходы на покупку фискального\n                                накопителя, необходимых программ, услуг по настройке и прочие затраты на приведение\n                                техники в рабочий режим."
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h1", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "Налоговый вычет на покупку ККТ: обязательные требования"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Льгота распространяется не на все кассы: есть условия, которые обязательно нужно\n                                соблюдать"
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("ul", [
+                              _c("li", [
+                                _vm._v(
+                                  "Во-первых, налоговый вычет предоставляется только на ККТ, включенные в\n                                    официальный реестр ФНС.\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Во-вторых, кассу обязательно нужно поставить на учет, иначе вернуть потраченные\n                                    на нее деньги не получится."
+                                ),
+                                _c("br"),
+                                _vm._v(
+                                  "\n                                    Возместят ли вам расходы — зависит от вашей деятельности и даты постановки ККТ\n                                    на учет:\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "\n                                    ИП на ПСН или ЕНВД в сфере розничной торговли или общественного питания,\n                                    имеющие сотрудников на трудовых договорах, могут получить вычет, если\n                                    зарегистрировали кассу с 1 февраля 2017 до 1 июля 2018 года. Таким образом, они\n                                    могут получить налоговый вычет при покупке онлайн-ККТ только в 2018.\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "\n                                    Остальные ИП на ЕНВД и ПСН могут получить вычет, если зарегистрировали кассу с\n                                    1 февраля 2017 до 1 июля 2019 года."
+                                ),
+                                _c("br"),
+                                _vm._v(
+                                  "\n                                    Таким образом, в 2019 вы сможете претендовать на возмещение расходов, только\n                                    если у вас нет наемных сотрудников. Если по трудовому договору в вашем кафе\n                                    занят хотя бы один человек, вернуть расходы на кассу уже не получится\n                                "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h2", { staticClass: "text-center" }, [
+                              _vm._v("Вычет по ЕНВД при покупке онлайн-кассы")
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "При покупке онлайн-кассы на ЕНВД налоговый вычет нельзя получить за период,\n                                который предшествовал регистрации ККТ. Сумма налога уменьшается при исчислении\n                                за налоговые периоды 2018 и 2019 годов, но не раньше периода, в котором был\n                                зарегистрирован аппарат. Если сумма ЕНВД меньше вычета за онлайн-кассу, то можно\n                                перенести остаток на следующие периоды до конца 2019 года."
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h2", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                Налоговый вычет на ККТ для ПСН\n                            "
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Для ИП на ПСН сумма налога уменьшается за периоды, которые начинаются в 2018 году\n                                и завершаются после регистрации ККТ. Если затраты превышают лимит, остаток\n                                учитывается при начислении налогов за следующие периоды. А если сумма налога\n                                оказалась меньше затрат, можно уменьшить патент с других видов деятельности,\n                                если для них используется касса."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h1", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "Как получить налоговый вычет при покупке онлайн-кассы"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Чтобы оформить вычет, индивидуальные предприниматели на ЕНВД должны подать\n                                налоговую декларацию и отразить в ней расходы на ККТ."
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Предпринимателям на ПСН нужно предоставить в налоговую уведомление об уменьшении\n                                суммы платежа по патенту. Пока официальный шаблон этого документа не утвержден,\n                                и заполнять его можно в свободной форме."
+                              )
+                            ]),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v("В уведомлении обязательно указать:")
+                            ]),
+                            _vm._v(" "),
+                            _c("ol", [
+                              _c("li", [
+                                _vm._v("ФИО и ИНН налогоплательщика.")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Номер и дату патента, в отношении которого производится уменьшение суммы\n                                    налога, сроки уплаты уменьшаемых платежей, суммы уменьшения.\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "Модель и заводской номер купленной кассы."
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [_vm._v("Сумму расходов на покупку.")])
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Если вы уже заплатили сумму, из которой хотите получить вычет, то необходимо\n                                подать в налоговую заявление о возврате излишне уплаченного налога."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "К декларации или уведомлению необходимо приложить документ, подтверждающий затраты на\n                                покупку ККТ, фискального накопителя, программного обеспечения, выполнение работ по\n                                их настройке и оказание соответствующих услуг, в том числе — на модернизацию старой\n                                кассы."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Документы подаются в тот налоговый орган, где предприниматель состоит на учете как\n                                налогоплательщик и куда он уплатил или собирается уплатить налог, из которого хочет\n                                получить вычет.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h1", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "Налоговый вычет на ККТ: часто задаваемые вопросы"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h2", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "Возможен ли налоговый вычет за онлайн-кассу для ИП на УСН?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Только в случае, когда ИП совмещает УСН и ЕНВД / ПСН. Тогда можно зачесть расходы на\n                                те кассы, которые используются на вмененке или патенте. Компаниям и предпринимателям\n                                на упрощенке кассовый вычет не предоставляют."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h2", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "Можно ли получить вычет за онлайн-кассу, купленную в 2017\n                                году?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Да, но только если вы поставили ее на учет в ФНС после 1 февраля. Если вы\n                                регистрировали онлайн-кассу в январе 2017 года, вернуть расходы на ее покупку\n                                нельзя."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h2", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "Как получить налоговый вычет за онлайн-кассы в полном\n                                размере?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Полный размер вычета, установленный законом, — 18 000 рублей на каждую кассу. Вернуть\n                                деньги сверх этой суммы не получится, даже если ККТ обошлась дороже."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("h2", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "Как получить налоговый вычет за онлайн-кассу ИП на ПСН?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Если вы применяете патентную систему налогообложения (патент), вычет за онлайн-кассу\n                                оформляется с помощью уведомления об уменьшении суммы налога."
+                              ),
+                              _c("br"),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Если налог уже заплачен — подайте в ФНС заявление на возврат излишне уплаченной\n                                суммы."
+                              ),
+                              _c("br"),
+                              _c("br"),
+                              _vm._v(
+                                "\n                                Документы предоставьте в налоговую инспекцию, где состоите на учете и куда будете\n                                платить налог. Можно отправить их в ФНС и по интернету, заверив усиленной\n                                квалифицированной электронной подписью.\n                            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("br")
+                          ]
+                        )
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "best-seller-section" },
+        [_c("recommended-component")],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "contact-section" },
+        [_c("footer-component")],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -68329,6 +69084,11 @@ Vue.component('nalogovyj-vychet-za-onlajn-kassu-component', __webpack_require__(
 Vue.component('komu-nuzhno-stavit-kassovyj-apparat-component', __webpack_require__(/*! ./components/fz54/komuNuzhnoStavitKassovyjApparatComponent */ "./resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue").default);
 Vue.component('kak-snyat-s-ucheta-online-kassu-component', __webpack_require__(/*! ./components/fz54/kakSnyatSUchetaOnlineKassuComponent */ "./resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue").default);
 /**
+ * Other pages
+ */
+
+Vue.component('tax-deduction-component', __webpack_require__(/*! ./components/pages/taxDeductionComponent */ "./resources/js/components/pages/taxDeductionComponent.vue").default);
+/**
  * Assets component
  */
 
@@ -70264,6 +71024,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_onlaynKassyDlyaIpNaEnvdIPsnOtsrochkaDo2021GodaComponent_vue_vue_type_template_id_79353454___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/taxDeductionComponent.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/pages/taxDeductionComponent.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _taxDeductionComponent_vue_vue_type_template_id_41cdebc6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taxDeductionComponent.vue?vue&type=template&id=41cdebc6& */ "./resources/js/components/pages/taxDeductionComponent.vue?vue&type=template&id=41cdebc6&");
+/* harmony import */ var _taxDeductionComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taxDeductionComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/pages/taxDeductionComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _taxDeductionComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _taxDeductionComponent_vue_vue_type_template_id_41cdebc6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _taxDeductionComponent_vue_vue_type_template_id_41cdebc6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/pages/taxDeductionComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/taxDeductionComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/pages/taxDeductionComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_taxDeductionComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./taxDeductionComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/taxDeductionComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_taxDeductionComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/taxDeductionComponent.vue?vue&type=template&id=41cdebc6&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/pages/taxDeductionComponent.vue?vue&type=template&id=41cdebc6& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_taxDeductionComponent_vue_vue_type_template_id_41cdebc6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./taxDeductionComponent.vue?vue&type=template&id=41cdebc6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/taxDeductionComponent.vue?vue&type=template&id=41cdebc6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_taxDeductionComponent_vue_vue_type_template_id_41cdebc6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_taxDeductionComponent_vue_vue_type_template_id_41cdebc6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

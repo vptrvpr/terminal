@@ -78,6 +78,11 @@ Route::get('/kak-snyat-s-ucheta-online-kassu', 'PageController@kakSnyatSUchetaOn
 
 
 /**
+ * other
+ */
+Route::get('/tax-deduction', 'PageController@taxDeduction');
+
+/**
  * Helper
  */
 Route::post('/helper/load_image', 'HelperController@loadImage');

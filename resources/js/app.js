@@ -57,6 +57,12 @@ Vue.component('komu-nuzhno-stavit-kassovyj-apparat-component', require('./compon
 Vue.component('kak-snyat-s-ucheta-online-kassu-component', require('./components/fz54/kakSnyatSUchetaOnlineKassuComponent').default);
 
 /**
+ * Other pages
+ */
+Vue.component('tax-deduction-component', require('./components/pages/taxDeductionComponent').default);
+
+
+/**
  * Assets component
  */
 Vue.component('header-component', require('./components/assets/HeaderComponent').default);

@@ -42,6 +42,11 @@
                                 <h2>E-mail: <a style="color: #2F2C65"
                                                href="mailto:info@nwc-em.ru">Saha2005@mail.ru</a></h2>
                             </div>
+                            <a class="contact-product-button" style="margin-top: 20px"
+                               href="dowloads-for-users/enterprise_map.doc" download>Скачать карточку
+                                предприятия</a><br>
+                            <a class="contact-product-button" style="margin-top: 20px"
+                               href="dowloads-for-users/vizitka.png" target="_blank">Визитка</a>
 
                         </div>
                     </transition>
@@ -121,110 +126,110 @@
             this.getProducts();
             this.getCartInfo();
             this.getProductsRec();
-            setTimeout(() => {
+            setTimeout( () => {
                 this.showProductsUpdate = true;
                 this.showDiv1 = true;
                 this.showDiv2 = true;
-            }, 900);
+            }, 900 );
 
 
         },
         methods: {
             getCategories: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_categories',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.categories = response.data;
 
-                });
+                } );
             },
-            showCategory: function ($categoryId) {
+            showCategory: function ( $categoryId ) {
                 this.showProductsUpdate = false;
                 this.count_all = false;
                 this.styleSpanCountProducts = {
                     top: '-23px',
                     right: '-6px'
                 };
-                axios({
+                axios( {
                     method: 'get',
                     url: '/products/' + $categoryId,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.products = response.data.products;
                     this.categories = response.data.categories;
 
-                });
-                setTimeout(() => {
+                } );
+                setTimeout( () => {
                     this.showProductsUpdate = true;
-                }, 500)
+                }, 500 )
 
             },
             getProducts: function () {
                 this.count_all = true;
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_products',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.products = response.data;
 
-                });
+                } );
             },
 
             showAllCategories: function () {
                 this.showProductsUpdate = false;
                 this.count_all = true;
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_products',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.products = response.data;
                     var app = this;
-                    for (var i = 0; i < response.data.length; i++) {
-                        app.categories.categories[i].show = false;
+                    for ( var i = 0; i < response.data.length; i++ ) {
+                        app.categories.categories[ i ].show = false;
 
                     }
-                });
-                setTimeout(() => {
+                } );
+                setTimeout( () => {
                     this.showProductsUpdate = true;
-                }, 500)
+                }, 500 )
             },
-            addCart: function (id) {
+            addCart: function ( id ) {
                 this.addCartAnimation();
-                axios({
+                axios( {
                     method: 'get',
                     url: '/cart_add/' + id,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.cart = response.data;
-                    this.addCartAnimation(response.data.message);
-                });
+                    this.addCartAnimation( response.data.message );
+                } );
 
             },
-            addCartAnimation: function (message) {
+            addCartAnimation: function ( message ) {
                 this.showCartMessage = false;
                 this.cartMessage = message;
-                setTimeout(() => {
+                setTimeout( () => {
                     this.showCartMessage = true;
-                }, 300);
-                setTimeout(() => {
+                }, 300 );
+                setTimeout( () => {
                     this.showCartMessage = false;
-                }, 3000)
+                }, 3000 )
             },
             getCartInfo: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/cart_info',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.cart = response.data;
-                });
+                } );
             },
             getProductsRec: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_recomended',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.productsRec = response.data;
                     console.log
-                });
+                } );
             }
 
         }

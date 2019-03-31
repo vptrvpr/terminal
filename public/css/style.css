@@ -726,7 +726,7 @@ a.carousel-control.right > span {
 }
 
 .service-item {
-    margin: 40px 0 40px ;
+    margin: 40px 0 40px;
 }
 
 .service-item i {
@@ -1303,7 +1303,7 @@ a.carousel-control.right > span {
     background: #2D2C4C no-repeat;
     /*  background-size: 100%;   */
     background-position: center center;
-    padding: 100px 0 80px;
+    padding: 35px 0 80px;
     display: block;
     position: relative;
 }
@@ -1358,8 +1358,8 @@ a.carousel-control.right > span {
 
 .contact-section .left-content p {
     color: #fff;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 24px;
     font-family: 'Roboto';
 }
@@ -2081,7 +2081,7 @@ footer.footer p a {
     background-color: #e9f0fd;
     font-weight: 600;
     font-size: 16px;
-    box-shadow: 3px 5px 9px 0px rgba(0,0,0,0.5);
+    box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.5);
     border: 3px solid #d3dff8;
     border-radius: 0 0 0 0;
 }
@@ -2490,4 +2490,30 @@ div.content {
 .notify-success-text-alert {
     font-weight: 600;
     color: #2D2C4C;
+}
+
+.page-info p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.page-info li {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.page-info {
+    color: #2F2C65;
+}
+
+.page-info h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2F2C65;
+}
+
+.page-info h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2F2C65;
 }
