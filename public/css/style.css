@@ -717,7 +717,7 @@ a.carousel-control.right > span {
 .service-section {
     display: block;
     text-align: center;
-    padding: 65px 0 80px;
+    padding: 20px 0 20px;
 }
 
 .service-section-1 {
@@ -726,6 +726,7 @@ a.carousel-control.right > span {
 }
 
 .service-item {
+    margin: 40px 0 40px ;
 }
 
 .service-item i {
