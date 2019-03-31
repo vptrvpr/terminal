@@ -32,7 +32,7 @@
                     <transition name="showDiv1">
                         <div class="col-md-12" v-if="showDiv1">
                             <div class="company_address" style="font-size: 15px">
-                                <h1>Информация о компании :</h1>
+                                <h1>Информация о компании:</h1>
                                 <h2 class="mt-1">628414, г. Сургут, ул.
                                     Крылова, 38, кв.97 </h2>
 
