@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81e05b49-fb4c-4024-a26a-1a2ff54e93e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SlackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SlackController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Fz54Component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Fz54Component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ShowProductComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ShowProductComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/ProductAdminComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/ProductAdminComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/assets/RecommendedComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/assets/RecommendedComponent.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -455,7 +448,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184477000" />
+    <option name="totallyTimeSpent" value="184656000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
