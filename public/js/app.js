@@ -50639,7 +50639,9 @@ var render = function() {
                                       attrs: {
                                         "api-key":
                                           "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
-                                        init: { plugins: "lists,text_color" }
+                                        init: {
+                                          plugins: "lists,textcolor,colorpicker"
+                                        }
                                       },
                                       model: {
                                         value: product.description,
@@ -51042,7 +51044,9 @@ var render = function() {
                                 attrs: {
                                   "api-key":
                                     "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
-                                  init: { plugins: "lists,text_color" }
+                                  init: {
+                                    plugins: "lists,textcolor,colorpicker"
+                                  }
                                 },
                                 model: {
                                   value: _vm.newProduct.description,

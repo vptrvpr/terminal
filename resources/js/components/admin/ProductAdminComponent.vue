@@ -106,7 +106,7 @@
                                                         <label for="comment">Описание:</label>
                                                         <editor v-model="product.description"
                                                                 api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
-                                                                :init="{plugins:'lists,text_color'}"></editor>
+                                                                :init="{plugins:'lists,textcolor,colorpicker'}"></editor>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2"></div>
@@ -218,7 +218,7 @@
                                                     <!--rows="5" id="comment"></textarea>-->
                                                     <editor v-model="newProduct.description"
                                                             api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
-                                                            :init="{plugins:'lists,text_color'}"></editor>
+                                                            :init="{plugins:'lists,textcolor,colorpicker'}"></editor>
                                                 </div>
 
                                             </div>
