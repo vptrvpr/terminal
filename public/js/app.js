@@ -3100,8 +3100,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -46525,13 +46523,6 @@ var render = function() {
                       _c("h2", [
                         _c("b", [_vm._v("Директор:")]),
                         _vm._v(" Коломиец Александр Васильевич")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("Юридический адрес:")]),
-                        _vm._v(
-                          " 198095, г. Санкт-Петербург, Михайловский переулок, Дом 4А,\n                            Литер Б, помещение 5"
-                        )
                       ]),
                       _vm._v(" "),
                       _c("h2", [

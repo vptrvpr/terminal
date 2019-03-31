@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81e05b49-fb4c-4024-a26a-1a2ff54e93e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ContactsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ContactsComponent.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,11 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
               <caret line="2382" column="17" selection-start-line="2382" selection-start-column="17" selection-end-line="2382" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/ContactsComponent.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="65" column="83" selection-start-line="65" selection-start-column="83" selection-end-line="65" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -118,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pre</find>
       <find>productEdit</find>
       <find>измене</find>
       <find>saveCate</find>
@@ -148,6 +156,7 @@
       <find>showCateg</find>
       <find>alert-w</find>
       <find>.show-product-price</find>
+      <find>show-product-image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,7 +179,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/recommended.blade.php" />
         <option value="$PROJECT_DIR$/app/Recommended.php" />
         <option value="$PROJECT_DIR$/resources/js/components/AboutComponent.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/ContactsComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/fz54/kakSnyatSUchetaOnlineKassuComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/fz54/Kas2gComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/fz54/komuNuzhnoStavitKassovyjApparatComponent.vue" />
@@ -207,6 +215,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/SlackController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/ShowProductComponent.vue" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/resources/js/components/ContactsComponent.vue" />
       </list>
     </option>
   </component>
@@ -448,7 +457,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184656000" />
+    <option name="totallyTimeSpent" value="184889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -598,13 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="92" column="49" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/ContactsComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -847,6 +849,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="2382" column="17" selection-start-line="2382" selection-start-column="17" selection-end-line="2382" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/ContactsComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="65" column="83" selection-start-line="65" selection-start-column="83" selection-end-line="65" selection-end-column="83" />
         </state>
       </provider>
     </entry>
