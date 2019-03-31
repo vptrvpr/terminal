@@ -114,4 +114,5 @@ Route::get('/recommended/page/get', 'RecommendedController@getPage');
  * Slack notifications
  */
 Route::post('/slack/order_send', 'SlackController@sendOrder');
+Route::post('/slack/contact_send', 'SlackController@sendContact');
 

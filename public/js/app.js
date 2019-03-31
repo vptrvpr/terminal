@@ -5796,14 +5796,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      recommended: []
+      recommended: [],
+      contacts: {
+        name: '',
+        email: '',
+        number: '',
+        message: ''
+      },
+      successSend: false,
+      errorSend: false
     };
   },
   mounted: function mounted() {},
-  methods: {}
+  methods: {
+    sendSlackNotification: function sendSlackNotification() {
+      var _this = this;
+
+      if (this.contacts.name === '' || this.contacts.email === '' || this.contacts.number === '' || this.contacts.message === '') {
+        this.errorSend = true;
+      } else {
+        axios({
+          method: 'post',
+          url: '/slack/contact_send',
+          data: {
+            contact: this.contacts
+          }
+        }).then(function (response) {
+          _this.successSend = true;
+          _this.errorSend = false;
+        });
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -50930,134 +50979,286 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
+        _c(
+          "form",
+          { staticClass: "contact-form" },
+          [
+            _c(
+              "transition",
+              { attrs: { name: "out-left-notif", mode: "out-in" } },
+              [
+                !_vm.successSend
+                  ? _c("div", { key: "adasd" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "input-group" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.contacts.name,
+                                  expression: "contacts.name"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                id: "name",
+                                placeholder: "Имя"
+                              },
+                              domProps: { value: _vm.contacts.name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.contacts,
+                                    "name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "input-group" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.contacts.email,
+                                  expression: "contacts.email"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                id: "name",
+                                placeholder: "Почта"
+                              },
+                              domProps: { value: _vm.contacts.email },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.contacts,
+                                    "email",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "input-group" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.contacts.number,
+                                  expression: "contacts.number"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                id: "name",
+                                placeholder: "Номер телефона"
+                              },
+                              domProps: { value: _vm.contacts.number },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.contacts,
+                                    "number",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row mt-2" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "input-group" }, [
+                            _c("div", { staticClass: "textarea-form-footer" }, [
+                              _c("textarea", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.contacts.message,
+                                    expression: "contacts.message"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  name: "",
+                                  id: "",
+                                  cols: "30",
+                                  rows: "5",
+                                  placeholder: "Сообщение..."
+                                },
+                                domProps: { value: _vm.contacts.message },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.contacts,
+                                      "message",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  : _c(
+                      "div",
+                      {
+                        key: "adasdaa",
+                        staticClass: "alert alert-white",
+                        staticStyle: { "margin-top": "20px" },
+                        attrs: { role: "alert" }
+                      },
+                      [
+                        _c("h3", { staticClass: "notify-success-text-alert" }, [
+                          _vm._v(
+                            "Спасибо,\n                            ваша заявка принята!"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", { staticClass: "notify-success-text-alert" }, [
+                          _vm._v("Мы свяжемся с вами в ближайшее время.")
+                        ])
+                      ]
+                    )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-md-12" },
+                [
+                  _c("transition", { attrs: { name: "out-left-notif" } }, [
+                    _vm.errorSend
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "alert alert-white",
+                            staticStyle: { "margin-top": "20px" },
+                            attrs: { role: "alert" }
+                          },
+                          [_c("p", [_vm._v("Заполните все поля!")])]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "input-group" }, [
+                    !_vm.successSend
+                      ? _c("input", {
+                          staticClass: "contact-submit",
+                          attrs: { type: "button", value: "Отправить" },
+                          on: { click: _vm.sendSlackNotification }
+                        })
+                      : _vm._e()
+                  ])
+                ],
+                1
+              )
+            ])
+          ],
+          1
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-12" }, [
-          _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-            _c("h1", [_vm._v("СВЯЗАТЬСЯ")])
-          ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
+          _c("h1", [_vm._v("СВЯЗАТЬСЯ")])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
-          _c("div", { staticClass: "left-content" }, [
-            _c("h1", [
-              _c("b", [_vm._v("К")]),
-              _vm._v("омпаниия "),
-              _c("b", [_vm._v("Т")]),
-              _vm._v("ерминал")
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Компания Терминал предоставляет услуги для бизнеса Сургутского района и Ханты-Мансийского Автономного округа"
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "contact-info" }, [
-              _c("p", [
-                _vm._v("Адрес: 628414, г. Сургут, ул. Крылова, 38, кв.97")
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Телефон: 8 (3462) 62-64-64, 65-64-44")]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Почта: Saha2005@mail.ru")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "social-media" }, [
-              _c("ul", [
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "https://vk.com/evotorsurgut",
-                        target: "_blank"
-                      }
-                    },
-                    [_c("i", { staticClass: "fab fa-vk" })]
-                  )
-                ])
-              ])
-            ])
-          ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6 wow fadeInLeft animated" }, [
+      _c("div", { staticClass: "left-content" }, [
+        _c("h1", [
+          _c("b", [_vm._v("К")]),
+          _vm._v("омпаниия "),
+          _c("b", [_vm._v("Т")]),
+          _vm._v("ерминал")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-md-6 wow fadeInRight animated" }, [
-          _c(
-            "form",
-            { staticClass: "contact-form", attrs: { action: "", method: "" } },
-            [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "name", placeholder: "Имя" }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "name", placeholder: "Почта" }
-                    })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "name", placeholder: "Тема" }
-                    })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-2" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "textarea-form-footer" }, [
-                      _c("textarea", {
-                        staticClass: "form-control",
-                        attrs: {
-                          name: "",
-                          id: "",
-                          cols: "30",
-                          rows: "5",
-                          placeholder: "Сообщение..."
-                        }
-                      })
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("input", {
-                      staticClass: "contact-submit",
-                      attrs: { type: "submit", value: "Отправить" }
-                    })
-                  ])
-                ])
-              ])
-            ]
+        _c("p", [
+          _vm._v(
+            "Компания Терминал предоставляет услуги для бизнеса Сургутского района и Ханты-Мансийского\n                    Автономного округа"
           )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "contact-info" }, [
+          _c("p", [_vm._v("Адрес: 628414, г. Сургут, ул. Крылова, 38, кв.97")]),
+          _vm._v(" "),
+          _c("p", [_vm._v("Телефон: 8 (3462) 62-64-64, 65-64-44")]),
+          _vm._v(" "),
+          _c("p", [_vm._v("Почта: Saha2005@mail.ru")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "social-media" }, [
+          _c("ul", [
+            _c("li", [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://vk.com/evotorsurgut",
+                    target: "_blank"
+                  }
+                },
+                [_c("i", { staticClass: "fab fa-vk" })]
+              )
+            ])
+          ])
         ])
       ])
     ])

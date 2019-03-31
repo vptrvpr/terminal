@@ -2483,3 +2483,8 @@ div.content {
     font-weight: 600;
     color: white;
 }
+
+.notify-success-text-alert {
+    font-weight: 600;
+    color: #2D2C4C;
+}
