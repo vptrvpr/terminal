@@ -4516,6 +4516,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4529,10 +4547,12 @@ __webpack_require__.r(__webpack_exports__);
       product: {},
       contacts: {
         number: '',
-        product_id: ''
+        product_id: '',
+        name: ''
       },
       norificationSended: false,
-      urlSite: ''
+      urlSite: '',
+      validateErrors: false
     };
   },
   mounted: function mounted() {
@@ -4606,15 +4626,21 @@ __webpack_require__.r(__webpack_exports__);
       var _this4 = this;
 
       this.contacts.product_id = productId;
-      axios({
-        method: 'post',
-        url: '/slack/order_send',
-        data: {
-          contacts: this.contacts
-        }
-      }).then(function (response) {
-        _this4.norificationSended = true;
-      });
+
+      if (this.contacts.number === '' || this.contacts.name === '') {
+        this.validateErrors = true;
+      } else {
+        this.validateErrors = false;
+        axios({
+          method: 'post',
+          url: '/slack/order_send',
+          data: {
+            contacts: this.contacts
+          }
+        }).then(function (response) {
+          _this4.norificationSended = true;
+        });
+      }
     },
     getUrlSite: function getUrlSite() {
       var _this5 = this;
@@ -5515,10 +5541,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-window.axios.defaults.headers.common = {
-  'X-Requested-With': 'XMLHttpRequest',
-  'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-};
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // es modules
   // commonjs require
@@ -46750,7 +46778,7 @@ var render = function() {
                         _c("div", { staticClass: "col-md-12" }, [
                           _c("h1", { staticClass: "h1-fz text-center" }, [
                             _vm._v(
-                              "Закон 54-ФЗ «О применении контрольно-кассовой техники».\n                                Что меняется в 2018 году?"
+                              "Закон 54-ФЗ «О применении контрольно-кассовой техники».\n                                Что меняется в 2019 году?"
                             )
                           ])
                         ])
@@ -48335,13 +48363,13 @@ var render = function() {
                     _vm.showProduct
                       ? _c("div", { staticClass: "col-md-2" }, [
                           _c("h1", { staticClass: "show-product-price" }, [
-                            _vm._v(_vm._s(_vm.product.price) + " ₽")
+                            _vm._v("Цена: " + _vm._s(_vm.product.price) + " ₽")
                           ]),
                           _vm._v(" "),
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-primary-purple",
+                              staticClass: "contact-product-button",
                               attrs: {
                                 "data-toggle": "modal",
                                 "data-target": "#buy"
@@ -48375,143 +48403,270 @@ var render = function() {
                                   attrs: { role: "document" }
                                 },
                                 [
-                                  _c("div", { staticClass: "modal-content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "modal-body" },
-                                      [
-                                        _c(
-                                          "transition",
-                                          { attrs: { name: "out-left" } },
-                                          [
-                                            !_vm.norificationSended
-                                              ? _c(
-                                                  "div",
-                                                  { staticClass: "form-group" },
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "modal-content contact-product-modal-content"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "modal-body" },
+                                        [
+                                          _c("div", { staticClass: "row" }, [
+                                            _c("div", {
+                                              staticClass: "col-md-11"
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "col-md-1" },
+                                              [
+                                                _c(
+                                                  "a",
+                                                  {
+                                                    staticClass: "close-modal",
+                                                    attrs: {
+                                                      "data-dismiss": "modal"
+                                                    }
+                                                  },
                                                   [
-                                                    _c(
-                                                      "label",
-                                                      {
-                                                        staticClass:
-                                                          "col-form-label",
-                                                        attrs: {
-                                                          for: "recipient-name"
-                                                        }
-                                                      },
-                                                      [_vm._v("Ваш телефон:")]
-                                                    ),
-                                                    _vm._v(" "),
-                                                    _c("input", {
-                                                      directives: [
-                                                        {
-                                                          name: "model",
-                                                          rawName: "v-model",
-                                                          value:
-                                                            _vm.contacts.number,
-                                                          expression:
-                                                            "contacts.number"
-                                                        }
-                                                      ],
+                                                    _c("i", {
                                                       staticClass:
-                                                        "form-control",
-                                                      attrs: {
-                                                        type: "text",
-                                                        id: "recipient-name"
-                                                      },
-                                                      domProps: {
-                                                        value:
-                                                          _vm.contacts.number
-                                                      },
-                                                      on: {
-                                                        input: function(
-                                                          $event
-                                                        ) {
-                                                          if (
-                                                            $event.target
-                                                              .composing
-                                                          ) {
-                                                            return
-                                                          }
-                                                          _vm.$set(
-                                                            _vm.contacts,
-                                                            "number",
-                                                            $event.target.value
-                                                          )
-                                                        }
-                                                      }
+                                                        "fas fa-times"
                                                     })
                                                   ]
                                                 )
-                                              : _vm._e()
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "transition",
-                                          { attrs: { name: "out-right" } },
-                                          [
-                                            _vm.norificationSended
-                                              ? _c("div", [
-                                                  _c("h3", [
-                                                    _vm._v(
-                                                      "Спасибо,\n                                                            ваша заявка принята!"
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c("h4", [
-                                                    _vm._v(
-                                                      "Мы свяжемся с вами в ближайшее время."
-                                                    )
-                                                  ])
-                                                ])
-                                              : _vm._e()
-                                          ]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "modal-footer" }, [
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "btn btn-secondary",
-                                          attrs: {
-                                            type: "button",
-                                            "data-dismiss": "modal"
-                                          }
-                                        },
-                                        [
-                                          _vm._v(
-                                            "Закрыть\n                                                "
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      !_vm.norificationSended
-                                        ? _c(
-                                            "button",
+                                              ]
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "transition",
                                             {
-                                              staticClass:
-                                                "btn btn-primary-purple",
-                                              attrs: { type: "button" },
-                                              on: {
-                                                click: function($event) {
-                                                  _vm.contactsSend(
-                                                    _vm.product.id
-                                                  )
-                                                }
+                                              attrs: {
+                                                name: "out-left-notif",
+                                                mode: "out-in"
                                               }
                                             },
                                             [
-                                              _vm._v(
-                                                "Перезвонить\n                                                    мне!\n                                                "
-                                              )
+                                              !_vm.norificationSended
+                                                ? _c("div", {}, [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        key: "name",
+                                                        staticClass:
+                                                          "form-group"
+                                                      },
+                                                      [
+                                                        _c("input", {
+                                                          directives: [
+                                                            {
+                                                              name: "model",
+                                                              rawName:
+                                                                "v-model",
+                                                              value:
+                                                                _vm.contacts
+                                                                  .name,
+                                                              expression:
+                                                                "contacts.name"
+                                                            }
+                                                          ],
+                                                          staticClass:
+                                                            "form-control contact-product-input",
+                                                          attrs: {
+                                                            type: "text",
+                                                            id:
+                                                              "recipient-name",
+                                                            placeholder: "Имя",
+                                                            autocomplete: "off"
+                                                          },
+                                                          domProps: {
+                                                            value:
+                                                              _vm.contacts.name
+                                                          },
+                                                          on: {
+                                                            input: function(
+                                                              $event
+                                                            ) {
+                                                              if (
+                                                                $event.target
+                                                                  .composing
+                                                              ) {
+                                                                return
+                                                              }
+                                                              _vm.$set(
+                                                                _vm.contacts,
+                                                                "name",
+                                                                $event.target
+                                                                  .value
+                                                              )
+                                                            }
+                                                          }
+                                                        })
+                                                      ]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        key: "number",
+                                                        staticClass:
+                                                          "form-group mt-3"
+                                                      },
+                                                      [
+                                                        _c("input", {
+                                                          directives: [
+                                                            {
+                                                              name: "model",
+                                                              rawName:
+                                                                "v-model",
+                                                              value:
+                                                                _vm.contacts
+                                                                  .number,
+                                                              expression:
+                                                                "contacts.number"
+                                                            }
+                                                          ],
+                                                          staticClass:
+                                                            "form-control contact-product-input",
+                                                          attrs: {
+                                                            type: "text",
+                                                            id:
+                                                              "recipient-number",
+                                                            placeholder:
+                                                              "Телефон",
+                                                            autocomplete: "off"
+                                                          },
+                                                          domProps: {
+                                                            value:
+                                                              _vm.contacts
+                                                                .number
+                                                          },
+                                                          on: {
+                                                            input: function(
+                                                              $event
+                                                            ) {
+                                                              if (
+                                                                $event.target
+                                                                  .composing
+                                                              ) {
+                                                                return
+                                                              }
+                                                              _vm.$set(
+                                                                _vm.contacts,
+                                                                "number",
+                                                                $event.target
+                                                                  .value
+                                                              )
+                                                            }
+                                                          }
+                                                        })
+                                                      ]
+                                                    )
+                                                  ])
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              _vm.norificationSended
+                                                ? _c(
+                                                    "div",
+                                                    { key: "success" },
+                                                    [
+                                                      _c(
+                                                        "h3",
+                                                        {
+                                                          staticClass:
+                                                            "notify-success-text"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Спасибо,\n                                                            ваша заявка принята!"
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "h4",
+                                                        {
+                                                          staticClass:
+                                                            "notify-success-text"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Мы свяжемся с вами в ближайшее время."
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                : _vm._e()
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "transition",
+                                            {
+                                              attrs: { name: "out-left-notif" }
+                                            },
+                                            [
+                                              _vm.validateErrors
+                                                ? _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "alert alert-white",
+                                                      attrs: { role: "alert" }
+                                                    },
+                                                    [
+                                                      _c("p", [
+                                                        _vm._v(
+                                                          "Заполните все поля!"
+                                                        )
+                                                      ])
+                                                    ]
+                                                  )
+                                                : _vm._e()
                                             ]
                                           )
-                                        : _vm._e()
-                                    ])
-                                  ])
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "modal-footer contact-product-modal-footer"
+                                        },
+                                        [
+                                          !_vm.norificationSended
+                                            ? _c(
+                                                "button",
+                                                {
+                                                  staticClass:
+                                                    "contact-product-button",
+                                                  attrs: { type: "button" },
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.contactsSend(
+                                                        _vm.product.id
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "Перезвонить\n                                                    мне!\n                                                "
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
+                                        ]
+                                      )
+                                    ]
+                                  )
                                 ]
                               )
                             ]
@@ -48533,7 +48688,7 @@ var render = function() {
                   _c("transition", { attrs: { name: "out-left" } }, [
                     _vm.showProduct
                       ? _c("div", {
-                          staticClass: "col-md-6 product-description",
+                          staticClass: "col-md-8 show-product-description",
                           domProps: {
                             innerHTML: _vm._s(_vm.product.description)
                           }
@@ -48541,18 +48696,28 @@ var render = function() {
                       : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-2" }),
+                  _c("div", { staticClass: "col-md-1" }),
                   _vm._v(" "),
                   _c("transition", { attrs: { name: "out-right" } }, [
                     _vm.showProduct
-                      ? _c("div", { staticClass: "col-md-4" }, [
-                          _c("img", {
-                            staticClass: "show-product-image",
-                            attrs: {
-                              src: "/images/products/" + _vm.product.img
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "col-md-2",
+                            staticStyle: {
+                              display: "flex",
+                              "justify-content": "center"
                             }
-                          })
-                        ])
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "show-product-image",
+                              attrs: {
+                                src: "/images/products/" + _vm.product.img
+                              }
+                            })
+                          ]
+                        )
                       : _vm._e()
                   ])
                 ],
@@ -50478,7 +50643,7 @@ var render = function() {
                                 attrs: {
                                   "api-key":
                                     "f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v",
-                                  init: { plugins: "" }
+                                  init: { plugins: "lists" }
                                 },
                                 model: {
                                   value: _vm.newProduct.description,
@@ -51074,7 +51239,9 @@ var render = function() {
                         "a",
                         {
                           staticClass: "add_cart",
-                          attrs: { href: "product/" + product.id }
+                          attrs: {
+                            href: "/catalog/category/product/" + product.id
+                          }
                         },
                         [_vm._v("Карточка товара")]
                       )

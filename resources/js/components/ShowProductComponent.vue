@@ -59,8 +59,8 @@
                             <div class="col-md-7"></div>
                             <transition name="out-right">
                                 <div class="col-md-2" v-if="showProduct">
-                                    <h1 class="show-product-price">{{product.price}} ₽</h1>
-                                    <button class="btn btn-primary-purple" data-toggle="modal" data-target="#buy">
+                                    <h1 class="show-product-price">Цена: {{product.price}} ₽</h1>
+                                    <button class="contact-product-button" data-toggle="modal" data-target="#buy">
                                         Купить
                                     </button>
 
@@ -68,29 +68,46 @@
                                     <div class="modal fade" id="buy" tabindex="-1" role="dialog"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document" style="margin-top: 200px">
-                                            <div class="modal-content">
+                                            <div class="modal-content contact-product-modal-content">
                                                 <div class="modal-body">
-                                                    <transition name="out-left">
-                                                        <div class="form-group" v-if="!norificationSended">
-                                                            <label for="recipient-name"
-                                                                   class="col-form-label">Ваш телефон:</label>
+                                                    <div class="row">
+                                                        <div class="col-md-11"></div>
+                                                        <div class="col-md-1">
+                                                            <a class="close-modal" data-dismiss="modal">
+                                                                <i class="fas fa-times"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <transition name="out-left-notif" mode="out-in">
+                                                        <div class="" v-if="!norificationSended">
+                                                        <div class="form-group" key="name">
+                                                            <input type="text" v-model="contacts.name"
+                                                                   class="form-control contact-product-input"
+                                                                   id="recipient-name" placeholder="Имя" autocomplete="off">
+                                                        </div>
+                                                        <div class="form-group mt-3" key="number"
+                                                             >
                                                             <input type="text" v-model="contacts.number"
-                                                                   class="form-control" id="recipient-name">
+                                                                   class="form-control contact-product-input"
+                                                                   id="recipient-number" placeholder="Телефон" autocomplete="off">
+                                                        </div>
+                                                        </div>
+
+
+                                                        <div v-if="norificationSended" key="success">
+                                                            <h3 class="notify-success-text">Спасибо,
+                                                                ваша заявка принята!</h3>
+                                                            <h4 class="notify-success-text">Мы свяжемся с вами в ближайшее время.</h4>
                                                         </div>
                                                     </transition>
-                                                    <transition name="out-right">
-                                                        <div v-if="norificationSended">
-                                                            <h3>Спасибо,
-                                                                ваша заявка принята!</h3>
-                                                            <h4>Мы свяжемся с вами в ближайшее время.</h4>
-                                                        </div>
+                                                    <transition name="out-left-notif">
+                                                    <div class="alert alert-white" role="alert" v-if="validateErrors">
+                                                        <p>Заполните все поля!</p>
+                                                    </div>
                                                     </transition>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Закрыть
-                                                    </button>
-                                                    <button type="button" class="btn btn-primary-purple"
+                                                <div class="modal-footer contact-product-modal-footer">
+                                                    <button type="button" class="contact-product-button"
                                                             v-if="!norificationSended"
                                                             @click="contactsSend(product.id)">Перезвонить
                                                         мне!
@@ -104,13 +121,14 @@
                         </div>
                         <div class="row" style="margin-bottom: 20px">
                             <transition name="out-left">
-                                <div class="col-md-6 product-description" v-if="showProduct" v-html="product.description">
+                                <div class="col-md-8 show-product-description" v-if="showProduct"
+                                     v-html="product.description">
 
                                 </div>
                             </transition>
-                            <div class="col-md-2"></div>
+                            <div class="col-md-1"></div>
                             <transition name="out-right">
-                                <div class="col-md-4" v-if="showProduct">
+                                <div class="col-md-2" v-if="showProduct" style="display: flex;justify-content: center">
                                     <img class="show-product-image" :src="'/images/products/'+product.img">
                                 </div>
                             </transition>
@@ -162,9 +180,10 @@
                 showCategories: false,
                 product: {},
                 contacts:
-                    {number: '', product_id: ''},
+                    { number: '', product_id: '', name: '' },
                 norificationSended: false,
-                urlSite: ''
+                urlSite: '',
+                validateErrors: false
 
 
             }
@@ -177,49 +196,49 @@
         },
         methods: {
             getCategories: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_categories',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.categories = response.data;
 
-                });
+                } );
             },
 
 
             showAllCategories: function () {
                 this.showProductsUpdate = false;
                 this.count_all = true;
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_products',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.products = response.data;
                     var app = this;
-                    for (var i = 0; i < response.data.length; i++) {
-                        app.categories.categories[i].show = false;
+                    for ( var i = 0; i < response.data.length; i++ ) {
+                        app.categories.categories[ i ].show = false;
                     }
-                });
-                setTimeout(() => {
+                } );
+                setTimeout( () => {
                     this.showProductsUpdate = true;
-                }, 500)
+                }, 500 )
             },
 
 
-            showCategory: function (index) {
+            showCategory: function ( index ) {
                 var i;
-                for (i = 0; i < this.categories.categories.length; i++) {
-                    this.categories.categories[i].show = false;
+                for ( i = 0; i < this.categories.categories.length; i++ ) {
+                    this.categories.categories[ i ].show = false;
                 }
-                this.categories.categories[index].show = true;
+                this.categories.categories[ index ].show = true;
             },
 
 
             showCategoriesStartPage: function () {
-                var win = $(window);
-                var marker = $('.categories-list');
+                var win = $( window );
+                var marker = $( '.categories-list' );
 
-                if (win.scrollTop() + win.height() >= marker.offset().top) {
+                if ( win.scrollTop() + win.height() >= marker.offset().top ) {
                     this.showCategories = true;
                     this.showProduct = true;
                 }
@@ -227,37 +246,43 @@
 
             loadProduct: function () {
                 var href = location.href;
-                var productId = href.split('category/product/')[1];
+                var productId = href.split( 'category/product/' )[ 1 ];
 
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get-product-by-id/' + productId
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.product = response.data;
 
-                });
+                } );
             },
 
 
-            contactsSend: function (productId) {
+            contactsSend: function ( productId ) {
                 this.contacts.product_id = productId;
-                axios({
-                    method: 'post',
-                    url: '/slack/order_send',
-                    data: {contacts: this.contacts}
-                }).then((response) => {
-                    this.norificationSended = true;
-                });
+                if ( this.contacts.number === '' || this.contacts.name === '') {
+                    this.validateErrors = true;
+                }else{
+                    this.validateErrors = false;
+                    axios( {
+                        method: 'post',
+                        url: '/slack/order_send',
+                        data: { contacts: this.contacts }
+                    } ).then( ( response ) => {
+                        this.norificationSended = true;
+                    } );
+                }
+
             },
 
 
             getUrlSite: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/helper/get-url-site',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.urlSite = response.data;
-                });
+                } );
             }
 
         }

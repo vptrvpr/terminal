@@ -47,7 +47,8 @@
                                    @click="saveNewCategories()">Сохранить</a>
                             </td>
 
-                            <div :class="'modal fade bd-example-modal-lg modal-product-edit'+product.id" tabindex="-1" role="dialog"
+                            <div :class="'modal fade bd-example-modal-lg modal-product-edit'+product.id" tabindex="-1"
+                                 role="dialog"
                                  aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
@@ -103,7 +104,9 @@
                                                 <div class="col-md-8">
                                                     <div class="form-group">
                                                         <label for="comment">Описание:</label>
-                                                        <editor v-model="product.description" api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v" :init="{plugins:'lists'}"></editor>
+                                                        <editor v-model="product.description"
+                                                                api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
+                                                                :init="{plugins:'lists'}"></editor>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2"></div>
@@ -212,8 +215,10 @@
                                                 <div class="form-group">
                                                     <label for="comment">Описание:</label>
                                                     <!--<textarea class="form-control" -->
-                                                              <!--rows="5" id="comment"></textarea>-->
-                                                    <editor v-model="newProduct.description" api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v" :init="{plugins:''}"></editor>
+                                                    <!--rows="5" id="comment"></textarea>-->
+                                                    <editor v-model="newProduct.description"
+                                                            api-key="f5b040i73ebkt63xkw5q3t2eycahtfyij48m616q4ezjyg4v"
+                                                            :init="{plugins:'lists'}"></editor>
                                                 </div>
 
                                             </div>
@@ -246,7 +251,8 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        <div v-if="saveChangesSuccessNewProduct" class="alert alert-success" role="alert">
+                                        <div v-if="saveChangesSuccessNewProduct" class="alert alert-success"
+                                             role="alert">
                                             Изменения успешно сохраненны!
                                         </div>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -266,16 +272,12 @@
 </template>
 
 <script>
-    window.axios.defaults.headers.common = {
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    };
     export default {
 
         // es modules
 
-    // commonjs require
-    // NOTE: default needed after require
+        // commonjs require
+        // NOTE: default needed after require
 
         data: function () {
             return {

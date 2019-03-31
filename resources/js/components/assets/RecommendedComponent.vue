@@ -17,7 +17,7 @@
                         </div>
                         <div class="product-hover">
                             <div class="product-meta">
-                                <a class="add_cart" :href="'product/'+product.id">Карточка товара</a>
+                                <a class="add_cart" :href="'/catalog/category/product/'+product.id">Карточка товара</a>
                             </div>
                         </div>
                         <div class="product-title">

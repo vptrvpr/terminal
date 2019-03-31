@@ -14,12 +14,13 @@ class SlackController extends Controller
 
         $product = Product::where('id',$contacts['product_id'])->first();
 
-        Slack::to('#orders')->send(
-            "Телефон:  " . $contacts['number'] . "\n" .
-            "Продукт:  " . $product->name . "\n" .
-            "Цена:  " . $product->price . "\n" .
-            "Время отправки:  " . Carbon::now()
-        );
+//        Slack::to('#orders')->send(
+//            "Телефон:  " . $contacts['number'] . "\n" .
+//            "Имя:  " . $contacts['name'] . "\n" .
+//            "Продукт:  " . $product->name . "\n" .
+//            "Цена:  " . $product->price . "\n" .
+//            "Время отправки:  " . Carbon::now()
+//        );
 
 
         return $contacts;
