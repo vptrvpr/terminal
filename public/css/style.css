@@ -2384,6 +2384,7 @@ div.content {
     background: #fff;
     box-shadow: 0 0 32px -3px rgba(0, 0, 0, 0.35);
     margin-top: 20px;
+    height: 322px;
 }
 
 .show-product-specification {
