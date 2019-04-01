@@ -217,7 +217,7 @@ class ProductsController extends Controller
             $productId = $request->get('id');
 
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(322)->save(public_path('/images/products/' . $filename));
+            Image::make($image)->save(public_path('/images/products/' . $filename));
 
             $product = Product::where('id', $productId)->first();
             $product->img = $filename;
