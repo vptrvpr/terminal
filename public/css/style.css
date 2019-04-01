@@ -420,10 +420,7 @@ header.header-section.fixed {
 }
 
 .header-section .navbar .navbar-brand {
-    font-size: 30px;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: #555252;
+    padding: 20px 20px 20px 20px;
 }
 
 .header-section .navbar .navbar-brand b {
@@ -2520,4 +2517,9 @@ div.content {
 
 .scroll-bottom-a:hover{
     cursor: pointer;
+}
+
+.logo-terminal{
+    height: 65px;
+    margin-top: -30px;
 }

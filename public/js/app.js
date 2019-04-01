@@ -5944,7 +5944,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     scrollToBottom: function scrollToBottom() {
@@ -51232,11 +51231,10 @@ var staticRenderFns = [
       ),
       _vm._v(" "),
       _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-        _c("b", [_vm._v("Компания")])
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-        _c("b", [_vm._v("Терминал")])
+        _c("img", {
+          staticClass: "logo-terminal",
+          attrs: { src: "/images/logo_terminal.png" }
+        })
       ])
     ])
   },

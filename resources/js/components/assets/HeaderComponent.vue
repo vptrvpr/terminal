@@ -20,8 +20,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><b>Компания</b></a>
-                    <a class="navbar-brand" href="/"><b>Терминал</b></a>
+                    <a class="navbar-brand" href="/"><img class="logo-terminal" src="/images/logo_terminal.png"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
