@@ -18,7 +18,7 @@ class HelperController extends Controller
             $image = $request->file( 'file' );
 
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            Image::make( $image )->save( public_path( '/images/products/' . $filename ) );
+            Image::make( $image )->resize(0,322)->save( public_path( '/images/products/' . $filename ) );
 
             if( $request->has( 'product_id' ) ) {
                 $productEdit      = Product::where( 'id', $request->get( 'product_id' ) )->first();
