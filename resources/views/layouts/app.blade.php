@@ -27,7 +27,7 @@
 <script src="{{ env('MIX_URL_SITE') }}/js/owl.carousel.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/wow.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/custom.js"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/app.js"></script><!-- /#wrapper -->
+<script src="{{ env('MIX_URL_SITE') }}/js/app.js?1"></script><!-- /#wrapper -->
 
 </body>
 
