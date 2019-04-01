@@ -92,8 +92,9 @@
                                                          width="322px">
                                                     <div class="file-upload">
                                                         <label>
-                                                            <input type="file" id="file" ref="myFiles"
-                                                                   @change="productEditImageLoad(product.id)">
+                                                            <input type="file" :id="'file_edit_product'+product.id"
+                                                                   ref="myFilesProduct"
+                                                                   @change="productEditImageLoad(product.id,index)">
                                                             <span>ВЫБЕРИТЕ ФОТО</span>
                                                         </label>
                                                     </div>
@@ -214,7 +215,6 @@
                                                         <span>ВЫБЕРИТЕ ФОТО</span>
                                                     </label>
                                                 </div>
-
                                             </div>
                                         </div>
                                         <div class="row">
@@ -420,12 +420,15 @@
             },
 
 
-            productEditImageLoad: function ( id ) {
+            productEditImageLoad: function ( id,index ) {
                 let app = this;
                 let data = new FormData();
-                data.append( 'file', document.getElementById( 'file' ).files[ 0 ] );
-                data.append( 'id', id );
-                axios.post( '/product/update_img', data ).then( function ( response ) {
+                data.append( 'file', document.getElementById( 'file_edit_product' + id ).files[ 0 ] );
+                data.append( 'product_id', id );
+                axios.post( '/helper/load_image', data ).then( function ( response ) {
+                    if ( response.data.status === 'edit' ) {
+                        app.products = response.data.products;
+                    }
 
                 } );
             },
@@ -436,7 +439,9 @@
                 let data = new FormData();
                 data.append( 'file', document.getElementById( 'file_new_product' ).files[ 0 ] );
                 axios.post( '/helper/load_image', data ).then( function ( response ) {
-                    app.newProduct.img = response.data;
+                    if ( response.data.status === 'new' ) {
+                        app.newProduct.img = response.data.filename;
+                    }
                 } );
             },
 

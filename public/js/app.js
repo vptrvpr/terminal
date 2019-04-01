@@ -5703,19 +5703,25 @@ __webpack_require__.r(__webpack_exports__);
         self.saveChangesSuccess = false;
       }, 1500);
     },
-    productEditImageLoad: function productEditImageLoad(id) {
+    productEditImageLoad: function productEditImageLoad(id, index) {
       var app = this;
       var data = new FormData();
-      data.append('file', document.getElementById('file').files[0]);
-      data.append('id', id);
-      axios.post('/product/update_img', data).then(function (response) {});
+      data.append('file', document.getElementById('file_edit_product' + id).files[0]);
+      data.append('product_id', id);
+      axios.post('/helper/load_image', data).then(function (response) {
+        if (response.data.status === 'edit') {
+          app.products = response.data.products;
+        }
+      });
     },
     loadImage: function loadImage() {
       var app = this;
       var data = new FormData();
       data.append('file', document.getElementById('file_new_product').files[0]);
       axios.post('/helper/load_image', data).then(function (response) {
-        app.newProduct.img = response.data;
+        if (response.data.status === 'new') {
+          app.newProduct.img = response.data.filename;
+        }
       });
     },
     saveNewProduct: function saveNewProduct() {
@@ -50627,12 +50633,18 @@ var render = function() {
                                 _c("div", { staticClass: "file-upload" }, [
                                   _c("label", [
                                     _c("input", {
-                                      ref: "myFiles",
+                                      ref: "myFilesProduct",
                                       refInFor: true,
-                                      attrs: { type: "file", id: "file" },
+                                      attrs: {
+                                        type: "file",
+                                        id: "file_edit_product" + product.id
+                                      },
                                       on: {
                                         change: function($event) {
-                                          _vm.productEditImageLoad(product.id)
+                                          _vm.productEditImageLoad(
+                                            product.id,
+                                            index
+                                          )
                                         }
                                       }
                                     }),

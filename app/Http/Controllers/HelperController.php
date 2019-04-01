@@ -2,20 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
+use App\ProductHelper;
 
 class HelperController extends Controller
 {
-    public function loadImage(Request $request)
+
+
+    public function loadImage( Request $request,ProductHelper $productHelper )
     {
-        if ($request->hasFile('file')) {
-            $image = $request->file('file');
+
+        if( $request->hasFile( 'file' ) ) {
+            $image = $request->file( 'file' );
 
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->save(public_path('/images/products/' . $filename));
+            Image::make( $image )->save( public_path( '/images/products/' . $filename ) );
 
-            return $filename;
+            if( $request->has( 'product_id' ) ) {
+                $productEdit      = Product::where( 'id', $request->get( 'product_id' ) )->first();
+                $productEdit->img = $filename;
+                $productEdit->save();
+
+                return [
+                    'status' => 'edit',
+                    'products' => $productHelper->getProductsForPage(),
+
+                ];
+            } else {
+                return [
+                    'status'=>'new',
+                    'filename' => $filename
+                ];
+            }
+
+
         }
     }
 
@@ -24,23 +46,24 @@ class HelperController extends Controller
      * Универсальное сохраниение картиники
      *
      * @param Request $request
+     *
      * @return string
      */
-    public function loadImageUniversal(Request $request)
+    public function loadImageUniversal( Request $request )
     {
-        $resizeWidth = $request->get('resize_width');
+        $resizeWidth = $request->get( 'resize_width' );
 
-        if ($request->has('path')) {
-            $path = $request->get('path');
-            if ($request->hasFile('file')) {
-                $image = $request->file('file');
+        if( $request->has( 'path' ) ) {
+            $path = $request->get( 'path' );
+            if( $request->hasFile( 'file' ) ) {
+                $image = $request->file( 'file' );
 
                 $filename = time() . '.' . $image->getClientOriginalExtension();
 
-                if ($resizeWidth){
-                    Image::make($image)->resize($resizeWidth)->save(public_path($path . $filename));
-                }else{
-                    Image::make($image)->save(public_path($path . $filename));
+                if( $resizeWidth ) {
+                    Image::make( $image )->resize( $resizeWidth )->save( public_path( $path . $filename ) );
+                } else {
+                    Image::make( $image )->save( public_path( $path . $filename ) );
                 }
 
 
@@ -54,7 +77,8 @@ class HelperController extends Controller
     /**
      * @return mixed
      */
-    public function getUrlSite(){
-        return env('MIX_URL_SITE');
+    public function getUrlSite()
+    {
+        return env( 'MIX_URL_SITE' );
     }
 }
