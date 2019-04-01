@@ -3105,6 +3105,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5757,6 +5760,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -46841,9 +46845,9 @@ var render = function() {
             "div",
             { staticClass: "row" },
             [
-              _c("transition", { attrs: { name: "showDiv1" } }, [
+              _c("transition-group", { attrs: { name: "showDiv1" } }, [
                 _vm.showDiv1
-                  ? _c("div", { staticClass: "col-md-12" }, [
+                  ? _c("div", { key: "tet", staticClass: "col-md-7" }, [
                       _c(
                         "div",
                         {
@@ -46914,6 +46918,18 @@ var render = function() {
                         },
                         [_vm._v("Визитка")]
                       )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.showDiv1
+                  ? _c("div", { key: "tet1", staticClass: "col-md-5" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/images/logo_kryg.png",
+                          alt: "альтернативный текст",
+                          width: "397px"
+                        }
+                      })
                     ])
                   : _vm._e()
               ])

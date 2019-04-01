@@ -20,7 +20,8 @@
                     </div>
                     <div class="social-media">
                         <ul>
-                            <li><a href="https://vk.com/companyterminal" target="_blank"><i class="fab fa-vk"></i></a></li>
+                            <li><a href="https://vk.com/companyterminal" target="_blank"><i class="fab fa-vk"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>

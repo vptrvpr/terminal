@@ -29,8 +29,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <transition name="showDiv1">
-                        <div class="col-md-12" v-if="showDiv1">
+                    <transition-group name="showDiv1">
+                        <div class="col-md-7" key="tet" v-if="showDiv1">
                             <div class="company_address" style="font-size: 15px">
                                 <h1>Информация о компании:</h1>
                                 <h2 class="mt-1">628414, г. Сургут, ул.
@@ -49,7 +49,10 @@
                                href="dowloads-for-users/vizitka.png" target="_blank">Визитка</a>
 
                         </div>
-                    </transition>
+                        <div class="col-md-5" key="tet1" v-if="showDiv1">
+                            <img src="/images/logo_kryg.png" alt="альтернативный текст" width="397px">
+                        </div>
+                    </transition-group>
                 </div>
             </div>
         </section>
