@@ -13,7 +13,7 @@ class HelperController extends Controller
             $image = $request->file('file');
 
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(322)->save(public_path('/images/products/' . $filename));
+            Image::make($image)->resize(0,322)->save(public_path('/images/products/' . $filename));
 
             return $filename;
         }
