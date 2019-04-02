@@ -320,9 +320,9 @@
                                         должны точно совпадать с чеком.
                                     </p>
                                     <p>
-                                        <span style="font-size: 1rem;">Проверьте данные и нажмите кнопку </span><span
-                                        style="font-size: 1rem; font-weight: bold;">Подписать и отправить</span><span
-                                        style="font-size: 1rem;">.</span>
+                                        <span style="">Проверьте данные и нажмите кнопку </span><span
+                                        style=" font-weight: bold;">Подписать и отправить</span><span
+                                        style="">.</span>
                                     </p>
                                     <p>
                                         После регистрации карточка ККТ будет доступна в личном кабинете
