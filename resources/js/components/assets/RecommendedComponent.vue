@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" v-if="recomended.lenght !== 0">
         <div class="row">
             <div class="col-md-12">
                 <div class="titie-section wow fadeInDown animated ">

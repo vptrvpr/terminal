@@ -51874,72 +51874,76 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        { staticClass: "row featured isotope" },
-        [
+  return _vm.recomended.lenght !== 0
+    ? _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "container" }, [
           _c(
-            "transition-group",
-            { attrs: { name: "fade1", tag: "div" } },
-            _vm._l(_vm.recommended, function(product) {
-              return _c(
-                "div",
-                {
-                  key: product.id,
-                  staticClass:
-                    "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
-                },
-                [
-                  _c("div", { staticClass: "product-item" }, [
-                    _c("div", { staticClass: "img-product" }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: _vm.urlSite + "/images/products/" + product.img,
-                          width: "255",
-                          height: "322",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-hover" }, [
-                      _c("div", { staticClass: "product-meta" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "add_cart",
+            "div",
+            { staticClass: "row featured isotope" },
+            [
+              _c(
+                "transition-group",
+                { attrs: { name: "fade1", tag: "div" } },
+                _vm._l(_vm.recommended, function(product) {
+                  return _c(
+                    "div",
+                    {
+                      key: product.id,
+                      staticClass:
+                        "col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item"
+                    },
+                    [
+                      _c("div", { staticClass: "product-item" }, [
+                        _c("div", { staticClass: "img-product" }, [
+                          _c("img", {
+                            staticClass: "img-responsive",
                             attrs: {
-                              href: "/catalog/category/product/" + product.id
+                              src:
+                                _vm.urlSite + "/images/products/" + product.img,
+                              width: "255",
+                              height: "322",
+                              alt: ""
                             }
-                          },
-                          [_vm._v("Карточка товара")]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "product-title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("h3", [_vm._v(_vm._s(product.name))]),
+                          })
+                        ]),
                         _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                        _c("div", { staticClass: "product-hover" }, [
+                          _c("div", { staticClass: "product-meta" }, [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "add_cart",
+                                attrs: {
+                                  href:
+                                    "/catalog/category/product/" + product.id
+                                }
+                              },
+                              [_vm._v("Карточка товара")]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product-title" }, [
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("h3", [_vm._v(_vm._s(product.name))]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v(_vm._s(product.price) + " ₽")])
+                          ])
+                        ])
                       ])
-                    ])
-                  ])
-                ]
+                    ]
+                  )
+                }),
+                0
               )
-            }),
-            0
+            ],
+            1
           )
-        ],
-        1
-      )
-    ])
-  ])
+        ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
