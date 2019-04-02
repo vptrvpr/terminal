@@ -46893,10 +46893,7 @@ var render = function() {
                         {
                           staticClass: "contact-product-button",
                           staticStyle: { "margin-top": "20px" },
-                          attrs: {
-                            href: "dowloads-for-users/vizitka.png",
-                            target: "_blank"
-                          }
+                          attrs: { href: "images/vizitka1.jpg", download: "" }
                         },
                         [_vm._v("Визитка")]
                       )

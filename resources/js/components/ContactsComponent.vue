@@ -46,7 +46,7 @@
                                href="dowloads-for-users/enterprise_map.doc" download>Скачать карточку
                                 предприятия</a><br>
                             <a class="contact-product-button" style="margin-top: 20px"
-                               href="dowloads-for-users/vizitka.png" target="_blank">Визитка</a>
+                               href="images/vizitka1.jpg" download>Визитка</a>
 
                         </div>
                         <div class="col-md-5" key="tet1" v-if="showDiv1">
