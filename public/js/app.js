@@ -3106,6 +3106,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -46841,7 +46842,7 @@ var render = function() {
                             ),
                             _c("br"),
                             _vm._v(
-                              "  г.Сургут, д.38, кв. 97\n                            "
+                              " г.Сургут, ул.\n                                Крылова д.38, кв. 97\n                            "
                             )
                           ]),
                           _vm._v(" "),
