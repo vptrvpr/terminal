@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ env('MIX_URL_SITE') }}/css/style.css?1">
+    <link rel="stylesheet" href="{{ env('MIX_URL_SITE') }}/css/style.css?44">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -27,7 +27,7 @@
 <script src="{{ env('MIX_URL_SITE') }}/js/owl.carousel.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/wow.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/custom.js"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/app.js?1"></script><!-- /#wrapper -->
+<script src="{{ env('MIX_URL_SITE') }}/js/app.js?44"></script><!-- /#wrapper -->
 
 </body>
 
