@@ -39,7 +39,9 @@ Route::get('/get_categories_by_id/{categoryId}','ProductsController@getCategoryB
 /**
  * Admin routes
  */
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin/home', 'AdminController@adminHome')->name('admin.home');
+Route::post('/admin/auth', 'AdminController@authAdmin')->name('admin.auth');
 Route::get('/admin/products/','AdminController@adminProducts');
 Route::get('/admin/partners/','AdminController@adminPartners');
 Route::get('/admin/slider/','AdminController@adminSliders');
