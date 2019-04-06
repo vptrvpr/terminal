@@ -40,11 +40,11 @@
                             </td>
                             <td>
                                 <a v-if="product.isNew === undefined" class="btn btn-danger"
-                                   @click="deleteProduct(product.id)">Удалить</a>
+                                   @click="deleteProduct(product.id)"><i class="far fa-trash-alt"></i></a>
                                 <a v-if="product.isNew === undefined" class="btn btn-success" data-toggle="modal"
-                                   :data-target="'.modal-product-edit'+product.id">Изменить</a>
+                                   :data-target="'.modal-product-edit'+product.id"><i class="far fa-edit"></i></a>
                                 <a v-if="product.isNew !== undefined" class="btn btn-success"
-                                   @click="saveNewCategories()">Сохранить</a>
+                                   @click="saveNewCategories()"><i class="far fa-save"></i></a>
                             </td>
 
                             <div :class="'modal fade bd-example-modal-lg modal-product-edit'+product.id" tabindex="-1"
@@ -101,8 +101,8 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-8">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-10">
                                                     <div class="form-group">
                                                         <label for="comment">Описание:</label>
                                                         <editor v-model="product.description"
@@ -111,14 +111,14 @@
                                                                 custom_colors="true"
                                                                 dialog_type="modal"
                                                                 selector="textarea"
-                                                                toolbar="forecolor | undo redo | styleselect | bold italic | link image"
+                                                                toolbar="forecolor | undo redo | styleselect | bold italic | link image | numlist bullist"
                                                                 :init="{height: 600,color_map: [
                                                     '2F2C65', 'Default',
                                                     ]}"
                                                         ></editor>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2"></div>
+                                                <div class="col-md-1"></div>
                                             </div>
                                             <div class="row">
                                                 <h1>Характеристики:</h1>
@@ -149,10 +149,11 @@
                                             <div v-if="saveChangesSuccess" class="alert alert-success" role="alert">
                                                 Изменения успешно сохраненны!
                                             </div>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                                class="fas fa-times"></i>
                                             </button>
                                             <button type="button" class="btn btn-primary"
-                                                    @click="saveChangesProduct(index)">Save changes
+                                                    @click="saveChangesProduct(index)"><i class="far fa-save"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -160,8 +161,8 @@
                             </div>
                         </tr>
                         </tbody>
-                        <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-1">Новый
-                            продукт
+                        <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-1">
+                            <i class="fas fa-plus"></i>
                         </button>
 
 
@@ -218,8 +219,8 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-8">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-10">
                                                 <div class="form-group">
                                                     <label for="comment">Описание:</label>
                                                     <editor v-model="newProduct.description"
@@ -228,7 +229,7 @@
                                                             custom_colors="true"
                                                             dialog_type="modal"
                                                             selector="textarea"
-                                                            toolbar="forecolor | undo redo | styleselect | bold italic | link image"
+                                                            toolbar="forecolor | undo redo | styleselect | bold italic | link image | numlist bullist"
                                                             :init="{height: 600,color_map: [
                                                     '2F2C65', 'Default',
                                                     ]}"
@@ -236,7 +237,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-md-2"></div>
+                                            <div class="col-md-1"></div>
                                         </div>
                                         <div class="row">
                                             <h1>Характеристики:</h1>
@@ -269,10 +270,12 @@
                                              role="alert">
                                             Изменения успешно сохраненны!
                                         </div>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                            class="fas fa-times"></i>
                                         </button>
                                         <button type="button" class="btn btn-primary"
-                                                @click="saveNewProduct()">Save changes
+                                                @click="saveNewProduct()">
+                                            <i class="far fa-save"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -420,7 +423,7 @@
             },
 
 
-            productEditImageLoad: function ( id,index ) {
+            productEditImageLoad: function ( id, index ) {
                 let app = this;
                 let data = new FormData();
                 data.append( 'file', document.getElementById( 'file_edit_product' + id ).files[ 0 ] );

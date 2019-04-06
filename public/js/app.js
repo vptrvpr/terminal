@@ -3106,7 +3106,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5562,6 +5561,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // es modules
   // commonjs require
@@ -5754,6 +5756,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -46973,11 +46976,6 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("h2", [
-                        _c("b", [_vm._v("Телефон (факс):")]),
-                        _vm._v(" 8 (922)76-30-737")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
                         _c("b", [_vm._v("Номер расчетного счета:")]),
                         _vm._v(" 40802810067170012856")
                       ]),
@@ -48055,37 +48053,39 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("section", { staticClass: "service-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.partners, function(partner) {
-              return _c(
+      _vm.partners.length !== 0
+        ? _c("section", { staticClass: "service-section" }, [
+            _c("div", { staticClass: "container" }, [
+              _c(
                 "div",
-                {
-                  staticClass: "col-md-3 col-sm-6 wow fadeInRight animated",
-                  attrs: { "data-wow-delay": "0.1s" }
-                },
-                [
-                  _c("div", { staticClass: "service-item" }, [
-                    _c(
-                      "a",
-                      { attrs: { href: partner.link, target: "_blank" } },
-                      [
-                        _c("img", {
-                          attrs: { src: partner.image, height: "70" }
-                        })
-                      ]
-                    )
-                  ])
-                ]
+                { staticClass: "row" },
+                _vm._l(_vm.partners, function(partner) {
+                  return _c(
+                    "div",
+                    {
+                      staticClass: "col-md-3 col-sm-6 wow fadeInRight animated",
+                      attrs: { "data-wow-delay": "0.1s" }
+                    },
+                    [
+                      _c("div", { staticClass: "service-item" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: partner.link, target: "_blank" } },
+                          [
+                            _c("img", {
+                              attrs: { src: partner.image, height: "70" }
+                            })
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                }),
+                0
               )
-            }),
-            0
-          )
-        ])
-      ]),
+            ])
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "section",
@@ -50386,7 +50386,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("Удалить")]
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
                         )
                       : _vm._e(),
                     _vm._v(" "),
@@ -50400,7 +50400,7 @@ var render = function() {
                               "data-target": ".modal-product-edit" + product.id
                             }
                           },
-                          [_vm._v("Изменить")]
+                          [_c("i", { staticClass: "far fa-edit" })]
                         )
                       : _vm._e(),
                     _vm._v(" "),
@@ -50415,7 +50415,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("Сохранить")]
+                          [_c("i", { staticClass: "far fa-save" })]
                         )
                       : _vm._e()
                   ]),
@@ -50646,9 +50646,9 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-2" }),
+                              _c("div", { staticClass: "col-md-1" }),
                               _vm._v(" "),
-                              _c("div", { staticClass: "col-md-8" }, [
+                              _c("div", { staticClass: "col-md-10" }, [
                                 _c(
                                   "div",
                                   { staticClass: "form-group" },
@@ -50667,7 +50667,7 @@ var render = function() {
                                         dialog_type: "modal",
                                         selector: "textarea",
                                         toolbar:
-                                          "forecolor | undo redo | styleselect | bold italic | link image",
+                                          "forecolor | undo redo | styleselect | bold italic | link image | numlist bullist",
                                         init: {
                                           height: 600,
                                           color_map: ["2F2C65", "Default"]
@@ -50686,7 +50686,7 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "col-md-2" })
+                              _c("div", { staticClass: "col-md-1" })
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "row" }, [
@@ -50804,21 +50804,7 @@ var render = function() {
                                 )
                               : _vm._e(),
                             _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-secondary",
-                                attrs: {
-                                  type: "button",
-                                  "data-dismiss": "modal"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Close\n                                        "
-                                )
-                              ]
-                            ),
+                            _vm._m(4, true),
                             _vm._v(" "),
                             _c(
                               "button",
@@ -50831,11 +50817,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [
-                                _vm._v(
-                                  "Save changes\n                                        "
-                                )
-                              ]
+                              [_c("i", { staticClass: "far fa-save" })]
                             )
                           ])
                         ])
@@ -50847,21 +50829,7 @@ var render = function() {
               0
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success",
-                attrs: {
-                  "data-toggle": "modal",
-                  "data-target": ".bd-example-modal-lg-1"
-                }
-              },
-              [
-                _vm._v(
-                  "Новый\n                        продукт\n                    "
-                )
-              ]
-            ),
+            _vm._m(5),
             _vm._v(" "),
             _c(
               "div",
@@ -50877,7 +50845,7 @@ var render = function() {
               [
                 _c("div", { staticClass: "modal-dialog modal-lg" }, [
                   _c("div", { staticClass: "modal-content" }, [
-                    _vm._m(4),
+                    _vm._m(6),
                     _vm._v(" "),
                     _c("div", { staticClass: "modal-body" }, [
                       _c("div", { staticClass: "row" }, [
@@ -51059,9 +51027,9 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-2" }),
+                        _c("div", { staticClass: "col-md-1" }),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-8" }, [
+                        _c("div", { staticClass: "col-md-10" }, [
                           _c(
                             "div",
                             { staticClass: "form-group" },
@@ -51080,7 +51048,7 @@ var render = function() {
                                   dialog_type: "modal",
                                   selector: "textarea",
                                   toolbar:
-                                    "forecolor | undo redo | styleselect | bold italic | link image",
+                                    "forecolor | undo redo | styleselect | bold italic | link image | numlist bullist",
                                   init: {
                                     height: 600,
                                     color_map: ["2F2C65", "Default"]
@@ -51099,14 +51067,14 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-2" })
+                        _c("div", { staticClass: "col-md-1" })
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
                         _c("h1", [_vm._v("Характеристики:")]),
                         _vm._v(" "),
                         _c("table", { staticClass: "table" }, [
-                          _vm._m(5),
+                          _vm._m(7),
                           _vm._v(" "),
                           _c(
                             "tbody",
@@ -51220,14 +51188,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-secondary",
-                          attrs: { type: "button", "data-dismiss": "modal" }
-                        },
-                        [_vm._v("Close\n                                    ")]
-                      ),
+                      _vm._m(8),
                       _vm._v(" "),
                       _c(
                         "button",
@@ -51240,11 +51201,7 @@ var render = function() {
                             }
                           }
                         },
-                        [
-                          _vm._v(
-                            "Save changes\n                                    "
-                          )
-                        ]
+                        [_c("i", { staticClass: "far fa-save" })]
                       )
                     ])
                   ])
@@ -51327,6 +51284,35 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-secondary",
+        attrs: { type: "button", "data-dismiss": "modal" }
+      },
+      [_c("i", { staticClass: "fas fa-times" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-success",
+        attrs: {
+          "data-toggle": "modal",
+          "data-target": ".bd-example-modal-lg-1"
+        }
+      },
+      [_c("i", { staticClass: "fas fa-plus" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header" }, [
       _c(
         "button",
@@ -51357,6 +51343,19 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("First")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-secondary",
+        attrs: { type: "button", "data-dismiss": "modal" }
+      },
+      [_c("i", { staticClass: "fas fa-times" })]
+    )
   }
 ]
 render._withStripped = true
@@ -51638,7 +51637,13 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "contact-info" }, [
-          _c("p", [_vm._v("Адрес: 628414, г. Сургут, ул. Крылова, 38, кв.97")]),
+          _c("p", [
+            _vm._v("Адрес: 628414, Ханты-Мансийский автономный округ-Югра,"),
+            _c("br"),
+            _vm._v(
+              "\n                        г.Сургут, ул. Крылова д.38, кв. 97"
+            )
+          ]),
           _vm._v(" "),
           _c("p", [_vm._v("Телефон: 8 (3462) 65-64-64, 65-64-44")]),
           _vm._v(" "),

@@ -136,7 +136,7 @@
             </div>
         </section>
 
-        <section class="service-section">
+        <section class="service-section" v-if="partners.length !== 0">
             <div class="container">
                 <div class="row">
 
