@@ -121,6 +121,17 @@
                                                 <div class="col-md-1"></div>
                                             </div>
                                             <div class="row">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-10">
+                                                    <div class="form-group">
+                                                        <label>Видео:</label>
+                                                        <textarea class="form-control"
+                                                                  v-model="product.video"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                            </div>
+                                            <div class="row">
                                                 <h1>Характеристики:</h1>
                                                 <table class="table">
                                                     <thead>
@@ -235,7 +246,16 @@
                                                     ]}"
                                                     ></editor>
                                                 </div>
-
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label>Видео:</label>
+                                                    <textarea class="form-control" v-model="newProduct.video"></textarea>
+                                                </div>
                                             </div>
                                             <div class="col-md-1"></div>
                                         </div>
@@ -311,7 +331,8 @@
                     new_category: "new_category",
                     specifications: [],
                     categorie: null,
-                    img: ''
+                    img: '',
+                    video: '',
                 },
                 saveChangesSuccess: false,
                 saveChangesSuccessNewProduct: false,

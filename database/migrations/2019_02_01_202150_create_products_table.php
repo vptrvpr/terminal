@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->binary('img');
             $table->integer('categorie_id');
             $table->integer('price');
+            $table->string('video')->nullable();
             $table->timestamps();
         });
     }

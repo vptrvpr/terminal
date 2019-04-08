@@ -4533,6 +4533,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5564,6 +5579,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // es modules
   // commonjs require
@@ -5582,7 +5617,8 @@ __webpack_require__.r(__webpack_exports__);
         new_category: "new_category",
         specifications: [],
         categorie: null,
-        img: ''
+        img: '',
+        video: ''
       },
       saveChangesSuccess: false,
       saveChangesSuccessNewProduct: false
@@ -49010,7 +49046,7 @@ var render = function() {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "Мы свяжемся с вами в ближайшее время."
+                                                            "Мы свяжемся с вами в\n                                                            ближайшее время."
                                                           )
                                                         ]
                                                       )
@@ -49177,6 +49213,33 @@ var render = function() {
                               )
                             ]
                           )
+                        ])
+                      : _vm._e()
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "row" },
+                [
+                  _c("transition", { attrs: { name: "out-top" } }, [
+                    _vm.showProduct
+                      ? _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "h1",
+                            {
+                              staticClass: "show-product-name text-center",
+                              staticStyle: { "font-size": "25px" }
+                            },
+                            [_vm._v("Видео")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", {
+                            staticClass: "center",
+                            domProps: { innerHTML: _vm._s(_vm.product.video) }
+                          })
                         ])
                       : _vm._e()
                   ])
@@ -50690,6 +50753,43 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-10" }, [
+                                _c("div", { staticClass: "form-group" }, [
+                                  _c("label", [_vm._v("Видео:")]),
+                                  _vm._v(" "),
+                                  _c("textarea", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: product.video,
+                                        expression: "product.video"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    domProps: { value: product.video },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          product,
+                                          "video",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
                               _c("h1", [_vm._v("Характеристики:")]),
                               _vm._v(" "),
                               _c("table", { staticClass: "table" }, [
@@ -51065,6 +51165,43 @@ var render = function() {
                             ],
                             1
                           )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-1" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-1" }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-10" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", [_vm._v("Видео:")]),
+                            _vm._v(" "),
+                            _c("textarea", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.newProduct.video,
+                                  expression: "newProduct.video"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              domProps: { value: _vm.newProduct.video },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.newProduct,
+                                    "video",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-md-1" })

@@ -2523,3 +2523,8 @@ div.content {
     height: 65px;
     margin-top: -30px;
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+}

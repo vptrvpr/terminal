@@ -80,30 +80,34 @@
                                                     </div>
                                                     <transition name="out-left-notif" mode="out-in">
                                                         <div class="" v-if="!norificationSended">
-                                                        <div class="form-group" key="name">
-                                                            <input type="text" v-model="contacts.name"
-                                                                   class="form-control contact-product-input"
-                                                                   id="recipient-name" placeholder="Имя" autocomplete="off">
-                                                        </div>
-                                                        <div class="form-group mt-3" key="number"
-                                                             >
-                                                            <input type="text" v-model="contacts.number"
-                                                                   class="form-control contact-product-input"
-                                                                   id="recipient-number" placeholder="Телефон" autocomplete="off">
-                                                        </div>
+                                                            <div class="form-group" key="name">
+                                                                <input type="text" v-model="contacts.name"
+                                                                       class="form-control contact-product-input"
+                                                                       id="recipient-name" placeholder="Имя"
+                                                                       autocomplete="off">
+                                                            </div>
+                                                            <div class="form-group mt-3" key="number"
+                                                            >
+                                                                <input type="text" v-model="contacts.number"
+                                                                       class="form-control contact-product-input"
+                                                                       id="recipient-number" placeholder="Телефон"
+                                                                       autocomplete="off">
+                                                            </div>
                                                         </div>
 
 
                                                         <div v-if="norificationSended" key="success">
                                                             <h3 class="notify-success-text">Спасибо,
                                                                 ваша заявка принята!</h3>
-                                                            <h4 class="notify-success-text">Мы свяжемся с вами в ближайшее время.</h4>
+                                                            <h4 class="notify-success-text">Мы свяжемся с вами в
+                                                                ближайшее время.</h4>
                                                         </div>
                                                     </transition>
                                                     <transition name="out-left-notif">
-                                                    <div class="alert alert-white" role="alert" v-if="validateErrors">
-                                                        <p>Заполните все поля!</p>
-                                                    </div>
+                                                        <div class="alert alert-white" role="alert"
+                                                             v-if="validateErrors">
+                                                            <p>Заполните все поля!</p>
+                                                        </div>
                                                     </transition>
                                                 </div>
                                                 <div class="modal-footer contact-product-modal-footer">
@@ -146,6 +150,17 @@
                                         </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                            </transition>
+                        </div>
+                        <div class="row">
+                            <transition name="out-top">
+                                <div class="col-md-12" v-if="showProduct">
+                                    <h1 class="show-product-name text-center" style="font-size: 25px;">Видео</h1>
+                                    <div class="center" v-html="product.video">
+
+
+                                    </div>
                                 </div>
                             </transition>
                         </div>
@@ -260,9 +275,9 @@
 
             contactsSend: function ( productId ) {
                 this.contacts.product_id = productId;
-                if ( this.contacts.number === '' || this.contacts.name === '') {
+                if ( this.contacts.number === '' || this.contacts.name === '' ) {
                     this.validateErrors = true;
-                }else{
+                } else {
                     this.validateErrors = false;
                     axios( {
                         method: 'post',
