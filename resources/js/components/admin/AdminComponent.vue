@@ -43,6 +43,8 @@
                                           v-model="category.description"></textarea>
                             </td>
                             <td>
+                                {{category.img}}
+                                <br>
                                 <div class="file-upload">
                                     <label>
                                         <input type="file" :id="'file_edit_category'+category.id"

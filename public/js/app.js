@@ -4772,6 +4772,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -49452,6 +49454,13 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("td", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(category.img) +
+                        "\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(" "),
                     _c("div", { staticClass: "file-upload" }, [
                       _c("label", [
                         _c("input", {
