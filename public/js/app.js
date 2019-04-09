@@ -4764,6 +4764,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4775,7 +4779,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getProducts();
     this.getCategories();
-    console.log(2222);
   },
   methods: {
     getCategories: function getCategories() {
@@ -4797,6 +4800,17 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this2.categories = response.data;
       });
+    },
+    productEditImageLoad: function productEditImageLoad(id, index) {
+      var app = this;
+      var data = new FormData();
+      data.append('file', document.getElementById('file_edit_category' + id).files[0]);
+      data.append('category_id', id);
+      axios.post('/helper/load_image', data).then(function (response) {
+        app.categories.categories[index].img = response.data.filename;
+      });
+      console.log(index);
+      console.log(this.categories.categories[index].img);
     },
     addNewSlotCategory: function addNewSlotCategory() {
       this.categories.categories.push({
@@ -49348,176 +49362,128 @@ var render = function() {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.categories.categories, function(category) {
+              _vm._l(_vm.categories.categories, function(category, index) {
                 return _c("tr", [
                   _c("th", { attrs: { scope: "row" } }, [
                     _vm._v(_vm._s(category.id))
                   ]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined ? category.name : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.name,
-                              expression: "category.name"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: category.name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(category, "name", $event.target.value)
-                            }
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: category.name,
+                          expression: "category.name"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: category.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        })
-                      : _vm._e()
+                          _vm.$set(category, "name", $event.target.value)
+                        }
+                      }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined
-                            ? category.description
-                            : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.description,
-                              expression: "category.description"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: category.description },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                category,
-                                "description",
-                                $event.target.value
-                              )
-                            }
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: category.description,
+                          expression: "category.description"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: category.description },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        })
-                      : _vm._e()
+                          _vm.$set(category, "description", $event.target.value)
+                        }
+                      }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined ? category.img : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.img,
-                              expression: "category.img"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text" },
-                          domProps: { value: category.img },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(category, "img", $event.target.value)
-                            }
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(
-                          category.isNew === undefined
-                            ? category.under_categories
-                            : ""
-                        ) +
-                        "\n                            "
-                    ),
-                    category.isNew !== undefined
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: category.under_categories,
-                              expression: "category.under_categories"
-                            }
-                          ],
-                          staticClass: "form-check-input big-checkbox",
-                          attrs: { type: "checkbox" },
-                          domProps: {
-                            checked: Array.isArray(category.under_categories)
-                              ? _vm._i(category.under_categories, null) > -1
-                              : category.under_categories
+                    _c("div", { staticClass: "file-upload" }, [
+                      _c("label", [
+                        _c("input", {
+                          ref: "myFilesProduct",
+                          refInFor: true,
+                          attrs: {
+                            type: "file",
+                            id: "file_edit_category" + category.id
                           },
                           on: {
                             change: function($event) {
-                              var $$a = category.under_categories,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      category,
-                                      "under_categories",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      category,
-                                      "under_categories",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(category, "under_categories", $$c)
-                              }
+                              _vm.productEditImageLoad(category.id, index)
                             }
                           }
-                        })
-                      : _vm._e()
+                        }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("ВЫБЕРИТЕ ФОТО")])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: category.under_categories,
+                          expression: "category.under_categories"
+                        }
+                      ],
+                      staticClass: "form-check-input big-checkbox",
+                      attrs: { type: "checkbox" },
+                      domProps: {
+                        checked: Array.isArray(category.under_categories)
+                          ? _vm._i(category.under_categories, null) > -1
+                          : category.under_categories
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = category.under_categories,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(
+                                  category,
+                                  "under_categories",
+                                  $$a.concat([$$v])
+                                )
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  category,
+                                  "under_categories",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(category, "under_categories", $$c)
+                          }
+                        }
+                      }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -49604,19 +49570,34 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("td", [
+                  _c("td", { staticClass: "d-inline" }, [
                     category.isNew === undefined
                       ? _c(
                           "a",
                           {
-                            staticClass: "btn btn-danger",
+                            staticClass: "btn btn-danger d-inline",
                             on: {
                               click: function($event) {
                                 _vm.deleteCategory(category.id)
                               }
                             }
                           },
-                          [_vm._v("Удалить")]
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    category.isNew === undefined
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success d-inline",
+                            on: {
+                              click: function($event) {
+                                _vm.saveChangesCategories()
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-save" })]
                         )
                       : _vm._e(),
                     _vm._v(" "),
@@ -49624,14 +49605,14 @@ var render = function() {
                       ? _c(
                           "a",
                           {
-                            staticClass: "btn btn-success",
+                            staticClass: "btn btn-success d-inline",
                             on: {
                               click: function($event) {
                                 _vm.saveNewCategories()
                               }
                             }
                           },
-                          [_vm._v("Сохранить")]
+                          [_c("i", { staticClass: "far fa-save" })]
                         )
                       : _vm._e()
                   ])
@@ -50730,7 +50711,7 @@ var render = function() {
                                         dialog_type: "modal",
                                         selector: "textarea",
                                         toolbar:
-                                          "forecolor | undo redo | styleselect | bold italic | link image | numlist bullist",
+                                          "forecolor backcolor | undo redo | styleselect | bold italic | link image | numlist bullist",
                                         init: {
                                           height: 600,
                                           color_map: ["2F2C65", "Default"]
@@ -51148,7 +51129,7 @@ var render = function() {
                                   dialog_type: "modal",
                                   selector: "textarea",
                                   toolbar:
-                                    "forecolor | undo redo | styleselect | bold italic | link image | numlist bullist",
+                                    "forecolor backcolor | undo redo | styleselect | bold italic | link image | numlist bullist",
                                   init: {
                                     height: 600,
                                     color_map: ["2F2C65", "Default"]

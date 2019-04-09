@@ -111,7 +111,7 @@
                                                                 custom_colors="true"
                                                                 dialog_type="modal"
                                                                 selector="textarea"
-                                                                toolbar="forecolor | undo redo | styleselect | bold italic | link image | numlist bullist"
+                                                                toolbar="forecolor backcolor | undo redo | styleselect | bold italic | link image | numlist bullist"
                                                                 :init="{height: 600,color_map: [
                                                     '2F2C65', 'Default',
                                                     ]}"
@@ -240,7 +240,7 @@
                                                             custom_colors="true"
                                                             dialog_type="modal"
                                                             selector="textarea"
-                                                            toolbar="forecolor | undo redo | styleselect | bold italic | link image | numlist bullist"
+                                                            toolbar="forecolor backcolor | undo redo | styleselect | bold italic | link image | numlist bullist"
                                                             :init="{height: 600,color_map: [
                                                     '2F2C65', 'Default',
                                                     ]}"

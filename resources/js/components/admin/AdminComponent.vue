@@ -28,26 +28,28 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="category in categories.categories">
+                        <tr v-for="(category,index) in categories.categories">
                             <th scope="row">{{category.id}}</th>
                             <td>
-                                {{category.isNew === undefined ? category.name : ''}}
-                                <input class="form-control" v-if="category.isNew !== undefined" type="text"
+                                <input class="form-control" type="text"
                                        v-model="category.name">
                             </td>
                             <td>
-                                {{category.isNew === undefined ? category.description : ''}}
-                                <input class="form-control" v-if="category.isNew !== undefined" type="text"
-                                       v-model="category.description">
+                                <textarea class="form-control" type="text"
+                                          v-model="category.description"></textarea>
                             </td>
                             <td>
-                                {{category.isNew === undefined ? category.img : ''}}
-                                <input class="form-control" v-if="category.isNew !== undefined" type="text"
-                                       v-model="category.img">
+                                <div class="file-upload">
+                                    <label>
+                                        <input type="file" :id="'file_edit_category'+category.id"
+                                               ref="myFilesProduct"
+                                               @change="productEditImageLoad(category.id,index)">
+                                        <span>ВЫБЕРИТЕ ФОТО</span>
+                                    </label>
+                                </div>
                             </td>
                             <td class="text-center">
-                                {{category.isNew === undefined ? category.under_categories : ''}}
-                                <input class="form-check-input big-checkbox" v-if="category.isNew !== undefined" type="checkbox"
+                                <input class="form-check-input big-checkbox" type="checkbox"
                                        v-model="category.under_categories">
                             </td>
                             <td>
@@ -66,11 +68,13 @@
                                     </select>
                                 </div>
                             </td>
-                            <td>
-                                <a v-if="category.isNew === undefined" class="btn btn-danger"
-                                   @click="deleteCategory(category.id)">Удалить</a>
-                                <a v-if="category.isNew !== undefined" class="btn btn-success"
-                                   @click="saveNewCategories()">Сохранить</a>
+                            <td class="d-inline">
+                                <a v-if="category.isNew === undefined" class="btn btn-danger d-inline"
+                                   @click="deleteCategory(category.id)"><i class="far fa-trash-alt"></i></a>
+                                <a v-if="category.isNew === undefined" class="btn btn-success d-inline"
+                                   @click="saveChangesCategories()"><i class="far fa-save"></i></a>
+                                <a v-if="category.isNew !== undefined" class="btn btn-success d-inline"
+                                   @click="saveNewCategories()"><i class="far fa-save"></i></a>
                             </td>
                         </tr>
                         </tbody>
@@ -96,7 +100,6 @@
         mounted() {
             this.getProducts();
             this.getCategories();
-            console.log(2222);
         },
         methods: {
             getCategories: function () {
@@ -115,6 +118,18 @@
                 }).then((response) => {
                     this.categories = response.data;
                 });
+            },
+
+            productEditImageLoad: function ( id, index ) {
+                let app = this;
+                let data = new FormData();
+                data.append( 'file', document.getElementById( 'file_edit_category' + id ).files[ 0 ] );
+                data.append( 'category_id', id );
+                axios.post( '/helper/load_image', data ).then( function ( response ) {
+                    app.categories.categories[index].img = response.data.filename;
+                } );
+                console.log(index);
+                console.log(this.categories.categories[index].img);
             },
 
 
