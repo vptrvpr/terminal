@@ -126,7 +126,6 @@
                 let data = new FormData();
                 data.append('file', document.getElementById('fileNewSlider').files[0]);
                 data.append('path', 'images/sliders/');
-                data.append('resize_width', '600');
                 axios.post('/helper/load-image-universal', data).then(function (response) {
                     app.sliders[index].image = response.data;
                 });
