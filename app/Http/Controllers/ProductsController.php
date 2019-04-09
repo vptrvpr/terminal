@@ -256,6 +256,22 @@ class ProductsController extends Controller
     }
 
 
+    public function categoriesChangesSave( Request $request )
+    {
+        $category = $request->get( 'category_edit' );
+
+        $categoryEdit                     = Categorie::where('id',$category['id'])->first();
+        $categoryEdit->name               = $category[ 'name' ];
+        $categoryEdit->img                = $category[ 'img' ];
+        $categoryEdit->description        = $category[ 'description' ];
+        $categoryEdit->under_categories   = $category[ 'under_categories' ];
+        $categoryEdit->parent_category_id = $category[ 'parent_category_id' ];
+        $categoryEdit->save();
+
+
+    }
+
+
     public function productEditLoadImage( Request $request )
     {
         if( $request->hasFile( 'file' ) ) {

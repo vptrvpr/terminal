@@ -12,6 +12,10 @@
 
         <div class="content">
             <h1 class="text-center">Категории</h1>
+            <div v-if="isCategoriesSaveChanges" class="alert alert-success text-center"
+                 role="alert">
+                Изменения успешно сохраненны!
+            </div>
             <br>
             <div class="row">
                 <div class="col-md-12">
@@ -72,7 +76,7 @@
                                 <a v-if="category.isNew === undefined" class="btn btn-danger d-inline"
                                    @click="deleteCategory(category.id)"><i class="far fa-trash-alt"></i></a>
                                 <a v-if="category.isNew === undefined" class="btn btn-success d-inline"
-                                   @click="saveChangesCategories()"><i class="far fa-save"></i></a>
+                                   @click="saveChangesCategories(index)"><i class="far fa-save"></i></a>
                                 <a v-if="category.isNew !== undefined" class="btn btn-success d-inline"
                                    @click="saveNewCategories()"><i class="far fa-save"></i></a>
                             </td>
@@ -92,7 +96,8 @@
             return {
                 products: {},
                 categories: [],
-                urlSite: ''
+                urlSite: '',
+                isCategoriesSaveChanges: false
 
 
             }
@@ -103,21 +108,21 @@
         },
         methods: {
             getCategories: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/admin/get_categories/',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.categories = response.data;
-                });
+                } );
             },
 
-            deleteCategory: function (categoryId) {
-                axios({
+            deleteCategory: function ( categoryId ) {
+                axios( {
                     method: 'get',
                     url: '/delete_categories/' + categoryId,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.categories = response.data;
-                });
+                } );
             },
 
             productEditImageLoad: function ( id, index ) {
@@ -126,63 +131,86 @@
                 data.append( 'file', document.getElementById( 'file_edit_category' + id ).files[ 0 ] );
                 data.append( 'category_id', id );
                 axios.post( '/helper/load_image', data ).then( function ( response ) {
-                    app.categories.categories[index].img = response.data.filename;
+                    app.categories.categories[ index ].img = response.data.filename;
                 } );
-                console.log(index);
-                console.log(this.categories.categories[index].img);
+
             },
 
 
             addNewSlotCategory: function () {
-                this.categories.categories.push({id: '', name: '', img: '', under_categories: false,parent_category_id: null,isNew: 1});
+                this.categories.categories.push( {
+                    id: '',
+                    name: '',
+                    img: '',
+                    under_categories: false,
+                    parent_category_id: null,
+                    isNew: 1
+                } );
             },
 
 
             saveNewCategories: function () {
-                axios({
+                axios( {
                     method: 'post',
                     url: '/save_categories',
-                    data: {categories: this.categories.categories}
-                }).then((response) => {
+                    data: { categories: this.categories.categories }
+                } ).then( ( response ) => {
                     this.categories = response.data;
-                });
+                } );
+            },
+
+
+            saveChangesCategories: function ( index ) {
+                console.log( this.categories.categories[ index ].img );
+                axios( {
+                    method: 'post',
+                    url: '/categories/save_changes',
+                    data: { category_edit: this.categories.categories[ index ] }
+                } ).then( ( response ) => {
+                    this.getCategories();
+                    this.isCategoriesSaveChanges = true;
+                } );
+                var self = this;
+                setTimeout( function () {
+                    self.isCategoriesSaveChanges = false;
+                }, 1500 );
             },
 
 
             getProducts: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/get_products',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.products = response.data;
 
-                });
+                } );
             },
-            deleteProduct: function (id) {
-                axios({
+            deleteProduct: function ( id ) {
+                axios( {
                     method: 'get',
                     url: '/delete_product/' + id,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.getProducts();
-                });
+                } );
             },
-            addCart: function (id) {
-                axios({
+            addCart: function ( id ) {
+                axios( {
                     method: 'get',
                     url: '/cart_add/' + id,
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.cart = response.data;
-                });
+                } );
 
             },
 
             getUrlSite: function () {
-                axios({
+                axios( {
                     method: 'get',
                     url: '/helper/get-url-site',
-                }).then((response) => {
+                } ).then( ( response ) => {
                     this.urlSite = response.data;
-                });
+                } );
             }
         }
 

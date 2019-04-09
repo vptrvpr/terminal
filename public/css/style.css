@@ -2515,16 +2515,21 @@ div.content {
     color: #2F2C65;
 }
 
-.scroll-bottom-a:hover{
+.scroll-bottom-a:hover {
     cursor: pointer;
 }
 
-.logo-terminal{
+.logo-terminal {
     height: 65px;
     margin-top: -30px;
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
+}
+
+.img-under-category {
+    width: 112px;
+    height: 112px;
 }

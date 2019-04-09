@@ -4768,12 +4768,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       products: {},
       categories: [],
-      urlSite: ''
+      urlSite: '',
+      isCategoriesSaveChanges: false
     };
   },
   mounted: function mounted() {
@@ -4809,8 +4814,6 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/helper/load_image', data).then(function (response) {
         app.categories.categories[index].img = response.data.filename;
       });
-      console.log(index);
-      console.log(this.categories.categories[index].img);
     },
     addNewSlotCategory: function addNewSlotCategory() {
       this.categories.categories.push({
@@ -4835,44 +4838,64 @@ __webpack_require__.r(__webpack_exports__);
         _this3.categories = response.data;
       });
     },
-    getProducts: function getProducts() {
+    saveChangesCategories: function saveChangesCategories(index) {
       var _this4 = this;
+
+      console.log(this.categories.categories[index].img);
+      axios({
+        method: 'post',
+        url: '/categories/save_changes',
+        data: {
+          category_edit: this.categories.categories[index]
+        }
+      }).then(function (response) {
+        _this4.getCategories();
+
+        _this4.isCategoriesSaveChanges = true;
+      });
+      var self = this;
+      setTimeout(function () {
+        self.isCategoriesSaveChanges = false;
+      }, 1500);
+    },
+    getProducts: function getProducts() {
+      var _this5 = this;
 
       axios({
         method: 'get',
         url: '/get_products'
       }).then(function (response) {
-        _this4.products = response.data;
+        _this5.products = response.data;
       });
     },
     deleteProduct: function deleteProduct(id) {
-      var _this5 = this;
+      var _this6 = this;
 
       axios({
         method: 'get',
         url: '/delete_product/' + id
       }).then(function (response) {
-        _this5.getProducts();
+        _this6.getProducts();
       });
     },
     addCart: function addCart(id) {
-      var _this6 = this;
+      var _this7 = this;
 
       axios({
         method: 'get',
         url: '/cart_add/' + id
       }).then(function (response) {
-        _this6.cart = response.data;
+        _this7.cart = response.data;
       });
     },
     getUrlSite: function getUrlSite() {
-      var _this7 = this;
+      var _this8 = this;
 
       axios({
         method: 'get',
         url: '/helper/get-url-site'
       }).then(function (response) {
-        _this7.urlSite = response.data;
+        _this8.urlSite = response.data;
       });
     }
   }
@@ -46683,7 +46706,8 @@ var render = function() {
                                   _c("div", { staticClass: "row" }, [
                                     _c("div", { staticClass: "col-md-2" }, [
                                       _c("img", {
-                                        staticClass: "margin-top-10",
+                                        staticClass:
+                                          "margin-top-10 img-under-category",
                                         staticStyle: { "margin-left": "25px" },
                                         attrs: { src: under_category.img }
                                       })
@@ -49353,6 +49377,17 @@ var render = function() {
     _c("div", { staticClass: "content" }, [
       _c("h1", { staticClass: "text-center" }, [_vm._v("Категории")]),
       _vm._v(" "),
+      _vm.isCategoriesSaveChanges
+        ? _c(
+            "div",
+            {
+              staticClass: "alert alert-success text-center",
+              attrs: { role: "alert" }
+            },
+            [_vm._v("\n            Изменения успешно сохраненны!\n        ")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
       _c("br"),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
@@ -49593,7 +49628,7 @@ var render = function() {
                             staticClass: "btn btn-success d-inline",
                             on: {
                               click: function($event) {
-                                _vm.saveChangesCategories()
+                                _vm.saveChangesCategories(index)
                               }
                             }
                           },

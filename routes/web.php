@@ -26,6 +26,7 @@ Route::get('/get_products', 'ProductsController@getProductsAll');
 Route::get('/get_recomended', 'ProductsController@getRecomended');
 Route::post('/save_categories', 'ProductsController@saveCategories');
 Route::get('/delete_categories/{categoryId}', 'ProductsController@deleteCategories');
+Route::post('/categories/save_changes', 'ProductsController@categoriesChangesSave');
 
 Route::post('/product/changes_save','ProductsController@productChangesSave');
 Route::post('/product/update_img', 'ProductsController@productEditLoadImage');

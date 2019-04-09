@@ -10,8 +10,13 @@ use App\ProductHelper;
 class HelperController extends Controller
 {
 
-
-    public function loadImage( Request $request,ProductHelper $productHelper )
+    /**
+     * @param Request       $request
+     * @param ProductHelper $productHelper
+     *
+     * @return array
+     */
+    public function loadImage( Request $request, ProductHelper $productHelper )
     {
 
         if( $request->hasFile( 'file' ) ) {
@@ -21,19 +26,34 @@ class HelperController extends Controller
             Image::make( $image )->save( public_path( '/images/products/' . $filename ) );
 
             if( $request->has( 'product_id' ) ) {
+
+                $filename = time() . '.' . $image->getClientOriginalExtension();
+                Image::make( $image )->save( public_path( '/images/products/' . $filename ) );
                 $productEdit      = Product::where( 'id', $request->get( 'product_id' ) )->first();
                 $productEdit->img = $filename;
                 $productEdit->save();
 
                 return [
-                    'status' => 'edit',
+                    'status'   => 'edit',
                     'products' => $productHelper->getProductsForPage(),
 
                 ];
-            } else {
+
+            } elseif( $request->has( 'category_id' ) ) {
+
+                $filename = time() . '.' . $image->getClientOriginalExtension();
+                Image::make( $image )->save( public_path( '/images/categories/' . $filename ) );
+
                 return [
-                    'status'=>'new',
-                    'filename' => $filename
+                    'filename' => '/images/categories/'.$filename,
+
+                ];
+
+            } else {
+
+                return [
+                    'status'   => 'new',
+                    'filename' => $filename,
                 ];
             }
 

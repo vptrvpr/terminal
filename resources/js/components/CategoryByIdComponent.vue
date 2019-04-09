@@ -64,7 +64,7 @@
                                            class="under-category-link">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <img class="margin-top-10" style="margin-left: 25px" :src="under_category.img">
+                                                    <img class="margin-top-10 img-under-category" style="margin-left: 25px" :src="under_category.img">
                                                 </div>
                                                 <div class="col-md-10">
                                                     <h4 class="under-category-name">{{under_category.name}}</h4>
