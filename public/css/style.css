@@ -1,4 +1,4 @@
-/*	################################################################
+.show-product-image/*	################################################################
 Theme Name: Pori
 Theme URI: http://www.themengraph.com/
 Author URI: http://www.themengraph.com/
@@ -2381,6 +2381,7 @@ div.content {
     box-shadow: 0 0 32px -3px rgba(0, 0, 0, 0.35);
     margin-top: 20px;
     height: 322px;
+    max-width: 350px;
 }
 
 .show-product-specification {
