@@ -79,7 +79,7 @@
                                                                 </option>
                                                                 <option class="under-category-option"
                                                                         v-for="under_category in category.under_categories"
-                                                                        v-if="under_category.name !== newProduct.category"
+                                                                        v-if="under_category.name !== product.category"
                                                                         :value="under_category.id">
                                                                     &nbsp;&nbsp;&nbsp;--{{under_category.name}}
                                                                 </option>
@@ -204,7 +204,8 @@
                                                     <select class="form-control" v-model="newProduct.category">
                                                         <option>{{newProduct.category}}</option>
                                                         <template v-for="category in categories.categories">
-                                                            <option v-if="category.name !== newProduct.category">
+                                                            <option v-if="category.name !== newProduct.category"
+                                                                    :value="category.id">
                                                                 {{category.name}}
                                                             </option>
                                                             <option class="under-category-option"
@@ -254,7 +255,8 @@
                                             <div class="col-md-10">
                                                 <div class="form-group">
                                                     <label>Видео:</label>
-                                                    <textarea class="form-control" v-model="newProduct.video"></textarea>
+                                                    <textarea class="form-control"
+                                                              v-model="newProduct.video"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-1"></div>

@@ -5637,6 +5637,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // es modules
   // commonjs require
@@ -50665,7 +50667,7 @@ var render = function() {
                                               category.under_categories,
                                               function(under_category) {
                                                 return under_category.name !==
-                                                  _vm.newProduct.category
+                                                  product.category
                                                   ? _c(
                                                       "option",
                                                       {
@@ -51082,13 +51084,17 @@ var render = function() {
                                 ) {
                                   return [
                                     category.name !== _vm.newProduct.category
-                                      ? _c("option", [
-                                          _vm._v(
-                                            "\n                                                            " +
-                                              _vm._s(category.name) +
-                                              "\n                                                        "
-                                          )
-                                        ])
+                                      ? _c(
+                                          "option",
+                                          { domProps: { value: category.id } },
+                                          [
+                                            _vm._v(
+                                              "\n                                                            " +
+                                                _vm._s(category.name) +
+                                                "\n                                                        "
+                                            )
+                                          ]
+                                        )
                                       : _vm._e(),
                                     _vm._v(" "),
                                     _vm._l(category.under_categories, function(
