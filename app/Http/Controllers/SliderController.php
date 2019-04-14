@@ -32,6 +32,7 @@ class SliderController extends Controller
             $slider = new Slider();
             $slider->title = $newSlider['title'];
             $slider->comment = $newSlider['comment'];
+            $slider->href = $newSlider['href'];
             $slider->image = 'images/sliders/' . $newSlider['image'];
             $slider->save();
         }

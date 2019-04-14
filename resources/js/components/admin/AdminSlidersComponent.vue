@@ -21,6 +21,7 @@
                             <th scope="col">id</th>
                             <th scope="col">Текст</th>
                             <th scope="col">Коммент(только для админа)</th>
+                            <th scope="col">Ссылка</th>
                             <th scope="col">Картинка</th>
                             <th scope="col">Функции</th>
                         </tr>
@@ -38,6 +39,11 @@
                                 {{slider.id !== 0 ? slider.comment : ''}}
                                 <input class="form-control" v-if="slider.id === 0" type="text"
                                        v-model="slider.comment">
+                            </td>
+                            <td>
+                                {{slider.id !== 0 ? slider.href : ''}}
+                                <input class="form-control" v-if="slider.id === 0" type="text"
+                                       v-model="slider.href">
                             </td>
                             <td>
                                 {{slider.id !== 0 ? slider.image : ''}}
@@ -81,7 +87,7 @@
 
         methods: {
             addNewSlotSlider: function () {
-                this.sliders.push({id: 0, title: '', comment: '', image: ''});
+                this.sliders.push({id: 0, title: '', comment: '',href: '', image: ''});
             },
 
 

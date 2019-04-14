@@ -29,13 +29,17 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
+
                     <div v-for="(slider,index) in sliders" :class="index === 0 ? 'item active' : 'item'">
+                        <a :href="slider.href === 0 ? '/' : slider.href">
                         <img :src="slider.image" height="600" alt="">
                         <div class="carousel-caption">
                             <h3>{{slider.title}}</h3>
 
                         </div>
+                        </a>
                     </div>
+
                 </div>
 
                 <!-- Controls -->

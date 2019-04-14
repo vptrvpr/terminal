@@ -3904,6 +3904,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5245,6 +5249,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5260,6 +5270,7 @@ __webpack_require__.r(__webpack_exports__);
         id: 0,
         title: '',
         comment: '',
+        href: '',
         image: ''
       });
     },
@@ -47850,13 +47861,21 @@ var render = function() {
                   "div",
                   { class: index === 0 ? "item active" : "item" },
                   [
-                    _c("img", {
-                      attrs: { src: slider.image, height: "600", alt: "" }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "carousel-caption" }, [
-                      _c("h3", [_vm._v(_vm._s(slider.title))])
-                    ])
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: slider.href === 0 ? "/" : slider.href }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: slider.image, height: "600", alt: "" }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "carousel-caption" }, [
+                          _c("h3", [_vm._v(_vm._s(slider.title))])
+                        ])
+                      ]
+                    )
                   ]
                 )
               }),
@@ -50235,6 +50254,37 @@ var render = function() {
                   _c("td", [
                     _vm._v(
                       "\n                            " +
+                        _vm._s(slider.id !== 0 ? slider.href : "") +
+                        "\n                            "
+                    ),
+                    slider.id === 0
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: slider.href,
+                              expression: "slider.href"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: slider.href },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(slider, "href", $event.target.value)
+                            }
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                            " +
                         _vm._s(slider.id !== 0 ? slider.image : "") +
                         "\n                            "
                     ),
@@ -50349,6 +50399,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [
           _vm._v("Коммент(только для админа)")
         ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Ссылка")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Картинка")]),
         _vm._v(" "),
