@@ -59,7 +59,8 @@
                             <div class="col-md-7"></div>
                             <transition name="out-right">
                                 <div class="col-md-2" v-if="showProduct">
-                                    <h1 class="show-product-price">Цена: {{product.price}} ₽</h1>
+                                    <h1 class="show-product-price" v-if="product.price">Цена: {{product.price}} ₽</h1>
+                                    <h1 class="show-product-price" v-if="!product.price">Узнайте у менеджера</h1>
                                     <button class="contact-product-button" data-toggle="modal" data-target="#buy">
                                         Купить
                                     </button>

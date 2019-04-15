@@ -4760,6 +4760,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -47075,9 +47076,11 @@ var render = function() {
                                 _c("a", { attrs: { href: "#" } }, [
                                   _c("h3", [_vm._v(_vm._s(product.name))]),
                                   _vm._v(" "),
-                                  _c("span", [
-                                    _vm._v(_vm._s(product.price) + " ₽")
-                                  ])
+                                  product.price
+                                    ? _c("span", [
+                                        _vm._v(_vm._s(product.price) + " ₽")
+                                      ])
+                                    : _vm._e()
                                 ])
                               ])
                             ])
@@ -48401,9 +48404,11 @@ var render = function() {
                                     _c("a", { attrs: { href: "#" } }, [
                                       _c("h3", [_vm._v(_vm._s(product.name))]),
                                       _vm._v(" "),
-                                      _c("span", [
-                                        _vm._v(_vm._s(product.price) + " ₽")
-                                      ])
+                                      product.price
+                                        ? _c("span", [
+                                            _vm._v(_vm._s(product.price) + " ₽")
+                                          ])
+                                        : _vm._e()
                                     ])
                                   ])
                                 ])
@@ -49371,9 +49376,19 @@ var render = function() {
                   _c("transition", { attrs: { name: "out-right" } }, [
                     _vm.showProduct
                       ? _c("div", { staticClass: "col-md-2" }, [
-                          _c("h1", { staticClass: "show-product-price" }, [
-                            _vm._v("Цена: " + _vm._s(_vm.product.price) + " ₽")
-                          ]),
+                          _vm.product.price
+                            ? _c("h1", { staticClass: "show-product-price" }, [
+                                _vm._v(
+                                  "Цена: " + _vm._s(_vm.product.price) + " ₽"
+                                )
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          !_vm.product.price
+                            ? _c("h1", { staticClass: "show-product-price" }, [
+                                _vm._v("Узнайте у менеджера")
+                              ])
+                            : _vm._e(),
                           _vm._v(" "),
                           _c(
                             "button",

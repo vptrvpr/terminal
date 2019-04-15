@@ -113,7 +113,7 @@
                                     <div class="product-title">
                                         <a href="#">
                                             <h3>{{product.name}}</h3>
-                                            <span>{{product.price}} ₽</span>
+                                            <span v-if="product.price">{{product.price}} ₽</span>
                                         </a>
                                     </div>
                                 </div>
