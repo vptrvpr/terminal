@@ -1297,9 +1297,9 @@ a.carousel-control.right > span {
     CONTACT SECTION
  */
 .contact-section {
-    background: #2D2C4C no-repeat;
+    background: url(/images/backround-search.jpg);
     /*  background-size: 100%;   */
-    background-position: center center;
+    background-repeat: repeat-y;
     padding: 35px 0 80px;
     display: block;
     position: relative;
