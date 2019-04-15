@@ -4760,7 +4760,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -49381,12 +49380,6 @@ var render = function() {
                                 _vm._v(
                                   "Цена: " + _vm._s(_vm.product.price) + " ₽"
                                 )
-                              ])
-                            : _vm._e(),
-                          _vm._v(" "),
-                          !_vm.product.price
-                            ? _c("h1", { staticClass: "show-product-price" }, [
-                                _vm._v("Узнайте у менеджера")
                               ])
                             : _vm._e(),
                           _vm._v(" "),
