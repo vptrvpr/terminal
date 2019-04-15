@@ -10,7 +10,7 @@
         <div class="container">
         <div class="row featured isotope">
             <transition-group name="fade1" tag="div">
-                <div v-for="product in recommended" :key="product.id"
+                <div v-for="product in recommended" :key="'product'+product.id"
                      class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
                     <div class="product-item">
                         <div class="img-product">

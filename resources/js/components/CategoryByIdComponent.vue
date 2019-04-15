@@ -48,13 +48,12 @@
                     <div class="description-category">
                         <transition-group name="fade1" tag="div">
                             <div v-if="category.show" :key="category.id">
-                                <div>
+                                <div class="description-category-div">
                                     <h1>{{category.name}}</h1>
-                                    <p>{{category.description}}</p>
+                                    <p style="padding: 0;margin-bottom: 20px;">{{category.description}}</p>
                                 </div>
                             </div>
                         </transition-group>
-                        <br><br>
                         <transition name="out-left" tag="div">
                             <div v-if="category.show">
                                 <div v-for="under_category in category.under_categories">

@@ -312,4 +312,21 @@ class ProductsController extends Controller
         return $product;
     }
 
+
+    public function searchTitle(){
+        return view('product.search');
+    }
+
+    public function getProductByTitle($title){
+        $title = str_replace('+',' ',$title);
+
+        $products = Product::where('name', 'LIKE', '%'.$title.'%')->limit(100)->get();
+
+        return [
+          'products'=> $products,
+          'title' => $title
+        ];
+
+    }
+
 }

@@ -63,6 +63,11 @@ Vue.component('tax-deduction-component', require('./components/pages/taxDeductio
 
 
 /**
+ * Search product
+ */
+Vue.component('search-component', require('./components/SearchComponent').default);
+
+/**
  * Assets component
  */
 Vue.component('header-component', require('./components/assets/HeaderComponent').default);

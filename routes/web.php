@@ -124,3 +124,9 @@ Route::get('/recommended/page/get', 'RecommendedController@getPage');
 Route::post('/slack/order_send', 'SlackController@sendOrder');
 Route::post('/slack/contact_send', 'SlackController@sendContact');
 
+
+/**
+ * Search
+ */
+Route::get('/search','ProductsController@searchTitle');
+Route::get('/product/search/{title}','ProductsController@getProductByTitle');

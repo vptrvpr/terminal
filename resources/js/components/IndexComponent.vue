@@ -3,21 +3,6 @@
 
         <header-component></header-component>
 
-        <section class="search-section">
-            <div class="container">
-                <div class="row subscribe-from">
-                    <div class="col-md-12">
-                        <form class="form-inline col-md-12 wow fadeInDown animated">
-                            <div class="form-group">
-                                <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
-                                <button class="suscribe-btn"><i class="pe-7s-search"></i></button>
-                            </div>
-                        </form><!-- end /. form -->
-                    </div>
-                </div><!-- end of/. row -->
-            </div><!-- end of /.container -->
-        </section><!-- end of /.news letter section -->
-
         <section class="slider-section">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -79,15 +64,14 @@
                 </div>
                 <div class="container">
                     <div class="description-category">
-                        <transition-group name="out-right" tag="div">
+                        <transition-group name="out-right" tag="div" class="description-category-div">
                             <div v-for="category in categories.categories" v-if="category.show" :key="category.id">
                                 <div>
                                     <h1>{{category.name}}</h1>
-                                    <p>{{category.description}}</p>
+                                    <p style="padding: 0;margin-bottom: 20px;">{{category.description}}</p>
                                 </div>
                             </div>
                         </transition-group>
-                        <br><br>
                         <transition name="out-left" tag="div">
                             <div class="for-animate-toggle" v-if="showUnderCategories">
                                 <div v-for="category in categories.categories" v-if="category.show">
