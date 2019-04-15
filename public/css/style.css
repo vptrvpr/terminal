@@ -2549,6 +2549,7 @@ div.content {
 
 .search-vue-section {
     height: 160px;
+    box-shadow: inset 0px -26px 26px -19px rgba(0,0,0,0.3);
 }
 
 .out-left-notif1-enter-active {
