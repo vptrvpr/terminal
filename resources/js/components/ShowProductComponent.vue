@@ -153,7 +153,7 @@
                                 </div>
                             </transition>
                         </div>
-                        <div class="row">
+                        <div class="row" v-if="product.video">
                             <transition name="out-top">
                                 <div class="col-md-12" v-if="showProduct">
                                     <h1 class="show-product-name text-center" style="font-size: 25px;">Видео</h1>

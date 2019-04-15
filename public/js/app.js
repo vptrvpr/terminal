@@ -49786,32 +49786,36 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "row" },
-                [
-                  _c("transition", { attrs: { name: "out-top" } }, [
-                    _vm.showProduct
-                      ? _c("div", { staticClass: "col-md-12" }, [
-                          _c(
-                            "h1",
-                            {
-                              staticClass: "show-product-name text-center",
-                              staticStyle: { "font-size": "25px" }
-                            },
-                            [_vm._v("Видео")]
-                          ),
-                          _vm._v(" "),
-                          _c("div", {
-                            staticClass: "center",
-                            domProps: { innerHTML: _vm._s(_vm.product.video) }
-                          })
-                        ])
-                      : _vm._e()
-                  ])
-                ],
-                1
-              )
+              _vm.product.video
+                ? _c(
+                    "div",
+                    { staticClass: "row" },
+                    [
+                      _c("transition", { attrs: { name: "out-top" } }, [
+                        _vm.showProduct
+                          ? _c("div", { staticClass: "col-md-12" }, [
+                              _c(
+                                "h1",
+                                {
+                                  staticClass: "show-product-name text-center",
+                                  staticStyle: { "font-size": "25px" }
+                                },
+                                [_vm._v("Видео")]
+                              ),
+                              _vm._v(" "),
+                              _c("div", {
+                                staticClass: "center",
+                                domProps: {
+                                  innerHTML: _vm._s(_vm.product.video)
+                                }
+                              })
+                            ])
+                          : _vm._e()
+                      ])
+                    ],
+                    1
+                  )
+                : _vm._e()
             ])
           ])
         ])
