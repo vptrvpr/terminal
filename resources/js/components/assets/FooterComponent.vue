@@ -18,6 +18,9 @@
                             г.Сургут, ул. Крылова д.38, кв. 97</p>
                         <p>Телефон: 8 (3462) 65-64-64, 65-64-44</p>
                         <p>Почта: Saha2005@mail.ru</p>
+                        <a href="http://cps-company.ru/" target="_blank">
+                            <img src="/images/stemp_cps.png" width="75" style="transform: rotate(-25deg)">
+                        </a>
                     </div>
                     <div class="social-media">
                         <ul>

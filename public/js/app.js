@@ -6145,6 +6145,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -46198,7 +46201,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("li", [
                               _vm._v(
-                                "Программное обеспечение «Франтол», «Далион», «1С»"
+                                "Программное обеспечение «Frontol», «Далион», «1С»"
                               )
                             ]),
                             _vm._v(" "),
@@ -52376,7 +52379,18 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", [_vm._v("Телефон: 8 (3462) 65-64-64, 65-64-44")]),
           _vm._v(" "),
-          _c("p", [_vm._v("Почта: Saha2005@mail.ru")])
+          _c("p", [_vm._v("Почта: Saha2005@mail.ru")]),
+          _vm._v(" "),
+          _c(
+            "a",
+            { attrs: { href: "http://cps-company.ru/", target: "_blank" } },
+            [
+              _c("img", {
+                staticStyle: { transform: "rotate(-25deg)" },
+                attrs: { src: "/images/stemp_cps.png", width: "75" }
+              })
+            ]
+          )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "social-media" }, [
