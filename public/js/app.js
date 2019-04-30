@@ -47331,7 +47331,7 @@ var render = function() {
                       _c("h2", [
                         _c("b", [_vm._v("Юридический адрес:")]),
                         _vm._v(
-                          " 628414, г. Сургут, ул.\n                            Крылова, 38, кв.97"
+                          " 628414, г. Сургут, ул.\n                            Крылова, 38"
                         )
                       ]),
                       _vm._v(" "),
@@ -52372,9 +52372,7 @@ var staticRenderFns = [
           _c("p", [
             _vm._v("Адрес: 628414, Ханты-Мансийский автономный округ-Югра,"),
             _c("br"),
-            _vm._v(
-              "\n                        г.Сургут, ул. Крылова д.38, кв. 97"
-            )
+            _vm._v("\n                        г.Сургут, ул. Крылова д.38")
           ]),
           _vm._v(" "),
           _c("p", [_vm._v("Телефон: 8 (3462) 65-64-64, 65-64-44")]),
@@ -52383,7 +52381,9 @@ var staticRenderFns = [
           _vm._v(" "),
           _c(
             "a",
-            { attrs: { href: "http://cps-company.ru/", target: "_blank" } },
+            {
+              attrs: { href: "http://cps-company.ru?visit=1", target: "_blank" }
+            },
             [
               _c("img", {
                 staticStyle: { transform: "rotate(-25deg)" },
