@@ -18,17 +18,24 @@
     <![endif]-->
 </head>
 <body>
+<div id="preloader">
+    <div class="preloader-area">
+        <div class="preloader-box">
+                <div class="preloader"></div>
+        </div>
+    </div>
+</div>
 <div id="app">
     @yield('content')
 </div>
-
-<script src="{{ env('MIX_URL_SITE') }}/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="{{ env('MIX_URL_SITE') }}/js/vendor/jquery-1.11.2.min.js"></script><!-- /#wrapper -->
+<script src="{{ env('MIX_URL_SITE') }}/js/app.js?11122345121112222231121223"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/vendor/bootstrap.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/isotope.pkgd.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/owl.carousel.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/wow.min.js"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/custom.js"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/app.js?1112234512111222223112122"></script><!-- /#wrapper -->
+<script src="{{ env('MIX_URL_SITE') }}/js/custom.js?122"></script>
+
 
 </body>
 

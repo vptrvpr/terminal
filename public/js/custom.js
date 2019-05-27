@@ -1,16 +1,14 @@
 /*==============================
    PRELOADER
 ==============================*/
-(function($){
-    $(window).load(function() {
-	    $('#preloader').hide();
-    });
-})(jQuery);
+$(document).ready(function (  ) {
+    $('#preloader').hide();
+});
 /*==============================
    SEARCH BUTTON SECRIPT
 ==============================*/
 $(".search-btn").click(function(event){
-    event.preventDefault()
+    event.preventDefault();
     $(".search-section").slideToggle(500);
 });
 
