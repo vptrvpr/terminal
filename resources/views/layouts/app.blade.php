@@ -29,7 +29,7 @@
     @yield('content')
 </div>
 <script src="{{ env('MIX_URL_SITE') }}/js/vendor/jquery-1.11.2.min.js"></script><!-- /#wrapper -->
-<script src="{{ env('MIX_URL_SITE') }}/js/app.js?11122345121112222231121223"></script>
+<script src="{{ env('MIX_URL_SITE') }}/js/app.js?111223451211122222311212232"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/vendor/bootstrap.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/isotope.pkgd.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/owl.carousel.min.js"></script>
