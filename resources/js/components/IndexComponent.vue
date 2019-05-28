@@ -44,18 +44,14 @@
                         <div class="filter-menu">
                             <div class="row categories-list">
                                 <div class="container">
-
                                     <div class="categories-list-center">
-                                        <transition-group name="showCategories" tag="a" class="tag-a-categories">
-                                            <a v-for="(category,index) in categories.categories" v-if="showCategories"
-                                               :key="category.id" :href="'/catalog/category/'+category.id"
-                                               class="category-index">
+                                            <a v-for="(category,index) in categories.categories"
+                                               :key="category.name" :href="'/catalog/category/'+category.id"
+                                               class="category-index" id="categoryIndexAnimation">
                                                 <img :src="category.img">
                                                 <h4>{{category.name}}</h4>
                                             </a>
-                                        </transition-group>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -64,16 +60,16 @@
                 </div>
                 <div class="container">
                     <div class="description-category">
-                        <transition-group name="out-right" tag="div" class="description-category-div">
+                        <div class="left-animate description-category-div">
                             <div v-for="category in categories.categories" v-if="category.show" :key="category.id">
                                 <div>
                                     <h1>{{category.name}}</h1>
                                     <p style="padding: 0;margin-bottom: 20px;">{{category.description}}</p>
                                 </div>
                             </div>
-                        </transition-group>
-                        <transition name="out-left" tag="div">
-                            <div class="for-animate-toggle" v-if="showUnderCategories">
+                        </div>
+                        <div>
+                            <div class="for-animate-toggle right-animate" v-if="showUnderCategories">
                                 <div v-for="category in categories.categories" v-if="category.show">
                                     <div v-for="under_category in category.under_categories">
                                         <div class="under-category">
@@ -93,7 +89,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </transition>
+                        </div>
 
                     </div>
 

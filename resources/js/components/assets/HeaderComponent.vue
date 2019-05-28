@@ -12,7 +12,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img class="logo-terminal" src="/images/logo_terminal.png"></a>
+                        <a class="navbar-brand left-animate" href="/"><img class="logo-terminal" src="/images/logo_terminal.png"></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->

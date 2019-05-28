@@ -2235,8 +2235,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3088,10 +3086,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3725,10 +3719,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -46096,131 +46086,7 @@ var render = function() {
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
-      _c(
-        "section",
-        {
-          staticClass: "featured-section",
-          staticStyle: { background: "whitesmoke" }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "container" },
-            [
-              _c("transition", { attrs: { name: "showDiv2" } }, [
-                _vm.showDiv2
-                  ? _c("div", { staticClass: "infomation_about" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-12" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "titie-section wow fadeInDown animated "
-                            },
-                            [_c("h1", [_vm._v("О НАС")])]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-12 page-info" }, [
-                          _c("h1", { staticClass: "text-center" }, [
-                            _vm._v("Компания «Терминал»"),
-                            _c("br"),
-                            _c("br"),
-                            _vm._v(
-                              "\n\n                                Предоставляет услуги в сфере обслуживание эквайрингового и\n                                кассового оборудования и продажи периферийных частей к нему."
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("ТЕРМИНАЛ ЭТО:")]),
-                          _vm._v(" "),
-                          _c("ol", { staticClass: "margin-left-30" }, [
-                            _c("li", {}, [
-                              _vm._v(
-                                "Индивидуальный подход к каждому нашему клиенту"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", {}, [
-                              _vm._v(
-                                "Гибкая ценовая политика компании вас приятно удивит"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", {}, [
-                              _vm._v(
-                                "Круглосуточная телефонная служба поддержки, выезд инженеров"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", {}, [
-                              _vm._v(
-                                "Гарантийное обслуживание в сертифицированном центре компании"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", {}, [
-                              _vm._v("Полное сопровождение, обучение кассиров")
-                            ]),
-                            _vm._v(" "),
-                            _c("li", {}, [
-                              _vm._v(
-                                "Предоставление документов по возврату денежных средств от покупки онлайн-кассы в ФНС России"
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c("h2", [_vm._v("Наши услуги:")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "margin-left-30" }, [
-                            _c("li", [_vm._v("Регистрация ФН ККМ в ФНС РФ")]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Открытие электронно-цифровой подписи в ФНС России"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Бесплатная доставка чековой ленты по г. Сургуту и Сургутскому району"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "В наличии большой выбор ККМ «АТОЛ», «МЕРКУРИЙ»"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Программное обеспечение «Frontol», «Далион», «1С»"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _vm._v(
-                                "Большой ассортимент периферийное оборудование"
-                              )
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  : _vm._e()
-              ])
-            ],
-            1
-          )
-        ]
-      ),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "section",
@@ -46272,6 +46138,114 @@ var staticRenderFns = [
         ])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "section",
+      {
+        staticClass: "featured-section",
+        staticStyle: { background: "whitesmoke" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "infomation_about top-animate" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c(
+                  "div",
+                  { staticClass: "titie-section wow fadeInDown animated " },
+                  [_c("h1", [_vm._v("О НАС")])]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12 page-info" }, [
+                _c("h1", { staticClass: "text-center" }, [
+                  _vm._v("Компания «Терминал»"),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(
+                    "\n\n                                Предоставляет услуги в сфере обслуживание эквайрингового и\n                                кассового оборудования и продажи периферийных частей к нему."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("h2", [_vm._v("ТЕРМИНАЛ ЭТО:")]),
+                _vm._v(" "),
+                _c("ol", { staticClass: "margin-left-30" }, [
+                  _c("li", {}, [
+                    _vm._v("Индивидуальный подход к каждому нашему клиенту")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", {}, [
+                    _vm._v(
+                      "Гибкая ценовая политика компании вас приятно удивит"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", {}, [
+                    _vm._v(
+                      "Круглосуточная телефонная служба поддержки, выезд инженеров"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", {}, [
+                    _vm._v(
+                      "Гарантийное обслуживание в сертифицированном центре компании"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", {}, [
+                    _vm._v("Полное сопровождение, обучение кассиров")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", {}, [
+                    _vm._v(
+                      "Предоставление документов по возврату денежных средств от покупки онлайн-кассы в ФНС России"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("h2", [_vm._v("Наши услуги:")]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "margin-left-30" }, [
+                  _c("li", [_vm._v("Регистрация ФН ККМ в ФНС РФ")]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v("Открытие электронно-цифровой подписи в ФНС России")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v(
+                      "Бесплатная доставка чековой ленты по г. Сургуту и Сургутскому району"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v("В наличии большой выбор ККМ «АТОЛ», «МЕРКУРИЙ»")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v("Программное обеспечение «Frontol», «Далион», «1С»")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v("Большой ассортимент периферийное оборудование")
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -47179,213 +47153,9 @@ var render = function() {
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "featured-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            [
-              _c("transition-group", { attrs: { name: "showDiv1" } }, [
-                _vm.showDiv1
-                  ? _c("div", { key: "tet", staticClass: "col-md-7" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "company_address",
-                          staticStyle: { "font-size": "15px" }
-                        },
-                        [
-                          _c("h1", [_vm._v("Информация о компании:")]),
-                          _vm._v(" "),
-                          _c("h2", { staticClass: "mt-1" }, [
-                            _vm._v(
-                              "628414, Ханты-Мансийский автономный округ-Югра,"
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              " г.Сургут, ул.\n                                Крылова д.38\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v(
-                              "График работы: с 9.00 до 18.00 без выходных "
-                            ),
-                            _c("br"),
-                            _c("br"),
-                            _vm._v(
-                              "Тел: 8(3462) 65-64-64, 65-64-44\n                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", [
-                            _vm._v("E-mail: "),
-                            _c(
-                              "a",
-                              {
-                                staticStyle: { color: "#2F2C65" },
-                                attrs: { href: "mailto:info@nwc-em.ru" }
-                              },
-                              [_vm._v("Saha2005@mail.ru")]
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "contact-product-button",
-                          staticStyle: { "margin-top": "20px" },
-                          attrs: {
-                            href: "dowloads-for-users/enterprise_map.doc",
-                            download: ""
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Скачать карточку\n                            предприятия"
-                          )
-                        ]
-                      ),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "contact-product-button",
-                          staticStyle: { "margin-top": "20px" },
-                          attrs: { href: "images/vizitka1.jpg", download: "" }
-                        },
-                        [_vm._v("Визитка")]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.showDiv1
-                  ? _c("div", { key: "tet1", staticClass: "col-md-5" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "/images/logo_kryg.png",
-                          alt: "альтернативный текст",
-                          width: "397px"
-                        }
-                      })
-                    ])
-                  : _vm._e()
-              ])
-            ],
-            1
-          )
-        ])
-      ]),
+      _vm._m(1),
       _vm._v(" "),
-      _c("section", { staticClass: "service-section-1" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "row" },
-            [
-              _c("transition", { attrs: { name: "showDiv2" } }, [
-                _vm.showDiv2
-                  ? _c("div", { staticClass: "col-md-12" }, [
-                      _c("h2", [
-                        _c("b", [
-                          _vm._v(
-                            "Полное официальное\n                            наименование предприятия\n                            (для печатн. форм. докум.):"
-                          )
-                        ]),
-                        _vm._v(
-                          " Индивидуальный\n                            предприниматель Коломиец\n                            Александр Васильевич"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [
-                          _vm._v(
-                            "Сокращенное наименование\n                            предприятия:"
-                          )
-                        ]),
-                        _vm._v(
-                          " ИП Коломиец А.В.\n                            Терминал"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("Директор:")]),
-                        _vm._v(" Коломиец Александр Васильевич")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("ИНН:")]),
-                        _vm._v(" 860236954880")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("ОГРН:")]),
-                        _vm._v(" 318861700081536")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("Юридический адрес:")]),
-                        _vm._v(
-                          " 628414, г. Сургут, ул.\n                            Крылова, 38"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("Номер расчетного счета:")]),
-                        _vm._v(" 40802810067170012856")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [
-                          _vm._v(
-                            "Наименование учреждения\n                            банка:"
-                          )
-                        ]),
-                        _vm._v(" ПАО «Сбербанк»")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [
-                          _vm._v(
-                            "Местонахождение\n                            учреждения банка:"
-                          )
-                        ]),
-                        _vm._v(
-                          " 628400, г. Сургут\n                            ул. Дзержинского д.5"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [
-                          _vm._v(
-                            "Корреспондентский счет\n                            банка:"
-                          )
-                        ]),
-                        _vm._v(" 30101810800000000651")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("БИК:")]),
-                        _vm._v(" 047102651")
-                      ]),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("b", [_vm._v("e-mail:")]),
-                        _vm._v(" Saha2005@mail.ru")
-                      ])
-                    ])
-                  : _vm._e()
-              ])
-            ],
-            1
-          )
-        ])
-      ]),
+      _vm._m(2),
       _vm._v(" "),
       _c(
         "section",
@@ -47442,10 +47212,189 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "titie-section wow fadeInDown animated " }, [
-          _c("h1", [_vm._v("Контакты")])
+    return _c("section", { staticClass: "featured-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              { staticClass: "titie-section wow fadeInDown animated " },
+              [_c("h1", [_vm._v("Контакты")])]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", [
+            _c("div", { staticClass: "col-md-7 left-animate" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "company_address",
+                  staticStyle: { "font-size": "15px" }
+                },
+                [
+                  _c("h1", [_vm._v("Информация о компании:")]),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "mt-1" }, [
+                    _vm._v("628414, Ханты-Мансийский автономный округ-Югра,"),
+                    _c("br"),
+                    _vm._v(
+                      " г.Сургут, ул.\n                                Крылова д.38\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", [
+                    _vm._v("График работы: с 9.00 до 18.00 без выходных "),
+                    _c("br"),
+                    _c("br"),
+                    _vm._v(
+                      "Тел: 8(3462) 65-64-64, 65-64-44\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", [
+                    _vm._v("E-mail: "),
+                    _c(
+                      "a",
+                      {
+                        staticStyle: { color: "#2F2C65" },
+                        attrs: { href: "mailto:info@nwc-em.ru" }
+                      },
+                      [_vm._v("Saha2005@mail.ru")]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "contact-product-button",
+                  staticStyle: { "margin-top": "20px" },
+                  attrs: {
+                    href: "dowloads-for-users/enterprise_map.doc",
+                    download: ""
+                  }
+                },
+                [
+                  _vm._v(
+                    "Скачать карточку\n                            предприятия"
+                  )
+                ]
+              ),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "contact-product-button",
+                  staticStyle: { "margin-top": "20px" },
+                  attrs: { href: "images/vizitka1.jpg", download: "" }
+                },
+                [_vm._v("Визитка")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-5 right-animate" }, [
+              _c("img", {
+                attrs: {
+                  src: "/images/logo_kryg.png",
+                  alt: "альтернативный текст",
+                  width: "397px"
+                }
+              })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "service-section-1" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 top-animate" }, [
+            _c("h2", [
+              _c("b", [
+                _vm._v(
+                  "Полное официальное\n                            наименование предприятия\n                            (для печатн. форм. докум.):"
+                )
+              ]),
+              _vm._v(
+                " Индивидуальный\n                            предприниматель Коломиец\n                            Александр Васильевич"
+              )
+            ]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [
+                _vm._v(
+                  "Сокращенное наименование\n                            предприятия:"
+                )
+              ]),
+              _vm._v(" ИП Коломиец А.В.\n                            Терминал")
+            ]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [_vm._v("Директор:")]),
+              _vm._v(" Коломиец Александр Васильевич")
+            ]),
+            _vm._v(" "),
+            _c("h2", [_c("b", [_vm._v("ИНН:")]), _vm._v(" 860236954880")]),
+            _vm._v(" "),
+            _c("h2", [_c("b", [_vm._v("ОГРН:")]), _vm._v(" 318861700081536")]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [_vm._v("Юридический адрес:")]),
+              _vm._v(
+                " 628414, г. Сургут, ул.\n                            Крылова, 38"
+              )
+            ]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [_vm._v("Номер расчетного счета:")]),
+              _vm._v(" 40802810067170012856")
+            ]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [
+                _vm._v(
+                  "Наименование учреждения\n                            банка:"
+                )
+              ]),
+              _vm._v(" ПАО «Сбербанк»")
+            ]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [
+                _vm._v(
+                  "Местонахождение\n                            учреждения банка:"
+                )
+              ]),
+              _vm._v(
+                " 628400, г. Сургут\n                            ул. Дзержинского д.5"
+              )
+            ]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [
+                _vm._v(
+                  "Корреспондентский счет\n                            банка:"
+                )
+              ]),
+              _vm._v(" 30101810800000000651")
+            ]),
+            _vm._v(" "),
+            _c("h2", [_c("b", [_vm._v("БИК:")]), _vm._v(" 047102651")]),
+            _vm._v(" "),
+            _c("h2", [
+              _c("b", [_vm._v("e-mail:")]),
+              _vm._v(" Saha2005@mail.ru")
+            ])
+          ])
         ])
       ])
     ])
@@ -48169,39 +48118,28 @@ var render = function() {
                     _c(
                       "div",
                       { staticClass: "categories-list-center" },
-                      [
-                        _c(
-                          "transition-group",
+                      _vm._l(_vm.categories.categories, function(
+                        category,
+                        index
+                      ) {
+                        return _c(
+                          "a",
                           {
-                            staticClass: "tag-a-categories",
-                            attrs: { name: "showCategories", tag: "a" }
+                            key: category.name,
+                            staticClass: "category-index",
+                            attrs: {
+                              href: "/catalog/category/" + category.id,
+                              id: "categoryIndexAnimation"
+                            }
                           },
-                          _vm._l(_vm.categories.categories, function(
-                            category,
-                            index
-                          ) {
-                            return _vm.showCategories
-                              ? _c(
-                                  "a",
-                                  {
-                                    key: category.id,
-                                    staticClass: "category-index",
-                                    attrs: {
-                                      href: "/catalog/category/" + category.id
-                                    }
-                                  },
-                                  [
-                                    _c("img", { attrs: { src: category.img } }),
-                                    _vm._v(" "),
-                                    _c("h4", [_vm._v(_vm._s(category.name))])
-                                  ]
-                                )
-                              : _vm._e()
-                          }),
-                          0
+                          [
+                            _c("img", { attrs: { src: category.img } }),
+                            _vm._v(" "),
+                            _c("h4", [_vm._v(_vm._s(category.name))])
+                          ]
                         )
-                      ],
-                      1
+                      }),
+                      0
                     )
                   ])
                 ])
@@ -48213,148 +48151,123 @@ var render = function() {
             "div",
             { staticClass: "container" },
             [
-              _c(
-                "div",
-                { staticClass: "description-category" },
-                [
-                  _c(
-                    "transition-group",
-                    {
-                      staticClass: "description-category-div",
-                      attrs: { name: "out-right", tag: "div" }
-                    },
-                    _vm._l(_vm.categories.categories, function(category) {
-                      return category.show
-                        ? _c("div", { key: category.id }, [
-                            _c("div", [
-                              _c("h1", [_vm._v(_vm._s(category.name))]),
-                              _vm._v(" "),
-                              _c(
-                                "p",
-                                {
-                                  staticStyle: {
-                                    padding: "0",
-                                    "margin-bottom": "20px"
-                                  }
-                                },
-                                [_vm._v(_vm._s(category.description))]
-                              )
-                            ])
+              _c("div", { staticClass: "description-category" }, [
+                _c(
+                  "div",
+                  { staticClass: "left-animate description-category-div" },
+                  _vm._l(_vm.categories.categories, function(category) {
+                    return category.show
+                      ? _c("div", { key: category.id }, [
+                          _c("div", [
+                            _c("h1", [_vm._v(_vm._s(category.name))]),
+                            _vm._v(" "),
+                            _c(
+                              "p",
+                              {
+                                staticStyle: {
+                                  padding: "0",
+                                  "margin-bottom": "20px"
+                                }
+                              },
+                              [_vm._v(_vm._s(category.description))]
+                            )
                           ])
-                        : _vm._e()
-                    }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "transition",
-                    { attrs: { name: "out-left", tag: "div" } },
-                    [
-                      _vm.showUnderCategories
-                        ? _c(
-                            "div",
-                            { staticClass: "for-animate-toggle" },
-                            _vm._l(_vm.categories.categories, function(
-                              category
-                            ) {
-                              return category.show
-                                ? _c(
-                                    "div",
-                                    _vm._l(category.under_categories, function(
-                                      under_category
-                                    ) {
-                                      return _c("div", [
+                        ])
+                      : _vm._e()
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c("div", [
+                  _vm.showUnderCategories
+                    ? _c(
+                        "div",
+                        { staticClass: "for-animate-toggle right-animate" },
+                        _vm._l(_vm.categories.categories, function(category) {
+                          return category.show
+                            ? _c(
+                                "div",
+                                _vm._l(category.under_categories, function(
+                                  under_category
+                                ) {
+                                  return _c("div", [
+                                    _c(
+                                      "div",
+                                      { staticClass: "under-category" },
+                                      [
                                         _c(
-                                          "div",
-                                          { staticClass: "under-category" },
+                                          "a",
+                                          {
+                                            staticClass: "under-category-link",
+                                            attrs: {
+                                              href:
+                                                "/catalog/category/" +
+                                                under_category.id
+                                            }
+                                          },
                                           [
-                                            _c(
-                                              "a",
-                                              {
-                                                staticClass:
-                                                  "under-category-link",
-                                                attrs: {
-                                                  href:
-                                                    "/catalog/category/" +
-                                                    under_category.id
-                                                }
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  { staticClass: "row" },
-                                                  [
-                                                    _c(
-                                                      "div",
-                                                      {
-                                                        staticClass: "col-md-2"
-                                                      },
-                                                      [
-                                                        _c("img", {
-                                                          staticClass:
-                                                            "margin-top-10",
-                                                          staticStyle: {
-                                                            "margin-left":
-                                                              "25px"
-                                                          },
-                                                          attrs: {
-                                                            src:
-                                                              under_category.img
-                                                          }
-                                                        })
-                                                      ]
-                                                    ),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "div",
-                                                      {
-                                                        staticClass: "col-md-10"
-                                                      },
-                                                      [
-                                                        _c(
-                                                          "h4",
-                                                          {
-                                                            staticClass:
-                                                              "under-category-name"
-                                                          },
-                                                          [
-                                                            _vm._v(
-                                                              _vm._s(
-                                                                under_category.name
-                                                              )
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c("p", [
-                                                          _vm._v(
-                                                            _vm._s(
-                                                              under_category.description
-                                                            )
-                                                          )
-                                                        ])
-                                                      ]
+                                            _c("div", { staticClass: "row" }, [
+                                              _c(
+                                                "div",
+                                                { staticClass: "col-md-2" },
+                                                [
+                                                  _c("img", {
+                                                    staticClass:
+                                                      "margin-top-10",
+                                                    staticStyle: {
+                                                      "margin-left": "25px"
+                                                    },
+                                                    attrs: {
+                                                      src: under_category.img
+                                                    }
+                                                  })
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "col-md-10" },
+                                                [
+                                                  _c(
+                                                    "h4",
+                                                    {
+                                                      staticClass:
+                                                        "under-category-name"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          under_category.name
+                                                        )
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("p", [
+                                                    _vm._v(
+                                                      _vm._s(
+                                                        under_category.description
+                                                      )
                                                     )
-                                                  ]
-                                                )
-                                              ]
-                                            )
+                                                  ])
+                                                ]
+                                              )
+                                            ])
                                           ]
                                         )
-                                      ])
-                                    }),
-                                    0
-                                  )
-                                : _vm._e()
-                            }),
-                            0
-                          )
-                        : _vm._e()
-                    ]
-                  )
-                ],
-                1
-              ),
+                                      ]
+                                    )
+                                  ])
+                                }),
+                                0
+                              )
+                            : _vm._e()
+                        }),
+                        0
+                      )
+                    : _vm._e()
+                ])
+              ]),
               _vm._v(" "),
               _vm._l(_vm.categories.categories, function(category) {
                 return _c(
@@ -52590,12 +52503,16 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-        _c("img", {
-          staticClass: "logo-terminal",
-          attrs: { src: "/images/logo_terminal.png" }
-        })
-      ])
+      _c(
+        "a",
+        { staticClass: "navbar-brand left-animate", attrs: { href: "/" } },
+        [
+          _c("img", {
+            staticClass: "logo-terminal",
+            attrs: { src: "/images/logo_terminal.png" }
+          })
+        ]
+      )
     ])
   },
   function() {

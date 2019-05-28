@@ -29,8 +29,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <transition-group name="showDiv1">
-                        <div class="col-md-7" key="tet" v-if="showDiv1">
+                    <div>
+                        <div class="col-md-7 left-animate">
                             <div class="company_address" style="font-size: 15px">
                                 <h1>Информация о компании:</h1>
                                 <h2 class="mt-1">628414, Ханты-Мансийский автономный округ-Югра,<br> г.Сургут, ул.
@@ -50,10 +50,10 @@
                                href="images/vizitka1.jpg" download>Визитка</a>
 
                         </div>
-                        <div class="col-md-5" key="tet1" v-if="showDiv1">
+                        <div class="col-md-5 right-animate">
                             <img src="/images/logo_kryg.png" alt="альтернативный текст" width="397px">
                         </div>
-                    </transition-group>
+                    </div>
                 </div>
             </div>
         </section>
@@ -61,8 +61,7 @@
         <section class="service-section-1">
             <div class="container">
                 <div class="row">
-                    <transition name="showDiv2">
-                        <div class="col-md-12" v-if="showDiv2">
+                    <div class="col-md-12 top-animate">
                             <h2><b>Полное официальное
                                 наименование предприятия
                                 (для печатн. форм. докум.):</b> Индивидуальный
@@ -87,10 +86,7 @@
                                 банка:</b> 30101810800000000651</h2>
                             <h2><b>БИК:</b> 047102651</h2>
                             <h2><b>e-mail:</b> Saha2005@mail.ru</h2>
-
-
-                        </div>
-                    </transition>
+                    </div>
                 </div>
             </div>
         </section>

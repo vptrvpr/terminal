@@ -22,8 +22,7 @@
         <section class="featured-section" style="    background: whitesmoke;">
 
             <div class="container">
-                <transition name="showDiv2">
-                    <div class="infomation_about" v-if="showDiv2">
+                    <div class="infomation_about top-animate">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="titie-section wow fadeInDown animated ">
@@ -64,7 +63,6 @@
                             </div>
                         </div>
                     </div>
-                </transition>
             </div>
 
         </section>

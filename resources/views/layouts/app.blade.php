@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <link rel="stylesheet" href="{{ env('MIX_URL_SITE') }}/css/style.css?11122345121112222231121222">
+    <link rel="stylesheet" href="{{ env('MIX_URL_SITE') }}/css/style.css?111223451211122222311212222">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="shortcut icon" href="/images/favicon_term.png" type="image/png">
@@ -33,8 +33,24 @@
 <script src="{{ env('MIX_URL_SITE') }}/js/isotope.pkgd.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/owl.carousel.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/wow.min.js"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/app.js?111223451211122222311212232"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/custom.js?122"></script>
+<script src="{{ env('MIX_URL_SITE') }}/js/app.js?1112234512111222223112122322"></script>
+<script src="{{ env('MIX_URL_SITE') }}/js/custom.js?12232"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(53836633, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53836633" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 
 </body>

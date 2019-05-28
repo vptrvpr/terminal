@@ -3,6 +3,60 @@
 ==============================*/
 $(document).ready(function (  ) {
     $('#preloader').hide();
+
+
+    setTimeout(function (  ) {
+        var delay = 300;
+        $( ".category-index" ).each( function ( index ) {
+            delay += 100;
+            $( this ).delay( delay ).queue( function ( next ) {
+                $( this ).css( {
+                    transform: 'translateY(0px)',
+                    opacity: 1
+                } );
+                next();
+            } );
+        } );
+
+
+        var delay2 = 300;
+        $( ".navbar-nav li" ).each( function ( index ) {
+            delay2 += 100;
+            $( this ).delay( delay2 ).queue( function ( next ) {
+                $( this ).css( {
+                    transform: 'translateY(0px)',
+                    opacity: 1
+                } );
+                next();
+            } );
+        } );
+
+        $('.left-animate').each(function ( index ) {
+            $( this ).css( {
+                transform: 'translateX(0px)',
+                opacity: 1
+            } );
+        });
+
+        $('.right-animate').each(function ( index ) {
+            $( this ).css( {
+                transform: 'translateX(0px)',
+                opacity: 1
+            } );
+        });
+
+        $('.top-animate').each(function ( index ) {
+            $( this ).css( {
+                transform: 'translateY(0px)',
+                opacity: 1
+            } );
+        });
+
+
+
+
+
+    },500);
 });
 /*==============================
    SEARCH BUTTON SECRIPT
@@ -310,4 +364,6 @@ $('#feedback').carousel({
       }
     );
     wow.init();
+
+
 })(jQuery);
