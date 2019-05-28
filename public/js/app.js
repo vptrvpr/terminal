@@ -2838,8 +2838,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -46868,39 +46866,28 @@ var render = function() {
                     _c(
                       "div",
                       { staticClass: "categories-list-center" },
-                      [
-                        _c(
-                          "transition-group",
+                      _vm._l(_vm.categories.categories, function(
+                        category,
+                        index
+                      ) {
+                        return _c(
+                          "a",
                           {
-                            staticClass: "tag-a-categories",
-                            attrs: { name: "showCategories", tag: "a" }
+                            key: category.name,
+                            staticClass: "category-index",
+                            attrs: {
+                              href: "/catalog/category/" + category.id,
+                              id: "categoryIndexAnimation"
+                            }
                           },
-                          _vm._l(_vm.categories.categories, function(
-                            category,
-                            index
-                          ) {
-                            return _vm.showCategories
-                              ? _c(
-                                  "a",
-                                  {
-                                    key: category.id,
-                                    staticClass: "category-index",
-                                    attrs: {
-                                      href: "/catalog/category/" + category.id
-                                    }
-                                  },
-                                  [
-                                    _c("img", { attrs: { src: category.img } }),
-                                    _vm._v(" "),
-                                    _c("h4", [_vm._v(_vm._s(category.name))])
-                                  ]
-                                )
-                              : _vm._e()
-                          }),
-                          0
+                          [
+                            _c("img", { attrs: { src: category.img } }),
+                            _vm._v(" "),
+                            _c("h4", [_vm._v(_vm._s(category.name))])
+                          ]
                         )
-                      ],
-                      1
+                      }),
+                      0
                     )
                   ])
                 ])

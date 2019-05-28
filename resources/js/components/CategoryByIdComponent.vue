@@ -28,14 +28,12 @@
                                 <div class="container">
 
                                     <div class="categories-list-center">
-                                        <transition-group name="showCategories" tag="a" class="tag-a-categories">
-                                            <a v-for="(category,index) in categories.categories" v-if="showCategories"
-                                               :key="category.id" :href="'/catalog/category/'+category.id"
-                                               class="category-index">
-                                                <img :src="category.img">
-                                                <h4>{{category.name}}</h4>
-                                            </a>
-                                        </transition-group>
+                                        <a v-for="(category,index) in categories.categories"
+                                           :key="category.name" :href="'/catalog/category/'+category.id"
+                                           class="category-index" id="categoryIndexAnimation">
+                                            <img :src="category.img">
+                                            <h4>{{category.name}}</h4>
+                                        </a>
                                     </div>
 
                                 </div>
