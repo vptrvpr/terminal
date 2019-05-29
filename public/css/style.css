@@ -2655,3 +2655,12 @@ div.content {
     transition: ease 1s;
     transform: translateY(-70px);
 }
+
+.map-yandex iframe{
+    width: 100%;
+    height: 600px;
+}
+
+.map-yandex{
+    min-height: 600px;
+}

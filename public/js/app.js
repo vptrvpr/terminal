@@ -3082,6 +3082,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -47286,7 +47292,26 @@ var staticRenderFns = [
                   width: "397px"
                 }
               })
-            ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "col-md-12 map-yandex top-animate",
+                staticStyle: { "margin-top": "30px" }
+              },
+              [
+                _c("iframe", {
+                  attrs: {
+                    src:
+                      "https://yandex.ru/map-widget/v1/?um=constructor%3A97f9f0ed92ae4af9a47054ca782f1415e9585394bc0f399bb839b08f3062dfa2&source=constructor",
+                    width: "500",
+                    height: "240",
+                    frameborder: "0"
+                  }
+                })
+              ]
+            )
           ])
         ])
       ])

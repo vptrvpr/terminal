@@ -31,6 +31,7 @@
                 <div class="row">
                     <div>
                         <div class="col-md-7 left-animate">
+
                             <div class="company_address" style="font-size: 15px">
                                 <h1>Информация о компании:</h1>
                                 <h2 class="mt-1">628414, Ханты-Мансийский автономный округ-Югра,<br> г.Сургут, ул.
@@ -52,6 +53,11 @@
                         </div>
                         <div class="col-md-5 right-animate">
                             <img src="/images/logo_kryg.png" alt="альтернативный текст" width="397px">
+                        </div>
+                        <div class="col-md-12 map-yandex top-animate" style="margin-top:30px">
+                            <iframe
+                                src="https://yandex.ru/map-widget/v1/?um=constructor%3A97f9f0ed92ae4af9a47054ca782f1415e9585394bc0f399bb839b08f3062dfa2&amp;source=constructor"
+                                width="500" height="240" frameborder="0"></iframe>
                         </div>
                     </div>
                 </div>
