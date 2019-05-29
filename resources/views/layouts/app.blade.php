@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <link rel="stylesheet" href="{{ env('MIX_URL_SITE') }}/css/style.css?1112234512111222223112122222">
+    <link rel="stylesheet" href="{{ env('MIX_URL_SITE') }}/css/style.css?11122345121112222231121222221">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="shortcut icon" href="/images/favicon_term.png" type="image/png">
@@ -33,8 +33,8 @@
 <script src="{{ env('MIX_URL_SITE') }}/js/isotope.pkgd.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/owl.carousel.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/wow.min.js"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/app.js?11122345121112222231121223223"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/custom.js?122323"></script>
+<script src="{{ env('MIX_URL_SITE') }}/js/app.js?111223451211122222311212232232"></script>
+<script src="{{ env('MIX_URL_SITE') }}/js/custom.js?1223232"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

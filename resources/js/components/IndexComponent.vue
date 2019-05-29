@@ -47,7 +47,7 @@
                                     <div class="categories-list-center">
                                             <a v-for="(category,index) in categories.categories"
                                                :key="category.name" :href="'/catalog/category/'+category.id"
-                                               class="category-index" id="categoryIndexAnimation">
+                                               class="category-index">
                                                 <img :src="category.img">
                                                 <h4>{{category.name}}</h4>
                                             </a>

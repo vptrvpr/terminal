@@ -2836,8 +2836,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -46875,10 +46873,7 @@ var render = function() {
                           {
                             key: category.name,
                             staticClass: "category-index",
-                            attrs: {
-                              href: "/catalog/category/" + category.id,
-                              id: "categoryIndexAnimation"
-                            }
+                            attrs: { href: "/catalog/category/" + category.id }
                           },
                           [
                             _c("img", { attrs: { src: category.img } }),
@@ -48114,10 +48109,7 @@ var render = function() {
                           {
                             key: category.name,
                             staticClass: "category-index",
-                            attrs: {
-                              href: "/catalog/category/" + category.id,
-                              id: "categoryIndexAnimation"
-                            }
+                            attrs: { href: "/catalog/category/" + category.id }
                           },
                           [
                             _c("img", { attrs: { src: category.img } }),

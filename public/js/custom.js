@@ -56,7 +56,7 @@ $(document).ready(function (  ) {
 
 
 
-    },500);
+    },700);
 });
 /*==============================
    SEARCH BUTTON SECRIPT
