@@ -34,7 +34,7 @@
 <script src="{{ env('MIX_URL_SITE') }}/js/owl.carousel.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/wow.min.js"></script>
 <script src="{{ env('MIX_URL_SITE') }}/js/app.js?111223451211122222311212232232"></script>
-<script src="{{ env('MIX_URL_SITE') }}/js/custom.js?1223232"></script>
+<script src="{{ env('MIX_URL_SITE') }}/js/custom.js?12232322"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
