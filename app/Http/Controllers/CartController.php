@@ -2,15 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(){
         return view('cart.index');
     }
+
+
+    /**
+     * @param $id
+     *
+     * @return array
+     */
     public function addCart($id)
     {
         $product = Product::where('id', $id)->first();
@@ -23,6 +33,11 @@ class CartController extends Controller
 
         return $data;
     }
+
+
+    /**
+     * @return array
+     */
     public function getInfoCart(){
 
         $data = [
@@ -34,15 +49,32 @@ class CartController extends Controller
 
         return $data;
     }
+
+
+    /**
+     * @return array
+     */
     public function destroyCart(){
         Cart::destroy();
         $data = $this->getInfoCart();
         return $data;
     }
+
+
+    /**
+     * @return string
+     */
     public function MessageInfoCart(){
         $message = 'В корзине '.Cart::count().' товар на сумму '.Cart::total().' рублей.';
         return $message;
     }
+
+
+    /**
+     * @param $rowId
+     *
+     * @return array
+     */
     public function deleteCart($rowId){
         Cart::remove($rowId);
         $data = $this->getInfoCart();

@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Categorie;
+use App\Models\Categorie;
 use App\IsAdmin;
 use Illuminate\Http\Request;
-use App\Product;
-use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
+    /**
+     * @var IsAdmin
+     */
     protected $isAdmin;
 
 
+    /**
+     * AdminController constructor.
+     *
+     * @param IsAdmin $isAdmin
+     */
     public function __construct( IsAdmin $isAdmin )
     {
         $this->isAdmin = $isAdmin;
@@ -24,9 +30,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        if( $this->isAdmin->isAdminChecker() == 0 ) {
-            return \redirect()->route( 'admin.home' );
-        }
+        $this->isAdmin->isAdminChecker();
+
         return view( 'admin.index' );
     }
 
@@ -36,9 +41,8 @@ class AdminController extends Controller
      */
     public function adminProducts()
     {
-        if( $this->isAdmin->isAdminChecker() == 0 ) {
-            return \redirect()->route( 'admin.home' );
-        }
+        $this->isAdmin->isAdminChecker();
+
         return view( 'admin.products' );
     }
 
@@ -48,9 +52,8 @@ class AdminController extends Controller
      */
     public function adminPartners()
     {
-        if( $this->isAdmin->isAdminChecker() == 0 ) {
-            return \redirect()->route( 'admin.home' );
-        }
+        $this->isAdmin->isAdminChecker();
+
         return view( 'admin.partners' );
     }
 
@@ -60,27 +63,24 @@ class AdminController extends Controller
      */
     public function adminSliders()
     {
-        if( $this->isAdmin->isAdminChecker() == 0 ) {
-            return \redirect()->route( 'admin.home' );
-        }
+        $this->isAdmin->isAdminChecker();
+
         return view( 'admin.sliders' );
     }
 
 
     public function adminRecommendeds()
     {
-        if( $this->isAdmin->isAdminChecker() == 0 ) {
-            return \redirect()->route( 'admin.home' );
-        }
+        $this->isAdmin->isAdminChecker();
+
         return view( 'admin.recommended' );
     }
 
 
     public function getCategories()
     {
-        if( $this->isAdmin->isAdminChecker() == 0 ) {
-            return \redirect()->route( 'admin.home' );
-        }
+        $this->isAdmin->isAdminChecker();
+
         return [
             'categories' => Categorie::all(),
         ];

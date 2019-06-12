@@ -31,18 +31,14 @@ class IsAdmin
 
 
     /**
-     * Проверка на авторизацию админа
-     *
-     * @return int
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function isAdminChecker()
     {
         $isAdmin = $this->request->session()->get( 'is_admin' );
 
         if( $isAdmin == 0 ) {
-            return 0;
-        } else {
-            return 1;
+            return redirect()->route( 'admin.home' )->send();
         }
     }
 

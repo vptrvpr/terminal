@@ -1,40 +1,38 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+/**
+ * Index
+ */
 Route::get('/', 'PostController@index');
-Route::get('/products/{campaignId}', 'ProductsController@getProductByCategory');
-Route::get('/delete_product/{id}', 'ProductsController@deleteProduct');
-Route::get('/get_form_new_product/', 'ProductsController@getFormNewProduct');
-
 
 
 /**
- * Products and Category
+ * Products
  */
-Route::get('/get_categories', 'ProductsController@getCategoryAll');
 Route::get('/get_products', 'ProductsController@getProductsAll');
 Route::get('/get_recomended', 'ProductsController@getRecomended');
-Route::post('/save_categories', 'ProductsController@saveCategories');
-Route::get('/delete_categories/{categoryId}', 'ProductsController@deleteCategories');
-Route::post('/categories/save_changes', 'ProductsController@categoriesChangesSave');
-
+Route::get('/products/{campaignId}', 'ProductsController@getProductByCategory');
+Route::get('/delete_product/{id}', 'ProductsController@deleteProduct');
 Route::post('/product/changes_save','ProductsController@productChangesSave');
 Route::post('/product/update_img', 'ProductsController@productEditLoadImage');
 Route::post('/product/save_new_product', 'ProductsController@saveNewProduct');
+Route::get('/get-product-by-id/{productId}','ProductsController@getProductById');
+
+/**
+ * Catalog
+ */
 Route::get('/catalog/category/{categoryId}','ProductsController@categoryPage');
 Route::get('/catalog/category/product/{productId}','ProductsController@showProduct');
-Route::get('/get-product-by-id/{productId}','ProductsController@getProductById');
-Route::get('/get_categories_by_id/{categoryId}','ProductsController@getCategoryById');
+
+
+/**
+ * Categories
+ */
+Route::get('/get_categories', 'CategoryController@getCategoryAll');
+Route::post('/save_categories', 'CategoryController@saveCategories');
+Route::get('/delete_categories/{categoryId}', 'CategoryController@deleteCategories');
+Route::post('/categories/save_changes', 'CategoryController@categoriesChangesSave');
+Route::get('/get_categories_by_id/{categoryId}','CategoryController@getCategoryById');
 
 
 /**
